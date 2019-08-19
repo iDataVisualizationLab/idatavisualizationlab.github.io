@@ -145,7 +145,7 @@ ol li {
   margin: 5px auto;
   width: 1000px;
   background: transparent;
-  padding-bottom: 30px;
+  /*padding-bottom: 30px;*/
 }
 
 
@@ -200,10 +200,10 @@ nav {
   padding: 0px 0px;
   color: #222;
   border-top: 1px solid #fff;
-  border-bottom: 1px solid #AFABAB;  
+  border-bottom: 1px solid #AFABAB;
 } 
 
-#site_content { 
+#site_content {
   width: 1000px;
   overflow: hidden;
   margin: 0 auto 0 auto;

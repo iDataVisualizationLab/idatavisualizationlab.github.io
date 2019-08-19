@@ -1,0 +1,789 @@
+
+
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>interactive Data Visualization Lab</title>
+    <meta name="description" content="website description" />
+    <meta name="keywords" content="website keywords, website keywords" />
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="shortcut icon" href="images/iDVLlogo/V2.png">
+    <!-- modernizr enables HTML5 elements and feature detects -->
+    <script type="text/javascript" src="js/modernizr-1.5.min.js"></script>
+    <script type="text/javascript" src="js/jquery-1.8.3.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            // this will get the full URL at the address bar
+            var url = window.location.href;
+
+            // passes on every "a" tag
+            $(".topmenu a").each(function() {
+                // checks if its the same on the address bar
+                if (url == (this.href)) {
+                    $(this).closest("li").addClass("selected");
+                }
+            });
+        });
+    </script>
+
+
+</head>
+
+<body>
+<div id="main">
+    <header>
+        <div id="logo">
+            <div id="logo_text">
+                <h1>
+                    <a href="index.php"> <img height="48px" src="images/iDVLlogo/iDVL.png" href="index.php" alt="logo" title="logo"></a>
+                    <a href="index.php"><span class="logo_colour"> interactive Data Visualization Lab</span>
+                        <a href="http://www.depts.ttu.edu/cs/"><img height="48px" src="images/TTUlogo.png" alt="logo" title="logo"></a>
+                </h1>
+            </div>
+        </div>
+        <nav>
+            <ul class="sf-menu" id="nav">
+                
+                <li >
+                    <a href="index.php">
+                        Home            </a>
+                </li>
+                
+                <li >
+                    <a href="people.php">
+                        People            </a>
+                </li>
+                
+                <li class="selected">
+                    <a href="publications.php">
+                        Publications            </a>
+                </li>
+                
+                <li >
+                    <a href="researchProjects.php">
+                        Research Projects            </a>
+                </li>
+                
+                <li >
+                    <a href="conferences.php">
+                        Conferences            </a>
+                </li>
+                
+                <li >
+                    <a href="grants.php">
+                        CFPs            </a>
+                </li>
+            
+            
+            </ul>
+        </nav>
+    </header>
+    
+    
+    <div id="site_content">
+        <div id="top_border"></div>
+        <div class="content fullPage publicationPage">
+            
+            <!--  <h4>IN PREPARATION</h4>
+             <ul>
+             <li>Sonia Baee, Tommy Dang, and Md. Yasin Kabir. Submitting a paper to VAHC 2017 on May 31.</li><br>
+                  <li>Vinh Nguyen and Tommy Dang. Submitting a paper to GLBIO 2017 on March 13.</li><br>
+              </ul>-->
+            <!--<h4>IN SUBMISSION</h4>
+              <ul>
+                <li>Vinh Nguyen and Tommy Dang. VDS 2017.</li><br>
+                <li>Vinh Nguyen and Tommy Dang. VAMrE 2017.</li><br>
+                <li>Long Nguyen and Tommy Dang. VAST challenge.</li><br>
+                <li>Tommy Dang, Paul Murray, and Angus Forbes. VOILA 2017.</li><br>
+              </ul>
+      
+                <div class="Border"></div> -->
+            <!-- <ul>
+ 
+                 <li><paperInfo><b>Tommy Dang</b>, <b>Long Hoang Nguyen</b>, Abdullahn Karim, and Venki Uddameri. <i> STOAViz: Visualizing Saturated Thickness of Ogallala Aquifer</i>. The Visualization in Environmental Sciences, <a href="http://www.informatik.uni-leipzig.de/~envirvis2017/">EnvirVis 2017</a>. </paperInfo><a href="paper.php?id=0">View more</a></li><li><paperInfo>
+     <b>Tommy Dang</b> and Angus Forbes. <i> CactusTree: A Tree Drawing Approach for Hierarchical Edge Bundling</i>. Proceedings of the 10th IEEE Pacific Visualization Symposium, PacificVis 2017.
+ </paperInfo><a href="paper.php?id=1">View more</a></li><li><paperInfo>
+     <b>Tommy Dang</b>, Paul Murray, and Angus Forbes. <i> BioLinker: Bottom-up exploration of protein interaction network</i>. Proceedings of the 10th IEEE Pacific Visualization Symposium, PacificVis 2017.
+ </paperInfo><a href="paper.php?id=2">View more</a></li>
+            <ul> -->
+            
+            
+            
+            
+            
+            <br><b>2019</b><div id="site_content"></div> <div id="top_border"></div>               <div class="publicationArea">
+            <table style="width:100%; margin-left: 20px;">
+                <tr>
+                    <th class="paperThumb" width="15%">
+                        <img src="images/papers/2019_HiperVR.png" width="200" height="100">
+                    </th>
+                    <th width="85%" style="padding-left: 25px;">
+                        <font color="#000000">[S5]</font>
+                        <i>HiperVR: A Virtual Reality model for High Performance Computing Systems</i><br/>
+                        Ngan Nguyen, Lino Virgen, and Tommy Dang  <br/>
+                        Practice & Experience in Advanced Research Computing Conference Series<br/>
+                        <a href="https://www.pearc19.pearc.org/">PEARC10:  July 28 - August 1, 2019 Chicago, IL</a>    <br/>
+                        <a href="https://dl.acm.org/citation.cfm?id=3337958"> <img src="images/icons/pdf.png" height="18"></a>
+                        <a href="https://www.youtube.com/watch?v=iKmpS74G6xM"> <img src="images/icons/movie.png" height="19"></a>
+                        <a href="https://github.com/iDataVisualizationLab/HPCC/tree/master/HiperView20190531/HPCC_VR"> <img src="images/icons/github.png" height="18"></a>
+                        
+                        
+                        
+                        <a href="https://dl.acm.org/citation.cfm?id=3337958"  class="button">DOI</a>
+                        <a href="https://dl.acm.org/citation.cfm?id=3337958"> <img src="images/icons/bibtex.png" height="13"></a>
+                    
+                    
+                    </th>
+                </tr>
+            </table>
+        </div>
+            <div class="publicationArea">
+                <table style="width:100%; margin-left: 20px;">
+                    <tr>
+                        <th class="paperThumb" width="15%">
+                            <img src="images/papers/PhaseSpace.png" width="200" height="100">
+                        </th>
+                        <th width="85%" style="padding-left: 25px;">
+                            <font color="#000000">[W14]</font>
+                            <i>SpacePhaser: Phase Space Embedding Visual Analytics</i><br/>
+                            Ngan Nguyen and Tommy Dang  <br/>
+                            IEEE International Workshop on Deep Analysis of Data-Driven Applications<br/>
+                            <a href="https://ieeecompsac.computer.org/2019/dada/">DADA 2019 @ COMPSAC, July 15, Milwaukee, WI</a>    <br/>
+                            <a href="https://github.com/VixLAB/SpacePhaser/raw/master/paper.pdf"> <img src="images/icons/pdf.png" height="18"></a>
+                            <a href="https://vixlab.github.io/SpacePhaser/"> <img src="images/icons/movie.png" height="19"></a>
+                            <a href="https://github.com/VixLAB/SpacePhaser"> <img src="images/icons/github.png" height="18"></a>
+                            
+                            
+                            
+                            <a href="https://ieeexplore.ieee.org/abstract/document/8753913"  class="button">DOI</a>
+                            <a href="https://ieeexplore.ieee.org/abstract/document/8753913"> <img src="images/icons/bibtex.png" height="13"></a>
+                        
+                        
+                        </th>
+                    </tr>
+                </table>
+            </div>
+            <div class="publicationArea">
+                <table style="width:100%; margin-left: 20px;">
+                    <tr>
+                        <th class="paperThumb" width="15%">
+                            <img src="images/papers/SOAViz.png" width="200" height="100">
+                        </th>
+                        <th width="85%" style="padding-left: 25px;">
+                            <font color="#000000">[W13]</font>
+                            <i>SOAViz: Visualization for Portable X-ray Fluorescence</i><br/>
+                            Vung Pham and Tommy Dang  <font color="#080"> (Best paper award) </font> <br/>
+                            The Visualization in Environmental Sciences<br/>
+                            <a href="https://www.informatik.uni-leipzig.de/bsv/envirvis2019/">EnvirVis 2019 @ EuroVis</a>    <br/>
+                            <a href=""> <img src="images/icons/pdf.png" height="18"></a>
+                            <a href="https://idatavisualizationlab.github.io/Soil/"> <img src="images/icons/movie.png" height="19"></a>
+                            <a href="https://github.com/iDataVisualizationLab/Soil"> <img src="images/icons/github.png" height="18"></a>
+                            
+                            <a href="https://github.com/iDataVisualizationLab/Soil/blob/master/SOAViz.pdf"> <img src="../img/ppt.png" height="16" padding="0" alt="Short version"/></a>
+                            
+                            <a href="https://diglib.eg.org/handle/10.2312/envirvis20191102"  class="button">DOI</a>
+                            <a href="https://diglib.eg.org/handle/10.2312/envirvis20191102"> <img src="images/icons/bibtex.png" height="13"></a>
+                        
+                        
+                        </th>
+                    </tr>
+                </table>
+            </div>
+            <div class="publicationArea">
+                <table style="width:100%; margin-left: 20px;">
+                    <tr>
+                        <th class="paperThumb" width="15%">
+                            <img src="images/papers/ws.png" width="200" height="100">
+                        </th>
+                        <th width="85%" style="padding-left: 25px;">
+                            <font color="#000000">[S4]</font>
+                            <i>WordStream: Interactive Visualization for Topic Evolution</i><br/>
+                            Tommy Dang, Huyen Nguyen, and Vung Pham  <br/>
+                            21st EG/VGTC Conference on Visualization<br/>
+                            <a href="https://www.eurovis.org/">EuroVis 2019 , June 3, Porto, Portugal</a>    <br/>
+                            <a href="https://github.com/iDataVisualizationLab/WordStream/blob/master/EuroVis19_WordStream.pdf"> <img src="images/icons/pdf.png" height="18"></a>
+                            <a href="https://idatavisualizationlab.github.io/WordStream/video.html"> <img src="images/icons/movie.png" height="19"></a>
+                            <a href="https://github.com/iDataVisualizationLab/WordStream"> <img src="images/icons/github.png" height="18"></a>
+                            
+                            <a href="https://github.com/iDataVisualizationLab/WordStream/blob/master/media/presentation/EuroVis-2019-WS.pptx"> <img src="../img/ppt.png" height="16" padding="0" alt="Slides EuroVis-2019-WS"/></a>
+                            
+                            <a href="https://diglib.eg.org/handle/10.2312/evs20191178"  class="button">DOI</a>
+                            <a href="https://diglib.eg.org/handle/10.2312/2632781"> <img src="images/icons/bibtex.png" height="13"></a>
+                        
+                        
+                        </th>
+                    </tr>
+                </table>
+            </div>
+            <div class="publicationArea">
+                <table style="width:100%; margin-left: 20px;">
+                    <tr>
+                        <th class="paperThumb" width="15%">
+                            <img src="images/papers/FSelector.png" width="200" height="100">
+                        </th>
+                        <th width="85%" style="padding-left: 25px;">
+                            <font color="#000000">[C4]</font>
+                            <i>FSelector: Variable Selection Using Visual Features</i><br/>
+                            Tommy Dang  <br/>
+                            The 45th annual conference on computer graphics, visualization and human-computer interaction<br/>
+                            <a href="http://graphicsinterface.org/conference/2019/">Graphics Interface (GI) 2019, May 28, Kingston, Canada</a>    <br/>
+                            <a href="https://github.com/FeatureSelector/FeatureSelector.github.io/blob/master/Scagnostics_GI2019.pdf"> <img src="images/icons/pdf.png" height="18"></a>
+                            <a href="https://featureselector.github.io/"> <img src="images/icons/movie.png" height="19"></a>
+                            <a href="https://github.com/FeatureSelector/FeatureSelector.github.io"> <img src="images/icons/github.png" height="18"></a>
+                            
+                            <a href="https://github.com/FeatureSelector/FeatureSelector.github.io/blob/master/GI%202019.pptx"> <img src="../img/ppt.png" height="16" padding="0" alt="Slides GI 2019"/></a>
+                            
+                            <a href="http://graphicsinterface.org/proceedings/gi2019/gi2019-7/"  class="button">DOI</a>
+                            <a href="http://graphicsinterface.org/proceedings/gi2019/gi2019-7/"> <img src="images/icons/bibtex.png" height="13"></a>
+                        
+                        
+                        </th>
+                    </tr>
+                </table>
+            </div>
+            <div class="publicationArea">
+                <table style="width:100%; margin-left: 20px;">
+                    <tr>
+                        <th class="paperThumb" width="15%">
+                            <img src="images/papers/VPA3.png" width="200" height="100">
+                        </th>
+                        <th width="85%" style="padding-left: 25px;">
+                            <font color="#000000">[C3]</font>
+                            <i>Visualizing Multidimensional Health Status of Data Centers</i><br/>
+                            Tommy Dang  <br/>
+                            Lecture Notes in Computer Science book series (LNCS, volume 11027)<br/>
+                            <a href="https://link.springer.com/book/10.1007/978-3-030-17872-7">Programming and Performance Visualization Tools</a>    <br/>
+                            <a href=""> <img src="images/icons/pdf.png" height="18"></a>
+                            <a href=""> <img src="images/icons/movie.png" height="19"></a>
+                            <a href=""> <img src="images/icons/github.png" height="18"></a>
+                            
+                            
+                            
+                            <a href="https://citation-needed.springer.com/v2/references/10.1007/978-3-030-17872-7_17?format=bibtex&flavour=citation"  class="button">DOI</a>
+                            <a href="https://citation-needed.springer.com/v2/references/10.1007/978-3-030-17872-7_17?format=bibtex&flavour=citation"> <img src="images/icons/bibtex.png" height="13"></a>
+                        
+                        
+                        </th>
+                    </tr>
+                </table>
+            </div>
+            <br><b>2018</b><div id="site_content"></div> <div id="top_border"></div>               <div class="publicationArea">
+            <table style="width:100%; margin-left: 20px;">
+                <tr>
+                    <th class="paperThumb" width="15%">
+                        <img src="images/papers/HealthTvizer.png" width="200" height="100">
+                    </th>
+                    <th width="85%" style="padding-left: 25px;">
+                        <font color="#000000">[W12]</font>
+                        <i>HealthTvizer: Exploring Health Awareness in Twitter Data through Coordinated Multiple Views</i><br/>
+                        Tommy Dang, Sonia Baee, Ngan Nguyen, and Vung Pham  <br/>
+                        The 2nd International Workshop on Big Social Management and Analysis<br/>
+                        <a href="http://www.comp.hkbu.edu.hk/~xinhuang/BSMDMA2018/">BSMDMA Workshop @ IEEE BigData 2018</a>    <br/>
+                        <a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=8622445"> <img src="images/icons/pdf.png" height="18"></a>
+                        <a href="https://healthtvizer.github.io/"> <img src="images/icons/movie.png" height="19"></a>
+                        <a href="https://github.com/HealthTvizer/HealthTvizer.github.io"> <img src="images/icons/github.png" height="18"></a>
+                        
+                        
+                        
+                        <a href="https://ieeexplore.ieee.org/document/8622445"  class="button">DOI</a>
+                        <a href="https://ieeexplore.ieee.org/document/8622445"> <img src="images/icons/bibtex.png" height="13"></a>
+                    
+                    
+                    </th>
+                </tr>
+            </table>
+        </div>
+            <div class="publicationArea">
+                <table style="width:100%; margin-left: 20px;">
+                    <tr>
+                        <th class="paperThumb" width="15%">
+                            <img src="images/papers/FinanViz.png" width="200" height="100">
+                        </th>
+                        <th width="85%" style="padding-left: 25px;">
+                            <font color="#000000">[W11]</font>
+                            <i>FinanViz: Visualizing Emerging Topics in Financial News</i><br/>
+                            Ngan Nguyen, Vung Pham, Vinh Nguyen, and Tommy Dang  <br/>
+                            The 2nd International Workshop on Big Data for Financial News and Data<br/>
+                            <a href="https://intelligentfinance.github.io/2018IEEE-BigData-Workshop/index.html">Financial News 2018</a>    <br/>
+                            <a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=8622097"> <img src="images/icons/pdf.png" height="18"></a>
+                            <a href="https://idatavisualizationlab.github.io/FinanViz/index.html"> <img src="images/icons/movie.png" height="19"></a>
+                            <a href="https://github.com/iDataVisualizationLab/FinanViz"> <img src="images/icons/github.png" height="18"></a>
+                            
+                            
+                            
+                            <a href="https://ieeexplore.ieee.org/document/8622097"  class="button">DOI</a>
+                            <a href="https://ieeexplore.ieee.org/document/8622097"> <img src="images/icons/bibtex.png" height="13"></a>
+                        
+                        
+                        </th>
+                    </tr>
+                </table>
+            </div>
+            <div class="publicationArea">
+                <table style="width:100%; margin-left: 20px;">
+                    <tr>
+                        <th class="paperThumb" width="15%">
+                            <img src="http://myweb.ttu.edu/vinhtngu/images/portfolio/UFOTracker.png" width="200" height="100">
+                        </th>
+                        <th width="85%" style="padding-left: 25px;">
+                            <font color="#000000">[W10]</font>
+                            <i>UFO_Tracker: Visualizing UFO sightings</i><br/>
+                            Vinh Nguyen and Tommy Dang  <br/>
+                            The 3rd International Workshop on Application of Big Data for Computational Social Science<br/>
+                            <a href="https://css-japan.com/en/bigdatacss2018/">ABCSS  Workshop @ IEEE BigData 2018</a>    <br/>
+                            <a href="http://myweb.ttu.edu/vinhtngu/data/IEEE_UFO_BigData_CameraReady__S25201.pdf"> <img src="images/icons/pdf.png" height="18"></a>
+                            <a href=""> <img src="images/icons/movie.png" height="19"></a>
+                            <a href="https://github.com/iDataVisualizationLab/UFO"> <img src="images/icons/github.png" height="18"></a>
+                            
+                            
+                            
+                            <a href="https://ieeexplore.ieee.org/document/8622418"  class="button">DOI</a>
+                            <a href="https://ieeexplore.ieee.org/document/8622418"> <img src="images/icons/bibtex.png" height="13"></a>
+                        
+                        
+                        </th>
+                    </tr>
+                </table>
+            </div>
+            <div class="publicationArea">
+                <table style="width:100%; margin-left: 20px;">
+                    <tr>
+                        <th class="paperThumb" width="15%">
+                            <img src="http://myweb.ttu.edu/vinhtngu/images/portfolio/IoTViz.png" width="200" height="100">
+                        </th>
+                        <th width="85%" style="padding-left: 25px;">
+                            <font color="#000000">[W9]</font>
+                            <i>IoTViz: Visualizing Emerging Topics in the Internet of Things</i><br/>
+                            Vung Pham, Vinh Nguyen, and Tommy Dang  <br/>
+                            Big Data Engineering and Analytics in Cyber-Physical Systems<br/>
+                            <a href="https://sites.google.com/site/bigeacps18">BigEACPS'18</a>    <br/>
+                            <a href="http://myweb.ttu.edu/vinhtngu/data/IEEE_BigData_IoT_CameraReady.pdf"> <img src="images/icons/pdf.png" height="18"></a>
+                            <a href="https://idatavisualizationlab.github.io/IoT/"> <img src="images/icons/movie.png" height="19"></a>
+                            <a href="https://github.com/iDataVisualizationLab/IoT"> <img src="images/icons/github.png" height="18"></a>
+                            
+                            
+                            
+                            <a href="https://ieeexplore.ieee.org/document/8622375"  class="button">DOI</a>
+                            <a href="https://ieeexplore.ieee.org/document/8622375"> <img src="images/icons/bibtex.png" height="13"></a>
+                        
+                        
+                        </th>
+                    </tr>
+                </table>
+            </div>
+            <div class="publicationArea">
+                <table style="width:100%; margin-left: 20px;">
+                    <tr>
+                        <th class="paperThumb" width="15%">
+                            <img src="images/papers/HPCViz.png" width="200" height="100">
+                        </th>
+                        <th width="85%" style="padding-left: 25px;">
+                            <font color="#000000">[W8]</font>
+                            <i>HPCViz: Visualizing and Monitoring Health Status of High Performance Computing Systems</i><br/>
+                            Tommy Dang, Vinh Nguyen, Vung Pham, Ghazanfar Ali, Yong Chen  <br/>
+                            The 2nd International Industry/University Workshop on Data-center Automation, Analytics, and Control<br/>
+                            <a href="https://daac-general.nsfcac.org/daac-2018">DAAC 2918</a>    <br/>
+                            <a href="https://drive.google.com/file/d/10SMKSwVMtkmLHaiBiDwdR_3NnKgUopFZ/view"> <img src="images/icons/pdf.png" height="18"></a>
+                            <a href="https://idatavisualizationlab.github.io/HPCC/HPCViz/"> <img src="images/icons/movie.png" height="19"></a>
+                            <a href="https://github.com/iDataVisualizationLab/HPCC/tree/master/HPCViz"> <img src="images/icons/github.png" height="18"></a>
+                            
+                            
+                            
+                            <a href=""  class="button">DOI</a>
+                            <a href=""> <img src="images/icons/bibtex.png" height="13"></a>
+                        
+                        
+                        </th>
+                    </tr>
+                </table>
+            </div>
+            <div class="publicationArea">
+                <table style="width:100%; margin-left: 20px;">
+                    <tr>
+                        <th class="paperThumb" width="15%">
+                            <img src="images/papers/CVExplorer2.png" width="200" height="100">
+                        </th>
+                        <th width="85%" style="padding-left: 25px;">
+                            <font color="#000000">[C2]</font>
+                            <i>CVExplorer: Multidimensional Visualization for Common Vulnerabilities and Exposures</i><br/>
+                            Vung Pham and Tommy Dang   <br/>
+                            IEEE International Conference on Big Data<br/>
+                            <a href="http://cci.drexel.edu/bigdata/bigdata2018/index.html">IEEE Big Data 2018: Dec 10-13, Seattle, WA</a>    <br/>
+                            <a href="https://github.com/iDataVisualizationLab/CVSS/blob/master/CVExplorer_BigData_2018.pdf"> <img src="images/icons/pdf.png" height="18"></a>
+                            <a href="https://idatavisualizationlab.github.io/CVSS/"> <img src="images/icons/movie.png" height="19"></a>
+                            <a href="https://github.com/iDataVisualizationLab/CVSS"> <img src="images/icons/github.png" height="18"></a>
+                            
+                            
+                            
+                            <a href="http://cci.drexel.edu/bigdata/bigdata2018/AcceptedPapers.html"  class="button">DOI</a>
+                            <a href="https://ieeexplore.ieee.org/document/8622092"> <img src="images/icons/bibtex.png" height="13"></a>
+                        
+                        
+                        </th>
+                    </tr>
+                </table>
+            </div>
+            <div class="publicationArea">
+                <table style="width:100%; margin-left: 20px;">
+                    <tr>
+                        <th class="paperThumb" width="15%">
+                            <img src="images/papers/AIVR1.png" width="200" height="100">
+                        </th>
+                        <th width="85%" style="padding-left: 25px;">
+                            <font color="#000000">[C1]</font>
+                            <i>Web-based Virtual Reality development in classroom: From learner's perspectives</i><br/>
+                            Vinh Nguyen and Tommy Dang  <br/>
+                            IEEE International Conference on Artificial Intelligence and Virtual Reality<br/>
+                            <a href="http://aivr.asia.edu.tw/2018/"> AIVR 2018</a>    <br/>
+                            <a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=8613629"> <img src="images/icons/pdf.png" height="18"></a>
+                            <a href="https://www.youtube.com/watch?v=3IT3-mnqayo&feature=youtu.be"> <img src="images/icons/movie.png" height="19"></a>
+                            <a href="https://idatavisualizationlab.github.io/CS5331-VirtualReality/P1/index.html"> <img src="images/icons/github.png" height="18"></a>
+                            
+                            
+                            
+                            <a href="https://ieeexplore.ieee.org/abstract/document/8613629"  class="button">DOI</a>
+                            <a href="https://ieeexplore.ieee.org/abstract/document/8613629"> <img src="images/icons/bibtex.png" height="13"></a>
+                        
+                        
+                        </th>
+                    </tr>
+                </table>
+            </div>
+            <div class="publicationArea">
+                <table style="width:100%; margin-left: 20px;">
+                    <tr>
+                        <th class="paperThumb" width="15%">
+                            <img src="images/papers/VAST2018mc2.png" width="200" height="100">
+                        </th>
+                        <th width="85%" style="padding-left: 25px;">
+                            <font color="#000000">[A2]</font>
+                            <i>Award: Strong Support for Exploratory Analysis</i><br/>
+                            Vung Pham and Tommy Dang   <br/>
+                            VAST Challenge 2018:  Mini-Challenge 2<br/>
+                            <a href="http://vacommunity.org/VAST+Challenge+2018+MC2">VAST 2018</a>    <br/>
+                            <a href="https://idatavisualizationlab.github.io/VAST2018/mc2/index.htm"> <img src="images/icons/pdf.png" height="18"></a>
+                            <a href="https://idatavisualizationlab.github.io/VAST2018/"> <img src="images/icons/movie.png" height="19"></a>
+                            <a href="https://github.com/iDataVisualizationLab/VAST2018"> <img src="images/icons/github.png" height="18"></a>
+                            
+                            
+                            
+                            <a href="https://idatavisualizationlab.github.io/VAST2018/heatmap.html"  class="button">DOI</a>
+                            <a href=""> <img src="images/icons/bibtex.png" height="13"></a>
+                        
+                        
+                        </th>
+                    </tr>
+                </table>
+            </div>
+            <div class="publicationArea">
+                <table style="width:100%; margin-left: 20px;">
+                    <tr>
+                        <th class="paperThumb" width="15%">
+                            <img src="images/papers/VAST2018mc3.png" width="200" height="100">
+                        </th>
+                        <th width="85%" style="padding-left: 25px;">
+                            <font color="#000000">[A1]</font>
+                            <i>Honorable Mention: Representation of Small-Scale Temporal Patterns</i><br/>
+                            Tommy Dang and Vung Pham  <br/>
+                            VAST Challenge 2018:  Mini-Challenge 3<br/>
+                            <a href="http://vacommunity.org/VAST+Challenge+2018+MC3">VAST 2018</a>    <br/>
+                            <a href="https://www.researchgate.net/publication/330005824_MTDES_Multi-dimensional_Temporal_Data_Exploration_System_Strong_Support_for_Exploratory_Analysis_Award_in_VAST_2018_Mini-Challenge_2"> <img src="images/icons/pdf.png" height="18"></a>
+                            <a href="https://idatavisualizationlab.github.io/VAST2018mc3/"> <img src="images/icons/movie.png" height="19"></a>
+                            <a href="https://github.com/iDataVisualizationLab/VAST2018mc3"> <img src="images/icons/github.png" height="18"></a>
+                            
+                            
+                            
+                            <a href=""  class="button">DOI</a>
+                            <a href="https://vimeo.com/319290251"> <img src="images/icons/bibtex.png" height="13"></a>
+                        
+                        
+                        </th>
+                    </tr>
+                </table>
+            </div>
+            <div class="publicationArea">
+                <table style="width:100%; margin-left: 20px;">
+                    <tr>
+                        <th class="paperThumb" width="15%">
+                            <img src="images/papers/MalViz.png" width="200" height="100">
+                        </th>
+                        <th width="85%" style="padding-left: 25px;">
+                            <font color="#000000">[S3]</font>
+                            <i>MalViz: An Interactive Visualization Tool for Tracing Malware</i><br/>
+                            Vinh Nguyen, Akbar Siami Namin, Keith S. Jones, and Tommy Dang  <br/>
+                            ACM SIGSOFT International Symposium on Software Testing and Analysis<br/>
+                            <a href="https://conf.researchr.org/home/issta-2018">ISSTA 2018</a>    <br/>
+                            <a href="https://github.com/Alex-Nguyen/Malviz/blob/master/paper/ISSTA2018_Demo_CameraReady.pdf"> <img src="images/icons/pdf.png" height="18"></a>
+                            <a href="https://www.youtube.com/watch?v=4NUMYGhPb4I&feature=youtu.be"> <img src="images/icons/movie.png" height="19"></a>
+                            <a href="https://github.com/Alex-Nguyen/Malviz"> <img src="images/icons/github.png" height="18"></a>
+                            
+                            
+                            
+                            <a href="https://dl.acm.org/citation.cfm?doid=3213846.3229501"  class="button">DOI</a>
+                            <a href="https://dl.acm.org/citation.cfm?doid=3213846.3229501"> <img src="images/icons/bibtex.png" height="13"></a>
+                        
+                        
+                        </th>
+                    </tr>
+                </table>
+            </div>
+            <div class="publicationArea">
+                <table style="width:100%; margin-left: 20px;">
+                    <tr>
+                        <th class="paperThumb" width="15%">
+                            <img src="images/papers/ComModeler_IMDB.png" width="200" height="100">
+                        </th>
+                        <th width="85%" style="padding-left: 25px;">
+                            <font color="#000000">[W7]</font>
+                            <i>ComModeler: Topic Modeling Using Community Detection</i><br/>
+                            Tommy Dang and Vinh Nguyen   <br/>
+                            The 9th international EuroVis workshop on Visual Analytics<br/>
+                            <a href="http://www.eurova.org/">EuroVA 2018</a>    <br/>
+                            <a href="https://www.researchgate.net/publication/324451738_ComModeler_Topic_Modeling_Using_Community_Detection"> <img src="images/icons/pdf.png" height="18"></a>
+                            <a href="https://dycomdetector.github.io/"> <img src="images/icons/movie.png" height="19"></a>
+                            <a href="https://github.com/DycomDetector/DycomDetector.github.io"> <img src="images/icons/github.png" height="18"></a>
+                            
+                            
+                            
+                            <a href="https://diglib.eg.org/handle/10.2312/eurova20181104"  class="button">DOI</a>
+                            <a href="https://diglib.eg.org/handle/10.2312/eurova20181104"> <img src="images/icons/bibtex.png" height="13"></a>
+                        
+                        
+                        </th>
+                    </tr>
+                </table>
+            </div>
+            <div class="publicationArea">
+                <table style="width:100%; margin-left: 20px;">
+                    <tr>
+                        <th class="paperThumb" width="15%">
+                            <img src="images/papers/TensorFlow_LSTM.png" width="200" height="100">
+                        </th>
+                        <th width="85%" style="padding-left: 25px;">
+                            <font color="#000000">[W6]</font>
+                            <i>Predict Saturated Thickness using TensorBoard Visualization</i><br/>
+                            Vinh Nguyen, Fang Jin, and Tommy Dang  <br/>
+                            The Visualization in Environmental Sciences<br/>
+                            <a href="https://www.informatik.uni-leipzig.de/bsv/envirvis2018/">EnvirVis 2018</a>    <br/>
+                            <a href="https://www.researchgate.net/publication/324362772_Predict_Saturated_Thickness_using_TensorBoard_Visualization"> <img src="images/icons/pdf.png" height="18"></a>
+                            <a href="https://www.youtube.com/watch?v=GIN6J0pme40"> <img src="images/icons/movie.png" height="19"></a>
+                            <a href="https://github.com/Alex-Nguyen/SaturatedThicknessTensorBoard"> <img src="images/icons/github.png" height="18"></a>
+                            
+                            
+                            
+                            <a href="https://diglib.eg.org/handle/10.2312/envirvis20181135"  class="button">DOI</a>
+                            <a href="https://diglib.eg.org/handle/10.2312/envirvis20181135"> <img src="images/icons/bibtex.png" height="13"></a>
+                        
+                        
+                        </th>
+                    </tr>
+                </table>
+            </div>
+            <br><b>2017</b><div id="site_content"></div> <div id="top_border"></div>               <div class="publicationArea">
+            <table style="width:100%; margin-left: 20px;">
+                <tr>
+                    <th class="paperThumb" width="15%">
+                        <img src="images/papers/SettingUpVR.png" width="200" height="100">
+                    </th>
+                    <th width="85%" style="padding-left: 25px;">
+                        <font color="#000000">[W5]</font>
+                        <i>Setting up virtual reality and augmented reality learning environment in Unity</i><br/>
+                        Vinh Nguyen and Tommy Dang  <br/>
+                        IEEE Workshop on Virtual, Augmented and Mixed Reality in Education <br/>
+                        <a href="https://www.vamre.org/">ISMAR 2017 </a>    <br/>
+                        <a href="http://myweb.ttu.edu/vinhtngu/contents/2017/VAMRE/SetupVRUnity.pdf"> <img src="images/icons/pdf.png" height="18"></a>
+                        <a href="https://drive.google.com/file/d/1QZkop1Vl17tabTXLwWEYegCt9uq5Vr4r/view"> <img src="images/icons/movie.png" height="19"></a>
+                        <a href="https://terrain.party/"> <img src="images/icons/github.png" height="18"></a>
+                        
+                        
+                        
+                        <a href="http://ieeexplore.ieee.org/document/8088512/"  class="button">DOI</a>
+                        <a href="bibTex/Nguyen2017SettingUpVR.txt"> <img src="images/icons/bibtex.png" height="13"></a>
+                    
+                    
+                    </th>
+                </tr>
+            </table>
+        </div>
+            <div class="publicationArea">
+                <table style="width:100%; margin-left: 20px;">
+                    <tr>
+                        <th class="paperThumb" width="15%">
+                            <img src="images/papers/CancerMapper.png" width="200" height="100">
+                        </th>
+                        <th width="85%" style="padding-left: 25px;">
+                            <font color="#000000">[W4]</font>
+                            <i>CancerLinker: Explorations of Cancer Study Network</i><br/>
+                            Vinh Nguyen, Yasin Kabir, and Tommy Dang  <br/>
+                            Visualization in Data Science at IEEE VIS 2017<br/>
+                            <a href="http://www.visualdatascience.org/2017/">VDS 2017</a>    <br/>
+                            <a href="https://arxiv.org/pdf/1710.06062.pdf"> <img src="images/icons/pdf.png" height="18"></a>
+                            <a href="https://www.youtube.com/embed/ioyaTPani4A"> <img src="images/icons/movie.png" height="19"></a>
+                            <a href="https://github.com/iDataVisualizationLab/CancerLinker"> <img src="images/icons/github.png" height="18"></a>
+                            
+                            
+                            
+                            <a href="https://arxiv.org/abs/1710.06062"  class="button">DOI</a>
+                            <a href="https://ieeexplore.ieee.org/document/8573445"> <img src="images/icons/bibtex.png" height="13"></a>
+                        
+                        
+                        </th>
+                    </tr>
+                </table>
+            </div>
+            <div class="publicationArea">
+                <table style="width:100%; margin-left: 20px;">
+                    <tr>
+                        <th class="paperThumb" width="15%">
+                            <img src="images/papers/CactusStudy.png" width="200" height="100">
+                        </th>
+                        <th width="85%" style="padding-left: 25px;">
+                            <font color="#000000">[W3]</font>
+                            <i>A User Study of Techniques for Visualizing Structure and Connectivity in Hierarchical Datasets</i><br/>
+                            Tommy Dang, Paul Murray, Ronak Etemadpour, and Angus G. Forbes  <br/>
+                            Proceedings of the 3rd International Workshop on Visualization and Interaction for Ontologies and Linked Data<br/>
+                            <a href="http://voila2017.visualdataweb.org/">VOILA 2017</a>    <br/>
+                            <a href="http://ceur-ws.org/Vol-1947/paper05.pdf"> <img src="images/icons/pdf.png" height="18"></a>
+                            <a href="http://cactustrees.github.io/"> <img src="images/icons/movie.png" height="19"></a>
+                            <a href="https://github.com/CactusTrees/CactusTrees.github.io"> <img src="images/icons/github.png" height="18"></a>
+                            
+                            
+                            
+                            <a href="http://ceur-ws.org/Vol-1947/"  class="button">DOI</a>
+                            <a href="bibTex/Dang2017CactusStudy.txt"> <img src="images/icons/bibtex.png" height="13"></a>
+                        
+                        
+                        </th>
+                    </tr>
+                </table>
+            </div>
+            <div class="publicationArea">
+                <table style="width:100%; margin-left: 20px;">
+                    <tr>
+                        <th class="paperThumb" width="15%">
+                            <img src="images/papers/Dycom.png" width="200" height="100">
+                        </th>
+                        <th width="85%" style="padding-left: 25px;">
+                            <font color="#000000">[W2]</font>
+                            <i>DycomDetector: Discover topics using automatic community detections in dynamic networks</i><br/>
+                            Tommy Dang , Vinh Nguyen, and Yasin Kabir  <br/>
+                            KDD 2017 Workshop on Interactive Data Exploration and Analytics<br/>
+                            <a href="http://poloclub.gatech.edu/idea2017/">IDEA 2017</a>    <br/>
+                            <a href="https://github.com/iDataVisualizationLab/DycomDetector/blob/master/paper/DycomDetector.pdf"> <img src="images/icons/pdf.png" height="18"></a>
+                            <a href="https://www.youtube.com/watch?v=Sk1rde-C0Pc&feature=youtu.be"> <img src="images/icons/movie.png" height="19"></a>
+                            <a href="https://github.com/iDataVisualizationLab/DycomDetector"> <img src="images/icons/github.png" height="18"></a>
+                            
+                            
+                            
+                            <a href="https://www.researchgate.net/publication/328006659_DycomDetector_Discover_topics_using_automatic_community_detections_in_dynamic_networks"  class="button">DOI</a>
+                            <a href="https://www.researchgate.net/publication/328006659_DycomDetector_Discover_topics_using_automatic_community_detections_in_dynamic_networks"> <img src="images/icons/bibtex.png" height="13"></a>
+                        
+                        
+                        </th>
+                    </tr>
+                </table>
+            </div>
+            <div class="publicationArea">
+                <table style="width:100%; margin-left: 20px;">
+                    <tr>
+                        <th class="paperThumb" width="15%">
+                            <img src="https://github.com/iDataVisualizationLab/SaturatedThickness/raw/master/files/STOAViz.png" width="200" height="100">
+                        </th>
+                        <th width="85%" style="padding-left: 25px;">
+                            <font color="#000000">[W1]</font>
+                            <i>STOAViz: Visualizing Saturated Thickness of Ogallala Aquifer.</i><br/>
+                            Tommy Dang, Long Hoang Nguyen, Abdullah Karim, and Venki Uddameri.  <br/>
+                            The Visualization in Environmental Sciences<br/>
+                            <a href="http://www.informatik.uni-leipzig.de/~envirvis2017/">EnvirVis 2017</a>    <br/>
+                            <a href="https://github.com/iDataVisualizationLab/SaturatedThickness/raw/master/files/STOAViz.pdf"> <img src="images/icons/pdf.png" height="18"></a>
+                            <a href="http://myweb.ttu.edu/longhngu/resources/demo-saturated-thickness.mp4"> <img src="images/icons/movie.png" height="19"></a>
+                            <a href="https://github.com/iDataVisualizationLab/SaturatedThickness"> <img src="images/icons/github.png" height="18"></a>
+                            
+                            
+                            
+                            <a href="https://diglib.eg.org/handle/10.2312/envirvis20171102"  class="button">DOI</a>
+                            <a href="bibTex/Dang2017StoaViz.txt"> <img src="images/icons/bibtex.png" height="13"></a>
+                        
+                        
+                        </th>
+                    </tr>
+                </table>
+            </div>
+            <div class="publicationArea">
+                <table style="width:100%; margin-left: 20px;">
+                    <tr>
+                        <th class="paperThumb" width="15%">
+                            <img src="images/papers/cactus.png" width="200" height="100">
+                        </th>
+                        <th width="85%" style="padding-left: 25px;">
+                            <font color="#000000">[S2]</font>
+                            <i>CactusTree: A Tree Drawing Approach for Hierarchical Edge Bundling.</i><br/>
+                            Tommy Dang and Angus Forbes.  <br/>
+                            Proceedings of the 10th IEEE Pacific Visualization Symposium<br/>
+                            <a href="http://pacificvis.snu.ac.kr/">PacificVis 2017</a>    <br/>
+                            <a href="https://github.com/iDataVisualizationLab/webFiles/raw/master/CactusTree/CactusTree.pdf"> <img src="images/icons/pdf.png" height="18"></a>
+                            <a href="https://github.com/iDataVisualizationLab/webFiles/blob/master/CactusTree/CactusTree.mp4?raw=true"> <img src="images/icons/movie.png" height="19"></a>
+                            <a href="https://github.com/CreativeCodingLab/HierarchicalCircularLayout"> <img src="images/icons/github.png" height="18"></a>
+                            
+                            
+                            
+                            <a href="http://ieeexplore.ieee.org/document/8031596/"  class="button">DOI</a>
+                            <a href="bibTex/Dang2017CactusTree.txt"> <img src="images/icons/bibtex.png" height="13"></a>
+                        
+                        
+                        </th>
+                    </tr>
+                </table>
+            </div>
+            <div class="publicationArea">
+                <table style="width:100%; margin-left: 20px;">
+                    <tr>
+                        <th class="paperThumb" width="15%">
+                            <img src="https://raw.githubusercontent.com/CreativeCodingLab/BioLinker/master/figures/Figure1.png" width="200" height="100">
+                        </th>
+                        <th width="85%" style="padding-left: 25px;">
+                            <font color="#000000">[S1]</font>
+                            <i>BioLinker: Bottom-up exploration of protein interaction network.</i><br/>
+                            Tommy Dang, Paul Murray, and Angus Forbes.  <br/>
+                            Proceedings of the 10th IEEE Pacific Visualization Symposium<br/>
+                            <a href="http://pacificvis.snu.ac.kr/">PacificVis 2017</a>    <br/>
+                            <a href="https://github.com/iDataVisualizationLab/BioLinker/raw/master/files/BioLinker.pdf"> <img src="images/icons/pdf.png" height="18"></a>
+                            <a href="http://www2.cs.uic.edu/~tdang/BioLinker/BioLinker.mp4"> <img src="images/icons/movie.png" height="19"></a>
+                            <a href="https://github.com/iDataVisualizationLab/BioLinker"> <img src="images/icons/github.png" height="18"></a>
+                            
+                            
+                            
+                            <a href="http://ieeexplore.ieee.org/document/8031603/"  class="button">DOI</a>
+                            <a href="bibTex/Dang2017BioLinker.txt"> <img src="images/icons/bibtex.png" height="13"></a>
+                        
+                        
+                        </th>
+                    </tr>
+                </table>
+            </div>
+            
+            <i>For papers before 2017, please visit <a href="http://www.myweb.ttu.edu/tnhondan/publications.html">director's website</a>.</i>
+        </div>
+    </div>
+    <footer>
+        <p>Last revised: April 28, 2019 | Copyright &copy; iDVL, TTU</p>
+    </footer>
+</div>
+
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/jquery.easing-sooper.js"></script>
+<script type="text/javascript" src="js/jquery.sooperfish.js"></script>
+<script type="text/javascript" src="js/jquery.kwicks-1.5.1.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#images').kwicks({
+            max : 600,
+            spacing : 2
+        });
+        $('ul.sf-menu').sooperfish();
+    });
+</script>
+</body>
+</html>
