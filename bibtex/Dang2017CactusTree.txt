@@ -1,0 +1,12 @@
+@INPROCEEDINGS{Dang2017CactusTree, 
+author={T. Dang and A. Forbes}, 
+booktitle={2017 IEEE Pacific Visualization Symposium (PacificVis)}, 
+title={CactusTree: A tree drawing approach for hierarchical edge bundling}, 
+year={2017}, 
+volume={}, 
+number={}, 
+pages={210-214}, 
+keywords={biology computing;botany;data structures;data visualisation;vegetation;CactusTree;connective qualities;descriptive features;hierarchical datasets representation;hierarchical edge bundling;structural qualities;tree drawing approach;visualization technique;Biology;Data visualization;Image color analysis;Layout;Stacking;Three-dimensional displays;Visualization;Hierarchical edge bundling;taxonomies;tree layouts}, 
+doi={10.1109/PACIFICVIS.2017.8031596}, 
+ISSN={}, 
+month={April},}

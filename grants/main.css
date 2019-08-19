@@ -1,0 +1,63 @@
+
+path {
+	fill: none;
+}
+.axis path,
+.axis line {
+	fill: none;
+	stroke: grey;
+	stroke-width: 1;
+	shape-rendering: crispEdges;
+}
+#controlHolder {
+	position:absolute;
+	z-index: 0;
+	top: 180px;
+	right: 730px;
+	border: 0px solid rgba(0,0,0, 1);
+	background-color: none;
+}
+
+#searchHolder {
+	position:absolute;
+	z-index: 0;
+	top: 150px;
+	right: 550px;
+	border: 1px solid rgba(0,0,0, 1);
+	background-color: none;
+}
+
+#networkHolder {
+	position:absolute;
+	z-index: 0;
+	top: 150px;
+	right: 20px;
+	border: 1px solid rgba(0,0,0, 1);
+	background-color: rgba(255,255,255, 1);
+	border-radius: 6px;
+}
+
+/* tooltip */
+.d3-tip {
+	line-height: 1;
+	padding: 10px;
+	font-size: 14px;
+	font-family: "sans-serif";
+	background: rgba(204, 204, 204, 0.96);
+	color: #000;
+	border: 1px solid rgba(0,0,0, 1);
+	border-radius: 12px;
+}
+
+/* Style northward tooltips differently */
+.d3-tip.n:after {
+	margin: -1px 0 0 0;
+	top: 100%;
+	left: 0;
+}
+
+table, th, td {
+	border: 1px solid #ccc;
+	border-collapse: collapse;
+	padding: 2px;
+}

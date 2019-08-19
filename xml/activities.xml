@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<activities>
+
+<activity category="Team">
+<date>May 5</date>
+<vinh><b>Vinh's</b> final report for spring 2017. <a href="https://github.com/iDataVisualizationLab/web/raw/master/file/research7000Spring/Vinh_CS7000.png">Slides</a></vinh>
+<long><b>Long's</b> final report for spring 2017. <a href="https://github.com/iDataVisualizationLab/web/raw/master/file/research7000Spring/Long_CS7000.ppt">Slides</a></long>
+<yasin><b>Yasin's</b> final report for spring 2017. <a href="https://github.com/iDataVisualizationLab/web/raw/master/file/research7000Spring/Yasin_CS7000.ppt">Slides</a></yasin>
+<work5/>
+<work6/>
+</activity>
+
+<activity category="Team">
+<date>March 1</date>
+<long><b>Long</b> needs to submit his work to <a href="https://techannounce.ttu.edu/Client/ViewMessage.aspx?MsgId=206458">GLEAM poster contest</a>. Deadline: <b>5pm, April 1</b>
+</long>
+    <yasin><b>Tommy+Yasin</b> submit a paper on network visualization. Deadline: March 15.</yasin>
+<work5/>
+<work6/>
+</activity>
+
+<activity category="Team">
+<date>Feb 17</date>
+<vinh><b>Vinh+Tommy</b> submit short EuroVis paper on community detection. Deadline: Feb 17</vinh>
+<long><b>Tommy+Long+Karim+ a CE Prof</b> submit a EnvirVis paper. Deadline: Feb 17</long>
+<amit><b>Tommy+Amit+Vinh</b> submit short EuroVis paper on geospaotial temporal visualization. Deadline: Feb 17.</amit>
+<work5></work5>
+<work6></work6>
+</activity>
+
+<activity category="Team">
+<date>Feb 3</date>
+<vinh><b>Vinh Nguyen</b> researchs on community detection.</vinh>
+<long><b>Long Nguyen</b> works on saturated thickness project.</long>
+<yasin><b>Yasin Kabir</b> works on rumor data.</yasin>
+<amit><b>Amitsingh Pardeshi</b> integrates rumor database.</amit>
+<work5></work5>
+<work6></work6>
+</activity>
+
+
+<activity category="Team">
+<date>Jan 23</date>
+<vinh><b>Vinh Nguyen</b> working on a cancer network visualization application.</vinh>
+<long><b>Long Hoang Nguyen</b> working on android application.</long>
+<yasin><b>Md. Yasin Kabir</b> working on Lab website.</yasin>
+<amit><b>Amitsingh Pardeshi</b> working with Mongo DB for cancer network.</amit>
+<work5></work5>
+<work6></work6>
+</activity>
+
+<activity category="Team">
+<date>Jan 15</date>
+<vinh><b>Vinh Nguyen</b> working on a cancer network visualization application.</vinh>
+<long><b>Long Hoang Nguyen</b> and <b>Amitsingh Pardeshi</b> working on Virtual Reality project.</long>
+<yasin><b>Md. Yasin Kabir</b> working on Lab website.</yasin>
+<amit></amit>
+<work5></work5>
+<work6></work6>
+</activity>
+
+</activities>

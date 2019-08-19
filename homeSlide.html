@@ -1,0 +1,131 @@
+
+<!DOCTYPE html>
+<!-- Camera is a Pixedelic free jQuery slideshow | Manuel Masia (designer and developer) --> 
+<html> 
+<head> 
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" > 
+    <title>Camera | a free jQuery slideshow by Pixedelic</title> 
+    <meta name="description" content="Camera a free jQuery slideshow with many effects, transitions, adaptive layout, easy to customize, using canvas and mobile ready"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--///////////////////////////////////////////////////////////////////////////////////////////////////
+    //
+    //		Styles
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////////////////--> 
+    <link rel='stylesheet' id='camera-css'  href='./css/camera.css' type='text/css' media='all'> 
+    <style>
+		body {
+			margin: 0;
+			padding: 0;
+		}
+		a {
+			color: #09f;
+		}
+		a:hover {
+			text-decoration: none;
+		}
+		#back_to_camera {
+			clear: both;
+			display: block;
+			height: 80px;
+			line-height: 40px;
+			padding: 20px;
+		}
+		.fluid_container {
+			margin: 0 auto;
+			max-width: 1000px;
+			width: 90%;
+		}
+		.camera_thumbs{
+			display: none;
+		}
+        .cameraContents{
+            height: 370px;
+        }
+        ::-webkit-scrollbar {
+        display: none;
+        }
+        .camera_wrap div{
+            max-height: 370px;
+        }
+        .camera_wrap a{
+            color: #ad4242;
+        }
+	</style>
+
+    <!--///////////////////////////////////////////////////////////////////////////////////////////////////
+    //
+    //		Scripts
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////////////////--> 
+    
+    <script type='text/javascript' src='./js/jquery.min.js'></script>
+    <script type='text/javascript' src='./js/jquery.mobile.customized.min.js'></script>
+    <script type='text/javascript' src='./js/jquery.easing.1.3.js'></script> 
+    <script type='text/javascript' src='./js/camera.js'></script> 
+    
+    <script>
+		jQuery(function(){
+			
+			jQuery('#camera_wrap_3').camera({
+				height: '370px',
+				loader: 'bar',
+				pagination: false,
+				thumbnails: true,
+				imagePath: '../images/',
+				time: 4500
+			});
+
+		});
+	</script>
+ 
+</head>
+<body>
+    
+	<div class="fluid_container" style="width: 750px; height: 370px;">
+        <div class="camera_wrap camera_emboss" id="camera_wrap_3" style="height: 370px;">
+
+
+            <div data-src="http://myweb.ttu.edu/tnhondan/iDVL/images/figures/diasterVR.gif" data-time="1500" data-trasPeriod="4000" data-target="_blank">
+                <div class="camera_caption fadeFromBottom">
+                    Virtual simulations of <a href="./news.php?id=1" target="_blank"> disaster evacuation</a>
+                </div>
+            </div>
+
+            <div data-src="http://myweb.ttu.edu/tnhondan/iDVL/images/figures/maingif.gif" data-time="1500" data-trasPeriod="4000" data-target="_blank">
+                <div class="camera_caption fadeFromBottom">
+                    3D web modeling
+                </div>
+            </div>
+
+            <div data-src="http://myweb.ttu.edu/tnhondan/iDVL/images/figures/Soil3.png" data-time="1500" data-trasPeriod="4000" data-target="_blank">
+                <div class="camera_caption fadeFromBottom">
+                    Soil chemical analysis for the <a href="https://www.olympus-ims.com/en/xrf-xrd/xrf-handheld/#!">Olympus Handheld XRF</a>
+                </div>
+            </div>
+
+            <div data-src="https://github.com/iDataVisualizationLab/webFiles/raw/master/labWeb/images/projects/eduAvatar.jpg" data-time="1500" data-trasPeriod="4000" data-target="_blank">
+                <div class="camera_caption fadeFromBottom">
+                    Teaching Foreign Language Pronunciation through  <a href="./news.php?id=2" target="_blank">Educational Avatars.</a>
+                </div>
+            </div>
+
+
+            <div data-src="https://github.com/iDataVisualizationLab/webFiles/raw/master/labWeb/images/projects/bioLinker.png">
+            <div class="camera_caption fadeFromBottom">
+                    <a href="https://github.com/iDataVisualizationLab/BioLinker/raw/master/files/BioLinker.pdf"> BioLinker</a>: Bottom-up Exploration of Protein Interaction Networks.
+                </div>
+            </div>
+
+            <div data-src="https://raw.githubusercontent.com/iDataVisualizationLab/webFiles/master/labWeb/images/projects/VR.jpg">
+                <div class="camera_caption fadeFromBottom">
+                    Experiencing VR view of underground water saturated thickness.
+                </div>
+            </div>
+        </div><!-- #camera_wrap_3 -->
+
+    </div><!-- .fluid_container -->
+    
+    <!-- <div style="clear:both; display:block; height:100px"></div> -->
+</body> 
+</html>

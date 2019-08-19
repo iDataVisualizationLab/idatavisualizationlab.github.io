@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en" class="gr__getbootstrap_com"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Dashboard watershed</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+    <link href="./style.css" rel="stylesheet">
+
+
+
+  </head>
+
+  <body data-gr-c-s-loaded="true">
+  <div id="bg"></div>
+
+    <!-- Static navbar -->
+    <nav class="navbar navbar-default navbar-static-top topMenu">
+      <div class="container topMenuContainer">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <div class="logo">
+              <a class="logo" href="#"><img src=""></a>
+          </div>
+          <a class="navbar-brand" href="#"></a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#">Customize</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact"> Contact</a></li>
+          </ul>
+          <div class="ttulogo"><img src=""></div>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+
+    <div class="container">
+      
+      <div class="row">
+       <div class="col-md-12">
+        <div class="col-md-12 watershed">
+                    <!-- <iframe src=""></iframe>  -->
+            <div class="color-legend">
+              <ul>
+               
+                 <li><div id="greensquare" class="left"></div><div class="right legend-text">Trees</div></li>
+                 <li><div id="yellowsquare" class="left"></div><div class="right legend-text">Dry Land</div></li>
+                 <li><div id="bluesquare" class="left"></div><div class="right legend-text">River</div></li>
+               
+              </ul>
+            </div>
+            <img src="./img/farm.jpg">
+            <img src="./img/watershed.png">
+        </div>
+      </div>
+     </div>
+
+     <div class="row">
+       <div class="col-md-12">
+        <div class="col-md-9 watershed">
+                    <!-- <iframe src=""></iframe>  -->
+
+            <img src="./img/timechart.png">
+        </div>
+      <div class="col-md-3">
+        <div class="properties">
+          <ul>
+            <li>Properties 1:</li>
+            <li>Properties 2:</li>
+            <li>Properties 3:</li>
+            <li>Properties 4:</li>
+            <li>Properties 5:</li>
+            <li>Properties 6:</li>
+          </ul>
+        </div>
+      </div>
+      </div>
+     </div>
+
+    </div> <!-- /container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+        <script type='text/javascript' src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+        <script type='text/javascript' src="./js/bootstrap.min.js"></script>
+   
+        <!-- JavaScript jQuery code from Bootply.com editor  -->  
+      <script>
+        $(".list-group-submenu a").on("click", function() {
+          $(".list-group-submenu a").removeClass("active");
+          $(this).addClass("active");
+        });
+      </script>
+
+      <script>
+        $(".list-group a").on("click", function() {
+          $(".list-group a").removeClass("active");
+          $(this).addClass("active");
+        });
+      </script>
+
+</body>
+
+</html>

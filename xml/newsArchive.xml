@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<newsArchive>
+
+	<news category="website">
+		<headline>VAST Challenge 2018 Award</headline>
+		<date>August 15th, 2018</date>
+		<sortNews><b>Vung Pham</b> received Mini-Challenge 2 Award within his first 3 months joining iDVL.</sortNews>
+		<fullNews>
+			<div class="news">
+				<center><h2><b>Vung Pham</b> received Mini-Challenge 2 Award: Strong Support for Exploratory Analysis</h2></center>
+				<a href="http://www.vacommunity.org/VAST+Challenge+2018"> The Visual Analytics Science and Technology (VAST) Challenge </a> is an annual contest with the goal of advancing the field of visual analytics through competition. The VAST Challenge is designed to help researchers understand how their software would be used in a novel analytic task and determine if their data transformations, visualizations, and interactions would be beneficial for particular analytic tasks. VAST Challenge problems provide researchers with realistic tasks and data sets for evaluating their software, as well as an opportunity to advance the field by solving more complex problems.
+
+				
+				<embed src="https://www.youtube.com/embed/pzf_Ar-Ejjg" width="100%" height="456px" allowfullscreen="true" />
+
+				Vung's Mini-Challenge 2 report can be found <a href="https://idatavisualizationlab.github.io/VAST2018/mc2/index.htm"> here</a>, <a href="https://idatavisualizationlab.github.io/VAST2018/heatmap.html"> Web demo</a>,
+
+			</div>
+		</fullNews>
+	</news>
+
+	<news category="website">
+		<headline>RA proposal awarded</headline>
+		<date>March 5th, 2018</date>
+		<sortNews><b>Dr. Dang</b> received a RA award from The Whitacre College of Engineering.</sortNews>
+		<fullNews>
+			<div class="news">
+				<center><h2>RA Proposal for Big Data Visualization in Water Resources</h2></center>
+				According to the National Ground Water Association report in 2016, we extract around 982 km<sup>3</sup> of water per year from the ground. Therefore, monitoring ground water, sustaining aquifer capability, and analyzing its changes are highly desirable by decision makers. This proposal requests for one RA to work on big data visualization in water resources.
+				This research is an on-going collaboration between the department of <a href="http://www.depts.ttu.edu/cs/">Computer Science</a> and <a href="http://www.depts.ttu.edu/waterresources/"> Water Resources Center</a> in the department of <a href="http://www.depts.ttu.edu/ceweb/"> Civil Engineering</a>.
+				<div class="img-area">
+					<div class="img-middle">
+						<img src="images/figures/disasterSimulation.JPG"></img>
+					</div>
+					<div style="clear:both;"></div>
+				</div>
+				<p>With this support, the student is aimed to target both research domains (water and big data visualization) in the College strategic growth initiative .</p>
+				<ul>
+					<li>In the first phase, the student will focus on developing visual analytics platforms to capture the trends/patterns, and to support analyzing the water usages in the Southern High Plains Aquifer of Texas.</li>
+					<li>In the second phase, he will build virtual simulations that support risk analyses and disaster evacuation.</li>
+				</ul>
+
+				<br></br>
+				<br></br>
+				<h3>The Whitacre College of Engineering Proposal Call</h3>
+
+				The Whitacre College of Engineering has a limited number of research assistantships as part of the Presidents strategic growth initiative.  These assistantships are $29K/year for up to four years and are to support research in the areas of energy, water, transportation, engineers in medicine, big data/data visualization and nanotechnology.
+			</div>
+		</fullNews>
+	</news>
+
+
+	<news category="website">
+		<headline>Research proposal awarded</headline>
+		<date>April 3rd, 2017</date>
+		<sortNews>SGIR awarded the proposal of <b>Dr. Dang</b>'s team.</sortNews>
+		<fullNews>
+		<div class="news">
+			 <p><b>Dr. Tommy Dang</b> has been awarded for round 2 of SGIR for the proposal: <i>Teaching Foreign Language Pronunciation through Educational Avatars</i> in the collaboration with:</p>
+			<ul>
+				<li><a target="_blank" href="https://www.kiminakatsukasa.net/">Kimi Nakatsukasa</a>, Department of Classical and Modern Languages, College of Arts and Sciences.</li>
+				<li><a target="_blank" href="http://www.aaronbraver.com/">Aaron Braver</a>, Department of English, College of Arts and Sciences.</li>
+				<li><a target="_blank" href="http://www.depts.ttu.edu/psy/people/mscolari/">Miranda Scolari</a>, Department of Psychological Sciences, College of Arts and Science.</li>
+			</ul>
+			<p>Gestures—hand movements that are directly tied to speech—play a crucial role in interaction and communication. In a recent pilot study, we investigated the effective use of gestures for teaching the difference between short and long vowels in Japanese (Iizuka, Nakatsukasa, Braver, and Farley, 2016).  The goal of this project is to determine the role instructional gesturing plays in second language acquisition.</p>
+
+			<div class="img-area">
+					<div class="img-middle">
+						<img src="https://github.com/iDataVisualizationLab/webFiles/raw/master/labWeb/images/projects/eduAvatar.png"></img>
+					</div>
+					<div style="clear:both;"></div>
+			</div>
+
+
+			<p><a target="_blank" href="https://www.depts.ttu.edu/vpr/funding/sgir.php">The Seed Grants for Interdisciplinary Research (SGIR)</a>
+			program announced the awarded proposal names for round 2. In the round 2 SGIR awarded 6 proposals of $669,000 in total. More information is available on the Seed Grants <a target="_blank" href="https://www.depts.ttu.edu/vpr/funding/sgir-round-one-awardees.php">webpage.</a></p>
+		</div>
+		</fullNews>
+	</news>
+
+	<news category="website">
+		<headline>EnvirVis paper accepted</headline>
+		<date>March 28th, 2017</date>
+		<sortNews><b>Long</b> gets  his first paper accepted</sortNews>
+		<fullNews><div class="news">
+			The <a target="_blank" href="http://www.informatik.uni-leipzig.de/~envirvis2017/">Visualization in Environmental Sciences 2017 (EnvirVis 2017)</a> accepted the paper of <b>Tommy Dang</b> and <b>Long Hoang Nguyen</b>  to present at the conference on June 12-13, 2017 in Barcelona, Spain.
+
+			The title and abstract of the paper is as following:
+			<br/>
+			<br/>
+
+			<h3>STOAViz: Visualizing Saturated Thickness of Ogallala Aquifer</h3>
+
+			<h6>Tommy Dang, Long Hoang Nguyen, Abdullah Karim, and Venki Uddameri<br/>
+				Computer Science and Civil, Environmental, and Construction Department, Texas Tech University, Texas, USA</h6>
+
+			<b>ABSTRACT</b>
+			<br/>
+			In this paper, we introduce STOAViz, a visual analytics tool for analyzing the saturated thickness of the Ogallala aquifer.The saturated thicknesses are monitored by sensors integrated on wells distributed on a vast geographic area. Our analytics application also captures the trends and patterns (such as average/standard deviation over time, sudden increase/decrease of saturated thicknesses) of water on individual well and group of wells based on their geographic locations. To highlight the usefulness and effectiveness of STOAViz, we demonstrate it on the Southern High Plains Aquifer of Texas. The work was developed using feedback from experts at the water resource center at a university. Moreover, our technique can be applied on any geographic areas where wells and their measurements are available.
+			<br/>
+			<br/>
+			Click here to read the paper: <a href="https://github.com/iDataVisualizationLab/SaturatedThickness/raw/master/files/STOAViz.pdf">STOAViz</a>
+			<br/>
+			For more information about the project please visit <a target="_blank" href="https://github.com/iDataVisualizationLab/SaturatedThickness">Project github repository</a><br/><br/>
+
+			<div class="img-area">
+				<div class="img-middle">
+					<img src="https://github.com/iDataVisualizationLab/SaturatedThickness/raw/master/files/stages.png"></img>
+				</div>
+				<div style="clear:both;"></div>
+				<br/>
+			</div></div>
+		</fullNews>
+	</news>
+
+<news category="website">
+<headline>Two posters accepted</headline>
+<date>March 1st, 2017</date>
+<sortNews>Congratulations to <b>Vinh</b> and <b>Long</b></sortNews>
+<fullNews>
+	<div class="news">
+	The <a target="_blank" href="http://www.depts.ttu.edu/gradschool/current/PosterCompetition2017.php">16th Annual Graduate Student Research Poster Competition</a> accepted and invited <b>Vinh The Nguyen</b> and <b>Long Hoang Nguyen</b> to present their posters.
+	The title and abstract of the posters are as following:
+	<br/>
+	<br/>
+
+	<h3>CancerMapper: Overview Explorations<br/><br/>of Cancer Study Interaction Network</h3>
+
+	<h6>Vinh The Nguyen and Tommy Dang<br/>
+	Computer Science Department, Texas Tech University, Texas, USA</h6>
+
+	<b>ABSTRACT</b>
+	<br/>
+	Understanding the complicated many-to-many relationships between cancers and mutated genes is challenging. For example, what common proteins are highly mutated in both prostate cancer and breast cancer or what cancers are driven by a selected subset of proteins. In this paper, we present CancerMapper, a novel exploration tool, that allows users to uncover the correlations among cancer studies as well as cancer studies and genes. CancerMapper also helps biologists to filter the cancer network based on the common mutated proteins and their frequencies. Bubble graph is constructed to visualize common protein based on its frequency and biological assemblies. Parallel coordinates highlight patterns of patient profiles (obtained from cBioportal by WebAPI services) on different attributes for a specified cancer study. Data retrieved from cBioportal.org as a Comma Separated Value file including protein name, frequency, cancer study and study type fields as well as Tab Separated Value through WebAPI service provided by cBioPortal. Protein’s images pulled from Protein Data Bank (http://www.rcsb.org/)
+	<br/><br/>
+	For more information about the project please visit <a target="_blank" href="https://github.com/iDataVisualizationLab/CancerNetwork">Project github repository</a><br/><br/>
+	<div class="img-area">
+		<div class="img-middle">
+			<img src="https://raw.githubusercontent.com/iDataVisualizationLab/webFiles/master/labWeb/images/posters/vinh/poster.png"></img> 
+		</div>
+		<div style="clear:both;"></div>
+		<br/>
+	</div>
+	
+
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+
+	<h3>Ogallala Aquifer Monitoring Visualization</h3>
+
+	<h6>Long Hoang Nuyen and Tommy Dang<br/>
+	Computer Science Department, Texas Tech University, Texas, USA</h6>
+
+	<b>ABSTRACT</b>
+	<br/>
+		Water is the basic element that humanity is reliant upon for everyday and production
+	activities. According to the National Ground Water Association report in 2016 [Facts about global
+	groundwater usage], we extract almost 982km3/year from the ground. This number serves as a
+	good indicator of need of water in our daily life. Therefore, monitoring ground water, sustaining
+	aquifer supply capability, and analyzing its changes are highly desirable by decision makers. In
+	facts, a lot of wells that have integrated sensors to monitor water level information are established.
+	As the number of wells increases, it becomes more and more challenging for specialists to
+	visualize and analyze such large amount of data which come in realtime. The traditional processing
+	method like Excel becomes out of capability. Thus, this becomes a burden to analysts.
+	<br/><br/>
+	The result and main contribution of this poster is a visual analytics tool that can handle such
+	big sensor data and features various important dimensions for ground water analyst to quickly
+	capture interesting water behavior such as its saturated thickness contour, time series data
+	visualization. This tool also stretches out unusual pattern of water level such as sudden increase,
+	sudden decrease points over time. It also compares water capability across different locations,
+	regions and overall average along Ogallala aquifer. 
+	<br/><br/>
+	For more information about the project please visit <a target="_blank" href="https://github.com/iDataVisualizationLab/SaturatedThickness">Project github repository</a><br/><br/>
+	<div class="img-area">
+		<div class="img-left">
+			<img src="https://raw.githubusercontent.com/iDataVisualizationLab/webFiles/master/labWeb/images/posters/long/contour-map.png"></img> 
+		</div>
+		<div class="img-right">
+			<img src="https://raw.githubusercontent.com/iDataVisualizationLab/webFiles/master/labWeb/images/posters/long/horizon.png"></img>
+		</div>
+		<br/>
+	</div>
+</div>
+</fullNews>
+</news>
+
+<news category="website">
+<headline>iDVL website launched</headline>
+<date>January 25th, 2017</date>
+<sortNews>Lab website has been launched</sortNews>
+<fullNews>The website for iDVL: interactive Data Visualization Lab has been lunched.</fullNews>
+</news>
+
+
+</newsArchive>

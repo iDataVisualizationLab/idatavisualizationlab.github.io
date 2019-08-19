@@ -1,0 +1,12 @@
+@INPROCEEDINGS{Dang2017BioLinker, 
+author={T. Dang and P. Murray and A. Forbes}, 
+booktitle={2017 IEEE Pacific Visualization Symposium (PacificVis)}, 
+title={BioLinker: Bottom-up exploration of protein interaction networks}, 
+year={2017}, 
+volume={}, 
+number={}, 
+pages={265-269}, 
+keywords={bioinformatics;data visualisation;interactive systems;proteins;BioLinker;biochemical reaction;biological pathways;bottom-up exploration;interactive visualization tools;pathway databases;pathway publications;protein interaction networks;Cancer;Data visualization;Genomics;Indexes;Proteins;Dynamic network visualization;Potential conflict matrix;Protein interaction network}, 
+doi={10.1109/PACIFICVIS.2017.8031603}, 
+ISSN={}, 
+month={April},}

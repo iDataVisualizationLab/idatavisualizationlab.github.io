@@ -1,0 +1,12 @@
+@INPROCEEDINGS{Nguyen2017SettingUpVR, 
+author={V. T. Nguyen and T. Dang}, 
+booktitle={2017 IEEE International Symposium on Mixed and Augmented Reality (ISMAR-Adjunct)}, 
+title={Setting up Virtual Reality and Augmented Reality Learning Environment in Unity}, 
+year={2017}, 
+volume={}, 
+number={}, 
+pages={315-320}, 
+keywords={augmented reality;computer aided instruction;data visualisation;solid modelling;3D curriculum contents;3D models;Augmented Reality learning environment;Unity engine;Virtual Reality headset devices;visualization;Augmented reality;Buildings;Games;Google;Solid modeling;Three-dimensional displays;Mixed reality;Unity engine;computational thinking;curriculum contents;watershed}, 
+doi={10.1109/ISMAR-Adjunct.2017.97}, 
+ISSN={}, 
+month={Oct},}

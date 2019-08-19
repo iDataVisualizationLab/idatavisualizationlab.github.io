@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<publications>
+
+<paper category="lab">
+<paperInfo><b>Tommy Dang</b>, <b>Long Hoang Nguyen</b>, Abdullahn Karim, and Venki Uddameri. <i> STOAViz: Visualizing Saturated Thickness of Ogallala Aquifer</i>. The Visualization in Environmental Sciences, <a href="http://www.informatik.uni-leipzig.de/~envirvis2017/">EnvirVis 2017</a>. </paperInfo>
+<description>
+			<h3>STOAViz: Visualizing Saturated Thickness of Ogallala Aquifer</h3>
+
+			<h6>Tommy Dang, Long Hoang Nguyen, Abdullah Karim, and Venki Uddameri<br/>
+				Computer Science and Civil, Environmental, and Construction Department, Texas Tech University, Texas, USA</h6>
+
+			<b>ABSTRACT</b>
+			<br/>
+			In this paper, we introduce STOAViz, a visual analytics tool for analyzing the saturated thickness of the Ogallala aquifer.The saturated thicknesses are monitored by sensors integrated on wells distributed on a vast geographic area. Our analytics application also captures the trends and patterns (such as average/standard deviation over time, sudden increase/decrease of saturated thicknesses) of water on individual well and group of wells based on their geographic locations. To highlight the usefulness and effectiveness of STOAViz, we demonstrate it on the Southern High Plains Aquifer of Texas. The work was developed using feedback from experts at the water resource center at a university. Moreover, our technique can be applied on any geographic areas where wells and their measurements are available.
+			<br/>
+			<br/>
+			<div class="img-area">
+					<div class="img-middle">
+						<img src="./images/papers/long/STOAViz/stages.png"></img>
+					</div>
+					<div style="clear:both;"></div>
+			</div>
+			<br/>
+			For more information about the project please visit <a target="_blank" href="https://github.com/iDataVisualizationLab/SaturatedThickness">Project github repository</a><br/><br/>
+</description>
+</paper> 
+
+<paper category="lab">
+<paperInfo>
+	<b>Tommy Dang</b> and Angus Forbes. <i> CactusTree: A Tree Drawing Approach for Hierarchical Edge Bundling</i>. Proceedings of the 10th IEEE Pacific Visualization Symposium, PacificVis 2017.
+</paperInfo>
+<description>
+			<h3>CactusTree: A Tree Drawing Approach for Hierarchical Edge Bundling</h3>
+
+			<h6>Tommy Dang and Angus Forbes.</h6>
+
+			<b>ABSTRACT</b>
+			<br/>
+			This paper introduces CactusTree, a novel visualization technique for representing hierarchical datasets. We introduce details about the construction of CactusTrees, and describe how they can be used to represent nested data and relationships between elements in the data. We explain how our design decisions were informed by tasks common to a range of scientific domains. A key contribution of this article is the introduction of descriptive features that can be used to characterize trees in terms of their structural and connective qualities.
+			<br/>
+			<br/>
+			<div class="img-area">
+					<div class="img-middle">
+						<img src=""></img>
+					</div>
+					<div style="clear:both;"></div>
+			</div>
+			<br/>
+			For more information about the project please visit <a target="_blank" href="">Project github repository</a><br/><br/>
+</description>
+</paper>
+
+<paper category="lab">
+<paperInfo>
+	<b>Tommy Dang</b>, Paul Murray, and Angus Forbes. <i> BioLinker: Bottom-up exploration of protein interaction network</i>. Proceedings of the 10th IEEE Pacific Visualization Symposium, PacificVis 2017. 
+</paperInfo>
+<description>
+			<h3>BioLinker: Bottom-up exploration of protein interaction network</h3>
+
+			<h6>Tommy Dang, Paul Murray, and Angus Forbes<br/>
+			</h6>
+
+			<b>ABSTRACT</b>
+			<br/>
+			BioLinker is an interactive visualization system that helps users to perform bottom-up exploration of complex protein interaction networks. Five interconnected views provide the user with a range of ways to explore pathway data: Overview/ protein selector, context view, main view, publication view, and conflict matrix.
+			<br/>
+			<br/>
+			<div class="img-area">
+					<div class="img-middle">
+						<img src="https://raw.githubusercontent.com/CreativeCodingLab/BioLinker/master/figures/Figure1.png"></img>
+					</div>
+					<div style="clear:both;"></div>
+			</div>
+			<br/>
+			For more information about the project please visit <a target="_blank" href="https://github.com/iDataVisualizationLab/BioLinker">Project github repository</a><br/><br/>
+</description>
+</paper>
+
+
+</publications>

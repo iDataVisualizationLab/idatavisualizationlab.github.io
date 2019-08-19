@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en" class="gr__getbootstrap_com"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Dashboard watershed</title>
+
+    <link rel="icon" href="./img/v2.png">
+    <!-- include the jQuery and jQuery UI scripts -->
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="prism/prism.css">
+    <link rel="stylesheet" href="http://nitinhayaran.github.io/jRange/jquery.range.css">
+    <link href='http://fonts.googleapis.com/css?family=Raleway:100,300' rel='stylesheet' type='text/css'>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+    <!-- Bootstrap core CSS -->
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+    <link href="./style.css" rel="stylesheet">
+
+
+
+  </head>
+
+  <body data-gr-c-s-loaded="true">
+  <div id="bg"></div>
+
+    <!-- Static navbar -->
+    <nav class="navbar navbar-default navbar-static-top topMenu">
+      <div class="container topMenuContainer">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <div class="logo">
+              <a class="logo" href="#"></a>
+          </div>
+          <a class="navbar-brand" href="#"></a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#">Customize</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact"> Contact</a></li>
+          </ul>
+            <div class="gameico"><img src="./img/gameico.png"></div>
+            <div class="ttulogo">
+              <div class="logottu"><img src="./img/TTUlogo.png"></div>
+            </div>
+            
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+
+    <div class="container">
+      
+      <div class="row">
+       <div class="col-md-12">
+           <div class="col-md-3 start-md-3">
+               <div class="controlsliders">
+                       <fieldset id="myControlPanel" class="controlBoard standardFont" style="cursor: default;">
+                           <legend>Climate</legend>
+                           <div class="controlsliders-inner">
+                                <div class="box-bg-climate">
+
+                                   <p>Temperature:</p>
+                                   <div class="demo-output temperature">
+                                       <input class="single-slider-temperature" type="hidden" value="0.0"/>
+                                   </div>
+                                   <p>Urbanization:</p>
+                                   <div class="demo-output urbanization">
+                                       <input class="single-slider-urbanization" type="hidden" value="0.0"/>
+                                   </div>
+                                </div>
+                                <div class="spacing"></div>
+                               <div class="box-bg-climate">
+                                   <h4>Technological Improvements</h4>
+                                   <p>Treatment Efficiency (Point Source):</p>
+                                   <div class="demo-output treatment">
+                                       <input class="single-slider-treatment" type="hidden" value="0.0"/>
+                                   </div>
+                                   <p>Best Management Practices:</p>
+                                   <div class="demo-output management">
+                                       <input class="single-slider-management" type="hidden" value="0.0"/>
+                                   </div>
+                               </div>
+                           </div>
+                       </fieldset>
+
+               </div>
+
+               <div class="landuse">
+                   <fieldset id="myControlPanel" class="controlBoard standardFont" style="cursor: default;">
+                    <legend>Land Use</legend>
+                      <div class="landuseImg"><img src="./img/pichart.png">
+                   </fieldset>
+               </div>
+               <!--<div class="copyright">-->
+                 <!--<p>Images/icons are captured from: <a href="https://graphicriver.net/item/isometric-map-icons-animals-plants-and-farm/9003270">Graphicriver.</a></p>-->
+               <!--</div>-->
+           </div>
+           <div class="col-md-6 middlearea">
+               <img class="gameplay" src="./img/farm.png">
+               <div class="col-sm-12">
+                   <div class="col-sm-6 barchart">
+                            <img src="./img/barchart.png">
+                   </div>
+                   <div class="col-sm-6 domodel">
+                       <img src="./img/DOmodel.png">
+                   </div>
+               </div>
+           </div>
+           <div class="col-md-3 rightDiv">
+               <div class="icon-img"><img src="./img/icons.png"></div>
+               <div class="box-bg"><img src="./img/coloredmap.png">
+               <img src="./img/map.png"></div>
+           </div>
+      </div>
+     </div>
+
+
+    </div> <!-- /container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+        <script type='text/javascript' src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+        <script type='text/javascript' src="./js/bootstrap.min.js"></script>
+
+  <script src="prism/prism.js"></script>
+
+  <script src="http://nitinhayaran.github.io/jRange/jquery.range.js"></script>
+  <script type="text/javascript">
+
+      $(document).ready(function(){
+          $('.single-slider-temperature').jRange({
+              from: 14,
+              to: 24,
+              step: 1,
+              scale: [14,16,18,20,22,24],
+              format: '%s°C',
+              width: 275,
+              showLabels: true,
+              snap: true,
+              theme: 'theme-blue'
+          });
+      });
+
+      $(document).ready(function(){
+          $('.single-slider-urbanization').jRange({
+              from: 0,
+              to: 100,
+              step: 1,
+              scale: [0,10,20,30,40,50,60,70,80,90,100],
+              format: '%s%',
+              width: 275,
+              showLabels: true,
+              snap: true,
+              theme: 'theme-blue'
+          });
+      });
+
+      $(document).ready(function(){
+          $('.single-slider-treatment').jRange({
+              from: 50,
+              to: 99,
+              step: 1,
+              scale: [50,55,60,65,70,75,80,85,90,95,99],
+              format: '%s%',
+              width: 275,
+              showLabels: true,
+              snap: true,
+              theme: 'theme-blue'
+          });
+
+          $('.single-slider-treatment').jRange('setValue', '85');
+      });
+
+      $(document).ready(function(){
+          $('.single-slider-management').jRange({
+              from: 30,
+              to: 90,
+              step: 1,
+              scale: [30,35,40,45,50,55,60,65,70,75,80,85,90],
+              format: '%s%',
+              width: 275,
+              showLabels: true,
+              snap: true,
+              theme: 'theme-blue'
+          });
+          $('.single-slider-management').jRange('setValue', '50');
+      });
+
+
+
+  </script>
+        <!-- JavaScript jQuery code from Bootply.com editor  -->  
+      <script>
+        $(".list-group-submenu a").on("click", function() {
+          $(".list-group-submenu a").removeClass("active");
+          $(this).addClass("active");
+        });
+      </script>
+
+      <script>
+        $(".list-group a").on("click", function() {
+          $(".list-group a").removeClass("active");
+          $(this).addClass("active");
+        });
+      </script>
+
+
+</body>
+
+</html>

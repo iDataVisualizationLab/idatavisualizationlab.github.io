@@ -1,0 +1,116 @@
+
+<!DOCTYPE html>
+<!-- Camera is a Pixedelic free jQuery slideshow | Manuel Masia (designer and developer) --> 
+<html> 
+<head> 
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" > 
+    <title>Camera | a free jQuery slideshow by Pixedelic</title> 
+    <meta name="description" content="Camera a free jQuery slideshow with many effects, transitions, adaptive layout, easy to customize, using canvas and mobile ready"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--///////////////////////////////////////////////////////////////////////////////////////////////////
+    //
+    //		Styles
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////////////////--> 
+    <link rel='stylesheet' id='camera-css'  href='./css/camera.css' type='text/css' media='all'> 
+    <style>
+		body {
+			margin: 0;
+			padding: 0;
+		}
+		a {
+			color: #09f;
+		}
+		a:hover {
+			text-decoration: none;
+		}
+		#back_to_camera {
+			clear: both;
+			display: block;
+			height: 80px;
+			line-height: 40px;
+			padding: 20px;
+		}
+		.fluid_container {
+			margin: 0 auto;
+			max-width: 1000px;
+			width: 750px;
+		}
+		.camera_thumbs{
+			display: none;
+		}
+        .cameraContents{
+            height: 500px;
+        }
+        ::-webkit-scrollbar {
+        display: none;
+        }
+        .camera_wrap div{
+            max-height: 500px;
+        }
+        .camera_wrap a{
+            color: #ad4242;
+        }
+        .camera_caption{
+            width: auto;
+        }
+	</style>
+
+    <!--///////////////////////////////////////////////////////////////////////////////////////////////////
+    //
+    //		Scripts
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////////////////--> 
+    
+    <script type='text/javascript' src='./js/jquery.min.js'></script>
+    <script type='text/javascript' src='./js/jquery.mobile.customized.min.js'></script>
+    <script type='text/javascript' src='./js/jquery.easing.1.3.js'></script> 
+    <script type='text/javascript' src='./js/camera.js'></script> 
+    
+    <script>
+		jQuery(function(){
+			
+			jQuery('#camera_wrap_3').camera({
+				height: '500px',
+				loader: 'bar',
+				pagination: false,
+				thumbnails: true,
+				imagePath: '../images/',
+				time: 4500
+			});
+
+		});
+	</script>
+ 
+</head>
+<body>
+    
+	<div class="fluid_container" style="width: 750px; height: 500px;">
+        <div class="camera_wrap camera_emboss" id="camera_wrap_3" style="height: 500px;">
+            <div data-src="./images/pics/lunchMay2017.JPG">
+                <div class="camera_caption fadeFromBottom">
+                    Summer 2017
+                </div>
+            </div>
+            <div data-src="./images/pics/people2017May.JPG">
+                <div class="camera_caption fadeFromBottom">
+                    May 2017
+                </div>
+            </div>
+            <div data-src="./images/pics/people2017Jan.png">
+          	  <div class="camera_caption fadeFromBottom">
+                   January 2017
+                </div>
+            </div>
+            <div data-src="./images/pics/beforeiDVL.jpg">
+               <div class="camera_caption fadeFromBottom">
+                    October 2016
+                </div>
+            </div>
+        </div><!-- #camera_wrap_3 -->
+
+    </div><!-- .fluid_container -->
+    
+    <!-- <div style="clear:both; display:block; height:100px"></div> -->
+</body> 
+</html>

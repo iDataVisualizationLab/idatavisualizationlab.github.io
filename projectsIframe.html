@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Scrolling Nav - Start Bootstrap Template</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/scrolling-nav.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+<style type="text/css">
+    .navbar-nav>li {
+   float: none;
+    background: #000;
+    min-height: 10px;
+    min-width: 10px;
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+    margin-bottom: 5px;
+    }
+    .projectNav ul li {
+    list-style-type: circle;
+    margin: 0 0 12px 0;
+     padding: 0px; 
+    line-height: 1.5em;
+    font-size: 15px;
+    }
+    .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover{
+    background: #000;
+    min-height: 10px;
+    min-width: 10px;
+    border-radius: 21px;
+    margin: 0px 0px 0px -3px;
+    top: -5px;
+    border: 4px solid #9a0606;
+    height: 10px;
+    width: 10px;
+}
+    }
+    body{
+        font-size: 14px;
+    }
+    nav {
+        width: 99%;
+    }
+    .nav>li>a {
+    padding: 5px;
+    }
+    img:hover{
+        box-shadow: none;
+    }
+    .navbar-default .navbar-toggle{
+        display: none;
+    }
+    ul li {
+    list-style-type: none;
+    background: url(./images/bullet.png) no-repeat;
+    margin: 0 0 0 0;
+    padding: 0 0 4px 17px;
+    line-height: 1.3em;
+    font-size: 14px;
+
+}
+.active a{
+    margin-bottom: 2px;
+}
+ul{
+       max-width: 1250px;
+    margin-left: auto;
+    margin-right: auto; 
+}
+.content ul{
+         max-width: 1250px;
+    margin-left: auto;
+    margin-right: auto;   
+}
+.container{
+    width: 90%;
+    max-width: 1500px;
+    margin: auto;
+}
+#top_border{
+    width: 100%;
+    max-width: 1250px;
+       margin-bottom: 5px;
+       margin: auto;
+}
+#site_content{
+    width: 100%;
+    max-width: 1250px;
+    margin: auto;
+
+}
+.row {
+    margin-right: -15px;
+    margin-left: -30px;
+}
+b{
+    font-size: 14px;
+}
+.col-lg-12{
+    .?<
+}
+.button {
+    background-color: #a55;
+    border: 1px #666;
+    border-radius: 4px;
+    color: #000;
+    padding: 0px 4px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 9px;
+    cursor: pointer;
+    position: relative;
+    bottom: 1px;
+    font-weight: bold;
+}
+ .button:hover{
+  color: #fff;
+  background: #000;
+}
+.container{
+    max-width: 1250px;
+    margin: auto;
+}
+p{
+    max-width: 1250px;
+    margin: auto;    
+}
+ul li{
+    max-width: 1250px;
+    margin: auto;
+}
+section{
+    clear: both;
+}
+.containerW{
+    font-size: 14px;
+}
+
+</style>
+</head>
+
+<!-- The #page-top ID is part of the scrolling feature - the data-spy and data-target are part of the built-in Bootstrap scrollspy function -->
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="">
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!-- <a class="navbar-brand page-scroll" href="#page-top">Start Bootstrap</a> -->
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="projectNav">
+                <ul class="nav navbar-nav">
+                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                    <li>
+                        <a class="page-scroll" href="#about"></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#services"></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#contact"></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#contact2"></a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Intro Section -->
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                        <div align=""><b>Geospatial-temporal visualizations</b></div>
+                       <div style="margin-top: 5px">
+                        <div class="containerW" class="containerW"> Related publications: <br>
+                        <ul>
+                        <li> <b>Tuan Dang</b>, Leland Wilkinson, and Anushka Anand. <i>Stacking Graphic Elements to Avoid Over-Plotting</i>. IEEE Transactions on Visualization AndComputer Graphics 16(6), InfoVis 2010.  <a href="file/Stacking.pdf"> <img src="images/icons/pdf.png" height="16"></a> <a href="https://www.cs.uic.edu/~tdang/media/Stacking.mp4"> 
+                        
+                        <img src="images/icons/movie.png" height="20"></a> 
+                        <a href="http://ieeexplore.ieee.org/xpl/login.jsp?tp=&arnumber=5613442" class="button">DOI</a>
+                        <a href="BibTeX/Dang2010Stacking.txt"> <img src="images/icons/bibtex.png" height="13"></a> 
+                    
+                    </li>
+                        </ul>
+                        </div>
+                      </div>
+
+                     
+                      <div  align="middle" style="margin-top: -20px"> <img src="https://raw.githubusercontent.com/iDataVisualizationLab/webFiles/master/labWeb/images/projectFigures/UFO2.png"  width=100%></div>
+                      <div class="containerW" class="containerW"> <b>Visualizing UFO sightings on a 2D map:</b> This project uses data from the National UFO Reporting Center available <a href="http://www.nuforc.org/webreports/ndxloc.html">here</a>. 
+                    The goal here is to give the user a higher level view of where different types of sightings occur, and to detect patterns/trends of these sightings over time.</div>
+                      <div  align="middle" style="margin-top: 10px"> <img src="https://raw.githubusercontent.com/iDataVisualizationLab/webFiles/master/labWeb/images/projectFigures/lyme.png"  width=80%></div>
+                      <div class="containerW" class="containerW"><b>Visualizing the distribution of Lyme diseases in 3D</b> reported in
+                    the U.S. in 2005, 2006, and 2007 by the <a href="https://www.cdc.gov/">CDC</a>. One might argue that a county-level choropleth map would
+                    be a suitable presentation. Nevertheless, it would be hard to argue that a county-level choropleth map using hue
+                    or brightness could reveal the threefold increase in Lyme disease cases centered around New England vs. the Midwest.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services-section">
+        <div id="site_content"></div> 
+        <div id="top_border"></div> 
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-12">
+                        
+
+                        <div align="left"><b>Networks and structures</b></div>
+
+                        <div style="margin-top: 5px">
+                        <div class="containerW" class="containerW"> Related publications: <br>
+                        <ul>
+                            <li><b>Tommy Dang</b>, Paul Murray, Ronak Etemadpour, and Angus Forbes. <i> Visualizing Structure and Connectivity in Complex Hierarchical Datasets</i>. IEEE Transactions on Visualization and Computer Graphics. (<i>in submission</i>)</li>
+                            <li> <b>Tommy Dang</b> and Angus Forbes. <i> CactusTree: A Tree Drawing Approach for Hierarchical Edge Bundling</i>. Proceedings of the 10th IEEE Pacific Visualization Symposium, PacificVis 2017. </li>         
+                            <li><b>Tommy Dang</b>,  Paul Murray, Jillian Aurisano, and Angus Forbes. <i> ReactionFlow: An Interactive Visualization Tool for Causality Analysis in Biological Pathways</i>. BMC Proceedings 9(6), BioVis 2015. 
+                              <a href="ReactionFlow/ReactionFlow_BioVis_2015.pdf"> <img src="images/icons/pdf.png" height="16"></a>
+                              <a href="ReactionFlow/video.mp4"> <img src="images/icons/movie.png" height="20"></a>
+                              <a href="https://github.com/CreativeCodingLab/ReactionFlow"> <img src="images/icons/github.png" height="16"></a>
+                              <a href="http://www.ncbi.nlm.nih.gov/pubmed/26361502" class="button">DOI</a>
+                              
+                              <a href="BibTeX/Dang2015ReactionFlow.txt"> <img src="images/icons/bibtex.png" height="13"></a> 
+                              </li><br/><br/>
+                            
+                        </ul>
+                        </div>
+                       </div>
+                              
+
+                        <div  align="middle" style="margin-top: -35px"> <img src="https://raw.githubusercontent.com/iDataVisualizationLab/webFiles/master/labWeb/images/projectFigures/HCL.png"  width=100%></div>
+                      <div class="containerW" class="containerW">Visualizing hierarchical structures and prey-predator relationships of mammals (left) and birds (right). Each animal is presented as a green leaf node. Red links are prey-predator relationships between them.</div>
+                      
+                      <div  align="middle" style="margin-top: 20px"> <img src="https://raw.githubusercontent.com/iDataVisualizationLab/webFiles/master/labWeb/images/projectFigures/HCLdiseases.png"  width=90%></div>
+                      <div class="containerW" class="containerW">Visualizing causal relationships of 20 popular diseases (left) from <a href="http://www.reactome.org/">reactome</a> and HIV life cycle (right): Gradient links indicate causalities between biochemical reactions.</div>
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+                         <div id="site_content"></div> 
+                        <div id="top_border"></div> 
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                        <div align="left"><b>Dynamic network visualization</b></div>
+                        <div style="margin-top: 5px">
+                        <div class="containerW" class="containerW"> Related publications: <br>
+                        <ul>
+                            <li><b>Tommy Dang</b>,  Nick Pendar, and Angus Forbes. <i> TimeArcs: Visualizing Fluctuations in Dynamic Networks</i>. Computer Graphics Forum 35(3), EuroVis 2016.
+                            <a href="https://www.cs.uic.edu/~tdang/TimeArcs/EuroVis2016/TimeArcs_Dang_EuroVis2016.pdf"> <img src="images/icons/pdf.png" height="16"></a>
+                            <a href="https://www.cs.uic.edu/~tdang/TimeArcs/EuroVis2016/TimeArcs_Dang_EuroVis2016.mp4"> <img src="images/icons/movie.png" height="20"></a>
+                            <a href="https://github.com/CreativeCodingLab/TimeArcs"> <img src="images/icons/github.png" height="16"></a>
+                           <a href="http://diglib.eg.org/handle/10.1111/cgf12882" class="button">DOI</a>
+                            <a href="BibTeX/Dang2016TimeArcs.txt"> <img src="images/icons/bibtex.png" height="13"></a> 
+                            <br/><br/>
+                            </li>   
+                        </ul>
+                        </div>
+                       </div>    
+
+                        <div align="middle" style="margin-top: -30px"> <img src="https://raw.githubusercontent.com/iDataVisualizationLab/webFiles/master/labWeb/images/projectFigures/PoliticalBlogs.png"  width=95%></div>
+                      <div class="containerW" class="containerW">Major events from nearly 100,000 political blogs in last 10 years were automatically detected in our visualization: Links connect popular terms appeared in the same blogs.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="contact2" class="contact-section">
+                        <div id="site_content"></div> 
+                    <div id="top_border"></div> 
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+
+                      <div align="left"><b>Matrix visualization</b></div>
+                  <div class="content fullPage" style="margin-top: 5px">
+                    <div class="containerW" class="containerW"> Related publications: <br>
+                    <ul>
+                        <li> <b>Tommy Dang</b>, Hong Cui, and Angus Forbes. <i> MultiLayerMatrix: Visualizing Large Taxonomic Datasets</i>. The seventh international EuroVis workshop on Visual Analytics, EuroVA 2016.  
+                          <a href="https://www.cs.uic.edu/~tdang/MultiLayerMatrix/MultiLayerMatrix_EuroVA_2016.pdf"> <img src="images/icons/pdf.png" height="16"></a>
+                          <a href="MultiLayerMatrix/video.mp4"> <img src="images/icons/movie.png" height="20"></a>
+                          <a href="https://github.com/CreativeCodingLab/MultiLayerMatrix"> <img src="images/icons/github.png" height="16"></a>
+                          
+                          <a href="https://diglib.eg.org/handle/10.2312/eurova20161125" class="button">DOI</a>
+                          <a href="BibTeX/Dang2016MultiLayerMatrix.txt"> <img src="images/icons/bibtex.png" height="13"></a> 
+                        </li>
+                        <li> <b>Tommy Dang</b>, Nico Franz, Bertram Lud&#228;scher and Angus Forbes. <i> ProvenanceMatrix: A Visualization Tool for Multi-Taxonomy Alignments</i>. International Workshop on Visualizations and User Interfaces for Ontologies and Linked Data, VOILA 2015. 
+                          <a href="ProvenanceMatrix/ProvenanceMatrix_VOILA_2015.pdf"> <img src="images/icons/pdf.png" height="16"></a>
+                          <a href="ProvenanceMatrix/video.mp4"> <img src="images/icons/movie.png" height="20"></a>
+                          <a href="https://github.com/CreativeCodingLab/ProvenanceMatrix"> <img src="images/icons/github.png" height="16"></a>
+                        
+                          <a href="http://www.bibsonomy.org/bibtex/23a2e7eda5e8580c2bdfdefca6d152a0f/dblp" class="button">DOI</a>
+                            <a href="BibTeX/Dang2015ProvenanceMatrix.txt"> <img src="images/icons/bibtex.png" height="13"></a> 
+                        </li> 
+                        <li> <b>Tommy Dang</b>,  Paul Murray, and Angus Forbes. <i> PathwayMatrix: Visualizing Binary Relationships between Proteins in Biological Pathways</i>. BMC Proceedings 9(6), BioVis 2015. 
+                          <a href="PathwayMatrix/PathwayMatrix_BioVis_2015.pdf"> <img src="images/icons/pdf.png" height="16"></a>
+                          <a href="PathwayMatrix/PathwayMatrixBioVis960x540.mp4"> <img src="images/icons/movie.png" height="20"></a>
+                          <a href="https://github.com/CreativeCodingLab/PathwayMatrix"> <img src="images/icons/github.png" height="16"></a>
+                          
+                          <a href="http://www.ncbi.nlm.nih.gov/pubmed/26361499" class="button">DOI</a>
+                          <a href="BibTeX/Dang2015PathwayMatrix.txt"> <img src="images/icons/bibtex.png" height="13"></a> 
+                        </li>
+                        <li> <b>Tommy Dang</b>, Anushka Anand, and Leland Wilkinson. <i>TimeSeer: Scagnostics for High-Dimensional Time Series</i>. IEEE Transactions on Visualization and Computer Graphics 19(3), TVCG 2012.  
+                          <a href="file/Multi-Scagnostics.pdf"> <img src="images/icons/pdf.png" height="16"></a>  
+                          <a href="media/TimeSeer.mov"> <img src="images/icons/movie.png" height="20"></a>
+                           <a href="http://ieeexplore.ieee.org/xpl/login.jsp?tp=&arnumber=6200267" class="button">DOI</a>
+                          <a href="BibTeX/Dang2012Timeseer.txt"> <img src="images/icons/bibtex.png" height="13"></a> 
+                         
+                        </li>
+                    </ul>
+                    </div>
+                   </div>  
+                         
+                    <div align="middle" style="margin-top: -20px"> <img src="https://raw.githubusercontent.com/iDataVisualizationLab/webFiles/master/labWeb/images/projectFigures/Matrix1.png"  width=90%></div>
+                   <div class="containerW" class="containerW">Visualizing the alignment of <a href="http://taxonbytes.org/pathwaymatrix-visualization-software-shows-eulerx-taxonomy-alignment-products-and-ambiguities/"> taxonomic classifications</a>: Gymnospermae sec. Weakley (2010) vs. RAB (1968)</div>
+                    <div  align="middle" style="margin-top: 20px"> <img src="https://raw.githubusercontent.com/iDataVisualizationLab/webFiles/master/labWeb/images/projectFigures/Matrix2.png"  width=100%></div>
+                  <div class="containerW" class="containerW"> High-dimensional data are represented by a small subset of variables in the US unemployment rates (left) from  <a href="https://www.bls.gov/"> BLS</a> and in the Asteraceae taxonomy (right) of 2,048 characters.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact2" class="contact-section">
+                        <div id="site_content"></div> 
+                    <div id="top_border"></div> 
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+
+                      <div align="left"><b>Image analysis</b></div>
+                  <div class="content fullPage" style="margin-top: 5px">
+                    <div class="containerW" class="containerW"> Related publications: <br>
+                        <li><b>Tuan Dang</b> and Leland Wilkinson. <i> PixSearcher: Searching Similar Images in Large Image Collections through Pixel Descriptors</i>. Proceedings of the 10th International Symposium on Visual Computing, ISVC 2014.                   
+                    </div>
+                    We extended Scagnostics features to handle pixels and then cluster images as shown on the left. This technique has also been applied on half million of <a href="http://www.setilive.org/\#/about/gallery"> SETI waterfall plots</a>. The right clusters provide a summary of this SETI collection, as well as highlights some outlier plots which may contain signals from unknown sources.
+                   </div>  
+                         
+
+                    <div align="middle" style="margin-top: -20px"> <img src="https://raw.githubusercontent.com/iDataVisualizationLab/webFiles/master/labWeb/images/projectFigures/ScagPixSeacher9.png"  width=100%></div>
+            </div>
+        </div>
+    </section>
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Scrolling Nav JavaScript -->
+    <script src="js/jquery.easing.min.js"></script>
+    <script src="js/scrolling-nav.js"></script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+@inproceedings{Dang2017CactusStudy,
+author = {Tommy Dang and Paul Murray and Ronak Etemadpour and Angus G. Forbes},
+title= {A User Study of Techniques for Visualizing Structure and Connectivity in Hierarchical Datasets},
+booktitle = {Proc. of the ISWC Workshop on Visualization and User Interfaces for Ontologies and Linked Data (VOILA)},
+year = {2017},
+pages = {45–59},
+series = {CEUR Workshop Proceedings},
+volume = {1947},
+}
