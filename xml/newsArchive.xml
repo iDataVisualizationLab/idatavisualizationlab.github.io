@@ -2,47 +2,367 @@
 
 <newsArchive>
 
+
 	<news category="website">
-		<headline>VAST Challenge 2018 Award</headline>
-		<date>August 15th, 2018</date>
-		<sortNews><b>Vung Pham</b> received Mini-Challenge 2 Award within his first 3 months joining iDVL.</sortNews>
+		<headline><b>Ngan</b> received Visualization Showcase Award at PEARC 2019</headline>
+		<date>August 4, 2019</date>
+		<sortNews></sortNews>
 		<fullNews>
 			<div class="news">
-				<center><h2><b>Vung Pham</b> received Mini-Challenge 2 Award: Strong Support for Exploratory Analysis</h2></center>
-				<a href="http://www.vacommunity.org/VAST+Challenge+2018"> The Visual Analytics Science and Technology (VAST) Challenge </a> is an annual contest with the goal of advancing the field of visual analytics through competition. The VAST Challenge is designed to help researchers understand how their software would be used in a novel analytic task and determine if their data transformations, visualizations, and interactions would be beneficial for particular analytic tasks. VAST Challenge problems provide researchers with realistic tasks and data sets for evaluating their software, as well as an opportunity to advance the field by solving more complex problems.
+				<center><h2>
+					"HiperViz: Interactive Visualization of CPU Temperatures in HPC Centers" Visualization Showcase Presentation Award at PEARC 2019</h2></center>
 
-				
-				<embed src="https://www.youtube.com/embed/pzf_Ar-Ejjg" width="100%" height="456px" allowfullscreen="true" />
+				<p><b>Visualization Showcase: </b></p>
+				<p> <a href="https://www.pearc19.pearc.org/call-for-participation">PEARC19</a> includes a visualization showcase session in which visualizations and visualization-associated research projects will be presented. Proposals should be extended abstracts (4 pages) that describe the visualization and the data, the computational application that generated the data, and any special or novel visualization techniques, tools, or software developed or used. Additionally, for ongoing visualization-associated research projects, the goals, progress, and findings to date should be described.</p>
 
-				Vung's Mini-Challenge 2 report can be found <a href="https://idatavisualizationlab.github.io/VAST2018/mc2/index.htm"> here</a>, <a href="https://idatavisualizationlab.github.io/VAST2018/heatmap.html"> Web demo</a>,
+				<p>
+					Submissions should provide a link to the visual content to be presented, in a form ready for viewing, downloading or running by reviewers. The conference will provide a 55-inch monitor for display, or space for an interactive visualization. All visualizations will be loaded on a conference computer for presentation in the showcase. Submission deadlines, including links to preliminary presentations, May 8, 2019.</p>
+
+				<embed src="https://www.youtube.com/embed/cfKU_3ss-mI" width="100%" height="420px" allowfullscreen="true"/>
+
+
+				<p></p>
+				<p>Here is the <a href="https://dl.acm.org/citation.cfm?doid=3332186.3337959">associated paper</a> and <a href="https://dl.acm.org/citation.cfm?id=3337958">Virtual Reality model</a>  of the system.</p>
+
+
+				<embed src="https://www.youtube.com/embed/iKmpS74G6xM" width="100%" height="420px" allowfullscreen="true"/>
+
+				<p>iDVL team members:</p>
+				<ul>
+					<li><a target="_blank" href="http://www.myweb.ttu.edu/ngu00336/">Ngan Nguyen</a>, PhD student, Department of Computer Science, Texas Tech University.</li>
+					<li><a target="_blank" href="http://myweb.ttu.edu/tnhondan/iDVL/index.php">Dr. Tommy Dang</a>, Department of Computer Science, Texas Tech University.</li>
+				</ul>
+				<p>We would like to thank
+					<li><a target="_blank" href="https://members.educause.edu/alan-sill">Dr. Alan Sill</a>, Managing Director of HPCC, for encouraging us to submit our work to <a href="https://www.pearc19.pearc.org/call-for-participation">PEARC19</a></li>
+					<li><a target="_blank" href="http://www.myweb.ttu.edu/yonchen/">Dr. Yong Chen</a> for supporting us the entire process.</li>
+					<li><a target="_blank" href="https://www.linkedin.com/in/ghazanfar-ali-sanpal-387ba0a/">Ghazanfar Ali</a> for providing us the Quanah cluster data and setting up inFlux database</li>
+					<li><a target="_blank" href="https://www.depts.ttu.edu/hpcc/about/staff.php">Dr. Christopher Turner</a> for providing useful insights of the HPC data</li>
+				</p>
+
+				<p>
+					We especially want to thank:
+					<li><a target="_blank" href="https://www.linkedin.com/in/jon-hass-b0b3a9">Jon Hass</a>, SW Architect at Dell Inc., for weekly feedback on the visual analytics protype and <a href="http://myweb.ttu.edu/tnhondan/iDVL/news.php?id=3">the generous support from Dell Inc.</a> to move this project forward.</li>
+				</p>
+
+			</div>
+		</fullNews>
+	</news>
+
+
+	<news category="website">
+		<headline><b>Vung</b> won the 3rd place at Herobots AI stock prediction</headline>
+		<date>July 2, 2019</date>
+		<sortNews><b>Vung</b> won the 3rd place at the stock prediction International AI Challenge</sortNews>
+		<fullNews>
+			<div class="news">
+				<center><h2>
+					Congratulations Team IDVL_TTU for achieving 3rd Place in Biannual International AI Challenge!</h2></center>
+
+				<p><b>Problem set:</b>
+					Create a price prediction module to predict the value of <b>Bitcoin</b> and <b>Ethereum</b> two hours ahead. Contestants were judged in accordance to the accuracy of their AI prediction models over the period of five months on cryptocurrency price prediction website <a href="3piks.com"> 3PIKS.com.</a>	</p>
+
+				<p>
+					The first entry submission deadline is on <i>Wednesday, 23rd January 2019</i>. These modules can be updated at any time after first submission until <i>Monday, 20th May 2019</i>.
+
+					The prediction modules will be shown live on <a href="3piks.com"> 3piks.com</a>. The service is scheduled to launch on Tuesday, 15 January 2019.	</p>
+
+				<div class="img-area">
+					<div class="img-middle">
+						<img src="./images/figures/Vung_Herobots.jpg"></img>
+					</div>
+					<div style="clear:both;"></div>
+				</div>
+
+				<p></p><p></p>
+				<p>There is no first place (due to the 70% accuracy criteria), so Zero cola is the 2nd place and TTU-IDVL is in the 3rd place.</p>
+
+
+				<div class="img-area">
+					<div class="img-middle">
+						<img src="./images/figures/Vung_Herobots_iDVL team_ranking.png"></img>
+					</div>
+				</div>
+				<p></p>
+				<p>IDVL_TTU team members:</p>
+				<ul>
+					<li><a target="_blank" href="https://www.researchgate.net/profile/Pham_Vung">Vung Pham</a>, PhD student, Department of Computer Science, Texas Tech University.</li>
+					<li><a target="_blank" href="http://www.myweb.ttu.edu/ngu00336/">Ngan Nguyen</a>, PhD student, Department of Computer Science, Texas Tech University.</li>
+				</ul>
 
 			</div>
 		</fullNews>
 	</news>
 
 	<news category="website">
-		<headline>RA proposal awarded</headline>
-		<date>March 5th, 2018</date>
-		<sortNews><b>Dr. Dang</b> received a RA award from The Whitacre College of Engineering.</sortNews>
+		<headline><b>Vung</b> is awarded the best paper at EnvirVis 2019</headline>
+		<date>June 4, 2019</date>
+		<sortNews><b>Vung</b> won the best paper award</sortNews>
+		<fullNews>
+			<div class="news">
+				<center><h2>SOAViz: Visualization for Portable X-ray Fluorescence</h2></center>
+
+				<p>In this project, we work closely with the soil scientists to develop a visualization solution to the rapidly gaining favor approach to soil horizon analysis using <a href="https://www.olympus-ims.com/en/xrf-xrd/xrf-handheld/#!" target="_blank">Portable X-ray Fluorescence (pXRF) devices</a>. Our visualization aims to provide soil scientists with rapid valuable insights into soil properties both visually perceptible with graphs and imperceptible quantification features with statistical calculations from the data collected from pXRF equipment. </p>
+
+				<div class="img-area">
+					<div class="img-middle">
+						<img src="./images/figures/soil2.png"></img>
+					</div>
+					<div style="clear:both;"></div>
+				</div>
+				<p>The work was developed in collaboration with:</p>
+				<ul>
+					<li><a target="_blank" href="https://www.depts.ttu.edu/pss/faculty_pages/dweindorf.php">Dr. David Weindorf</a>, Department of Plant and Soil Science, Texas Tech University.</li>
+				</ul>
+				<p>Students:</p>
+				<ul>
+					<li><a target="_blank" href="https://www.researchgate.net/profile/Pham_Vung">Vung Pham</a>, PhD student, Department of Computer Science, Texas Tech University.</li>
+				</ul>
+				<div class="img-area">
+					<div class="img-middle">
+						<img src="./images/figures/VungEnvirVis2019.JPG"></img>
+					</div>
+				</div>
+				<div class="img-area">
+					<div class="img-middle">
+						<img src="./images/figures/VungAward.png"></img>
+					</div>
+				</div>
+
+
+			</div>
+		</fullNews>
+	</news>
+
+	<news category="website">
+		<headline>Support from Dell Inc. for supercomputing visual analytics</headline>
+		<date>April 20, 2019</date>
+		<sortNews><b>iDVL</b> develops visual analytics for supercomputing centers</sortNews>
+		<fullNews>
+			<div class="news">
+				<center><h2>Visualizing, monitoring, and predicting health status of HPC centers</h2></center>
+
+				<p>This project proposes visual approaches for situational awareness and health monitoring of HPC systems:</p>
+				<ul>
+					<li>Multidimensional analytics: allows us to detect visual patterns and correlations of various health services</li>
+					<li>Predictive analytics: Extract historical health services and provide main clusters/trends of the HPC system  </li>
+					<li>User analytics: balance between automation and control </li>
+				</ul>
+				<div class="img-area">
+					<div class="img-middle">
+						<img src="./images/figures/tSNE_26Sep2018.gif"></img>
+					</div>
+					<div style="clear:both;"></div>
+				</div>
+				<p>The work was developed in collaboration with both industrial and acadamic domain experts:</p>
+				<ul>
+					<li><a target="_blank" href="http://www.myweb.ttu.edu/yonchen/">Dr. Yong Chen</a>, Department of Computer Science, Texas Tech University.</li>
+					<li><a target="_blank" href="https://members.educause.edu/alan-sill">Dr. Alan Sill</a>, Managing Director of HPCC; Co-Director, NSF CAC.</li>
+					<li><a target="_blank" href="https://www.linkedin.com/in/jon-hass-b0b3a9">Jon Hass</a>, SW Architect at Dell Inc.; Chairman of the board, DMTF.</li>
+				</ul>
+				<div class="img-area">
+					<div class="img-middle">
+						<img src="./images/figures/tSNE_21Mar2019.gif"></img>
+					</div>
+				</div>
+				<p>Students:</p>
+				<ul>
+					<li><a target="_blank" href="http://myweb.ttu.edu/tnhondan/iDVL/people.php">Ngan Nguyen</a>, PhD student, Department of Computer Science, Texas Tech University.</li>
+					<li><a target="_blank" href="https://www.linkedin.com/in/ghazanfar-ali-sanpal-387ba0a/">Ghazanfar Ali</a>, PhD student. Department of Computer Science, Texas Tech University.</li>
+				</ul>
+				<div class="img-area">
+					<div class="img-middle">
+						<img src="./images/figures/tparrallelcoordinate.gif"></img>
+					</div>
+				</div>
+
+			</div>
+		</fullNews>
+	</news>
+
+
+
+	<news category="website">
+		<headline>HEAF fund for drones from TTU Provost’s office is accepted</headline>
+		<date>Feb 10, 2019</date>
+		<sortNews>TTU Provost’s office has accepted our <i>Drones for all</i> request</sortNews>
+		<fullNews>
+			<div class="news">
+				<center><h2>Drones for all</h2></center>
+
+				<p>In this project, we proposed to use drones for various appplications:</p>
+				<ul>
+					<li>Augmented Reality: Goal is to put viewers into drone pilot seat for real-time viewing via multiple devices</li>
+					<li>Bridge and Highway inspection: image analysis for sustaining infrastructures </li>
+					<li>Precision Agriculture: Aerial images captured by drone can give information that is hard to access </li>
+					<li>Resilient Control: Design a safe and efficient controller for group of drones to be resilient for disruptions</li>
+					<li>Visual and Performing Arts: Publicize TTU STEAM, Use for first year common engineering course </li>
+					<li>Parking enforcement and other campus surveillance: Advance security research to assist TTU community  </li>
+
+				</ul>
+				<p></p>
+				<div class="img-area">
+					<div class="img-middle">
+						<img src="./images/figures/HEAF_drones.png"></img>
+					</div>
+					<div style="clear:both;"></div>
+				</div>
+				<p></p>
+				<p></p>
+				<p><a target="_blank" href="https://www.depts.ttu.edu/procurement/resources/training-and-work-aids/documents/purchasing/procurement-heaf-funds-guidelines.docx">Higher Education Assistance Funds:</a>  Fiscal Year 2019 requests should focus on large, multi-user pieces of equipment that will augment research and graduate education. Joint proposals representing departments and programs across multiple colleges will be of particular interest. Partnerships committing some cost-sharing toward the equipment will have an advantage, as will proposals that indicate how the equipment could be incentive. These requests should exclude items that would more appropriately be addressed by Facilities Allocation Council as capital improvement projects (normally involving renovations or other construction).</p>
+				<p></p>
+				<p>The work is in collaboration with:</p>
+				<ul>
+					<li><a target="_blank" href="http://www.depts.ttu.edu/cs/faculty/rattikorn_hewett/index.php">Rattikorn Hewett, Ph.D</a>, Computer Science Department Chair</li><div></div>
+					<li><a target="_blank" href="http://www.depts.ttu.edu/cs/faculty/ariful_islam/index.php">Ariful Islam, Ph.D</a></li> <div></div>
+				</ul>
+				<p></p>
+				<p>Students:</p>
+				<ul>
+					<li><a target="_blank" href=".">Himel Das</a>, PhD student, Department of Computer Science, Texas Tech University</li>
+					<li><a target="_blank" href=".">Lin Ho</a>, PhD student. Department of Computer Science, Texas Tech University</li>
+				</ul>
+
+			</div>
+		</fullNews>
+	</news>
+
+	<news category="website">
+		<headline>AVX project funded to refine Aviation Sustainment data</headline>
+		<date>Jan 10, 2019</date>
+		<sortNews><b>iDVL</b> is funded to refine Aviation Sustainment data</sortNews>
+		<fullNews>
+			<div class="news">
+				<center><h2>Data Refinement and Reduction for Aviation Sustainment</h2></center>
+
+				The team is tasked to develop a dashboard with rule-based relevancy engine to demonstrate the feasibility to refine the health/usage data. iDVL will support visualization using aviation sustainment data.
+				<p></p>
+				<div class="img-area">
+					<div class="img-middle">
+						<img src="./images/figures/idvRact2.gif"></img>
+					</div>
+					<div style="clear:both;"></div>
+				</div>
+
+				<p></p>
+				<p>The work is in collaboration with:</p>
+				<ul>
+					<li><a target="_blank" href="http://www.avxaircraft.com/">AVX Aircraft Company</a>, AVX was founded to bring advanced vertical takeoff and landing aircraft to the mass market.</li>
+					<li><a target="_blank" href="https://www.eecs.psu.edu/">Pennsylvania State University</a></li> <div></div>
+					<li><a target="_blank" href="https://www.ttuhsc.edu/">People Tech</a></li>
+				</ul>
+				<p></p>
+				<p>Students:</p>
+				<ul>
+					<li><a target="_blank" href="http://myweb.ttu.edu/tnhondan/iDVL/people.php">Ngan Nguyen</a>, PhD student, Department of Computer Science, Texas Tech University</li>
+				</ul>
+				<object width="1000" height="563" data="https://www.youtube.com/embed/LyVO217JFU0"></object>
+
+
+			</div>
+		</fullNews>
+	</news>
+
+	<news category="website">
+		<headline><b>iDVL</b> is funded by GRI to monitor HPCC via the visual interface</headline>
+		<date>Dec 2, 2018</date>
+		<sortNews><b>iDVL</b> is funded to monitor HPCC via the visual interface</sortNews>
+		<fullNews>
+			<div class="news">
+				<center><h2>Monitoring Health Status of High Performance Computing Systems</h2></center>
+
+				Monitoring data centers is challenging due to their size, complexity, and dynamic nature. This project proposes a visual approach for situational awareness and health monitoring of high-performance computing systems. The visualization requirements are expanded on the following dimensions: 1) High performance computing spatial layout, 2) Temporal domain (historical vs. real-time tracking), and 3) System health services such as temperature, CPU load, memory usage, fan speed, and power consumption. We demonstrate the developed prototype on a medium-scale data center of 10 racks and 467 hosts.
+
+				<p></p>
+				<div class="img-area">
+					<div class="img-middle">
+						<img src="./images/figures/HPCCtemp.gif"></img>
+					</div>
+					<div style="clear:both;"></div>
+				</div>
+
+				<p>The work was developed in collaboration with both industrial and acadamic domain experts:</p>
+				<ul>
+					<li><a target="_blank" href="http://www.myweb.ttu.edu/yonchen/">Dr. Yong Chen</a>, Department of Computer Science, Texas Tech University.</li>
+					<li><a target="_blank" href="https://members.educause.edu/alan-sill">Dr. Alan Sill</a>, Managing Director of HPCC; Co-Director, NSF CAC.</li>
+				</ul>
+				<div class="img-area">
+					<div class="img-middle">
+						<img src="./images/figures/HPCCfandspeed.gif"></img>
+					</div>
+				</div>
+			</div>
+		</fullNews>
+	</news>
+
+	<news category="website">
+		<headline><b>Vung</b> got VAST Challenge Award</headline>
+		<date>Aug 15, 2018</date>
+		<sortNews><b>Vung</b> received a VAST award within his first 3 months at iDVL</sortNews>
+		<fullNews>
+			<div class="news">
+				<center><h2><b>Vung Pham</b> received Mini-Challenge 2 Award: Strong Support for Exploratory Analysis within his first 3 months at iDVL</h2></center>
+				<p></p>
+				<a href="http://www.vacommunity.org/VAST+Challenge+2018"> The Visual Analytics Science and Technology (VAST) Challenge </a> is an annual contest with the goal of advancing the field of visual analytics through competition. The VAST Challenge is designed to help researchers understand how their software would be used in a novel analytic task and determine if their data transformations, visualizations, and interactions would be beneficial for particular analytic tasks. VAST Challenge problems provide researchers with realistic tasks and data sets for evaluating their software, as well as an opportunity to advance the field by solving more complex problems.
+				<p></p>
+				<embed src="https://www.youtube.com/embed/pzf_Ar-Ejjg" width="100%" height="456px" allowfullscreen="true"/>
+				Vung's Mini-Challenge 2 report can be found <a href="https://idatavisualizationlab.github.io/VAST2018/mc2/index.htm"> here</a>, <a href="https://idatavisualizationlab.github.io/VAST2018/heatmap.html"> Web demo</a>,
+
+				<p></p>
+				<div class="img-area">
+					<div class="img-middle">
+						<img src="./images/figures/Vung.jpg"></img>
+					</div>
+				</div>
+
+			</div>
+		</fullNews>
+	</news>
+
+	<news category="website">
+		<headline>RA proposal awarded from WCoE</headline>
+		<date>Mar 5, 2018</date>
+		<sortNews><b>iDVL</b> received RA award from TTU WCoE</sortNews>
 		<fullNews>
 			<div class="news">
 				<center><h2>RA Proposal for Big Data Visualization in Water Resources</h2></center>
 				According to the National Ground Water Association report in 2016, we extract around 982 km<sup>3</sup> of water per year from the ground. Therefore, monitoring ground water, sustaining aquifer capability, and analyzing its changes are highly desirable by decision makers. This proposal requests for one RA to work on big data visualization in water resources.
-				This research is an on-going collaboration between the department of <a href="http://www.depts.ttu.edu/cs/">Computer Science</a> and <a href="http://www.depts.ttu.edu/waterresources/"> Water Resources Center</a> in the department of <a href="http://www.depts.ttu.edu/ceweb/"> Civil Engineering</a>.
+				This research is an on-going collaboration between the department of <a href="http://www.depts.ttu.edu/cs/">Computer Science</a> and <a href="http://www.depts.ttu.edu/waterresources/"> Water Resources Center</a> in the department of <a href="http://www.depts.ttu.edu/ceweb/"> Civil Engineering</a>
 				<div class="img-area">
 					<div class="img-middle">
-						<img src="images/figures/disasterSimulation.JPG"></img>
+						<img src="images/figures/soil_profile1.png"></img>
 					</div>
 					<div style="clear:both;"></div>
 				</div>
-				<p>With this support, the student is aimed to target both research domains (water and big data visualization) in the College strategic growth initiative .</p>
+				<p>With this support, the student is aimed to target both research domains (water and big data visualization) in the College strategic growth initiative.</p>
 				<ul>
 					<li>In the first phase, the student will focus on developing visual analytics platforms to capture the trends/patterns, and to support analyzing the water usages in the Southern High Plains Aquifer of Texas.</li>
 					<li>In the second phase, he will build virtual simulations that support risk analyses and disaster evacuation.</li>
 				</ul>
+				<div class="img-area">
+					<div class="img-middle">
+						<img src="images/figures/soil_profile2.png"></img>
+					</div>
+					<div style="clear:both;"></div>
+				</div>
+				<p>Students:</p>
+				<ul>
+					<li><a target="_blank" href="http://myweb.ttu.edu/tnhondan/iDVL/people.php">Vung Pham</a>, PhD student, Department of Computer Science, Texas Tech University.</li>
+				</ul>
 
-				<br></br>
-				<br></br>
+
+				<p>Ralated publication:</p>
+				<ul>
+					<li>[W13] SOAViz: Visualization for Portable X-ray Fluorescence. Vung Pham and Tommy Dang. <a target="_blank" href="https://www.informatik.uni-leipzig.de/bsv/envirvis2019/">EnvirVis 2019</a></li>
+					<li>[A1] Award: Strong Support for Exploratory Analysis. Vung Pham and Tommy Dang VAST Challenge 2018: <a target="_blank" href="hhttp://vacommunity.org/VAST+Challenge+2018+MC2">Mini-Challenge 2</a>.</li>
+					<li>[W1] STOAViz: Visualizing Saturated Thickness of Ogallala Aquifer. Tommy Dang, Abdullah Karim, and Venki Uddameri. <a target="_blank" href="https://www.informatik.uni-leipzig.de/bsv/envirvis2018/">EnvirVis 2018</a></li>
+				</ul>
+
+				<div class="img-area">
+					<div class="img-middle">
+						<img src="images/figures/soil_profile3.png"></img>
+					</div>
+					<div style="clear:both;"></div>
+				</div>
 				<h3>The Whitacre College of Engineering Proposal Call</h3>
 
 				The Whitacre College of Engineering has a limited number of research assistantships as part of the Presidents strategic growth initiative.  These assistantships are $29K/year for up to four years and are to support research in the areas of energy, water, transportation, engineers in medicine, big data/data visualization and nanotechnology.
@@ -52,147 +372,50 @@
 
 
 	<news category="website">
-		<headline>Research proposal awarded</headline>
-		<date>April 3rd, 2017</date>
+		<headline> <b>iDVL</b> is awarded SGIR proposal </headline>
+		<date>Apr 3, 2017</date>
 		<sortNews>SGIR awarded the proposal of <b>Dr. Dang</b>'s team.</sortNews>
 		<fullNews>
-		<div class="news">
-			 <p><b>Dr. Tommy Dang</b> has been awarded for round 2 of SGIR for the proposal: <i>Teaching Foreign Language Pronunciation through Educational Avatars</i> in the collaboration with:</p>
-			<ul>
-				<li><a target="_blank" href="https://www.kiminakatsukasa.net/">Kimi Nakatsukasa</a>, Department of Classical and Modern Languages, College of Arts and Sciences.</li>
-				<li><a target="_blank" href="http://www.aaronbraver.com/">Aaron Braver</a>, Department of English, College of Arts and Sciences.</li>
-				<li><a target="_blank" href="http://www.depts.ttu.edu/psy/people/mscolari/">Miranda Scolari</a>, Department of Psychological Sciences, College of Arts and Science.</li>
-			</ul>
-			<p>Gestures—hand movements that are directly tied to speech—play a crucial role in interaction and communication. In a recent pilot study, we investigated the effective use of gestures for teaching the difference between short and long vowels in Japanese (Iizuka, Nakatsukasa, Braver, and Farley, 2016).  The goal of this project is to determine the role instructional gesturing plays in second language acquisition.</p>
+			<div class="news">
+				<p><b>Dr. Tommy Dang</b> has been awarded for round 2 of SGIR for the proposal: <i>Teaching Foreign Language Pronunciation through Educational Avatars</i> in the collaboration with:</p>
+				<ul>
+					<li><a target="_blank" href="https://www.kiminakatsukasa.net/">Kimi Nakatsukasa</a>, Department of Classical and Modern Languages, College of Arts and Sciences.</li>
+					<li><a target="_blank" href="http://www.aaronbraver.com/">Aaron Braver</a>, Department of English, College of Arts and Sciences.</li>
+					<li><a target="_blank" href="http://www.depts.ttu.edu/psy/people/mscolari/">Miranda Scolari</a>, Department of Psychological Sciences, College of Arts and Science.</li>
+				</ul>
+				<p>Gestures—hand movements that are directly tied to speech—play a crucial role in interaction and communication. In a recent pilot study, we investigated the effective use of gestures for teaching the difference between short and long vowels in Japanese (Iizuka, Nakatsukasa, Braver, and Farley, 2016).  The goal of this project is to determine the role instructional gesturing plays in second language acquisition.</p>
 
-			<div class="img-area">
+				<div class="img-area">
 					<div class="img-middle">
 						<img src="https://github.com/iDataVisualizationLab/webFiles/raw/master/labWeb/images/projects/eduAvatar.png"></img>
 					</div>
 					<div style="clear:both;"></div>
+				</div>
+				<p><a target="_blank" href="https://www.depts.ttu.edu/vpr/funding/sgir.php">The Seed Grants for Interdisciplinary Research (SGIR)</a>
+					program announced the awarded proposal names for round 2. In the round 2 SGIR awarded 6 proposals of $669,000 in total. More information is available on the Seed Grants <a target="_blank" href="https://www.depts.ttu.edu/vpr/funding/sgir-round-one-awardees.php">webpage.</a></p>
+				<div class="img-area">
+					<div class="img-middle">
+						<img src="images/figures/SGIRteam2016.jpg"></img>
+					</div>
+					<div style="clear:both;"></div>
+				</div>
+
+				<p>Student:</p>
+				<ul>
+					<li><a target="_blank" href="http://myweb.ttu.edu/vinhtngu/">Vinh Nguyen</a>, PhD student, Department of Computer Science, Texas Tech University.</li>
+				</ul>
 			</div>
-
-
-			<p><a target="_blank" href="https://www.depts.ttu.edu/vpr/funding/sgir.php">The Seed Grants for Interdisciplinary Research (SGIR)</a>
-			program announced the awarded proposal names for round 2. In the round 2 SGIR awarded 6 proposals of $669,000 in total. More information is available on the Seed Grants <a target="_blank" href="https://www.depts.ttu.edu/vpr/funding/sgir-round-one-awardees.php">webpage.</a></p>
-		</div>
 		</fullNews>
 	</news>
+
+
 
 	<news category="website">
-		<headline>EnvirVis paper accepted</headline>
-		<date>March 28th, 2017</date>
-		<sortNews><b>Long</b> gets  his first paper accepted</sortNews>
-		<fullNews><div class="news">
-			The <a target="_blank" href="http://www.informatik.uni-leipzig.de/~envirvis2017/">Visualization in Environmental Sciences 2017 (EnvirVis 2017)</a> accepted the paper of <b>Tommy Dang</b> and <b>Long Hoang Nguyen</b>  to present at the conference on June 12-13, 2017 in Barcelona, Spain.
-
-			The title and abstract of the paper is as following:
-			<br/>
-			<br/>
-
-			<h3>STOAViz: Visualizing Saturated Thickness of Ogallala Aquifer</h3>
-
-			<h6>Tommy Dang, Long Hoang Nguyen, Abdullah Karim, and Venki Uddameri<br/>
-				Computer Science and Civil, Environmental, and Construction Department, Texas Tech University, Texas, USA</h6>
-
-			<b>ABSTRACT</b>
-			<br/>
-			In this paper, we introduce STOAViz, a visual analytics tool for analyzing the saturated thickness of the Ogallala aquifer.The saturated thicknesses are monitored by sensors integrated on wells distributed on a vast geographic area. Our analytics application also captures the trends and patterns (such as average/standard deviation over time, sudden increase/decrease of saturated thicknesses) of water on individual well and group of wells based on their geographic locations. To highlight the usefulness and effectiveness of STOAViz, we demonstrate it on the Southern High Plains Aquifer of Texas. The work was developed using feedback from experts at the water resource center at a university. Moreover, our technique can be applied on any geographic areas where wells and their measurements are available.
-			<br/>
-			<br/>
-			Click here to read the paper: <a href="https://github.com/iDataVisualizationLab/SaturatedThickness/raw/master/files/STOAViz.pdf">STOAViz</a>
-			<br/>
-			For more information about the project please visit <a target="_blank" href="https://github.com/iDataVisualizationLab/SaturatedThickness">Project github repository</a><br/><br/>
-
-			<div class="img-area">
-				<div class="img-middle">
-					<img src="https://github.com/iDataVisualizationLab/SaturatedThickness/raw/master/files/stages.png"></img>
-				</div>
-				<div style="clear:both;"></div>
-				<br/>
-			</div></div>
-		</fullNews>
+		<headline>iDVL website launched</headline>
+		<date>Jan 25, 2017</date>
+		<sortNews>Lab website has been launched</sortNews>
+		<fullNews>The website for iDVL: interactive Data Visualization Lab has been lunched.</fullNews>
 	</news>
-
-<news category="website">
-<headline>Two posters accepted</headline>
-<date>March 1st, 2017</date>
-<sortNews>Congratulations to <b>Vinh</b> and <b>Long</b></sortNews>
-<fullNews>
-	<div class="news">
-	The <a target="_blank" href="http://www.depts.ttu.edu/gradschool/current/PosterCompetition2017.php">16th Annual Graduate Student Research Poster Competition</a> accepted and invited <b>Vinh The Nguyen</b> and <b>Long Hoang Nguyen</b> to present their posters.
-	The title and abstract of the posters are as following:
-	<br/>
-	<br/>
-
-	<h3>CancerMapper: Overview Explorations<br/><br/>of Cancer Study Interaction Network</h3>
-
-	<h6>Vinh The Nguyen and Tommy Dang<br/>
-	Computer Science Department, Texas Tech University, Texas, USA</h6>
-
-	<b>ABSTRACT</b>
-	<br/>
-	Understanding the complicated many-to-many relationships between cancers and mutated genes is challenging. For example, what common proteins are highly mutated in both prostate cancer and breast cancer or what cancers are driven by a selected subset of proteins. In this paper, we present CancerMapper, a novel exploration tool, that allows users to uncover the correlations among cancer studies as well as cancer studies and genes. CancerMapper also helps biologists to filter the cancer network based on the common mutated proteins and their frequencies. Bubble graph is constructed to visualize common protein based on its frequency and biological assemblies. Parallel coordinates highlight patterns of patient profiles (obtained from cBioportal by WebAPI services) on different attributes for a specified cancer study. Data retrieved from cBioportal.org as a Comma Separated Value file including protein name, frequency, cancer study and study type fields as well as Tab Separated Value through WebAPI service provided by cBioPortal. Protein’s images pulled from Protein Data Bank (http://www.rcsb.org/)
-	<br/><br/>
-	For more information about the project please visit <a target="_blank" href="https://github.com/iDataVisualizationLab/CancerNetwork">Project github repository</a><br/><br/>
-	<div class="img-area">
-		<div class="img-middle">
-			<img src="https://raw.githubusercontent.com/iDataVisualizationLab/webFiles/master/labWeb/images/posters/vinh/poster.png"></img> 
-		</div>
-		<div style="clear:both;"></div>
-		<br/>
-	</div>
-	
-
-	<br/>
-	<br/>
-	<br/>
-	<br/>
-
-	<h3>Ogallala Aquifer Monitoring Visualization</h3>
-
-	<h6>Long Hoang Nuyen and Tommy Dang<br/>
-	Computer Science Department, Texas Tech University, Texas, USA</h6>
-
-	<b>ABSTRACT</b>
-	<br/>
-		Water is the basic element that humanity is reliant upon for everyday and production
-	activities. According to the National Ground Water Association report in 2016 [Facts about global
-	groundwater usage], we extract almost 982km3/year from the ground. This number serves as a
-	good indicator of need of water in our daily life. Therefore, monitoring ground water, sustaining
-	aquifer supply capability, and analyzing its changes are highly desirable by decision makers. In
-	facts, a lot of wells that have integrated sensors to monitor water level information are established.
-	As the number of wells increases, it becomes more and more challenging for specialists to
-	visualize and analyze such large amount of data which come in realtime. The traditional processing
-	method like Excel becomes out of capability. Thus, this becomes a burden to analysts.
-	<br/><br/>
-	The result and main contribution of this poster is a visual analytics tool that can handle such
-	big sensor data and features various important dimensions for ground water analyst to quickly
-	capture interesting water behavior such as its saturated thickness contour, time series data
-	visualization. This tool also stretches out unusual pattern of water level such as sudden increase,
-	sudden decrease points over time. It also compares water capability across different locations,
-	regions and overall average along Ogallala aquifer. 
-	<br/><br/>
-	For more information about the project please visit <a target="_blank" href="https://github.com/iDataVisualizationLab/SaturatedThickness">Project github repository</a><br/><br/>
-	<div class="img-area">
-		<div class="img-left">
-			<img src="https://raw.githubusercontent.com/iDataVisualizationLab/webFiles/master/labWeb/images/posters/long/contour-map.png"></img> 
-		</div>
-		<div class="img-right">
-			<img src="https://raw.githubusercontent.com/iDataVisualizationLab/webFiles/master/labWeb/images/posters/long/horizon.png"></img>
-		</div>
-		<br/>
-	</div>
-</div>
-</fullNews>
-</news>
-
-<news category="website">
-<headline>iDVL website launched</headline>
-<date>January 25th, 2017</date>
-<sortNews>Lab website has been launched</sortNews>
-<fullNews>The website for iDVL: interactive Data Visualization Lab has been lunched.</fullNews>
-</news>
 
 
 </newsArchive>

@@ -12,7 +12,7 @@ svg = svg.append("g")
         "translate(" + margin.left + "," + margin.top + ")");
 
 var w2 =500;
-var h2 =400;
+var h2 =300;
 var svg2 = d3.select("#networkHolder").append("svg")
     .attr("width", w2)
     .attr("height", h2);
@@ -28,7 +28,7 @@ var y = d3.scaleLinear().range([height, 0]);
 var yAxis= d3.scaleLinear().range([height, 0]);
 
 
-// Student info data  
+// Student info data
 var dataG = {};
 d3.csv("grants/data/ResearchInsights.csv", function(error, dataG_) {
     // Filter data by endDate
@@ -68,8 +68,8 @@ var links=[];
 var nodes2=[];
 var links2=[];
 
-var startDate = new Date("5/1/2018");
-var endtDate = new Date("12/1/2019");
+var startDate = new Date("1/1/2019");
+var endtDate = new Date("1/1/2021");
 var today = new Date();
 
 function getCategoty(str){
