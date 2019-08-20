@@ -1,0 +1,42 @@
+<html>
+<head>
+    <title></title>
+    <script
+            src="https://code.jquery.com/jquery-3.3.1.js"
+            integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+            crossorigin="anonymous">
+    </script>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script>
+        $(function(){
+            $("#header").load("header.html", function () {
+                d3.select("#").classed("selected", true);
+            });
+            $("#footer").load("footer.html");
+            $("#sidebar").load("newsSidebar.html");
+        });
+    </script>
+</head>
+<body>
+<div id="header"></div>
+<div>
+    <div id="site_content">
+        <div id="top_border"></div>
+        <div id="sidebar"></div>
+        
+        <div class="content newsBox">
+        
+        </div>
+    
+    </div>
+</div>
+
+</div>
+<div id="footer"></div>
+</body>
+<script>
+d3.xml("xml/newsArchive.xml", function (error, xml) {
+    console.log(xml.documentElement);
+})
+</script>
+</html>

@@ -14,10 +14,15 @@
                 d3.select("#homeTab").classed("selected", true);
             });
             $("#footer").load("footer.html");
-            $("#sidebar").load("newsSidebar.html");
-            document.getElementsByTagName("html")[0].style.visibility = "visible";
+            $("#sidebar").load("newsSidebar.html"
+            //     , function () {
+            //     d3.selectAll("headline")
+            //         .on("click", function () {
+            //             console.log("hi");
+            //         })
+            // }
+            );
         });
-        
     </script>
 </head>
 <body>
@@ -68,6 +73,8 @@
     <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d830.9226695160976!2d-101.87623938321492!3d33.587379666974954!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1484952297448" width="100%" height="500" frameborder="0" style="border:0" allowfullscreen></iframe>
 </div>
 <div id="footer"></div>
+<script>
 
+</script>
 </body>
 </html>
