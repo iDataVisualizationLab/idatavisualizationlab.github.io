@@ -1,63 +1,153 @@
+
+
 <!DOCTYPE HTML>
+<html>
+
 <head>
-    <title></title>
-    <link rel="shortcut icon" href="images/iDVLlogo/V2.png">
+    <title>interactive Data Visualization Lab</title>
+    <meta name="description" content="website description" />
+    <meta name="keywords" content="website keywords, website keywords" />
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
     <link rel="stylesheet" type="text/css" href="css/style.css" />
-    
-    <script
-            src="https://code.jquery.com/jquery-3.3.1.js"
-            integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-            crossorigin="anonymous">
-    </script>
-    <!--<script src="https://d3js.org/d3.v4.min.js"></script>-->
-    <script>
-        $(function(){
-            $("#header").load("header.html");
-            $("#footer").load("footer.html");
-            $("#sidebar").load("newsSidebar.html");
+    <link rel="shortcut icon" href="images/iDVLlogo/V2.png">
+    <!-- modernizr enables HTML5 elements and feature detects -->
+    <script type="text/javascript" src="js/modernizr-1.5.min.js"></script>
+    <script type="text/javascript" src="js/jquery-1.8.3.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            // this will get the full URL at the address bar
+            var url = window.location.href;
+
+            // passes on every "a" tag
+            $(".topmenu a").each(function() {
+                // checks if its the same on the address bar
+                if (url == (this.href)) {
+                    $(this).closest("li").addClass("selected");
+                }
+            });
         });
     </script>
+
+
 </head>
 
+<body>
 <div id="main">
-    <div id="header"></div>
-    <div id="site_content">
-        <div id="sidebar"></div>
-        <div class="content newsBox">
-            <h4><headline><b>Vung</b> is awarded the best paper at EnvirVis 2019</headline></h4><h5><date>June 4, 2019</date></h5><p><fullNews>
-            <div class="news">
-                <center><h2>SOAViz: Visualization for Portable X-ray Fluorescence</h2></center>
+    <header>
+        <div id="logo">
+            <div id="logo_text">
+                <h1>
+                    <a href="index.php"> <img height="48px" src="images/iDVLlogo/iDVL.png" href="index.php" alt="logo" title="logo"></a>
+                    <a href="index.php"><span class="logo_colour"> interactive Data Visualization Lab</span>
+                        <a href="http://www.depts.ttu.edu/cs/"><img height="48px" src="images/TTUlogo.png" alt="logo" title="logo"></a>
+                </h1>
+            </div>
+        </div>
+        <nav>
+            <ul class="sf-menu" id="nav">
+                
+                <li >
+                    <a href="index.php">
+                        Home            </a>
+                </li>
+                
+                <li >
+                    <a href="people.php">
+                        People            </a>
+                </li>
+                
+                <li >
+                    <a href="publications.php">
+                        Publications            </a>
+                </li>
+                
+                <li >
+                    <a href="researchProjects.php">
+                        Research Projects            </a>
+                </li>
+                
+                <li >
+                    <a href="conferences.php">
+                        Conferences            </a>
+                </li>
+                
+                <li >
+                    <a href="grants.php">
+                        CFPs            </a>
+                </li>
             
-            <p>In this project, we work closely with the soil scientists to develop a visualization solution to the rapidly gaining favor approach to soil horizon analysis using <a href="https://www.olympus-ims.com/en/xrf-xrd/xrf-handheld/#!" target="_blank">Portable X-ray Fluorescence (pXRF) devices</a>. Our visualization aims to provide soil scientists with rapid valuable insights into soil properties both visually perceptible with graphs and imperceptible quantification features with statistical calculations from the data collected from pXRF equipment. </p>
+            
+            </ul>
+        </nav>
+    </header>
+    
+    
+    <div id="site_content">
+        <div id="top_border"></div>
+        <div id="sidebar_container">
+            <img class="paperclip" src="images/paperclip.png" alt="paperclip" />
+            <div class="sidebar">
+                <h3>Latest News</h3>
+                <div class="sidebarNewsBorder"></div>
+                <h5><date>August 4, 2019</date></h5><h4><a href="news.php?id=0"><headline><b>Ngan</b> received Visualization Showcase Award at PEARC 2019</headline></a></h4><div class="sidebarNewsBorder"></div><h5><date>July 2, 2019</date></h5><h4><a href="news.php?id=1"><headline><b>Vung</b> won the 3rd place at Herobots AI stock prediction</headline></a></h4><div class="sidebarNewsBorder"></div><h5><date>June 4, 2019</date></h5><h4><a href="news.php?id=2"><headline><b>Vung</b> is awarded the best paper at EnvirVis 2019</headline></a></h4><div class="sidebarNewsBorder"></div><h5><date>April 20, 2019</date></h5><h4><a href="news.php?id=3"><headline>Support from Dell Inc. for supercomputing visual analytics</headline></a></h4><div class="sidebarNewsBorder"></div><h5><date>Feb 10, 2019</date></h5><h4><a href="news.php?id=4"><headline>HEAF fund for drones from TTU Provost’s office is accepted</headline></a></h4><div class="sidebarNewsBorder"></div><h5><date>Jan 10, 2019</date></h5><h4><a href="news.php?id=5"><headline>AVX project funded to refine Aviation Sustainment data</headline></a></h4><div class="sidebarNewsBorder"></div><h5><date>Dec 2, 2018</date></h5><h4><a href="news.php?id=6"><headline><b>iDVL</b> is funded by GRI to monitor HPCC via the visual interface</headline></a></h4><div class="sidebarNewsBorder"></div><h5><date>Aug 15, 2018</date></h5><h4><a href="news.php?id=7"><headline><b>Vung</b> got VAST Challenge Award</headline></a></h4><div class="sidebarNewsBorder"></div><h5><date>Mar 5, 2018</date></h5><h4><a href="news.php?id=8"><headline>RA proposal awarded from WCoE</headline></a></h4><div class="sidebarNewsBorder"></div><h5><date>Apr 3, 2017</date></h5><h4><a href="news.php?id=9"><headline> <b>iDVL</b> is awarded SGIR proposal </headline></a></h4><div class="sidebarNewsBorder"></div><h5><date>Jan 25, 2017</date></h5><p><sortNews>Lab website has been launched</sortNews></p>        </div>
+        </div>
+        <div class="content newsBox">
+            <h4><headline> <b>iDVL</b> is awarded SGIR proposal </headline></h4><h5><date>Apr 3, 2017</date></h5><p><fullNews>
+            <div class="news">
+            <p><b>Dr. Tommy Dang</b> has been awarded for round 2 of SGIR for the proposal: <i>Teaching Foreign Language Pronunciation through Educational Avatars</i> in the collaboration with:</p>
+            <ul>
+                <li><a target="_blank" href="https://www.kiminakatsukasa.net/">Kimi Nakatsukasa</a>, Department of Classical and Modern Languages, College of Arts and Sciences.</li>
+                <li><a target="_blank" href="http://www.aaronbraver.com/">Aaron Braver</a>, Department of English, College of Arts and Sciences.</li>
+                <li><a target="_blank" href="http://www.depts.ttu.edu/psy/people/mscolari/">Miranda Scolari</a>, Department of Psychological Sciences, College of Arts and Science.</li>
+            </ul>
+            <p>Gestures—hand movements that are directly tied to speech—play a crucial role in interaction and communication. In a recent pilot study, we investigated the effective use of gestures for teaching the difference between short and long vowels in Japanese (Iizuka, Nakatsukasa, Braver, and Farley, 2016).  The goal of this project is to determine the role instructional gesturing plays in second language acquisition.</p>
             
             <div class="img-area">
                 <div class="img-middle">
-                    <img src="./images/figures/soil2.png"/>
+                    <img src="https://github.com/iDataVisualizationLab/webFiles/raw/master/labWeb/images/projects/eduAvatar.png"/>
                 </div>
                 <div style="clear:both;"/>
             </div>
-            <p>The work was developed in collaboration with:</p>
-            <ul>
-                <li><a target="_blank" href="https://www.depts.ttu.edu/pss/faculty_pages/dweindorf.php">Dr. David Weindorf</a>, Department of Plant and Soil Science, Texas Tech University.</li>
-            </ul>
-            <p>Students:</p>
-            <ul>
-                <li><a target="_blank" href="https://www.researchgate.net/profile/Pham_Vung">Vung Pham</a>, PhD student, Department of Computer Science, Texas Tech University.</li>
-            </ul>
+            <p><a target="_blank" href="https://www.depts.ttu.edu/vpr/funding/sgir.php">The Seed Grants for Interdisciplinary Research (SGIR)</a>
+                program announced the awarded proposal names for round 2. In the round 2 SGIR awarded 6 proposals of $669,000 in total. More information is available on the Seed Grants <a target="_blank" href="https://www.depts.ttu.edu/vpr/funding/sgir-round-one-awardees.php">webpage.</a></p>
             <div class="img-area">
                 <div class="img-middle">
-                    <img src="./images/figures/VungEnvirVis2019.JPG"/>
+                    <img src="images/figures/SGIRteam2016.jpg"/>
                 </div>
+                <div style="clear:both;"/>
             </div>
-            <div class="img-area">
-                <div class="img-middle">
-                    <img src="./images/figures/VungAward.png"/>
-                </div>
-            </div>
-        
-        
+            
+            <p>Student:</p>
+            <ul>
+                <li><a target="_blank" href="http://myweb.ttu.edu/vinhtngu/">Vinh Nguyen</a>, PhD student, Department of Computer Science, Texas Tech University.</li>
+            </ul>
         </div>
+        </fullNews></p>
     </div>
+
 </div>
 </div>
-<div id="footer"></div>
+
+
+
+<footer>
+    <p>Last revised: April 28, 2019 | Copyright &copy; iDVL, TTU</p>
+</footer>
+</div>
+
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/jquery.easing-sooper.js"></script>
+<script type="text/javascript" src="js/jquery.sooperfish.js"></script>
+<script type="text/javascript" src="js/jquery.kwicks-1.5.1.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#images').kwicks({
+            max : 600,
+            spacing : 2
+        });
+        $('ul.sf-menu').sooperfish();
+    });
+</script>
+</body>
+</html>
+</div>
