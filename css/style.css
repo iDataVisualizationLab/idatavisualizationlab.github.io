@@ -639,6 +639,9 @@ img.resize {
 #nganPub{
   display: none;
 }
+#huyenPub{
+  display: none;
+}
 
 .images:hover ~ .infoArea > div {
   display: none;
