@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1b7495b3-50d4-4f91-b008-aceb92f0d255" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newsSidebar.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/newsSidebar.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/paper.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/paper.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/publications.html" beforeDir="false" afterPath="$PROJECT_DIR$/publications.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -86,8 +83,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/publications.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="681">
-              <caret line="39" column="89" lean-forward="true" selection-start-line="39" selection-start-column="89" selection-end-line="39" selection-end-column="89" />
+            <state relative-caret-position="647">
+              <caret line="40" column="133" lean-forward="true" selection-start-line="40" selection-start-column="133" selection-end-line="40" selection-end-column="133" />
               <folding>
                 <element signature="n#style#0;n#table#0;n#div#2;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#th#1;n#tr#0;n#table#0;n#div#2;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -171,7 +168,7 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="3" />
     <option name="y" value="23" />
-    <option name="width" value="1105" />
+    <option name="width" value="1217" />
     <option name="height" value="1417" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
@@ -268,19 +265,19 @@
       <workItem from="1566589854940" duration="2144000" />
       <workItem from="1566610457106" duration="1628000" />
       <workItem from="1566661583912" duration="837000" />
-      <workItem from="1566867221792" duration="1956000" />
+      <workItem from="1566867221792" duration="2723000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="34256000" />
+    <option name="totallyTimeSpent" value="35023000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="3" y="23" width="1105" height="1417" extended-state="0" />
+    <frame x="3" y="23" width="1217" height="1417" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.21771218" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.19732441" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="0" />
       <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" />
@@ -702,8 +699,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/publications.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="681">
-          <caret line="39" column="89" lean-forward="true" selection-start-line="39" selection-start-column="89" selection-end-line="39" selection-end-column="89" />
+        <state relative-caret-position="647">
+          <caret line="40" column="133" lean-forward="true" selection-start-line="40" selection-start-column="133" selection-end-line="40" selection-end-column="133" />
           <folding>
             <element signature="n#style#0;n#table#0;n#div#2;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#th#1;n#tr#0;n#table#0;n#div#2;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
