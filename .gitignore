@@ -1,2 +1,5 @@
-
+.idea/*
 .idea/workspace.xml
+file/.DS_Store
+project_prototypes/.DS_Store
+.DS_Store
