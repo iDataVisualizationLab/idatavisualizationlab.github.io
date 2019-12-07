@@ -938,7 +938,7 @@ function computeLinks() {
 
     nodeG.append("circle")
         .attr("class", "sum")
-        .attr("r", 20)
+        .attr("r", 15)
         .style("fill-opacity",1)
         .style("fill", function(d){
             return "url(#node_avatar" + fixstring(d.name) + ")"});
