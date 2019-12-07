@@ -1,5 +1,5 @@
 //Constants for the SVG
-var margin = {top: 0, right: 0, bottom: 5, left: 15};
+var margin = {top: 0, right: 100, bottom: 5, left: 15};
 var width = site_content.getBoundingClientRect().width;
 // var width = document.body.clientWidth;
 var height = 800 - margin.top - margin.bottom;
@@ -7,6 +7,14 @@ var height = 800 - margin.top - margin.bottom;
 //---End Insert------
 
 //Append a SVG to the body of the html page. Assign this SVG as an object to svg
+var tip = d3.tip().attr('class', 'd3-tip').direction(function(d) {
+    console.log(d)
+    if (d.y >height/2) return 's'
+    return 'n'
+}).html(function(d) {
+    var html = `<div><h4>${d.name}</h4><table></table></div>`
+    return html;
+});
 var svg = d3.select("#timearc").append("svg")
     .style("background", "transparent")
     .style("overflow", "visible")
@@ -14,7 +22,7 @@ var svg = d3.select("#timearc").append("svg")
     .attr("x", 0)
     .attr("width", width)
     .attr("height", height);
-
+svg.call(tip);
 var svg2 = d3.select("body").append("svg")
     .style("background", "#ee0")
     .attr("width", width)
@@ -169,7 +177,7 @@ d3.tsv("data/publication.tsv", function (error, data_) {
     terms = new Object();
     termMaxMax = 1;
     var cccc = 0;
-    data.forEach(function (d) {
+    data.forEach(function (d,i) {
         var year = time2num(new Date(d["Time"]));
         d.year = year;
         timearr[year]=1;
@@ -192,10 +200,11 @@ d3.tsv("data/publication.tsv", function (error, data_) {
                 terms[term].InfoVis = {};
                 terms[term].VAST = {};
                 terms[term].SciVis = {};
+                terms[term].paper = {};
             }
             else
                 terms[term].count++;
-
+            terms[term].paper[i] = d;
 
             if (!terms[term][year]) {
                 terms[term][year] = 1;
@@ -1217,7 +1226,6 @@ function mouseovered(d) {
     ;
 
     nodeG.transition().duration(500).attr("transform", function (n) {
-        console.log(n)
         if (list[n.name] && n.name != d.name) {
             var newX = xStep + xScale(list[n.name].year);
             console.log(newX)
@@ -1227,6 +1235,11 @@ function mouseovered(d) {
             return "translate(" + n.xConnected + "," + n.y + ")"
         }
     })
+    // tooltip
+    tip.show(d).getNode().select('table').selectAll('tr')
+        .data(d3.values(terms[d.name].paper))
+        .enter().append('tr')
+        .append('td').text(d=>{return `[${d.Id}] ${d.Title}`})
 }
 
 
@@ -1250,7 +1263,7 @@ function mouseouted(d) {
         return "translate(" + n.xConnected + "," + n.y + ")"
 
     })
-
+    tip.hide();
 }
 
 // check if a node for a month m already exist.

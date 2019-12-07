@@ -2,8 +2,10 @@ var diameter = 1000,
     radius = diameter / 2,
     innerRadius = radius - 120;
 
-var cList = ["Multiple publications","Workshop","Short paper","Conference","Journal","Award"]  
-var typeList = ["O","W","S","C","J","A"];
+// var cList = ["Multiple publications","Workshop","Short paper","Conference","Journal","Award"]
+var cList = ["Workshop","Short paper","Conference","Journal","Award"]
+// var typeList = ["O","W","S","C","J","A"];
+var typeList = ["W","S","C","J","A"];
 var positions = [{role:"Msc program", yearStart:0, years: 2, color: "#0ff", opacity: 0.1},
     {role:"PhD program", yearStart:2, years: 4, color: "#0f0", opacity: 0.1},
     {role:"Post-doc", yearStart:6, years: 2, color: "#ff0", opacity: 0.1},

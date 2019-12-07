@@ -56,7 +56,9 @@ d3.tip = function() {
 
     return tip
   }
-
+  tip.getNode = function(){
+    return getNodeEl()
+  }
   // Public - hide the tooltip
   //
   // Returns a tip

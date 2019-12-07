@@ -1305,5 +1305,14 @@ img:hover{
   
 }
 
-
-
+.d3-tip {
+  pointer-events: none!important;
+  width: 400px;
+  transform: translateX(50%);
+  background-color: white;
+  padding: 10px;
+  border-radius: 5px;
+}
+.d3-tip.n {
+  transform: translateY(-100%);
+}
