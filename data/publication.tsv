@@ -1,0 +1,38 @@
+Id	Code	Level	Time	Venue	VenueId	Title	Authors	Rate
+A4	A	2	3 Dec 2018	Biannual International AI Challenge	Herobots AI	3rd Place in Herobots AI stock prediction challenge	"Vung Pham,Ngan Nguyen"	
+W9	W	3	Jul 2019	IEEE International Workshop on Deep Analysis of Data-Driven Applications	DADA 2019	SpacePhaser: Phase Space Embedding Visual Analytics	"Ngan Nguyen,Tommy Dang"	
+A3	A	2	10 Jun 2019	The Visualization in Environmental Sciences	EnvirVis 2019 	SOAViz: Visualization for Portable X-ray Fluorescence	"Vung Pham,Tommy Dang"	
+S4	S	2	Jun 2019	21st EG/VGTC Conference on Visualization	EuroVis 2019	WordStream: Interactive Visualization for Topic Evolution	"Tommy Dang,Huyen Nguyen,Vung Pham"	
+W11	W	3	20 Dec 2018	The 2nd International Workshop on Big Social Management and Analysis	BSMDMA 2018 	HealthTvizer: Exploring Health Awareness in Twitter Data through Coordinated Multiple Views	"Ngan Nguyen,Tommy Dang,Vung Pham"	
+W10	W	3	5 Dec 2018	The 2nd International Workshop on Big Data for Financial News and Data	Financial News 2018 	FinanViz: Visualizing Emerging Topics in Financial News	"Ngan Nguyen,Tommy Dang"	
+W9	W	3	Nov 2018	"The 2nd International Industry/University Workshop on Data-center Automation, Analytics, and Control"	DAAC 2918 	HPCViz: Visualizing and Monitoring Health Status of High Performance Computing Systems	"Tommy Dang,Vinh Nguyen,Vung Pham,Ghazanfar Ali,Yong Chen "	
+C12	C	2	10 Dec 2018	IEEE International Conference on Big Data	IEEE BigData	CVExplorer: Multidimensional Visualization for Common Vulnerabilities and Exposures	"Vung Pham,Tommy Dang"	
+C11	C	2	1 Dec 2018	IEEE International Conference on Artificial Intelligence and Virtual Reality	AIVR 2018	Web-based Virtual Reality development in classroom: From learner's perspectives	"Vinh Nguyen,Tommy Dang"	
+A2	A	2	3 Oct 2018	VAST Challenge 2018: Mini-Challenge 2	VAST 2018	Award: Strong Support for Exploratory Analysis	"Vung Pham,Tommy Dang"	
+A1	A	2	1 Oct 2018	VAST Challenge 2018: Mini-Challenge 2	VAST 2018	Honorable Mention: Representation of Small-Scale Temporal Patterns	"Tommy Dang,Vung Pham"	
+S3	S	2	Jul 2018	ACM SIGSOFT International Symposium on Software Testing and Analysis	ISSTA 2018	MalViz: An Interactive Visualization Tool for Tracing Malware	"Vinh Nguyen,Tommy Dang,Akbar Namin"	
+W8	W	3	10 Jun 2018	The 9th international EuroVis workshop on Visual Analytics	EuroVA 2018 	ComModeler: Topic Modeling Using Community Detection	"Vinh Nguyen,Tommy Dang"	
+W7	W	3	1 Jun 2018	The Visualization in Environmental Sciences	EnvirVis 2018 	Predict Saturated Thickness using TensorBoard Visualization	"Vinh Nguyen,Fang Jin,Tommy Dang"	
+W6	W	3	10 Oct 2017	"IEEE Workshop on Virtual, Augmented and Mixed Reality in Education"	ISMAR 2017 	Setting up virtual reality and augmented reality learning environment in Unity	"Vinh Nguyen,Tommy Dang"	
+W5	W	3	Oct 2017	Visualization in Data Science at IEEE VIS 2017	VDS 2017	CancerLinker: Explorations of Cancer Study Network	"Vinh Nguyen,Tommy Dang"	?%
+W4	W	3	22 Oct 2017	Proceedings of the 3rd International Workshop on Visualization and Interaction for Ontologies and Linked Data	VOILA 2017	A User Study of Techniques for Visualizing Structure and Connectivity in Hierarchical Datasets	"Tommy Dang,Paul Murray,Ronak Etemadpour,Angus Forbes"	?%
+W3	W	3	Mar 2017	The Visualization in Environmental Sciences 	EnvirVis 2017	STOAViz: Visualizing Saturated Thickness of Ogallala Aquifer	"Tommy Dang,Abdullah Karim,Venki Uddameri"	?%
+S2	S	3	Apr 2017	The 10th IEEE Pacific Visualization Symposium	PacificVis 2017	CactusTree: A Tree Drawing Approach for Hierarchical Edge Bundling	"Tommy Dang,Angus Forbes"	42%
+S1	S	3	10 Apr 2017	The 10th IEEE Pacific Visualization Symposium	PacificVis 2017	BioLinker: Bottom-up exploration of protein interaction network	"Tommy Dang,Paul Murray,Angus Forbes"	42%
+W2	W	3	Apr 2016	The 7th international EuroVis workshop on Visual Analytics	EuroVA 2016	MultiLayerMatrix: Visualizing Large Taxonomic Datasets	"Tuan Dang,Tommy Dang,Hong Cui,Angus Forbes"	
+J5	J	1	Jun 2016	Computer Graphics Forum 35(3)	EuroVis 2016	TimeArcs: Visualizing Fluctuations in Dynamic Networks	"Tuan Dang,Nick Pendar,Angus Forbes"	27%
+W1	W	3	Nov 2015	International Workshop on Visualizations and User Interfaces for Ontologies and Linked Data	VOILA 2015	ProvenanceMatrix: A Visualization Tool for Multi-Taxonomy Alignments	"Tuan Dang,Nico Franz,Bertram Ludascher,Angus Forbes"	
+C10	C	2	Jul 2015	BMC Proceedings 9(6)	BioVis 2015	ReactionFlow: An Interactive Visualization Tool for Causality Analysis in Biological Pathways	"Tuan Dang,Paul Murray,Jillian Aurisano,Angus Forbes"	
+C9	C	2	10 Jul 2015	BMC Proceedings 9(6)	BioVis 2015	PathwayMatrix: Visualizing Binary Relationships between Proteins in Biological Pathways	"Tuan Dang,Paul Murray,Angus Forbes"	
+C8	C	3	Dec 2014	Proceedings of the 10th International Symposium on Visual Computing	ISVC 2014	PixSearcher: Searching Similar Images in Large Image Collections through Pixel Descriptors	"Tuan Dang,Leland Wilkinson"	
+J4	J	1	Apr 2014	IEEE Transactions on Visualization and Computer Graphics 20(12)	VAST 2014	Transforming Scagnostics to Reveal Hidden Features	"Tuan Dang,Leland Wilkinson"	23%
+C7	C	2	Mar 2014	Proceedings of the 7th IEEE Pacific Visualization Symposium	PacificVis 2014	ScagExplorer: Exploring Scatterplots by Their Scagnostics	"Tuan Dang,Leland Wilkinson"	29%
+C6	C	3	Jul 2013	Proceedings of the 9th International Symposium on Visual Computing	ISVC 2013	TimeExplorer: Similarity Search Time Series by Their Signatures	"Tuan Dang,Leland Wilkinson"	
+C5	C	3	Sep 2012	Proceedings of the 5th International Symposium on Visual Information Communication and Interaction	VINCI 2012	Detecting interesting distributions in multiple time series data	"Tuan Dang,Leland Wilkinson"	
+C4 	C	3	Jul 2012	Proceedings of the 8th International Symposium on Visual Computing	ISVC 2012	FmFinder: Search and Filter Your Favorite Songs	"Tuan Dang,Anushka Anand,Leland Wilkinson"	
+J3	J	1	Apr 2012	IEEE Transactions on Visualization and Computer Graphics 19(3)	TVCG 2012	TimeSeer: Scagnostics for High-Dimensional Time Series	"Tuan Dang,Anushka Anand,Leland Wilkinson"	
+C3	C	1	Jun 2012	Proceedings of IEEE Conference on Visual Analytics Science and Technology	VAST 2012	Visual Pattern Discovery using Random Projections	"Anushka Anand,Leland Wilkinson,Tuan Dang"	28%
+J2	J	1	Jan 2012	Journal ACM Transactions on Knowledge Discovery from Data	TKDD 2012	Substantial improvements in the set-covering projection classifier CHIRP	"Tuan Dang,Anushka Anand,Leland Wilkinson"	
+C2	C	1	Jan 2011	Proceedings of the 17th ACM SIGKDD International Conference on Knowledge Discovery and Data Mining	KDD 2011	CHIRP: A new classifier based on Composite Hypercubes on Iterated Random Projections	"Leland Wilkinson,Anushka Anand,Tuan Dang"	17.50%
+J1	J	1	Jan 2010	IEEE Transactions on Visualization AndComputer Graphics 16(6)	InfoVis 2010	Stacking Graphic Elements to Avoid Over-Plotting	"Tuan Dang,Anushka Anand,Leland Wilkinson"	26%
+C1	C	1	Jan 2009	Proceedings of IEEE International Conference on Data Mining	ICDM 2009	An L-infinity Norm Visual Classier	"Anushka Anand,Leland Wilkinson,Tuan Dang"	17.80%
