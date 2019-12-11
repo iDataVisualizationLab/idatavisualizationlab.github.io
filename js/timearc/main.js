@@ -188,7 +188,7 @@ d3.tsv("data/publication.tsv", function (error, data_) {
         var list = d["Authors"].split(",");
         cccc++;
         for (var i = 0; i < list.length; i++) {
-            var term = list[i];
+            var term = list[i].trim();
             d[term] = 1;
 
             if (!terms[term]) {
@@ -761,12 +761,14 @@ function computeLinks() {
         var term1 = nodes[i].name;
         for (var j = i + 1; j < numNode; j++) {
             var term2 = nodes[j].name;
-            if (relationship[term1 + "__" + term2] && (term1 == "Tuan Dang" || term1 == "Tommy Dang" || term2 == "Tommy Dang"
-                || (term1 == "Vung Pham" && term2 == "Ngan Nguyen")
-                || (term1 == "Ngan Nguyen" && term2 == "Vung Pham")
-                || (term1 == "Angus Forbes" && term2 == "Paul Murray")
-                || (term1 == "Paul Murray" && term2 == "Angus Forbes")
-            )) {
+            if (relationship[term1 + "__" + term2]
+            //     && (term1 == "Tuan Dang" || term1 == "Tommy Dang" || term2 == "Tommy Dang"
+            //     || (term1 == "Vung Pham" && term2 == "Ngan Nguyen")
+            //     || (term1 == "Ngan Nguyen" && term2 == "Vung Pham")
+            //     || (term1 == "Angus Forbes" && term2 == "Paul Murray")
+            //     || (term1 == "Paul Murray" && term2 == "Angus Forbes")
+            // )
+            ) {
                 var ordering = 0;
                 Object.keys(timearr).forEach(m=> {
                     if (m===0)
@@ -941,6 +943,9 @@ function computeLinks() {
         .attr("r", 15)
         .style("fill-opacity",1)
         .style("fill", function(d){
+            let nodeimg = d3.select("#node_avatar" + fixstring(d.name));
+            if (nodeimg.empty())
+                return "#9c9c9c"
             return "url(#node_avatar" + fixstring(d.name) + ")"});
     // nodeG.append("text")
     //     .attr("class", "nodeText")
@@ -1014,7 +1019,6 @@ $('#btnUpload').click(function () {
     var beginLoad = setInterval(function () {
         load();
     }, 50);
-
 });
 
 function searchNode() {
