@@ -165,6 +165,7 @@ var numberInputTerms = 0;
 var listYear = [];
 var timearr = {};
 d3.csv("data/people.csv", function(error,data){
+    data.push({ID:"noavatar",img:"images/noavatar.jpg"})
     initAvatar(data)
 });
 
@@ -945,7 +946,7 @@ function computeLinks() {
         .style("fill", function(d){
             let nodeimg = d3.select("#node_avatar" + fixstring(d.name));
             if (nodeimg.empty())
-                return "#9c9c9c"
+                return "url(#node_avatarnoavatar)"
             return "url(#node_avatar" + fixstring(d.name) + ")"});
     // nodeG.append("text")
     //     .attr("class", "nodeText")
