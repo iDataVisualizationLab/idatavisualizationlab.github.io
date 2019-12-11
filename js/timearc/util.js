@@ -125,7 +125,8 @@ function drawTimeLegend() {
   for (var i=minYear+1; i<maxYear;i++){
     var xx = xStep+xScale((i-minYear));
     svg.append("line")
-      .style("stroke", "#fff")
+        .attr('class','grid')
+      .style("stroke", "#818181")
       .style("stroke-dasharray", ("1, 2"))
       .style("fill-opacity", 1)   
       .style("stroke-opacity", 1)

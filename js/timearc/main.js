@@ -931,7 +931,7 @@ function computeLinks() {
             if (d.name == "Tuan Dang" || d.name == "Tommy Dang")
                 return "#982";
             else
-                return "#fff";
+                return "#565656";
         });
 
     svg.selectAll(".nodeG").remove();
@@ -1168,6 +1168,8 @@ function mouseoutedLink(l) {
 
 
 function mouseovered(d) {
+    nodeG.style('pointer-events','none');
+    d3.select(this).style('pointer-events','all');
     if (force.alpha() > 0) return;
     var list = new Object();
     list[d.name] = new Object();
@@ -1239,7 +1241,7 @@ function mouseovered(d) {
         else {
             return "translate(" + n.xConnected + "," + n.y + ")"
         }
-    })
+    });
     // tooltip
     tip.show(d).getNode().select('table').selectAll('tr')
         .data(d3.values(terms[d.name].paper))
@@ -1269,6 +1271,7 @@ function mouseouted(d) {
 
     })
     tip.hide();
+    nodeG.style('pointer-events','all');
 }
 
 // check if a node for a month m already exist.
