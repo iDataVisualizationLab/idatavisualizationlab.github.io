@@ -290,19 +290,25 @@ function initAvatar(data) {
         .attr("id", function(d){return "node_avatar" + fixstring(d.ID)})
         .attr("width", 1)
         .attr("height", 1)
-        .attr("patternContentUnits", "objectBoundingBox");
+        .attr("patternContentUnits", "objectBoundingBox").on('error',function(){console.log(this.src)});
     pattern.append("svg:rect")
         .attr("width", 1)
         .attr("height", 1)
         .attr("fill", "#eee");
     pattern
         .append("svg:image")
+        .attr("xmlns:xlink", "http://www.w3.org/1999/xlink")
         .attr("xlink:href",function(d){return d.img})
         .attr("x", 0)
         .attr("y", 0)
         .attr("width", 1)
         .attr("height", 1)
-        .attr("preserveAspectRatio", "xMinYMin slice");
+        .attr("preserveAspectRatio", "xMinYMin slice")
+        .on("error", function(){
+            let el = d3.select(this);
+            el.attr("xlink:href", "images/noavatar.jpg");
+            el.on("error", null);
+        })
 }
 function fixstring(str){
     return str.toLowerCase().replace(' ','_');
