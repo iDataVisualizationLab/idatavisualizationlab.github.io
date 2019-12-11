@@ -205,7 +205,7 @@ d3.tsv("data/publication.tsv", function (error, data_) {
             }
             else
                 terms[term].count++;
-            terms[term].paper[i] = d;
+            terms[term].paper[d.Id] = d;
 
             if (!terms[term][year]) {
                 terms[term][year] = 1;
