@@ -179,7 +179,8 @@ d3.tsv("data/publication.tsv", function (error, data_) {
     termMaxMax = 1;
     var cccc = 0;
     data.forEach(function (d,i) {
-        var year = time2num(new Date(d["Time"]));
+        // var year = time2num(new Date(d["Time"]));
+        var year = time2num(new Date('Jan '+(new Date(d["Time"]).getFullYear())));
         d.year = year;
         timearr[year]=1;
         //if (d.year<20) return; 
