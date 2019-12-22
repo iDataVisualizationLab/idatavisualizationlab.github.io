@@ -1,35 +1,24 @@
-d3.tsv("data/publication.tsv", function (error,data_) {
-    if (error) throw error;
-
-    var minYear = 2017;
-
-    var data = data_.filter(d => new Date(d.Time).getFullYear() >= minYear);
-
-    // preprocess
-    data.forEach(d=>{
-        d.Time = new Date(d.Time);
-        d.Authors = d.Authors.split(',').map(n=>n.trim());
-    })
-    data.sort((a,b)=>b.Time-a.Time);
-
-    // seperate year
-    var dataByYear = d3.nest().key(k=>k.Time.getFullYear()).sortKeys((a,b)=>b-a).entries(data);
+function drawPub(data) {
+// seperate year
+    var dataByYear = d3.nest().key(k => k.Time.getFullYear()).sortKeys((a, b) => b - a).entries(data);
 
     var mainContain = d3.select('#paperPlacement');
-    var yearContain = mainContain.selectAll('div.pubYear').data(dataByYear)
-        .enter().append('div').attr('class','pubYear');
+    var yearContain_i = mainContain.selectAll('div.pubYear').data(dataByYear, d => d.key);
+    yearContain_i.exit().remove();
+    var yearContain = yearContain_i
+        .enter().append('div').attr('class', 'pubYear');
     yearContain.append('br');
-    yearContain.append('b').text(d=>d.key);
-    yearContain.append('div').attr('class','site_content');
-    yearContain.append('div').attr('class','top_border');
-    var publicationArea = yearContain.selectAll('div.publicationArea').data(d=>d.values)
-        .enter().append('div').attr('class','publicationArea')
-        .append('table').style('width','100%').style('margin-left','20px')
+    yearContain.append('b').text(d => d.key);
+    yearContain.append('div').attr('class', 'site_content');
+    yearContain.append('div').attr('class', 'top_border');
+    var publicationArea = mainContain.selectAll('div.pubYear').selectAll('div.publicationArea').data(d => d.values)
+        .enter().append('div').attr('class', 'publicationArea')
+        .append('table').style('width', '100%').style('margin-left', '20px')
         .append('tr');
-    publicationArea.append('th').attr('class','paperThumb').attr('width','15%')
-        .append('img').attr('src',d=>d.image).attr('width',200).attr('height',100);
-    publicationArea.append('th').attr('width','85%')
-        .html(d=>`<font color="${getColor(d.Code)}">[${d.Id}]</font>
+    publicationArea.append('th').attr('class', 'paperThumb').attr('width', '15%')
+        .append('img').attr('src', d => d.image).attr('width', 200).attr('height', 100);
+    publicationArea.append('th').attr('width', '85%')
+        .html(d => `<font color="${getColor(d.Code)}">[${d.Id}]</font>
                         <i>${d.Title}</i><br>
                         ${arraytoAuthor(d.Authors)} <br>
                         ${d.Venue}<br>
@@ -46,4 +35,21 @@ d3.tsv("data/publication.tsv", function (error,data_) {
         }
         return lasta;
     }
+}
+let pubCount = 10;
+d3.tsv("data/publication.tsv", function (error,data_) {
+    if (error) throw error;
+
+    var minYear = 2017;
+
+    datapub = data_.filter(d => new Date(d.Time).getFullYear() >= minYear);
+
+    // preprocess
+    datapub.forEach(d=>{
+        d.Time = new Date(d.Time);
+        d.Authors = d.Authors.split(',').map(n=>n.trim());
+    })
+    datapub.sort((a,b)=>b.Time-a.Time);
+
+    drawPub(datapub.filter((d,i)=>i<pubCount));
 });

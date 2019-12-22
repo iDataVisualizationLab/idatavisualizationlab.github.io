@@ -1,3 +1,14 @@
+$(document).ready(function(){
+    $(window).on('scroll', function(){
+        if( $(window).scrollTop() >= ($(document).height() - $(window).height()) ) {
+            if(datapub&&pubCount<datapub.length) {
+                pubCount += 5;
+                drawPub(datapub.filter((d, i) => i < pubCount));
+            }
+        }
+    }).scroll();
+
+})
 //Constants for the SVG
 var margin = {top: 0, right: 100, bottom: 5, left: 15};
 var width = site_content.getBoundingClientRect().width;
