@@ -78,7 +78,7 @@ function releasenode(d) {
 var data, data2;
 
 var minYear = 2008;
-var maxYear = 2021;
+var maxYear = 2022;
 var numYear = (maxYear - minYear);
 
 var sourceList = {};
@@ -439,11 +439,11 @@ d3.tsv("data/publication.tsv", function (error, data_) {
         optArray.push(termArray[i].term);
     }
     optArray = optArray.sort();
-    $(function () {
-        $("#search").autocomplete({
-            source: optArray
-        });
-    });
+    // $(function () {
+    //     $("#search").autocomplete({
+    //         source: optArray
+    //     });
+    // });
 });
 
 function recompute() {
