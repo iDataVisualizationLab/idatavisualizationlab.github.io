@@ -164,7 +164,7 @@ function getColor(category) {
   else if (category=="A")
     return "#dd4444"
   else{
-    return "#eee";    
+    return "#1c1c1c";
   }
 }
 

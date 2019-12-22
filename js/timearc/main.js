@@ -200,11 +200,11 @@ d3.tsv("data/publication.tsv", function (error, data_) {
         //if (d.year<20) return; 
 
         numberInputTerms++;
-
-        var list = d["Authors"].split(",");
+        var list = d["Authors"].split(",").map(l=>l.trim());
+        d["Authors"] = list.join(',')
         cccc++;
         for (var i = 0; i < list.length; i++) {
-            var term = list[i].trim();
+            var term = list[i];
             d[term] = 1;
 
             if (!terms[term]) {
@@ -771,19 +771,12 @@ function computeNodes() {
 function computeLinks() {
     links = [];
     relationshipMaxMax2 = 0;
-
+    let connectionpair = [/Vung PhamNgan Nguyen/,/Angus ForbesPaul Murray/];
     for (var i = 0; i < numNode; i++) {
         var term1 = nodes[i].name;
         for (var j = i + 1; j < numNode; j++) {
             var term2 = nodes[j].name;
-            if (relationship[term1 + "__" + term2]
-            //     && (term1 == "Tuan Dang" || term1 == "Tommy Dang" || term2 == "Tommy Dang"
-            //     || (term1 == "Vung Pham" && term2 == "Ngan Nguyen")
-            //     || (term1 == "Ngan Nguyen" && term2 == "Vung Pham")
-            //     || (term1 == "Angus Forbes" && term2 == "Paul Murray")
-            //     || (term1 == "Paul Murray" && term2 == "Angus Forbes")
-            // )
-            ) {
+            if (relationship[term1 + "__" + term2] && ((term1+term2).match(/Tuan Dang|Tommy Dang/)||connectionpair.find(c=>(term1+term2).match(c)||(term2+term1).match(c)))) {
                 var ordering = 0;
                 Object.keys(timearr).forEach(m=> {
                     if (m===0)
@@ -1068,7 +1061,7 @@ function mouseoveredLink(l) {
         data2.forEach(function (d) {
             var year = d.year;
             if (year == l.m) {
-                var list = d["Authors"];
+                var list = d["Authors"].split(',');
                 for (var i = 0; i < list.length; i++) {
                     if (term1 == list[i]) {
                         for (var j = 0; j < list.length; j++) {
