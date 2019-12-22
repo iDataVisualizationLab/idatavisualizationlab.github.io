@@ -178,6 +178,8 @@ var listYear = [];
 var timearr = {};
 d3.csv("data/people.csv", function(error,data){
     data.push({ID:"noavatar",img:"images/noavatar.jpg"})
+    for (let i = minYear;i<maxYear;i++)
+        data.push({ID:`${'Tommy Dang '}${i}`,img:`images/people/Tommy_pics/${i}.png`})
     initAvatar(data)
 });
 
@@ -287,9 +289,7 @@ d3.tsv("data/publication.tsv", function (error, data_) {
         else if (l.source.name == "Ngan Nguyen" && l.target.name == "Vung Pham")
             return 2;
         // Tuan Dang -- Tommy Dang
-        else if (l.source.name == "Tuan Dang" && l.target.name == "Tommy Dang")
-            return 0;
-        else if (l.source.name == "Tommy Dang" && l.target.name == "Tuan Dang")
+        else if (l.source.name.match(/Tuan Dang|Tommy Dang/) && l.target.name.match(/Tuan Dang|Tommy Dang/))
             return 0;
         // Huyen     
         else if (l.source.name == "Huyen Nguyen" || l.target.name == "Huyen Nguyen")
@@ -669,7 +669,8 @@ function computeNodes() {
         }
     });
 
-    numNode = Math.min(50, termArray.length);
+    // numNode = Math.min(50, termArray.length);
+    numNode =termArray.length;
     computeConnectivity(termArray, numNode);
     nodes = [];
     for (var i = 0; i < numNode; i++) {
@@ -935,13 +936,13 @@ function computeLinks() {
         })
         .style("stroke-dasharray", ("1, 1"))
         .style("stroke-width", function (d) {
-            if (d.name == "Tuan Dang" || d.name == "Tommy Dang")
+            if (d.name.match(/Tuan Dang|Tommy Dang/))
                 return 1;
             else
                 return 0.5;
         })
         .style("stroke", function (d) {
-            if (d.name == "Tuan Dang" || d.name == "Tommy Dang")
+            if (d.name.match(/Tuan Dang|Tommy Dang/))
                 return "#982";
             else
                 return "#565656";
@@ -957,10 +958,10 @@ function computeLinks() {
         .attr("r", 15)
         .style("fill-opacity",1)
         .style("fill", function(d){
-            let nodeimg = d3.select("#node_avatar" + fixstring(d.name));
+            let nodeimg = d3.select("#node_avatar" + fixstring(d.name.replace(/Tuan Dang|Tommy Dang/,'Tommy Dang '+(Math.round(d.year)+minYear))));
             if (nodeimg.empty())
                 return "url(#node_avatarnoavatar)"
-            return "url(#node_avatar" + fixstring(d.name) + ")"});
+            return "url(#node_avatar" + fixstring(d.name.replace('Tuan Dang','Tommy Dang '+(Math.round(d.year)+minYear))) + ")"});
     // nodeG.append("text")
     //     .attr("class", "nodeText")
     //     .text(function (d) {
@@ -1066,7 +1067,7 @@ function mouseoveredLink(l) {
         data2.forEach(function (d) {
             var year = d.year;
             if (year == l.m) {
-                var list = d["Authors"].split(",");
+                var list = d["Authors"];
                 for (var i = 0; i < list.length; i++) {
                     if (term1 == list[i]) {
                         for (var j = 0; j < list.length; j++) {
@@ -1390,8 +1391,8 @@ function updateTransition(durationTime, timeY) {  // timeY is the position of ti
 
         var minY = 0;
         var time_name = Object.keys(list[d.name]).sort((a,b)=>(+a) - (+b));
-        var minY = + time_name[0];
         var maxY = + time_name[time_name.length-1];
+        var minY = + time_name[0];
         d.minY = minY;
         d.maxY = maxY;
         d.xConnected = xStep + xScale(minY);
@@ -1462,25 +1463,21 @@ function detactTimeSeries() {
     var step = Math.min(20,(height-20)/termArray.length);
     var totalH = termArray.length * step;
 
-    var indexTuan = -1;
-    var indexTommy = -1;
+    var indexTommy = [];
     for (var i = 0; i < termArray.length; i++) {
-        if (nodes[termArray[i].nodeId].name == "Tuan Dang")
-            indexTuan = i;
-        if (nodes[termArray[i].nodeId].name == "Tommy Dang")
-            indexTommy = i;
-    }
-    if (indexTuan === -1) { // fix bug if use data >2017
-        indexTuan = indexTommy;
+        if (nodes[termArray[i].nodeId].name.match(/Tuan Dang|Tommy Dang/))
+            indexTommy.push(i);
     }
     var count = 0;
     for (var i = 0; i < termArray.length; i++) {
         // Make sure Tommy Dang and Tuan Dang have the same y position
         nodes[termArray[i].nodeId].y = (height - totalH) / 2 - 5 + count * step;
-        if (i != indexTommy)
+        if (indexTommy.indexOf(i)===-1) // not tommy
             count++;
     }
-    nodes[termArray[indexTommy].nodeId].y = nodes[termArray[indexTuan].nodeId].y;
+    indexTommy.forEach(d=>{
+        nodes[termArray[d].nodeId].y = nodes[termArray[indexTommy[Math.round(indexTommy.length/2)]].nodeId].y;
+    })
     //debugger;
     force.stop();
 

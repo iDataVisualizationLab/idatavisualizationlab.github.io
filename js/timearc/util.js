@@ -306,11 +306,13 @@ function initAvatar(data) {
         .attr("height", 1)
         .attr("preserveAspectRatio", "xMinYMin slice")
         .on("error", function(){
-            let el = d3.select(this);
-            el.attr("xlink:href", "images/noavatar.jpg");
-            el.on("error", null);
+            setTimeout(()=>{
+                let el = d3.select(this);
+                el.attr("xlink:href", "images/noavatar.jpg");
+                el.on("error", null);
+            },100)
         })
 }
 function fixstring(str){
-    return str.toLowerCase().replace(' ','_');
+    return str.toLowerCase().replace(/ /g,'_');
 }
