@@ -949,6 +949,7 @@ function computeLinks() {
         });
 
     svg.selectAll(".nodeG").remove();
+
     nodeG = svg.selectAll(".nodeG")
         .data(pNodes).enter().append("g")
         .attr("class", "nodeG")
@@ -1393,7 +1394,7 @@ function updateTransition(durationTime, timeY) {  // timeY is the position of ti
         var time_name = Object.keys(list[d.name]).sort((a,b)=>(+a) - (+b));
         var maxY = + time_name[time_name.length-1];
         var minY = + time_name[0];
-        d.minY = minY;
+        d.minY = d.minY_o||minY;
         d.maxY = maxY;
         d.xConnected = xStep + xScale(minY);
         return "translate(" + d.xConnected + "," + d.y + ")"
