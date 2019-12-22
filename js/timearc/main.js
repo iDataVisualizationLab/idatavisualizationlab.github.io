@@ -1456,7 +1456,7 @@ function detactTimeSeries() {
 
     var step = Math.min(20,(height-20)/termArray.length);
     var totalH = termArray.length * step;
-
+    var middle = Math.round((termArray.length-1)/2);
     var indexTommy = [];
     for (var i = 0; i < termArray.length; i++) {
         if (nodes[termArray[i].nodeId].name.match(/Tuan Dang|Tommy Dang/))
@@ -1465,13 +1465,19 @@ function detactTimeSeries() {
     var count = 0;
     for (var i = 0; i < termArray.length; i++) {
         // Make sure Tommy Dang and Tuan Dang have the same y position
-        nodes[termArray[i].nodeId].y = (height - totalH) / 2 - 5 + count * step;
         if (indexTommy.indexOf(i)===-1) // not tommy
+        {
+            if(count ===middle)
+                count++;
+            nodes[termArray[i].nodeId].y = (height - totalH) / 2 - 5 + count * step;
             count++;
+        }else{
+            nodes[termArray[i].nodeId].y = (height - totalH) / 2 - 5+ middle * step;
+        }
     }
-    indexTommy.forEach(d=>{
-        nodes[termArray[d].nodeId].y = nodes[termArray[indexTommy[Math.round(indexTommy.length/2)]].nodeId].y;
-    })
+    // indexTommy.forEach(d=>{
+    //     nodes[termArray[d].nodeId].y = nodes[termArray[indexTommy[Math.round(indexTommy.length/2)]].nodeId].y;
+    // })
     //debugger;
     force.stop();
 
