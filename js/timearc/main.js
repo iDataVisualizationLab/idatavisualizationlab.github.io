@@ -882,6 +882,7 @@ function computeLinks() {
     linkArcs = svg.selectAll(".linkArc")
         .data(links).enter().append("path")
         .attr("class", "linkArc")
+        .style("fill", "none")
         .style("stroke", function (d) {
             if (d.count == 1) {
                 return getColor(d.type[0]);
@@ -900,6 +901,7 @@ function computeLinks() {
     linkArcs2 = svg.selectAll(".linkArc2")
         .data(links).enter().append("path")
         .attr("class", "linkArc2")
+        .style("fill", "none")
         .style("stroke", "#0f0")
         .style("stroke-opacity", 0)
         .style("stroke-width", function (d) {
@@ -1043,6 +1045,7 @@ function searchNode() {
 }
 
 function mouseoveredLink(l) {
+    nodeG.style('pointer-events','none');
     if (force.alpha() == 0) {
         // mouseovered(l.source);
 
@@ -1162,6 +1165,7 @@ function mouseoveredLink(l) {
 }
 
 function mouseoutedLink(l) {
+    nodeG.style('pointer-events','all');
     if (force.alpha() == 0) {
         svg.selectAll(".linkTilte").remove();
         svg.selectAll(".linkArc")
