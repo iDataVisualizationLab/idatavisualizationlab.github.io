@@ -107,7 +107,8 @@ var termArray, termArray, termArray;
 var relationship;
 var termMaxMax, termMaxMax2, termMaxMax3;
 var terms;
-var NodeG;
+var nodeG;
+var nodeG_dummy;
 
 var xStep = 0;
 // if (width > 900)
@@ -176,10 +177,12 @@ var optArray = [];   // FOR search box
 var numberInputTerms = 0;
 var listYear = [];
 var timearr = {};
+let imagerange = d3.range(2007,2019+1); // tommy pic years
 d3.csv("data/people.csv", function(error,data){
     data.push({ID:"noavatar",img:"images/noavatar.jpg"})
-    for (let i = minYear;i<maxYear;i++)
+    imagerange.forEach(i=>{
         data.push({ID:`${'Tommy Dang '}${i}`,img:`images/people/Tommy_pics/${i}.png`})
+    })
     initAvatar(data);
     data2timearc();
 });
@@ -933,15 +936,15 @@ function computeLinks() {
         })
         .style("stroke-dasharray", ("1, 1"))
         .style("stroke-width", function (d) {
-            if (d.name.match(/Tuan Dang|Tommy Dang/))
-                return 1;
-            else
+            // if (d.name.match(/Tuan Dang|Tommy Dang/))
+            //     return 1;
+            // else
                 return 0.5;
         })
         .style("stroke", function (d) {
-            if (d.name.match(/Tuan Dang|Tommy Dang/))
-                return "#982";
-            else
+            // if (d.name.match(/Tuan Dang|Tommy Dang/))
+            //     return "#982";
+            // else
                 return "#565656";
         });
 
@@ -949,40 +952,20 @@ function computeLinks() {
 
     nodeG = svg.selectAll(".nodeG")
         .data(pNodes).enter().append("g")
-        .attr("class", "nodeG")
+        .attr("class", "nodeG");
 
     nodeG.append("circle")
         .attr("class", "sum")
         .attr("r", 15)
         .style("fill-opacity",1)
-        .style("fill", function(d){
-            let nodeimg = d3.select("#node_avatar" + fixstring(d.name.replace(/Tuan Dang|Tommy Dang/,'Tommy Dang '+(Math.round(d.year)+minYear))));
+        .style("fill", function(d) {
+            let image = "#node_avatar" + fixstring(d.name.replace(/Tuan Dang|Tommy Dang/, 'Tommy Dang ' + (Math.round(d.connect[0]) + minYear)));
+            let nodeimg = d3.select(image);
             if (nodeimg.empty())
-                return "url(#node_avatarnoavatar)"
-            return "url(#node_avatar" + fixstring(d.name.replace('Tuan Dang','Tommy Dang '+(Math.round(d.year)+minYear))) + ")"});
-    // nodeG.append("text")
-    //     .attr("class", "nodeText")
-    //     .text(function (d) {
-    //         return d.name
-    //     })
-    //     .attr("dy", "3px")
-    //     .style("fill", function (d) {
-    //         if (d.name == "Tuan Dang" || d.name == "Tommy Dang")
-    //             return "#982";
-    //         else
-    //             return "#aaa";
-    //     })
-    //     .style("font-weight", function (d) {
-    //         if (d.name == "Tuan Dang" || d.name == "Tommy Dang")
-    //             return "bold";
-    //         else
-    //             return "";
-    //     })
-    //     .style("fill-opacity", 1)
-    //     .style("text-anchor", "end")
-    //     .style("text-shadow", "1px 1px 0 rgba(0, 0, 0, 0.8")
-    //     .attr("font-family", "sans-serif")
-    //     .attr("font-size", "12px");
+                return "url(#node_avatarnoavatar)";
+            return `url(${image})`;
+        })
+
     nodeG.on('mouseover', mouseovered)
         .on("mouseout", mouseouted);
 
@@ -1181,7 +1164,8 @@ function mouseoutedLink(l) {
 }
 
 
-function mouseovered(d) {
+function mouseovered() {
+    let d = d3.select(this).datum();
     nodeG.style('pointer-events','none');
     d3.select(this).style('pointer-events','all');
     if (force.alpha() > 0) return;
@@ -1264,7 +1248,8 @@ function mouseovered(d) {
 }
 
 
-function mouseouted(d) {
+function mouseouted() {
+    let d = d3.select(this).datum();
     if (force.alpha() > 0) return;
 
     nodeG.style("opacity", 1);
@@ -1469,6 +1454,7 @@ function detactTimeSeries() {
     }
     var middle;
     var count = 0;
+    var nodeTommy=[];
     for (var i = 0; i < termArray.length; i++) {
         // Make sure Tommy Dang and Tuan Dang have the same y position
         if (indexTommy.indexOf(i)===-1) // not tommy
@@ -1479,19 +1465,49 @@ function detactTimeSeries() {
             count++;
         }else{
             middle = middle===undefined?count:middle;
-            nodes[termArray[i].nodeId].y = (height - totalH) / 2 - 5+ middle * step;
+            nodes[termArray[i].nodeId].y = (height - totalH) / 2 - 5+ middle * step
+            nodeTommy.push(nodes[termArray[i].nodeId])
         }
     }
-    // indexTommy.forEach(d=>{
-    //     nodes[termArray[d].nodeId].y = nodes[termArray[indexTommy[Math.round(indexTommy.length/2)]].nodeId].y;
-    // })
+
     //debugger;
     force.stop();
 
     updateTransition(2000, height - 4);
     setTimeout(setBackground, 3000);
+    // add professor images
+    professor_images(nodeTommy);
 }
 
+function professor_images(nodeTommy){
+    let timagadata = imagerange.map(y=>{
+        if (nodeTommy.find(d=>Math.round(d.minY)===(y-minYear))===undefined)
+        {
+            return y-minYear;
+        }
+    }).filter(d=>d!==undefined);
+    svg.selectAll(".nodeG_dummy").remove();
+    nodeG.filter(d=>nodeTommy.find(e=>e===d)).select('circle')
+        .style("fill", function(d){
+        let image = fixstring("#node_avatarTommy Dang "+(Math.round(d.minY)+minYear));
+        return `url(${image})`})
+    nodeG_dummy= svg.selectAll(".nodeG_dummy")
+        .data(timagadata).enter().append("g")
+        .attr("class", "nodeG_dummy").append("circle")
+        .attr("class", "sum")
+        .attr("r", 15)
+        .style("fill-opacity",1)
+        .style("fill", function(y){
+            let image = fixstring("#node_avatarTommy Dang "+(y+minYear));
+            return `url(${image})`})
+        .attr("transform", function (y) {
+            var newX = xStep + xScale(y);
+            return "translate(" + newX + "," + nodeTommy[0].y + ")"
+        }).style('opacity',0);
+    nodeG_dummy.transition().duration(500).style('opacity',1);
+    nodeG_dummy.on('mouseover', mouseovered(d<Math.round(nodeTommy[1].minY)?nodeTommy[0]:nodeTommy[1]))
+        .on("mouseout", d=>mouseovered(d<Math.round(nodeTommy[1].minY)?nodeTommy[0]:nodeTommy[1]));
+}
 
 
 
