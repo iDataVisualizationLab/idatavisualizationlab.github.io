@@ -1500,8 +1500,9 @@ function professor_images(nodeTommy){
             return "translate(" + newX + "," + nodeTommy[0].y + ")"
         }).style('opacity',0);
     nodeG_dummy.transition().duration(500).style('opacity',1);
-    nodeG_dummy.on('mouseover', d=>mouseovered(d<Math.round(nodeTommy[1].minY)?nodeTommy[0]:nodeTommy[1]))
-        .on("mouseout", d=>mouseovered(d<Math.round(nodeTommy[1].minY)?nodeTommy[0]:nodeTommy[1]));
+    nodeG_dummy.on('mouseover', d=>
+        _.bind(mouseovered,nodeG.filter(e=>e.name===(d<Math.round(nodeTommy[1].minY)?nodeTommy[0]:nodeTommy[1]).name).node())())
+        .on("mouseout", d=>_.bind(mouseovered,nodeG.filter(e=>e.name===(d<Math.round(nodeTommy[1].minY)?nodeTommy[0]:nodeTommy[1]).name).node())());
 }
 
 
