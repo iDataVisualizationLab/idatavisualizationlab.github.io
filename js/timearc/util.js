@@ -288,7 +288,7 @@ function initAvatar(data) {
         .enter()
         .append('defs')
         .append("pattern")
-        .attr("id", function(d){return "node_avatar" + fixstring(d.ID)})
+        .attr("id", function(d){return "node_avatar" + fixstring(d.Id)})
         .attr("width", 1)
         .attr("height", 1)
         .attr("patternContentUnits", "objectBoundingBox").on('error',function(){console.log(this.src)});

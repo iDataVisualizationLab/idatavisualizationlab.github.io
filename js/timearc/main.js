@@ -178,289 +178,284 @@ var numberInputTerms = 0;
 var listYear = [];
 var timearr = {};
 let imagerange = d3.range(2007,2019+1); // tommy pic years
-d3.csv("data/people.csv", function(error,data){
-    data.push({ID:"noavatar",img:"images/noavatar.jpg"})
-    imagerange.forEach(i=>{
-        data.push({ID:`${'Tommy Dang '}${i}`,img:`images/people/Tommy_pics/${i}.png`})
-    })
-    initAvatar(data);
-    data2timearc();
-});
+// d3.csv("data/people.csv", function(error,data){
+//     data.push({ID:"noavatar",img:"images/noavatar.jpg"})
+//     imagerange.forEach(i=>{
+//         data.push({ID:`${'Tommy Dang '}${i}`,img:`images/people/Tommy_pics/${i}.png`})
+//     })
+//     initAvatar(data);
+//     data2timearc();
+// });
 
 function data2timearc() {
-    d3.tsv("data/publication.tsv", function (error, data_) {
-        if (error) throw error;
-        // data = data_.filter(d => +d.Time >= minYear);
-        data = data_;
+    var time2num = d3.time.scale().domain([new Date('Jan ' + minYear), new Date('Jan ' + (minYear + 1))]);
+    terms = new Object();
+    termMaxMax = 1;
+    var cccc = 0;
+    data.forEach(function (d, i) {
+        // var year = time2num(new Date(d["Time"]));
+        var year = time2num(new Date('Jan ' + (new Date(d["Time"]).getFullYear())));
+        d.year = year;
+        timearr[year] = 1;
+        //if (d.year<20) return;
 
-        var time2num = d3.time.scale().domain([new Date('Jan ' + minYear), new Date('Jan ' + (minYear + 1))]);
-        terms = new Object();
-        termMaxMax = 1;
-        var cccc = 0;
-        data.forEach(function (d, i) {
-            // var year = time2num(new Date(d["Time"]));
-            var year = time2num(new Date('Jan ' + (new Date(d["Time"]).getFullYear())));
-            d.year = year;
-            timearr[year] = 1;
-            //if (d.year<20) return;
+        numberInputTerms++;
+        var list = d["Authors"].slice();
+        // d["Authors"] = list.join(',')
+        cccc++;
+        for (var i = 0; i < list.length; i++) {
+            var term = list[i];
+            d[term] = 1;
 
-            numberInputTerms++;
-            var list = d["Authors"].split(",").map(l => l.trim());
-            d["Authors"] = list.join(',')
-            cccc++;
-            for (var i = 0; i < list.length; i++) {
-                var term = list[i];
-                d[term] = 1;
-
-                if (!terms[term]) {
-                    terms[term] = new Object();
-                    terms[term].count = 1;
-                    terms[term].max = 0;
-                    terms[term].maxYear = -100;   // initialized negative
-                    terms[term].category = d.Conference;
-                    terms[term].InfoVis = {};
-                    terms[term].VAST = {};
-                    terms[term].SciVis = {};
-                    terms[term].paper = {};
-                }
-                else
-                    terms[term].count++;
-                terms[term].paper[d.Id] = d;
-
-                if (!terms[term][year]) {
-                    terms[term][year] = 1;
-                }
-                else {
-                    terms[term][year]++;
-                    if (terms[term][year] > terms[term].max) {
-                        terms[term].max = terms[term][year];
-                        terms[term].maxYear = year;
-                        if (terms[term].max > termMaxMax)
-                            termMaxMax = terms[term].max;
-                    }
-                }
-
-                if (d.Conference == "InfoVis" || d.Conference == "Comedy") {
-                    if (!terms[term].InfoVis[year]) {
-                        terms[term].InfoVis[year] = 1;
-                    }
-                    else {
-                        terms[term].InfoVis[year]++;
-                    }
-                }
-                else if (d.Conference == "VAST" || d.Conference == "Action") {
-                    if (!terms[term].VAST[year]) {
-                        terms[term].VAST[year] = 1;
-                    }
-                    else {
-                        terms[term].VAST[year]++;
-                    }
-                }
-                else if (d.Conference == "SciVis" || d.Conference == "Drama") {
-                    if (!terms[term].SciVis[year]) {
-                        terms[term].SciVis[year] = 1;
-                    }
-                    else {
-                        terms[term].SciVis[year]++;
-                    }
-                }
+            if (!terms[term]) {
+                terms[term] = new Object();
+                terms[term].count = 1;
+                terms[term].max = 0;
+                terms[term].maxYear = -100;   // initialized negative
+                terms[term].category = d.Conference;
+                terms[term].InfoVis = {};
+                terms[term].VAST = {};
+                terms[term].SciVis = {};
+                terms[term].paper = {};
             }
-        });
-        setupSliderScale(svg);
-        // drawBackground();
-        drawColorLegend();
-        drawTimeLegend();
-
-
-        readTermsAndRelationships();
-        computeNodes();
-        computeLinks();
-
-        //force.linkStrength(function(l) {
-        //     return 0.1;
-        // });
-
-        force.linkDistance(function (l) {
-
-            // Angus Forbes -- Paul Murray
-            if (l.source.name == "Paul Murray" && l.target.name == "Angus Forbes")
-                return linkWeight;
-            else if (l.source.name == "Angus Forbes" && l.target.name == "Paul Murray")
-                return linkWeight;
-
-            // Ngan -- Vung
-            if (l.source.name.match(/Vung Pham|Ngan Nguyen/) && l.target.name.match(/Vung Pham|Ngan Nguyen/))
-                return linkWeight;
-            // Tuan Dang -- Tommy Dang
-            else if (l.source.name.match(/Tuan Dang|Tommy Dang/) && l.target.name.match(/Tuan Dang|Tommy Dang/))
-                return 0;
-            // Huyen
-            else if (l.source.name == "Huyen Nguyen" || l.target.name == "Huyen Nguyen")
-                return (16 * (l.m - 1)) + (maxYear - minYear); // why 15 why 50?
-
-            else if (Math.round(l.m) + minYear < 2016)
-                return (5 * (l.m - 1));
             else
-                return (16 * (l.m - 1));
-        });
+                terms[term].count++;
+            terms[term].paper[d.Id] = d;
 
-        /// The second force directed layout ***********
-        for (var i = 0; i < nodes.length; i++) {
-            var nod = nodes[i];
-            if (!nodes2List[nod.name] && nodes2List[nod.name] != 0) {
-                var newNod = {};
-                newNod.name = nod.name;
-                newNod.id = nodes2.length;
-                nodes2List[newNod.name] = newNod.id;
-                nodes2.push(newNod);
-            }
-        }
-
-        var selectedTime = {};
-        var linksList = {};
-        list5 = {};
-        // selectedTime[20] = 1;
-        // linksList[20] = [];
-        // list5[20] = {};
-        // selectedTime[21] = 1;
-        // linksList[21] = [];
-        // list5[21] = {};
-        // selectedTime[22] = 1;
-        // linksList[22] = [];
-        // list5[22] = {};
-        // selectedTime[23] = 1;
-        // linksList[23] = [];
-        // list5[23] = {};
-        // selectedTime[24] = 1;
-        // linksList[24] = [];
-        // list5[24] = {};
-
-        for (var i = 0; i < links.length; i++) {
-            var l = links[i];
-            var name1 = nodes[l.source].name;
-            var name2 = nodes[l.target].name;
-            var node1 = nodes2List[name1];
-            var node2 = nodes2List[name2];
-            if (!links2List[name1 + "_" + name2] && links2List[name1 + "_" + name2] != 0) {
-                var newl = {};
-                newl.source = node1;
-                newl.target = node2;
-                newl.count = l.count;
-                if (!newl[l.m])
-                    newl[l.m] = l.count;
-                else
-                    newl[l.m] += l.count;
-
-                if (list5[l.m]) {
-                    list5[l.m][name1] = 1;
-                    list5[l.m][name2] = 1;
-                }
-
-                links2List[name1 + "_" + name2] = links2.length;
-                links2.push(newl);
+            if (!terms[term][year]) {
+                terms[term][year] = 1;
             }
             else {
-                var oldl = links2[links2List[name1 + "_" + name2]];
-                if (!oldl[l.m])
-                    oldl[l.m] = l.count;
-                else
-                    oldl[l.m] += l.count;
-
-                if (list5[l.m]) {
-                    list5[l.m][name1] = 1;
-                    list5[l.m][name2] = 1;
+                terms[term][year]++;
+                if (terms[term][year] > terms[term].max) {
+                    terms[term].max = terms[term][year];
+                    terms[term].maxYear = year;
+                    if (terms[term].max > termMaxMax)
+                        termMaxMax = terms[term].max;
                 }
-
-                oldl.count += l.count;
             }
-        }
 
-
-        force.nodes(nodes)
-            .links(links)
-            .start(100, 150, 200);
-
-        var link2 = svg2.selectAll(".link2")
-            .data(links2)
-            .enter().append("line")
-            .attr("class", "link2")
-            .style("stroke", function (d) {
-                if (d.count == 1) {
-                    return "#fbb";
+            if (d.Conference == "InfoVis" || d.Conference == "Comedy") {
+                if (!terms[term].InfoVis[year]) {
+                    terms[term].InfoVis[year] = 1;
                 }
                 else {
-                    return "#f00";
+                    terms[term].InfoVis[year]++;
                 }
-
-            })
-            .style("stroke-width", function (d) {
-                return 0.0 + 0.75 * linkScale(d.count);
-            });
-
-        var node2 = svg2.selectAll(".nodeText2")
-            .data(nodes2)
-            .enter().append("text")
-            .attr("class", "nodeText2")
-            .text(function (d) {
-                return d.name
-            })
-            .attr("dy", ".35em")
-            .style("fill", "#000")
-            .style("text-anchor", "middle")
-            .style("text-shadow", "1px 1px 0 rgba(255, 255, 255, 0.6")
-            .style("font-weight", function (d) {
-                return d.isSearchTerm ? "bold" : "";
-            })
-            .attr("dy", ".21em")
-            .attr("font-family", "sans-serif")
-            .attr("font-size", "12px");
-
-        node2.append("title")
-            .text(function (d) {
-                return d.name;
-            });
-
-        force2.on("tick", function () {
-            link2.attr("x1", function (d) {
-                return d.source.x;
-            })
-                .attr("y1", function (d) {
-                    return d.source.y;
-                })
-                .attr("x2", function (d) {
-                    return d.target.x;
-                })
-                .attr("y2", function (d) {
-                    return d.target.y;
-                });
-
-            node2.attr("x", function (d) {
-                return d.x;
-            })
-                .attr("y", function (d) {
-                    return d.y;
-                });
-        });
-
-
-        force.on("tick", function () {
-            update();
-        });
-        force.on("end", function () {
-            detactTimeSeries();
-        });
-
-
-        for (var i = 0; i < termArray.length; i++) {
-            optArray.push(termArray[i].term);
+            }
+            else if (d.Conference == "VAST" || d.Conference == "Action") {
+                if (!terms[term].VAST[year]) {
+                    terms[term].VAST[year] = 1;
+                }
+                else {
+                    terms[term].VAST[year]++;
+                }
+            }
+            else if (d.Conference == "SciVis" || d.Conference == "Drama") {
+                if (!terms[term].SciVis[year]) {
+                    terms[term].SciVis[year] = 1;
+                }
+                else {
+                    terms[term].SciVis[year]++;
+                }
+            }
         }
-        optArray = optArray.sort();
-        // $(function () {
-        //     $("#search").autocomplete({
-        //         source: optArray
-        //     });
-        // });
     });
+    setupSliderScale(svg);
+    // drawBackground();
+    drawColorLegend();
+    drawTimeLegend();
+
+
+    readTermsAndRelationships();
+    computeNodes();
+    computeLinks();
+
+    //force.linkStrength(function(l) {
+    //     return 0.1;
+    // });
+
+    force.linkDistance(function (l) {
+
+        // Angus Forbes -- Paul Murray
+        if (l.source.name == "Paul Murray" && l.target.name == "Angus Forbes")
+            return linkWeight;
+        else if (l.source.name == "Angus Forbes" && l.target.name == "Paul Murray")
+            return linkWeight;
+
+        // Ngan -- Vung
+        if (l.source.name.match(/Vung Pham|Ngan Nguyen/) && l.target.name.match(/Vung Pham|Ngan Nguyen/))
+            return linkWeight;
+        // Tuan Dang -- Tommy Dang
+        else if (l.source.name.match(/Tuan Dang|Tommy Dang/) && l.target.name.match(/Tuan Dang|Tommy Dang/))
+            return 0;
+        // Huyen
+        else if (l.source.name == "Huyen Nguyen" || l.target.name == "Huyen Nguyen")
+            return (16 * (l.m - 1)) + (maxYear - minYear); // why 15 why 50?
+
+        else if (Math.round(l.m) + minYear < 2016)
+            return (5 * (l.m - 1));
+        else
+            return (16 * (l.m - 1));
+    });
+
+    /// The second force directed layout ***********
+    for (var i = 0; i < nodes.length; i++) {
+        var nod = nodes[i];
+        if (!nodes2List[nod.name] && nodes2List[nod.name] != 0) {
+            var newNod = {};
+            newNod.name = nod.name;
+            newNod.id = nodes2.length;
+            nodes2List[newNod.name] = newNod.id;
+            nodes2.push(newNod);
+        }
+    }
+
+    var selectedTime = {};
+    var linksList = {};
+    list5 = {};
+    // selectedTime[20] = 1;
+    // linksList[20] = [];
+    // list5[20] = {};
+    // selectedTime[21] = 1;
+    // linksList[21] = [];
+    // list5[21] = {};
+    // selectedTime[22] = 1;
+    // linksList[22] = [];
+    // list5[22] = {};
+    // selectedTime[23] = 1;
+    // linksList[23] = [];
+    // list5[23] = {};
+    // selectedTime[24] = 1;
+    // linksList[24] = [];
+    // list5[24] = {};
+
+    for (var i = 0; i < links.length; i++) {
+        var l = links[i];
+        var name1 = nodes[l.source].name;
+        var name2 = nodes[l.target].name;
+        var node1 = nodes2List[name1];
+        var node2 = nodes2List[name2];
+        if (!links2List[name1 + "_" + name2] && links2List[name1 + "_" + name2] != 0) {
+            var newl = {};
+            newl.source = node1;
+            newl.target = node2;
+            newl.count = l.count;
+            if (!newl[l.m])
+                newl[l.m] = l.count;
+            else
+                newl[l.m] += l.count;
+
+            if (list5[l.m]) {
+                list5[l.m][name1] = 1;
+                list5[l.m][name2] = 1;
+            }
+
+            links2List[name1 + "_" + name2] = links2.length;
+            links2.push(newl);
+        }
+        else {
+            var oldl = links2[links2List[name1 + "_" + name2]];
+            if (!oldl[l.m])
+                oldl[l.m] = l.count;
+            else
+                oldl[l.m] += l.count;
+
+            if (list5[l.m]) {
+                list5[l.m][name1] = 1;
+                list5[l.m][name2] = 1;
+            }
+
+            oldl.count += l.count;
+        }
+    }
+
+
+    force.nodes(nodes)
+        .links(links)
+        .start(100, 150, 200);
+
+    var link2 = svg2.selectAll(".link2")
+        .data(links2)
+        .enter().append("line")
+        .attr("class", "link2")
+        .style("stroke", function (d) {
+            if (d.count == 1) {
+                return "#fbb";
+            }
+            else {
+                return "#f00";
+            }
+
+        })
+        .style("stroke-width", function (d) {
+            return 0.0 + 0.75 * linkScale(d.count);
+        });
+
+    var node2 = svg2.selectAll(".nodeText2")
+        .data(nodes2)
+        .enter().append("text")
+        .attr("class", "nodeText2")
+        .text(function (d) {
+            return d.name
+        })
+        .attr("dy", ".35em")
+        .style("fill", "#000")
+        .style("text-anchor", "middle")
+        .style("text-shadow", "1px 1px 0 rgba(255, 255, 255, 0.6")
+        .style("font-weight", function (d) {
+            return d.isSearchTerm ? "bold" : "";
+        })
+        .attr("dy", ".21em")
+        .attr("font-family", "sans-serif")
+        .attr("font-size", "12px");
+
+    node2.append("title")
+        .text(function (d) {
+            return d.name;
+        });
+
+    force2.on("tick", function () {
+        link2.attr("x1", function (d) {
+            return d.source.x;
+        })
+            .attr("y1", function (d) {
+                return d.source.y;
+            })
+            .attr("x2", function (d) {
+                return d.target.x;
+            })
+            .attr("y2", function (d) {
+                return d.target.y;
+            });
+
+        node2.attr("x", function (d) {
+            return d.x;
+        })
+            .attr("y", function (d) {
+                return d.y;
+            });
+    });
+
+
+    force.on("tick", function () {
+        update();
+    });
+    force.on("end", function () {
+        detactTimeSeries();
+    });
+
+
+    for (var i = 0; i < termArray.length; i++) {
+        optArray.push(termArray[i].term);
+    }
+    optArray = optArray.sort();
+    // $(function () {
+    //     $("#search").autocomplete({
+    //         source: optArray
+    //     });
+    // });
+
 }
 
 
@@ -569,7 +564,7 @@ function readTermsAndRelationships() {
     ttt = {};
     data2.forEach(function (d) {
         var year = d.year;
-        var list = d["Authors"].split(",");
+        var list = d["Authors"].slice();
         for (var i = 0; i < list.length; i++) {
             var term1 = list[i];
             for (var j = 0; j < list.length; j++) {
@@ -1049,7 +1044,7 @@ function mouseoveredLink(l) {
         data2.forEach(function (d) {
             var year = d.year;
             if (year == l.m) {
-                var list = d["Authors"].split(',');
+                var list = d["Authors"].slice();
                 for (var i = 0; i < list.length; i++) {
                     if (term1 == list[i]) {
                         for (var j = 0; j < list.length; j++) {
