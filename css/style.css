@@ -1316,3 +1316,8 @@ img:hover{
 .d3-tip.n {
   transform: translateY(-100%);
 }
+
+#left_panel {
+  background-color: #eeeeee;
+  border: #dcdcdc;
+}

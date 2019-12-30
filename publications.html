@@ -2,6 +2,7 @@
 <head>
     <title>iDVL Publications</title>
     <link rel="shortcut icon" href="images/iDVLlogo/V2.png">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
     <link rel="stylesheet" type="text/css" href="css/style.css"/>
     <!---->
     <!--<script-->
@@ -10,15 +11,34 @@
     <!--crossorigin="anonymous">-->
     <!--</script>-->
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
     <script src="js/database/dexie.js"></script>
 </head>
 <body style="height: 100vh;">
 
 <div id="header"></div>
-<div id="site_content" style="overflow: visible;">
-    <div class="content" id="timearc" style="width:100%;">
+
+<div class="row" style="margin: 0">
+    <div id="left_panel" style="height: 100%; width:200px">
+        <div class="col">
+            <span>Publication displayed:</span>
+            <h1 class="align-content-center" id="pub_num" style="text-align: center;font-size: x-large;font-weight: bold"></h1>
+        </div>
+        <div class="col">
+            <div class="input-group md-form form-sm form-2 pl-0">
+                <input class="form-control my-0 py-1 red-border" type="text" placeholder="Search" aria-label="Search">
+                <div class="input-group-append">
+    <span class="input-group-text red lighten-3" id="basic-text1"><i class="fas fa-search text-grey"
+                                                                     aria-hidden="true"></i></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="content" class="col" id="timearc" style="width: calc(100% - 220px);">
 
     </div>
+</div>
+<div id="site_content" style="overflow: visible;">
     <div class="content fullPage publicationPage">
         <div id="paperPlacement" class="infinite-scroll">
 

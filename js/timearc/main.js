@@ -12,7 +12,7 @@ $(document).ready(function(){
 })
 //Constants for the SVG
 var margin = {top: 0, right: 100, bottom: 5, left: 15};
-var width = site_content.getBoundingClientRect().width;
+var width = timearc.getBoundingClientRect().width;
 // var width = document.body.clientWidth;
 var height = 800 - margin.top - margin.bottom;
 
@@ -20,7 +20,6 @@ var height = 800 - margin.top - margin.bottom;
 
 //Append a SVG to the body of the html page. Assign this SVG as an object to svg
 var tip = d3.tip().attr('class', 'd3-tip').direction(function(d) {
-    console.log(d)
     if (d.y >height/2) return 's'
     return 'n'
 }).html(function(d) {
@@ -89,7 +88,7 @@ function releasenode(d) {
 
 var data, data2;
 
-var minYear = 2008;
+var minYear = 2006;
 var maxYear = 2022;
 var numYear = (maxYear - minYear);
 
@@ -1162,6 +1161,7 @@ function mouseoutedLink(l) {
 function mouseovered() {
     let d = d3.select(this).datum();
     nodeG.style('pointer-events','none');
+    nodeG_dummy.style("opacity", 0);
     d3.select(this).style('pointer-events','all');
     if (force.alpha() > 0) return;
     var list = new Object();
@@ -1228,7 +1228,6 @@ function mouseovered() {
     nodeG.transition().duration(500).attr("transform", function (n) {
         if (list[n.name] && n.name != d.name) {
             var newX = xStep + xScale(list[n.name].year);
-            console.log(newX)
             return "translate(" + newX + "," + n.y + ")"
         }
         else {
@@ -1244,9 +1243,8 @@ function mouseovered() {
 
 
 function mouseouted() {
-    let d = d3.select(this).datum();
     if (force.alpha() > 0) return;
-
+    nodeG_dummy.style("opacity", 1);
     nodeG.style("opacity", 1);
     svg.selectAll(".layerInfoVis")
         .style("fill-opacity", 1);
@@ -1498,11 +1496,12 @@ function professor_images(nodeTommy){
         .attr("transform", function (y) {
             var newX = xStep + xScale(y);
             return "translate(" + newX + "," + nodeTommy[0].y + ")"
-        }).style('opacity',0);
+        })
+        .style('opacity',0);
     nodeG_dummy.transition().duration(500).style('opacity',1);
     nodeG_dummy.on('mouseover', d=>
         _.bind(mouseovered,nodeG.filter(e=>e.name===(d<Math.round(nodeTommy[1].minY)?nodeTommy[0]:nodeTommy[1]).name).node())())
-        .on("mouseout", d=>_.bind(mouseovered,nodeG.filter(e=>e.name===(d<Math.round(nodeTommy[1].minY)?nodeTommy[0]:nodeTommy[1]).name).node())());
+        .on("mouseout", mouseouted);
 }
 
 

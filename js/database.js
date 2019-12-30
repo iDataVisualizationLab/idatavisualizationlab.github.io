@@ -20,7 +20,11 @@ d3.csv("data/people.csv", function(error,people_data){
 
         db.people.bulkPut(people_data);
         db.publication.bulkPut(data_).then(()=>
-            (data=data_,data2timearc(data)))
+            (data=data_,updatefilter(),data2timearc(data)))
 
     })
 });
+
+function updatefilter(){
+    d3.select('#pub_num').text(data.length)
+}
