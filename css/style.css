@@ -24,8 +24,11 @@ article, aside, figure, footer, header, hgroup, nav, section {
   display:block;
 }
 
-body { 
-  font: normal .80em arial, sans-serif;
+html {
+  font: 12px arial, sans-serif;
+}
+
+body {
   background: #fff url(../images/pattern.png) repeat;
   color: #000;
 }
