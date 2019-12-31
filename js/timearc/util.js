@@ -104,7 +104,7 @@ function drawBackground(){
         })
         .style("fill-opacity", 0)
         .style("text-anchor","middle")
-        .style("text-shadow", "1px 1px 0 rgba(0, 0, 0, 1")
+        // .style("text-shadow", "1px 1px 0 rgba(0, 0, 0, 1")
         .attr("font-family", "times")
         .attr("font-size", "30px")
         .text(function (d) { return d.role; });
@@ -140,7 +140,7 @@ function drawTimeLegend() {
       .style("fill", "#888")
       .style("fill-opacity", 1)   
       .style("text-anchor","start")
-      .style("text-shadow", "1px 1px 0 rgba(55, 55, 55, 0.6")
+      // .style("text-shadow", "1px 1px 0 rgba(55, 55, 55, 0.6")
       .attr("x", xx)
       .attr("y", height-8)
       .attr("dy", ".21em")

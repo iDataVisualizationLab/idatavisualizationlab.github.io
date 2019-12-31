@@ -402,7 +402,7 @@ function data2timearc() {
         .attr("dy", ".35em")
         .style("fill", "#000")
         .style("text-anchor", "middle")
-        .style("text-shadow", "1px 1px 0 rgba(255, 255, 255, 0.6")
+        // .style("text-shadow", "1px 1px 0 rgba(255, 255, 255, 0.6")
         .style("font-weight", function (d) {
             return d.isSearchTerm ? "bold" : "";
         })
@@ -875,6 +875,7 @@ function computeLinks() {
         l.value = linkScale(relationship[term1 + "__" + term2][month]);
     });
     svg.selectAll(".nodeG_dummy").remove();
+    nodeG_dummy= svg.selectAll(".nodeG_dummy")
     //Create all the line svgs but without locations yet
     svg.selectAll(".linkArc").remove();
     linkArcs = svg.selectAll(".linkArc")
@@ -1024,6 +1025,7 @@ function searchNode() {
 
 function mouseoveredLink(l) {
     nodeG.style('pointer-events','none');
+    nodeG_dummy.style("opacity", 0);
     if (force.alpha() == 0) {
         // mouseovered(l.source);
 
@@ -1092,7 +1094,7 @@ function mouseoveredLink(l) {
                 .style("fill", function (d) {
                     return getColor(listCode[i], 0);
                 })
-                .style("text-shadow", "1px 1px 0 rgba(20, 20, 20, 0.6");
+                // .style("text-shadow", "1px 1px 0 rgba(20, 20, 20, 0.6");
 
             svg.append("text")
                 .attr("class", "linkTilte")
@@ -1107,7 +1109,7 @@ function mouseoveredLink(l) {
                 .style("fill", function (d) {
                     return getColor(listType[i], 0);
                 })
-                .style("text-shadow", "1px 1px 0 rgba(20, 20, 20, 0.6");
+                // .style("text-shadow", "1px 1px 0 rgba(20, 20, 20, 0.6");
         }
 
         svg.selectAll(".linkArc")
@@ -1143,6 +1145,7 @@ function mouseoveredLink(l) {
 }
 
 function mouseoutedLink(l) {
+    nodeG_dummy.style("opacity", 1);
     nodeG.style('pointer-events','all');
     if (force.alpha() == 0) {
         svg.selectAll(".linkTilte").remove();
