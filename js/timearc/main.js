@@ -874,7 +874,7 @@ function computeLinks() {
         l.type = ttt[term1 + "__" + term2][month];
         l.value = linkScale(relationship[term1 + "__" + term2][month]);
     });
-
+    svg.selectAll(".nodeG_dummy").remove();
     //Create all the line svgs but without locations yet
     svg.selectAll(".linkArc").remove();
     linkArcs = svg.selectAll(".linkArc")
