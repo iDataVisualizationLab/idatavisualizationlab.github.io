@@ -1324,3 +1324,12 @@ img:hover{
   background-color: #eeeeee;
   border: #dcdcdc;
 }
+.hidden {
+  display: none;
+}
+.category-entry{
+  border-radius: 3px;
+}
+.category-entry.active {
+  background-color: #ffcaca;
+}

@@ -129,7 +129,7 @@
             "type":"category-entry",
             "title":"size",
             "description":"Size",
-            "content":"<span class=\"content-entry-icon\"><img src=\"images/icons/square-measument.svg\"></span>"
+            "content":"<i class=\"fas fa-braille\"></i>"
           },
           {
             "type":"category-entry",
@@ -141,7 +141,7 @@
             "type":"category-entry",
             "title":"texture",
             "description":"Texture/Pattern",
-            "content":"<span class=\"glyphicon glyphicon-barcode\"></span>"
+            "content":"<i class=\"fas fa-barcode\"></i>"
           }
         ]
       },
@@ -155,43 +155,43 @@
             "type":"category-entry",
             "title":"line-plot",
             "description":"Line Plot / River",
-            "content":"<span class=\"content-entry-icon\"><img src=\"images/line-plot.svg\"></span>"
+            "content":"<i class=\"fas fa-chart-line\"></i>"
           },
           {
             "type":"category-entry",
             "title":"pixel-area",
             "description":"Pixel/Area/Matrix",
-            "content":"<span class=\"glyphicon glyphicon-th\"></span>"
+            "content":"<i class=\"fas fa-th\"></i>"
           },
           {
             "type":"category-entry",
             "title":"node-link",
             "description":"Node-Link",
-            "content":"<span class=\"content-entry-icon\"><img src=\"images/node-link.svg\"></span>"
+            "content":"<i class=\"fas fa-vector-square\"></i>"
           },
           {
             "type":"category-entry",
             "title":"clouds",
             "description":"Clouds/Galaxies",
-            "content":"<span class=\"glyphicon glyphicon-cloud\"></span>"
+            "content":"<i class=\"fas fa-cloud\"></i>"
           },
           {
             "type":"category-entry",
             "title":"maps",
             "description":"Maps",
-            "content":"<span class=\"glyphicon glyphicon-globe\"></span>"
+            "content":"<i class=\"fas fa-globe\"></i>"
           },
           {
             "type":"category-entry",
             "title":"text",
             "description":"Text",
-            "content":"<span class=\"glyphicon glyphicon-align-center\"></span>"
+            "content":"<i class=\"fas fa-font\"></i>"
           },
           {
             "type":"category-entry",
             "title":"glyph",
             "description":"Glyph/Icon",
-            "content":"<span class=\"glyphicon glyphicon-leaf\"></span>"
+            "content":"<i class=\"fas fa-leaf\"></i>"
           }
         ]
       }

@@ -20,11 +20,54 @@ d3.csv("data/people.csv", function(error,people_data){
 
         db.people.bulkPut(people_data);
         db.publication.bulkPut(data_).then(()=>
-            (data=data_,loadCategories(),updatefilter(),data2timearc(data)))
+            (data=data_,loadCategories(),setupHandlers(),updatefilter(),data2timearc(data)))
 
     })
 });
+// Updates the set of displayed entries based on current filter values
+function updateDisplayedEntries(){
+    // Also, remove the tooltips
+    $(".tooltip").remove();
 
+    // Get the set of active filters
+    var activeFilters = {};
+    $(".category-entry.active:not(.category-other)").each(function(){
+        var category = $(this).data("entry");
+        var parent = categoriesMap[category].parentCategory;
+        if (!activeFilters[parent])
+            activeFilters[parent] = [];
+
+        activeFilters[parent].push(category);
+    });
+
+    // Get the set of inactive filters for "Other" buttons
+    var inactiveOthers = [];
+    $(".category-other:not(.active)").each(function(){
+        inactiveOthers.push($(this).data("category"));
+    });
+
+    // Get the time filter range
+    var indices = $("#timeFilter").val();
+    // var yearMin = timeFilterEntries[parseInt(indices[0])];
+    // var yearMax = timeFilterEntries[parseInt(indices[1])];
+    var yearMin = minYear;
+    var yearMax = maxYear;
+
+    // Filter the entries and sort the resulting array
+    db.publication.where('tags').anyOf(_.flatten(d3.values(activeFilters))).toArray()
+        .then(d=>{
+            data = d;
+            if (!data.length) {
+                // container.append("<p class=\"text-muted\">No eligible entries found</p>");
+                data2timearc(data);
+            } else {
+                updatefilter();
+                data2timearc(data);
+            }
+        })
+
+    // updateTimeChart(data);
+}
 let categories,categoriesMap,stats,statsMap;
 function loadCategories(){
     d3.json("data/categories.json", function(data){
@@ -40,9 +83,6 @@ function loadCategories(){
         $.each(categories, function(i,d){
             appendCategoryFilter(d, null, container, stats);
         });
-        // initializeFormCategories();
-        //
-        // loadContent();
     });
 }
 // Initializes category data and appends the category filter in a recursive fashion
@@ -120,7 +160,50 @@ function appendCategoryFilter(item, parent, currentContainer, currentStats){
     }
 
 }
+function onFilterToggle(){
+    var element = $(this);
 
+    if (!element.hasClass("active"))
+        element.addClass("active");
+    else
+        element.removeClass("active");
+
+    updateCategoryResetButton(element);
+    updateDisplayedEntries();
+}
+function updateCategoryResetButton(element){
+    var container = element.parent();
+    var resetButton = container.parent().find(".reset-category-filter");
+
+    if (container.children(".category-entry:not(.active)").length > 0)
+        resetButton.removeClass("hidden");
+    else
+        resetButton.addClass("hidden");
+}
+function onCategoryFilterReset(){
+    var element = $(this);
+
+    element.parent().next(".category-entries-container").children(".category-entry").addClass("active");
+    element.addClass("hidden");
+
+    updateDisplayedEntries();
+}
+function setupHandlers(){
+    // $(".search-clear").on("click", onSearchClear);
+    // $("#searchField").on("keyup", onSearch);
+
+    $("#categoriesList")
+        .on("click", ".category-entry", onFilterToggle)
+        .on("click", ".reset-category-filter", onCategoryFilterReset);
+    //
+    // $("#entriesContainer").on("click", ".content-entry", onEntryClick);
+
+    // $(window).on("resize", function(){
+    //     if ($("#aboutModal").hasClass("in"))
+    //         onAboutModalShown();
+    // });
+
+}
 function updatefilter(){
     d3.select('#pub_num').text(data.length)
 }
