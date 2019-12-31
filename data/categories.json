@@ -37,15 +37,9 @@
       },
       {
         "type":"category-entry",
-        "title":"navigation",
-        "description":"Navigation/Exploration",
-        "content":"<span class=\"glyphicon glyphicon-move\"></span>"
-      },
-      {
-        "type":"category-entry",
         "title":"uncertainty",
         "description":"Uncertainty Tackling",
-        "content":"<span class=\"glyphicon glyphicon-question-sign\"></span>"
+        "content":"<i class=\"fas fa-question\"></i>"
       }
     ]
   },
@@ -64,19 +58,19 @@
             "type":"category-entry",
             "title":"document",
             "description":"Document",
-            "content":"<span class=\"glyphicon glyphicon-file\"></span>"
+            "content":"<i class=\"fas fa-file\"></i>"
           },
           {
             "type":"category-entry",
             "title":"corpora",
             "description":"Corpora",
-            "content":"<span class=\"glyphicon glyphicon-folder-open\"></span>"
+            "content":"<i class=\"fas fa-folder-open\"></i>"
           },
           {
             "type":"category-entry",
             "title":"streams",
             "description":"Streams",
-            "content":"<span class=\"glyphicon glyphicon-cloud-download\"></span>"
+            "content":"<i class=\"fas fa-cloud-upload-alt\"></i>"
           }
         ]
       },
@@ -90,72 +84,21 @@
             "type":"category-entry",
             "title":"geospatial",
             "description":"Geospatial",
-            "content":"<span class=\"content-entry-icon\"><img src=\"images/geospatial.svg\"></span>"
+            "content":"<i class=\"fas fa-map-marked-alt\"></i>"
           },
           {
             "type":"category-entry",
             "title":"time-series",
             "description":"Time-series",
-            "content":"<span class=\"glyphicon glyphicon-time\"></span>"
+            "content":"<i class=\"fas fa-chart-line\"></i>"
           },
           {
             "type":"category-entry",
             "title":"networks",
             "description":"Networks",
-            "content":"<span class=\"content-entry-icon\"><img src=\"images/networks.svg\"></span>"
+            "content":"<i class=\"fab fa-connectdevelop\"></i>"
           }
         ]
-      }
-    ]
-  },
-  {
-    "type":"category",
-    "title":"domain",
-    "description":"Domain",
-    "childrenDescription":"Domain: ",
-    "entries":[
-      {
-        "type":"category-entry",
-        "title":"social-media",
-        "description":"Online Social Media",
-        "content":"<span class=\"glyphicon glyphicon-comment\"></span>"
-      },
-      {
-        "type":"category-entry",
-        "title":"communication",
-        "description":"Communication",
-        "content":"<span class=\"glyphicon glyphicon-envelope\"></span>"
-      },
-      {
-        "type":"category-entry",
-        "title":"patents",
-        "description":"Patents",
-        "content":"<span class=\"glyphicon glyphicon-briefcase\"></span>",
-        "disabled":true
-      },
-      {
-        "type":"category-entry",
-        "title":"reviews",
-        "description":"Reviews / (Medical) Reports",
-        "content":"<span class=\"content-entry-icon\"><img src=\"images/reviews.svg\"></span>"
-      },
-      {
-        "type":"category-entry",
-        "title":"literature",
-        "description":"Literature / Poems",
-        "content":"<span class=\"glyphicon glyphicon-book\"></span>"
-      },
-      {
-        "type":"category-entry",
-        "title":"papers",
-        "description":"Scientific Articles / Papers",
-        "content":"<span class=\"glyphicon glyphicon-stats\"></span>"
-      },
-      {
-        "type":"category-entry",
-        "title":"editorial-media",
-        "description":"Editorial Media",
-        "content":"<span class=\"glyphicon glyphicon-registration-mark\"></span>"
       }
     ]
   },
@@ -174,25 +117,25 @@
             "type":"category-entry",
             "title":"color",
             "description":"Color",
-            "content":"<span class=\"glyphicon glyphicon-adjust\"></span>"
+            "content":"<i class=\"fas fa-palette\"></i>"
           },
           {
             "type":"category-entry",
             "title":"position",
             "description":"Position/Orientation",
-            "content":"<span class=\"glyphicon glyphicon-sort\"></span>"
+            "content":"<i class=\"fas fa-sort-numeric-down\"></i>"
           },
           {
             "type":"category-entry",
             "title":"size",
             "description":"Size",
-            "content":"<span class=\"glyphicon glyphicon-text-size\"></span>"
+            "content":"<span class=\"content-entry-icon\"><img src=\"images/icons/square-measument.svg\"></span>"
           },
           {
             "type":"category-entry",
             "title":"shape",
             "description":"Shape",
-            "content":"<span class=\"glyphicon glyphicon-certificate\"></span>"
+            "content":"<i class=\"fas fa-shapes\"></i>"
           },
           {
             "type":"category-entry",

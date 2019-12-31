@@ -26,6 +26,7 @@ var tip = d3.tip().attr('class', 'd3-tip').direction(function(d) {
     var html = `<div><h4>${d.name}</h4><table></table></div>`
     return html;
 });
+d3.select('#left_panel').style('height',height+'px')
 var svg = d3.select("#timearc").append("svg")
     .style("background", "transparent")
     .style("overflow", "visible")
