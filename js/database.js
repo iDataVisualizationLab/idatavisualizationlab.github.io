@@ -36,15 +36,9 @@ function updateDisplayedEntries(){
         var parent = categoriesMap[category].parentCategory;
         if (!activeFilters[parent])
             activeFilters[parent] = [];
-
         activeFilters[parent].push(category);
     });
 
-    // Get the set of inactive filters for "Other" buttons
-    var inactiveOthers = [];
-    $(".category-other:not(.active)").each(function(){
-        inactiveOthers.push($(this).data("category"));
-    });
 
     // Get the time filter range
     var indices = $("#timeFilter").val();
@@ -54,7 +48,7 @@ function updateDisplayedEntries(){
     var yearMax = maxYear;
 
     // Filter the entries and sort the resulting array
-    db.publication.where('tags').anyOf(_.flatten(d3.values(activeFilters))).toArray()
+    db.publication.where('Code').anyOf(activeFilters["publication-venue"]).and(function(d){return d['tags'].find(e=>_.flatten(d3.values(activeFilters)).indexOf(e)!==-1)}).toArray()
         .then(d=>{
             data = d;
             if (!data.length) {
@@ -83,6 +77,14 @@ function loadCategories(){
         $.each(categories, function(i,d){
             appendCategoryFilter(d, null, container, stats);
         });
+        // add color to filter
+        d3.select('.category-item[data-category=publication-venue')
+            .selectAll('.category-entry').each(function(){
+            const target = d3.select(this);
+            target.style('color',getColor(target.attr('data-entry')));
+        })
+
+
     });
 }
 // Initializes category data and appends the category filter in a recursive fashion
