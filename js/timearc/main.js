@@ -1503,8 +1503,8 @@ function professor_images(nodeTommy){
         })
         .style('opacity',0);
     nodeG_dummy.transition().duration(500).style('opacity',1);
-    nodeG_dummy.on('mouseover', d=>
-        _.bind(mouseovered,nodeG.filter(e=>e.name===(d<Math.round(nodeTommy[1].minY)?nodeTommy[0]:nodeTommy[1]).name).node())())
+    nodeG_dummy.on('mouseover', d=>(console.log(d),console.log(d-Math.round(nodeTommy[1].minY)),
+        _.bind(mouseovered,nodeG.filter(e=>e.name===(d<Math.round(nodeTommy[1].minY)?nodeTommy[0]:nodeTommy[1]).name).node())()))
         .on("mouseout", mouseouted);
 }
 
