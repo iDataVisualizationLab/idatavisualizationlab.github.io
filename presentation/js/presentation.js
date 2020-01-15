@@ -79,7 +79,7 @@ function playItem(i){
         .data(data.contents).enter()
         .append('li')
         .attr('class','presentContentList_item row')
-        .html(d=>`<a href="${d.link}" ${d.link==="#!"?target="_blank":''}>
+        .html(d=>`<a href="${d.link}" ${d.link!=="#!"?'target="_blank"':''}>
                     <img class="col" src="${d.img}" width="200" height="100">
                     <h5 class="col" style="display: inline-block; max-width: calc(100% - 250px) ">
                             ${d.title}
