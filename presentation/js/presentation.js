@@ -1,4 +1,4 @@
-
+let dataPresent;
 $(document).ready(function() {
     d3.csv("data/people.csv").then(people_data=>{
         data = people_data.slice();
@@ -10,17 +10,22 @@ $(document).ready(function() {
         // initAvatar(data);
 
         d3.json('presentation/data/presentList.json').then(pL=>{
+            dataPresent = pL;
+            pL.forEach(d=>{
+                d.avatar = (data.find(e=>e.Id===d.name)||{img:'images/noavatar.jpg'}).img;
+            });
             let mainC = d3.select('#presentList');
-            mainC.select('ul.collection')
+            let itemL = mainC.select('ul.collection')
                 .selectAll('.collection-item')
                 .data(pL)
                 .enter().append('li')
                 .attr('class','collection-item avatar')
-                .html(d=>`<img src="${(data.find(e=>e.Id===d.name)||{img:'images/noavatar.jpg'}).img}" alt="" class="circle">
+                .html(function(d,i){ return `<img src="${d.avatar}" alt="" class="circle">
                 <span class="title">${d.name}</span>
                 <ul style="list-style-type: circle;margin-left: 20px">${d.contents.map(e=>`<li style="list-style-type: unset;">${e.shortTitle||e.title}</li>`).join('')}
                 </ul>
-                <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>`)
+                <a href="#!" class="secondary-content" onClick="playItem(${i})"><i class="material-icons">play_circle_filled</i></a>`});
+
         })
     });
 
@@ -59,4 +64,24 @@ function initAvatar(data) {
 }
 function fixstring(str){
     return str.toLowerCase().replace(/ /g,'_');
+}
+function playItem(i){
+    let data = dataPresent[i];
+    let holder = d3.select('.presentCard')
+    holder.select('.avatar img').attr('src',data.avatar);
+    holder.select('.name').html(`${data.name} <span class="new badge ${data.tag?'blue':'red'}" data-badge-caption=${data.tag?"MS":"PhD"}></span>`);
+    holder.select('.presentContentList').selectAll('li').remove();
+    holder.select('.presentContentList').selectAll('li')
+        .data(data.contents).enter()
+        .append('li')
+        .attr('class','presentContentList_item row')
+        .html(d=>`<a href="${d.link}" ${d.link==="#!"?target="_blank":''}>
+                    <img class="col" src="${d.img}" width="200" height="100">
+                    <span class="col">
+                            ${d.title}
+                    </span>
+                </a>`);
+}
+function onPlayItem(){
+
 }
