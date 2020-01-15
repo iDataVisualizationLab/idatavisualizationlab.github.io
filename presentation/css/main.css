@@ -192,9 +192,9 @@ textarea {
 }
 
 @media print,
-  (-webkit-min-device-pixel-ratio: 1.25),
-  (min-resolution: 1.25dppx),
-  (min-resolution: 120dpi) {
+(-webkit-min-device-pixel-ratio: 1.25),
+(min-resolution: 1.25dppx),
+(min-resolution: 120dpi) {
   /* Style adjustments for high resolution devices */
 }
 
@@ -273,7 +273,7 @@ textarea {
 }
 
 .info-panel {
-  height: 50px;
+  height: fit-content;
   width: 900px;
   border: solid darkgrey 2px;
   border-radius: 5px;
@@ -287,3 +287,40 @@ textarea {
   z-index: -1;
 }
 
+.panel-text {
+  padding-left: 10px;
+  padding-right: 10px;
+  color: black;
+  font-size: 25px;
+  font-weight: bolder;
+}
+
+.card-panel .avatar:not(.circle-clipper)>.circle, .card-panel .avatar :not(.circle-clipper)>.circle{
+
+  width: 80px;
+  height: 80px;
+  overflow: hidden;
+  left: 15px;
+  display: inline-block;
+  vertical-align: middle;
+}
+.presentContentList_item:not(.circle-clipper)>.circle , .presentContentList_item :not(.circle-clipper)>.circle{
+
+  width: 40px;
+  height: 40px;
+  overflow: hidden;
+  left: 15px;
+  display: inline-block;
+  vertical-align: middle;
+}
+.paperThumb img {
+  border: 1px solid #444;
+  border-radius: 5px;
+  box-shadow: 3px 3px 5px -2px #000;
+}
+
+
+.card-panel .avatar div{
+  display: inline-block;
+  margin-left: 20px;
+}

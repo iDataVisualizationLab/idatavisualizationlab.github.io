@@ -32,10 +32,44 @@
     <div class="row">
         <svg class="main col s4" id="main-svg"></svg>
         <div class="img-panel col s8">
-            <div class="info-panel">
+            <div class="info-panel" id="paper-info">
 
             </div>
             <img id="paper-img">
+        </div>
+    </div>
+    <div class="row" id="presentList">
+        <ul class="collection col s6">
+            <!--<li class="collection-item avatar">-->
+                <!--<img src="images/yuna.jpg" alt="" class="circle">-->
+                <!--<span class="title">Title</span>-->
+                <!--<p>First Line <br>-->
+                    <!--Second Line-->
+                <!--</p>-->
+                <!--<a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>-->
+            <!--</li>-->
+        </ul>
+        <div class="col s6">
+            <div class="card-panel red lighten-5">
+                <span class="center-align">Presenter</span>
+                <div class="avatar">
+                    <img src="images/noavatar.jpg" alt="" class="circle">
+                    <div class="valign-wrapper">
+                        <h4 class="name valign-wrapper"> Author name <span class="new badge red" data-badge-caption="PhD"></span></h4>
+                    </div>
+                </div>
+
+                <ul class="presentContentList">
+                    <li class="presentContentList_item row">
+                        <a href="#!" target="_blank">
+                            <img class="col" src="images/noavatar.jpg" width="200" height="100">
+                            <span class="col">
+                                    Paper title
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
 </div>
@@ -47,6 +81,7 @@
 <script>window.jQuery || document.write('<script src="presentation/js/vendor/jquery-3.4.1.min.js"><\/script>')</script>
 <script src="presentation/js/plugins.js"></script>
 <script src="presentation/js/main.js"></script>
+<script src="presentation/js/presentation.js"></script>
 
 
 <script type="text/javascript" src="presentation/js/materialize.min.js"></script>

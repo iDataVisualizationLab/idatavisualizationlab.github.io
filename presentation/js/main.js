@@ -127,6 +127,7 @@ function createBubbleChart(svg, settings) {
 
 d3.tsv('data/publication.tsv').then(function (data) {
   let filteredYearData = data.filter(d => Date.parse(d.Time) > Date.parse("2017"));
+  console.log(filteredYearData);
   let bubbleChartSettings = {
     bubbleRadius: 20,
     width: 500,
@@ -135,17 +136,20 @@ d3.tsv('data/publication.tsv').then(function (data) {
   svg = d3.select('#main-svg');
   let bubbleChart = createBubbleChart(svg, bubbleChartSettings);
 
-  idList = filteredYearData.map(d => {return {id: d.Id, image: d.image}});
+  idList = filteredYearData.map(d => {return {id: d.Id, image: d.image, title: d.Title}});
 
   bubbleChart(filteredYearData);
 }).then(async function () {
   let idx = 0;
   let panelImg = d3.select('#paper-img');
+  let panelInfo = d3.select('#paper-info');
   while (true) {
     await sleep(5000).then(function () {
       svg.selectAll('g').attr('opacity', 0.15);
       svg.select(`#data-${idList[idx].id}` ).attr('opacity', 1);
       panelImg.attr('src', idList[idx].image);
+      panelInfo.selectAll('*').remove();
+      panelInfo.append('p').attr('class', 'panel-text').text(idList[idx].title);
       if (idx === idList.length - 1) {
         idx = 0;
       } else {

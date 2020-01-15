@@ -1,0 +1,104 @@
+[
+  {
+    "name":"Ngan Nguyen",
+    "contents":[
+      {
+        "title":"Color blind - Can you sight?",
+        "shortTitle":"VR",
+        "picture":"images/presentation/colorblind.png",
+        "link":"#!"
+      },
+      {
+        "title":"HiperView: Interactive visualization for High Performance Computing Centers",
+        "shortTitle":"HPC",
+        "picture":"images/papers/hipervizv2.gif",
+        "link":"https://idatavisualizationlab.github.io/HPCC/HiperView/demo.html"
+      }
+    ]
+  },
+  {
+    "name":"Yada",
+    "contents":[
+      {
+        "title":"Timeline visualization",
+        "picture":"images/presentation/timeline.png",
+        "link":"#!"
+      }
+    ]
+  },
+  {
+    "name":"Juanita",
+    "contents":[
+      {
+        "title":"AR",
+        "picture":"images/presentation/ar.png",
+        "link":"#!"
+      }
+    ]
+  },
+  {
+    "name":"Vung Pham",
+    "contents":[
+      {
+        "title":"Enhanced soil profile visualization using portable X-ray fluorescence (PXRF) spectrometry",
+        "shortTitle":"SOAViz",
+        "picture":"images/papers/geodermaSoil.png",
+        "link":"https://idatavisualizationlab.github.io/Soil/demos.html"
+      },
+      {
+        "title":"Award: Strong Support for Exploratory Analysis",
+        "shortTitle":"VAST Challenge 2018: Mini-Challenge 2",
+        "picture":"images/papers/VAST2018mc2.png",
+        "link":"https://idatavisualizationlab.github.io/VAST2018/heatmap.html"
+      },
+      {
+        "title":"Outliagnostics: Am I outlier or inlier?",
+        "shortTitle":"Outliagnostics",
+        "picture":"images/papers/outliagnostics_thumbnail.png",
+        "link":"https://outliagnostics.github.io/demos.html"
+      },
+      {
+        "title":"Explainable Neural Networks for Multivariate Time Series",
+        "shortTitle":"RUL",
+        "picture":"images/presentation/NN.png",
+        "link":"https://idatavisualizationlab.github.io/V/RUL_Viz/"
+      }
+    ]
+  },
+  {
+    "name":"Van Hao",
+    "contents":[
+      {
+        "title":"DeepViz: Explaining Long Short-Term Memory Network With High Dimensional Time Series Data",
+        "shortTitle":"DeepViz",
+        "picture":"images/presentation/deepviz.png",
+        "link":"https://idatavisualizationlab.github.io/H/VCNN/demo.html"
+      }
+    ]
+  },
+  {
+    "name":"Chau Pham",
+    "contents":[
+      {
+        "title":"Solar Flare Prediction Using two-tier Ensemble with Deep Learning and Gradient Boosting Machine​",
+        "shortTitle":"Solar Flare",
+        "picture":"images/presentation/solarfare.png",
+        "link":"https://texastechuniversity-my.sharepoint.com/:p:/g/personal/tommy_dang_ttu_edu/ESIirh7nuqxMuB_gKQQx1EMBSbkMu7Fc7sbU9nx44FtGhw?e=4%3amAGYQp&at=9&CID=BEFC9A1D-87D7-4ACD-BE80-49BB3C229A0A&wdLOR=cAA885D4C-8069-477F-881C-EA821F6668D0"
+      },{
+        "title":"SHAP",
+        "picture":"images/presentation/shap.jpg",
+        "link":"https://texastechuniversity-my.sharepoint.com/:p:/g/personal/tommy_dang_ttu_edu/ESIirh7nuqxMuB_gKQQx1EMBSbkMu7Fc7sbU9nx44FtGhw?e=4%3amAGYQp&at=9&CID=BEFC9A1D-87D7-4ACD-BE80-49BB3C229A0A&wdLOR=cAA885D4C-8069-477F-881C-EA821F6668D0"
+      }
+    ]
+  },
+  {
+    "name":"Bao Nguyen",
+    "contents":[
+      {
+        "title":"Time Series analytics",
+        "picture":"images/presentation/timeB.png",
+        "link":"https://idatavisualizationlab.github.io/B/congnostics/layout.html"
+      }
+    ]
+  }
+]
