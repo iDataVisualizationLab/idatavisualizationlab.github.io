@@ -39,26 +39,81 @@
   },
   {
     "type":"category",
-    "title":"data",
-    "description":"Data Aspects",
+    "title":"ResearchArea",
+    "description":"Research Area",
     "entries":[
           {
             "type":"category-entry",
-            "title":"data-analytic",
-            "description":"Data analytic",
-            "content":"<span>Data analytic</span>"
+            "title":"ResearchArea_BDV",
+            "description":"Big Data Visualization",
+            "content":"<span>Big Data Visualization</span>"
           },
           {
             "type":"category-entry",
-            "title":"viz-analytic",
-            "description":"Visualization analytic",
-            "content":"<span>Visualization analytic</span>"
+            "title":"ResearchArea_IVA",
+            "description":"Intelligent Visual Analytic",
+            "content":"<span>Intelligent Visual Analytic</span>"
           },
           {
             "type":"category-entry",
-            "title":"vr",
-            "description":"VR",
-            "content":"<span>VR</span>"
+            "title":"ResearchArea_VR",
+            "description":"Virtual Reality & Argument Realit",
+            "content":"<span>Virtual Reality & Argument Reality</span>"
+          },
+          {
+            "type":"category-entry",
+            "title":"ResearchArea_EML",
+            "description":"Explainable Machine Learning",
+            "content":"<span>Explainable Machine Learning</span>"
+          }
+        ]
+  },
+  {
+    "type":"category",
+    "title":"Application",
+    "description":"Application",
+    "entries":[
+          {
+            "type":"category-entry",
+            "title":"Application_B",
+            "description":"Biology",
+            "content":"<span>Biology</span>"
+          },
+          {
+            "type":"category-entry",
+            "title":"Application_C",
+            "description":"Cyber-security",
+            "content":"<span>Cyber-security</span>"
+          },
+          {
+            "type":"category-entry",
+            "title":"Application_E",
+            "description":"Environment",
+            "content":"<span>Environment</span>"
+          },
+          {
+            "type":"category-entry",
+            "title":"Application_H",
+            "description":"Hight Performance Computer",
+            "content":"<span>HPC</span>"
+          },
+          {
+            "type":"category-entry",
+            "title":"Application_L",
+            "description":"Learning",
+            "content":"<span>Learning</span>"
+          },
+          {
+            "type":"category-entry",
+            "title":"Application_S",
+            "description":"Social media",
+            "content":"<span>Social media</span>"
+          },
+          {
+            "type":"category-entry",
+            "title":"Application_other",
+            "description":"Not specific",
+            "content":"<span>Not specific</span>"
           }
         ]
   }
