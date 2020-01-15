@@ -18,6 +18,7 @@
   },
   {
     "name":"Yada",
+    "tag":"MS",
     "contents":[
       {
         "title":"Timeline visualization",
@@ -28,6 +29,7 @@
   },
   {
     "name":"Juanita",
+    "tag":"MS",
     "contents":[
       {
         "title":"AR",
@@ -98,6 +100,17 @@
         "title":"Time Series analytics",
         "picture":"images/presentation/timeB.png",
         "link":"https://idatavisualizationlab.github.io/B/congnostics/layout.html"
+      }
+    ]
+  },
+  {
+    "name":"Nhat Le",
+    "tag":"MS",
+    "contents":[
+      {
+        "title":"t-SNE for music nodes",
+        "picture":"images/presentation/music.png",
+        "link":"https://idatavisualizationlab.github.io/music/Audio_API_Sound_Similarity/"
       }
     ]
   }
