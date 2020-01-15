@@ -336,3 +336,8 @@ i.material-icons.dis{
 #presentList {
   margin-top: 200px;
 }
+.logo_colour{
+  color: #9e1f1f;
+  position: relative;
+  bottom: 3px;
+}
