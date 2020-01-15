@@ -25,7 +25,7 @@ $(document).ready(function() {
                 <ul style="list-style-type: circle;margin-left: 20px">${d.contents.map(e=>`<li style="list-style-type: unset;">${e.shortTitle||e.title}</li>`).join('')}
                 </ul>
                 <a href="#!" class="secondary-content" onClick="playItem(${i})"><i class="material-icons">play_circle_filled</i></a>`});
-
+            playItem(0);
         })
     });
 
@@ -66,6 +66,10 @@ function fixstring(str){
     return str.toLowerCase().replace(/ /g,'_');
 }
 function playItem(i){
+    d3.select('#presentList').select('ul.collection')
+        .selectAll('.collection-item').select('.secondary-content i').classed('dis',true).html('stop');
+    d3.select('#presentList').select('ul.collection')
+        .selectAll('.collection-item').filter((d,it)=>i===it).select('.secondary-content i').classed('dis',false).html('play_circle_filled');
     let data = dataPresent[i];
     let holder = d3.select('.presentCard')
     holder.select('.avatar img').attr('src',data.avatar);
@@ -77,11 +81,8 @@ function playItem(i){
         .attr('class','presentContentList_item row')
         .html(d=>`<a href="${d.link}" ${d.link==="#!"?target="_blank":''}>
                     <img class="col" src="${d.img}" width="200" height="100">
-                    <span class="col">
+                    <h5 class="col" style="display: inline-block; max-width: calc(100% - 250px) ">
                             ${d.title}
-                    </span>
+                    </h5>
                 </a>`);
-}
-function onPlayItem(){
-
 }
