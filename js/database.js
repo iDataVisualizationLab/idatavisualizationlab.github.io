@@ -151,7 +151,7 @@ function appendCategoryFilter(item, parent, currentContainer, currentStats){
             });
         }
     } else if (item.type == "category-entry") {
-        var element = $("<button type=\"button\" class=\"btn btn-default category-entry active\""
+        var element = $("<button type=\"button\" class=\"btn btn-default category-entry flat-primary-inner-butt active\""
             + "data-tooltip=\"tooltip\"></button>");
         element.attr("data-entry", item.title);
         element.prop("title", item.description);
