@@ -124,7 +124,18 @@ function createBubbleChart(svg, settings) {
 
   return chart;
 }
-
+let category = {
+  'EML':'EML',
+  'BDV':'BDV',
+  'IVA':'IVA',
+  'VR':'VR',
+  'C':'C',
+  'B':'Biology',
+  'L':'Learning',
+  'H':'HPC',
+  'S':'Social Media',
+  'E':'Environment',
+};
 d3.tsv('data/publication.tsv').then(function (data) {
   let filteredYearData = data.filter(d => Date.parse(d.Time) > Date.parse("2017"));
   console.log(filteredYearData);
@@ -136,8 +147,25 @@ d3.tsv('data/publication.tsv').then(function (data) {
   svg = d3.select('#main-svg');
   let bubbleChart = createBubbleChart(svg, bubbleChartSettings);
 
-  idList = filteredYearData.map(d => {return {id: d.Id, image: d.image, title: d.Title}});
-
+  idList = filteredYearData.map(d => {
+    let chips = [];
+    d.ResearchArea.split(',').forEach(s=>{
+      if(s!=="")
+        chips.push({
+            short: s,
+            type:"Research Area",
+            full: category[s]
+        })
+    });
+    d.Application.split(',').forEach(s=>{
+        if(s!=="")
+            chips.push({
+                short: s,
+                type:"Application",
+                full: category[s]
+            })
+    });
+    return {id: d.Id, image: d.image, title: d.Title,chips: chips}});
   bubbleChart(filteredYearData);
 }).then(async function () {
   let idx = 0;
@@ -150,6 +178,7 @@ d3.tsv('data/publication.tsv').then(function (data) {
       panelImg.attr('src', idList[idx].image);
       panelInfo.selectAll('*').remove();
       panelInfo.append('p').attr('class', 'panel-text').text(idList[idx].title);
+      updateChips(idList[idx]);
       if (idx === idList.length - 1) {
         idx = 0;
       } else {
@@ -157,6 +186,14 @@ d3.tsv('data/publication.tsv').then(function (data) {
       }
     })
   }
+    function updateChips(info){
+    console.log(info)
+        panelInfo.selectAll('.chip').remove();
+        panelInfo.selectAll('.chip').data(info.chips)
+            .enter().append('div').attr('class','chip')
+            .html(d=>(console.log(d),console.log(category[d.short]),category[d.short]));
+
+    }
 });
 
 const sleep = (milliseconds) => {
