@@ -33,6 +33,8 @@ function initDatabase(callBack) {
             data_.forEach(d => {
                 d.Authors = d.Authors.split(',').map(e => e.trim());
                 d.ResearchArea = d.ResearchArea.split(',').filter(s => s !== "" ? s : false).map(s => "ResearchArea_" + s);
+                if (d.Application === undefined)
+                    d.Application =""
                 d.Application = d.Application.split(',').filter(s => s !== "" ? s : false).map(s => "Application_" + s);
                 if (d.Application.length === 0)
                     d.Application = ['Application_other']
