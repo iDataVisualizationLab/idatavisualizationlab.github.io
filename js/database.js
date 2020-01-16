@@ -1,29 +1,61 @@
 //
 // Define your database
 //
+var minYear = 2006;
+var maxYear = 2022;
+
 var db = new Dexie("idvl_database");
-d3.csv("data/people.csv", function(error,people_data){
-    data = people_data.slice();
-    data.push({Id:"noavatar",img:"images/noavatar.jpg"})
-    imagerange.forEach(i=>{
-        data.push({Id:`${'Tommy Dang '}${i}`,img:`images/people/Tommy_pics/${i}.png`})
-    })
-    initAvatar(data);
-    d3.tsv("data/publication.tsv", function (error, data_) {
-        if (error) throw error;
-        // data = data_.filter(d => +d.Time >= minYear);
-        data_.forEach(d=>(d.Authors = d.Authors.split(',').map(e=>e.trim()),d.tags = d.tags.split(',').map(e=>e.trim())));
-        db.version(1).stores({
-            people: Object.keys(people_data[0]).join(','),
-            publication: 'Id,Code,Level,Time,Venue,VenueId,Title,*Authors,pubURL,pdf,video,github,bib,doi,image,*tags,Rate'
-        });
+$(document).ready(function(){
 
-        db.people.bulkPut(people_data);
-        db.publication.bulkPut(data_).then(()=>
-            (data=data_,loadCategories(),setupHandlers(),updatefilter(),data2timearc(data)))
-
-    })
+    initDatabase(function(){
+        // let autocompleteData = {};
+        // data.forEach(d=>autocompleteData[d.Title] = d.image);
+        // $('#form-autocomplete').mdbAutocomplete({
+        //     data: states
+        // });
+        // $('#searchPub').autocomplete({
+        //     data: autocompleteData,
+        // });
+    });
 });
+
+function initDatabase(callBack) {
+    d3.csv("data/people.csv", function (error, people_data) {
+        data = people_data.slice();
+        data.push({Id: "noavatar", img: "images/noavatar.jpg"})
+        imagerange.forEach(i => {
+            data.push({Id: `${'Tommy Dang '}${i}`, img: `images/people/Tommy_pics/${i}.png`})
+        })
+        initAvatar(data);
+        d3.tsv("data/publication.tsv", function (error, data_) {
+            if (error) throw error;
+            // data = data_.filter(d => +d.Time >= minYear);
+            data_.forEach(d => {
+                d.Authors = d.Authors.split(',').map(e => e.trim());
+                d.ResearchArea = d.ResearchArea.split(',').filter(s => s !== "" ? s : false).map(s => "ResearchArea_" + s);
+                d.Application = d.Application.split(',').filter(s => s !== "" ? s : false).map(s => "Application_" + s);
+                if (d.Application.length === 0)
+                    d.Application = ['Application_other']
+            });
+            db.version(1).stores({
+                people: Object.keys(people_data[0]).join(','),
+                publication: 'Id,Code,Level,Time,Venue,VenueId,Title,*Authors,pubURL,pdf,video,github,bib,doi,image,*tags,Rate,*ResearchArea,*Application'
+            });
+
+            db.people.bulkPut(people_data);
+            db.publication.bulkPut(data_).then(() => {
+                data = data_;
+                loadCategories();
+                setupHandlers();
+                updatefilter();
+                data2timearc(data);
+                callBack();
+            });
+
+        })
+    });
+}
+
 // Updates the set of displayed entries based on current filter values
 function updateDisplayedEntries(){
     // Also, remove the tooltips
@@ -39,7 +71,7 @@ function updateDisplayedEntries(){
         activeFilters[parent].push(category);
     });
 
-
+console.log(activeFilters)
     // Get the time filter range
     var indices = $("#timeFilter").val();
     // var yearMin = timeFilterEntries[parseInt(indices[0])];
@@ -48,7 +80,11 @@ function updateDisplayedEntries(){
     var yearMax = maxYear;
 
     // Filter the entries and sort the resulting array
-    db.publication.where('Code').anyOf(activeFilters["publication-venue"]).and(function(d){return d['tags'].find(e=>_.flatten(d3.values(activeFilters)).indexOf(e)!==-1)}).toArray()
+    let query = db.publication.where('Code').anyOf(activeFilters["publication-venue"]);
+    _.without(d3.keys(activeFilters),'publication-venue').forEach(k=>{
+        query = query.and(function(d){return d[k].find(e=>d3.values(activeFilters[k]).indexOf(e)!==-1)});
+    });
+    query.toArray()
         .then(d=>{
             data = d;
             if (!data.length) {
