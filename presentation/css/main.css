@@ -279,14 +279,6 @@ textarea {
   border-radius: 5px;
 }
 
-#paper-img {
-  width: 900px;
-  /*height: 450px;*/
-  margin: auto;
-  position: absolute;
-  z-index: -1;
-}
-
 .panel-text {
   padding-left: 10px;
   padding-right: 10px;
@@ -344,4 +336,14 @@ i.material-icons.dis{
 
 .chip {
   margin-left: 5px;
+}
+
+.crop {
+  width: 900px;
+  height: 500px;
+  overflow: hidden;
+}
+
+.crop img {
+  width: 900px;
 }
