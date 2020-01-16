@@ -38,6 +38,10 @@ function createBubbleChart(svg, settings) {
 
         year = yearCluster;
 
+        data.forEach(function (d) {
+            calculateTimelinePosition(d);
+        });
+
         let yearArr = [];
 
         for (let key in yearCluster) {
@@ -50,7 +54,6 @@ function createBubbleChart(svg, settings) {
             .enter()
             .append('rect')
             .attr('x', d => {
-                console.log(d);
                 return d.x
             })
             .attr('y', d => d.y)
@@ -64,7 +67,6 @@ function createBubbleChart(svg, settings) {
             .enter()
             .append('text')
             .attr('x', d => {
-                console.log(d);
                 return d.x - 15
             })
             .attr('y', d => d.y + 20)
@@ -124,7 +126,7 @@ function createBubbleChart(svg, settings) {
             .force('y', d3.forceY().strength(forceStrength).y(center.y))
             .force('charge', d3.forceManyBody().strength(charge))
             .force('collision', d3.forceCollide().radius(function (d) {
-                return d.radius
+                return d.radius;
             }))
             .alphaTarget(0.3)
             .on('tick', ticked);
@@ -161,21 +163,44 @@ function createBubbleChart(svg, settings) {
         simulation.alpha(1).restart();
     }
 
-    chart.moveBubble = function (bubble, newXPosition) {
-        console.log(newXPosition);
+    chart.updateBubble = function () {
         simulation.force('x', d3.forceX().strength(forceStrength).x(d => {
-            if (d.id === bubble.id) {
-                return newXPosition;
+            if (d.data.isInTimeline) {
+                return d.data.timelineX;
             } else {
                 return isGroup ? center.x : rAreaCluster[d.data.ResearchArea].x;
             }
         })).force('y', d3.forceY().strength(forceStrength).y(d => {
-            if (d.id === bubble.id) {
-                return 510;
+            if (d.data.isInTimeline) {
+                return d.data.timelineY;
             } else {
                 return center.y;
             }
+        })).force('collision', d3.forceCollide().radius(function (d) {
+            if (d.data.isInTimeline) {
+                return 4;
+            } else {
+                return d.radius;
+            }
+        })).force('charge', d3.forceManyBody().strength(d => {
+            if (d.data.isInTimeline) {
+                return 0;
+            } else {
+                return charge(d);
+            }
         }));
+        simulation.alpha(1).restart();
+    };
+
+    chart.reset = function () {
+        simulation.force('x', d3.forceX().strength(forceStrength).x(d => {
+            d.data.isInTimeline = false;
+            return isGroup ? center.x : rAreaCluster[d.data.ResearchArea].x;
+        })).force('y', d3.forceY().strength(forceStrength).y(d => {
+            return center.y;
+        })).force('collision', d3.forceCollide().radius(function (d) {
+            return d.radius;
+        })).force('charge', d3.forceManyBody().strength(charge));
         simulation.alpha(1).restart();
     };
 
@@ -261,6 +286,18 @@ function createBubbleChart(svg, settings) {
         }
     };
 
+    //calculate bubble position in timeline
+    function calculateTimelinePosition(currentItem) {
+        let currentItemTime = new Date(currentItem.Time);
+        let currentItemMonth = currentItemTime.getMonth();
+        let currentItemYear = currentItemTime.getFullYear();
+        let distance = yearDistance / 11;
+
+        currentItem.timelineX = year[currentItemYear].x + distance * (currentItemMonth);
+        currentItem.timelineY = 510;
+        currentItem.isInTimeline = false;
+    }
+
     function createMultilineText(clusterArr) {
         let texts = svg.select('.chart-tags').selectAll('text').data(clusterArr)
             .enter()
@@ -339,35 +376,41 @@ d3.tsv('data/publication.tsv').then(function (data) {
     let panelImg = d3.select('#paper-img');
     let panelInfo = d3.select('#paper-info');
     while (true) {
-        await sleep(5000).then(function () {
+        await sleep(3000).then(function () {
 
             //update bubble opacity and title
             svg.selectAll('.node').attr('opacity', 0.3);
-            svg.selectAll('circle').attr('r', bubbleChartSettings.bubbleRadius);
             let currentItem = svg.select(`#data-${idList[idx].id}`);
             currentItem.attr('opacity', 1);
             panelImg.attr('src', idList[idx].image);
             panelInfo.selectAll('*').remove();
             panelInfo.append('p').attr('class', 'panel-text').text(idList[idx].title);
 
-            //update bubble position
-            let currentItemTime = new Date(currentItem.data()[0].data.Time);
-            let currentItemMonth = currentItemTime.getMonth();
-            let currentItemYear = currentItemTime.getFullYear();
-            let distance = yearDistance / 11;
+            currentItem.data()[0].data.isInTimeline = true;
+            bubbleChart.updateBubble();
 
-            console.log(currentItemMonth, currentItemYear);
-            console.log(year[currentItemYear].x, distance * (currentItemMonth));
-            bubbleChart.moveBubble(currentItem.data()[0], year[currentItemYear].x + distance * (currentItemMonth));
+            console.log(new Date(currentItem.data()[0].data.Time));
 
-            currentItem.select('circle').transition(3000).attr('r', 8);
+            //temp
+            // svg.select('.current-show').classed('current-show', false).transition().duration(2000).attr('r', bubbleChartSettings.bubbleRadius);
+
+            currentItem.select('circle').transition().duration(2000).attr('r', 8);
             updateChips(idList[idx]);
             if (idx === idList.length - 1) {
                 idx = 0;
             } else {
                 idx++;
             }
-        })
+        });
+
+        if (idx === 0) {
+            await sleep(3000).then(function () {
+                bubbleChart.reset();
+                svg.selectAll('circle').transition().delay((d, i) => 100 * i).duration(500).attr('r', bubbleChartSettings.bubbleRadius);
+            });
+
+            await sleep(4000);
+        }
     }
 
     function updateChips(info) {
