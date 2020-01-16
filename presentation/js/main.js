@@ -379,9 +379,9 @@ d3.tsv('data/publication.tsv').then(function (data) {
         await sleep(3000).then(function () {
 
             //update bubble opacity and title
-            svg.selectAll('.node').attr('opacity', 0.3);
+            // svg.selectAll('.node').attr('opacity', 0.3);
             let currentItem = svg.select(`#data-${idList[idx].id}`);
-            currentItem.attr('opacity', 1);
+            // currentItem.attr('opacity', 1);
             panelImg.attr('src', idList[idx].image);
             panelInfo.selectAll('*').remove();
             panelInfo.append('p').attr('class', 'panel-text').text(idList[idx].title);
