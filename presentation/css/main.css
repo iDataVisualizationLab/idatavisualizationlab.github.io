@@ -341,3 +341,7 @@ i.material-icons.dis{
   position: relative;
   bottom: 3px;
 }
+
+.chip {
+  margin-left: 5px;
+}

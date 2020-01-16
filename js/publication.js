@@ -48,7 +48,7 @@ d3.tsv("data/publication.tsv", function (error,data_) {
     datapub.forEach(d=>{
         d.Time = new Date(d.Time);
         d.Authors = d.Authors.split(',').map(n=>n.trim());
-    })
+    });
     datapub.sort((a,b)=>b.Time-a.Time);
 
     drawPub(datapub.filter((d,i)=>i<pubCount));

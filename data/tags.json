@@ -1,0 +1,16 @@
+{
+  "ResearchArea": {
+    "BDV": "Big Data Visualization",
+    "IVA": "Intelligent Visual Analytic",
+    "VR": "Virtual Reality & Argument Reality",
+    "EML": "Explainable Machine Learning"
+  },
+  "Application": {
+    "B": "Biology",
+    "C": "Cyber-security",
+    "E": "Environment",
+    "H": "HPCC",
+    "L": "Learning",
+    "S": "Social media"
+  }
+}
