@@ -6,12 +6,12 @@ let yearDistance = 0;
 let isGroup = true;
 
 let bubbleChartSettings = {
-    bubbleRadius: 20,
-    width: 600,
-    height: 600
+    width: parseFloat(d3.select('#chart-container').style('width').replace('px', '')),
+    height: parseFloat(d3.select('#chart-container').style('width').replace('px', '')),
+    bubbleRadius: parseFloat(d3.select('#chart-container').style('width').replace('px', '')) / 30,
 };
 
-function createBubbleChart(svg, settings) {
+function createBubbleChart(data, svg, settings) {
     let color = d3.scaleOrdinal(d3.schemeCategory10);
     let displayType = 'group-all';
 
@@ -22,28 +22,49 @@ function createBubbleChart(svg, settings) {
     let rAreaCluster = {}, yearCluster = {};
     let simulation = null;
     let bubbleRadius = settings.bubbleRadius;
+    let chartData = data;
 
     svg.attr('width', width).attr('height', height);
 
     let defs = svg.append("defs");
 
-    let chart = function (data) {
-        data = data.map(d => {
+    let chart = function () {
+        chartData = chartData.map(d => {
             d['year'] = new Date(d.Time).getFullYear();
             return d;
         });
 
-        rAreaCluster = createAreaCluster(data, 'ResearchArea', height / 2);
-        yearCluster = createYearCluster(data, 'year', height - 30);
+        defs.selectAll("pattern")
+            .data(chartData)
+            .enter()
+            .append("pattern")
+            .attr("id", d => d.Id)
+            .attr("width", 1)
+            .attr("height", 1)
+            .attr("patternContentUnits", "objectBoundingBox")
+            .append("image")
+            .attr("xlink:href", d => d.image)
+            .attr("x", 0)
+            .attr("y", 0)
+            .attr("width", 1)
+            .attr("height", 1)
+            .attr("preserveAspectRatio", "xMinYMin slice");
+
+
+        chart.draw();
+    };
+
+    chart.draw = function () {
+        rAreaCluster = createAreaCluster('ResearchArea', height / 2);
+        yearCluster = createYearCluster('year', height - 30);
 
         year = yearCluster;
 
-        data.forEach(function (d) {
+        chartData.forEach(function (d) {
             calculateTimelinePosition(d);
         });
 
         let yearArr = [];
-
         for (let key in yearCluster) {
             yearArr.push({year: key, x: yearCluster[key].x, y: yearCluster[key].y});
         }
@@ -73,26 +94,20 @@ function createBubbleChart(svg, settings) {
             .text(d => d.year)
             .attr('stroke', 'gray');
 
-        defs.selectAll("pattern")
-            .data(data)
-            .enter()
-            .append("pattern")
-            .attr("id", d => d.Id)
-            .attr("width", 1)
-            .attr("height", 1)
-            .attr("patternContentUnits", "objectBoundingBox")
-            .append("image")
-            .attr("xlink:href", d => d.image)
-            .attr("x", 0)
-            .attr("y", 0)
-            .attr("width", 1)
-            .attr("height", 1)
-            .attr("preserveAspectRatio", "xMinYMin slice");
+        //                        <line x1="0" y1="570" x2="600" y2="570" stroke-width="2" stroke="gray"></line>
+        svg.select('.timeline')
+            .append('line')
+            .attr('x1', 0)
+            .attr('y1', height - 30)
+            .attr('x2', width)
+            .attr('y2', height - 30)
+            .attr('stroke-width', 2)
+            .attr('stroke', 'gray');
 
-        let nodes = createNodes(data);
+        let nodes = createNodes();
 
         bubbles = svg.selectAll(".bubble-container")
-            .data(nodes)
+            .data(nodes, d => d.data.Id)
             .enter()
             .append('g')
             .attr('class', 'node')
@@ -134,8 +149,22 @@ function createBubbleChart(svg, settings) {
         simulation.nodes(nodes);
     };
 
-    function createNodes(data) {
-        let nodes = data.map(function (d) {
+    chart.update = function () {
+        width = parseFloat(d3.select('#chart-container').style('width').replace('px', ''));
+        height = parseFloat(d3.select('#chart-container').style('height').replace('px', ''));
+
+        console.log(width, height);
+
+        bubbleChartSettings.bubbleRadius = width / 30;
+
+        center = {x: width / 2, y: height / 2};
+        svg.attr('width', width).attr('height', height);
+
+        chart.draw();
+    };
+
+    function createNodes() {
+        let nodes = chartData.map(function (d) {
             return {
                 radius: bubbleRadius,
                 value: 1,
@@ -236,10 +265,10 @@ function createBubbleChart(svg, settings) {
         d.fy = null;
     }
 
-    function createAreaCluster(data, clusterType, yPosition) {
+    function createAreaCluster(clusterType, yPosition) {
         let clusterName = [];
         let clusters = {};
-        data.forEach(function (d) {
+        chartData.forEach(function (d) {
             if (!clusterName.includes(d[clusterType])) {
                 clusterName.push(d[clusterType])
             }
@@ -254,10 +283,10 @@ function createBubbleChart(svg, settings) {
         return clusters;
     }
 
-    function createYearCluster(data, clusterType, yPosition) {
+    function createYearCluster(clusterType, yPosition) {
         let clusterName = [];
         let clusters = {};
-        data.forEach(function (d) {
+        chartData.forEach(function (d) {
             if (!clusterName.includes(d[clusterType])) {
                 clusterName.push(d[clusterType])
             }
@@ -293,7 +322,7 @@ function createBubbleChart(svg, settings) {
         let distance = yearDistance / 11;
 
         currentItem.timelineX = year[currentItemYear].x + distance * (currentItemMonth);
-        currentItem.timelineY = 510;
+        currentItem.timelineY = height * 85 / 100;
         currentItem.isInTimeline = false;
     }
 
@@ -343,7 +372,7 @@ d3.tsv('data/publication.tsv').then(function (data) {
         category = Object.assign(tags.ResearchArea, tags.Application);
         let filteredYearData = data.filter(d => Date.parse(d.Time) > Date.parse("2017")).sort((a, b) => Date.parse(a.Time) - Date.parse(b.Time));
         svg = d3.select('#main-svg');
-        bubbleChart = createBubbleChart(svg, bubbleChartSettings);
+        bubbleChart = createBubbleChart(filteredYearData, svg, bubbleChartSettings);
 
         idList = filteredYearData.map(d => {
             let chips = [];
@@ -368,7 +397,8 @@ d3.tsv('data/publication.tsv').then(function (data) {
         bubbleChart(filteredYearData);
         $('#chart-toggle').on('click', function () {
             bubbleChart.toggleDisplay();
-        })
+        });
+
     });
 }).then(async function () {
     let idx = 0;
@@ -421,3 +451,9 @@ d3.tsv('data/publication.tsv').then(function (data) {
 const sleep = (milliseconds) => {
     return new Promise(resolve => setTimeout(resolve, milliseconds))
 };
+
+$(document).ready(function () {
+    let width = parseFloat(d3.select('.crop').style('width'));
+    console.log(width);
+    d3.select('.crop').style('height', `${width * 60 / 100}px`)
+});

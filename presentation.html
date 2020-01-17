@@ -6,7 +6,7 @@
     <title></title>
     <meta name="description" content="">
     <link rel="shortcut icon" href="images/iDVLlogo/V2.png">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1">-->
 
     <link rel="apple-touch-icon" href="icon.png">
     <!-- Place favicon.ico in the root directory -->
@@ -28,22 +28,25 @@
 
 <!-- Add your site or application content here -->
 <div class="content">
-    <h1 class="valign-wrapper" style="position: relative">
-        <a href="index.html"> <img height="48px" src="images/iDVLlogo/iDVL.png" href="index.php" alt="logo"
-                                   title="logo"></a>
-        <a href="index.html" style="padding-left: 20px"><span
-                class="logo_colour"> interactive Data Visualization Lab</span></a>
-        <a href="http://www.depts.ttu.edu/cs/" style="position: absolute;right: 0"><img height="48px"
-                                                                                        src="images/TTUlogo.png"
-                                                                                        alt="logo" title="logo"></a>
-    </h1>
+    <div class="row">
+        <div class="col s12">
+            <h1 class="valign-wrapper" style="position: relative">
+                <a href="index.html"> <img height="48px" src="images/iDVLlogo/iDVL.png" href="index.php" alt="logo"
+                                           title="logo"></a>
+                <a href="index.html" style="padding-left: 20px"><span
+                        class="logo_colour"> interactive Data Visualization Lab</span></a>
+                <a href="http://www.depts.ttu.edu/cs/" style="position: absolute;right: 0"><img height="48px"
+                                                                                                src="images/TTUlogo.png"
+                                                                                                alt="logo" title="logo"></a>
+            </h1>
+        </div>
+    </div>
     <div class="row">
         <div class="col s5">
             <a class="waves-effect waves-light btn-small" id="chart-toggle">Toggle Chart</a>
-            <div class="col s12">
+            <div class="col s12" id="chart-container">
                 <svg id="main-svg">
                     <g class="timeline">
-                        <line x1="0" y1="570" x2="600" y2="570" stroke-width="2" stroke="gray"></line>
                     </g>
                     <g class="chart-tags"></g>
                 </svg>
