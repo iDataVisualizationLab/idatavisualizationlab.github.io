@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <title></title>
     <meta name="description" content="">
+    <link rel="shortcut icon" href="images/iDVLlogo/V2.png">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="apple-touch-icon" href="icon.png">
@@ -14,10 +15,8 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Import materialize.css-->
     <link type="text/css" rel="stylesheet" href="presentation/css/materialize.min.css" media="screen,projection"/>
-
-    <link rel="stylesheet" href="presentation/css/normalize.css">
-    <link rel="stylesheet" href="presentation/css/main.css">
-
+    <link rel="stylesheet" type="text/css" href="presentation/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="presentation/css/main.css">
     <meta name="theme-color" content="#fafafa">
 </head>
 
@@ -41,13 +40,14 @@
     <div class="row">
         <div class="col s5">
             <a class="waves-effect waves-light btn-small" id="chart-toggle">Toggle Chart</a>
-            <svg class="main" id="main-svg" style="width: 100%">
-                <g class="timeline">
-                    <line x1="0" y1="570" x2="590" y2="570" stroke-width="2" stroke="gray"></line>
-                </g>
-                <g class="chart-tags">
-                </g>
-            </svg>
+            <div class="col s12">
+                <svg id="main-svg">
+                    <g class="timeline">
+                        <line x1="0" y1="570" x2="600" y2="570" stroke-width="2" stroke="gray"></line>
+                    </g>
+                    <g class="chart-tags"></g>
+                </svg>
+            </div>
         </div>
         <div class="img-panel col s7">
             <div class="info-panel" id="paper-info"></div>
@@ -93,6 +93,7 @@
     </div>
 </div>
 
+
 <script src="presentation/js/vendor/modernizr-3.8.0.min.js"></script>
 <script src="presentation/js/vendor/d3.v5.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"
@@ -101,7 +102,6 @@
 <script src="presentation/js/plugins.js"></script>
 <script src="presentation/js/main.js"></script>
 <script src="presentation/js/presentation.js"></script>
-
 
 <script type="text/javascript" src="presentation/js/materialize.min.js"></script>
 </body>

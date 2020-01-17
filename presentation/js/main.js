@@ -156,7 +156,6 @@ function createBubbleChart(svg, settings) {
     function splitBubbles() {
         isGroup = false;
         var clusterArr = Object.keys(rAreaCluster);
-        console.log(clusterArr);
         createMultilineText(clusterArr);
 
         simulation.force('x', d3.forceX().strength(forceStrength).x(d => rAreaCluster[d.data.ResearchArea].x));
@@ -388,9 +387,6 @@ d3.tsv('data/publication.tsv').then(function (data) {
 
             currentItem.data()[0].data.isInTimeline = true;
             bubbleChart.updateBubble();
-
-            console.log(new Date(currentItem.data()[0].data.Time));
-
             //temp
             // svg.select('.current-show').classed('current-show', false).transition().duration(2000).attr('r', bubbleChartSettings.bubbleRadius);
 
