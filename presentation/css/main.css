@@ -89,9 +89,11 @@ i.material-icons.dis {
 
 .crop img {
     width: 100%;
+    border: solid darkgrey 2px;
+    border-radius: 5px;
 }
 
-#main-svg {
+#chart-container {
     border: solid darkgrey 2px;
     border-radius: 5px;
     background-color: white;
@@ -99,4 +101,12 @@ i.material-icons.dis {
 
 .row .col .s12 {
     padding: 0;
+}
+
+.btn-small {
+    background-color: #9e1f1f;
+}
+
+.btn-small:hover {
+    background-color: #c7312c;
 }

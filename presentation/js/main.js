@@ -187,7 +187,13 @@ function createBubbleChart(data, svg, settings) {
         var clusterArr = Object.keys(rAreaCluster);
         createMultilineText(clusterArr);
 
-        simulation.force('x', d3.forceX().strength(forceStrength).x(d => rAreaCluster[d.data.ResearchArea].x));
+        simulation.force('x', d3.forceX().strength(forceStrength).x(function (d) {
+            if (d.data.isInTimeline) {
+                return d.data.timelineX;
+            } else {
+                return rAreaCluster[d.data.ResearchArea].x;
+            }
+        }));
         simulation.alpha(1).restart();
     }
 
@@ -206,7 +212,7 @@ function createBubbleChart(data, svg, settings) {
             }
         })).force('collision', d3.forceCollide().radius(function (d) {
             if (d.data.isInTimeline) {
-                return 4;
+                return 8;
             } else {
                 return d.radius;
             }
@@ -236,7 +242,13 @@ function createBubbleChart(data, svg, settings) {
         isGroup = true;
         svg.selectAll('.cluster').remove();
 
-        simulation.force('x', d3.forceX().strength(forceStrength).x(center.x));
+        simulation.force('x', d3.forceX().strength(forceStrength).x(function (d) {
+            if (d.data.isInTimeline) {
+                return d.data.timelineX;
+            } else {
+                return center.x;
+            }
+        }));
         simulation.alpha(1).restart();
     }
 
@@ -454,6 +466,6 @@ const sleep = (milliseconds) => {
 
 $(document).ready(function () {
     let width = parseFloat(d3.select('.crop').style('width'));
-    console.log(width);
-    d3.select('.crop').style('height', `${width * 60 / 100}px`)
+    d3.select('.crop').style('height', `${width * 60 / 100}px`);
+    d3.select('.crop img').style('max-height', `${width * 60 / 100}px`);
 });
