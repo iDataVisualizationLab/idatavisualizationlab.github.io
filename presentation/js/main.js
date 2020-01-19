@@ -4,6 +4,7 @@ let category = {};
 let year = {};
 let yearDistance = 0;
 let isGroup = true;
+let colors = ["#1f77b4", "#ff7f0e", "#2ca02c", "#d62728"];
 
 let bubbleChartSettings = {
     width: parseFloat(d3.select('#chart-container').style('width').replace('px', '')),
@@ -12,7 +13,7 @@ let bubbleChartSettings = {
 };
 
 function createBubbleChart(data, svg, settings) {
-    let color = d3.scaleOrdinal(d3.schemeCategory10);
+    let color = d3.scaleOrdinal(colors);
     let displayType = 'group-all';
 
     let width = settings.width, height = settings.height;
