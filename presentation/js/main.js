@@ -49,8 +49,6 @@ function createBubbleChart(data, svg, settings) {
             .attr("width", 1)
             .attr("height", 1)
             .attr("preserveAspectRatio", "xMinYMin slice");
-
-
         chart.draw();
     };
 
@@ -59,6 +57,8 @@ function createBubbleChart(data, svg, settings) {
         yearCluster = createYearCluster('year', height - 30);
         textCluster = createTextCluster('Text', height / 2);
 
+        console.log(textCluster);
+
         year = yearCluster;
 
         chartData.forEach(function (d) {
@@ -66,6 +66,8 @@ function createBubbleChart(data, svg, settings) {
         });
 
         chartData = calculateTextPosition(chartData);
+
+        console.log(chartData);
 
         let yearArr = [];
         for (let key in yearCluster) {
@@ -97,7 +99,6 @@ function createBubbleChart(data, svg, settings) {
             .text(d => d.year)
             .attr('stroke', 'gray');
 
-        //                        <line x1="0" y1="570" x2="600" y2="570" stroke-width="2" stroke="gray"></line>
         svg.select('.timeline')
             .append('line')
             .attr('x1', 0)
@@ -108,6 +109,18 @@ function createBubbleChart(data, svg, settings) {
             .attr('stroke', 'gray');
 
         let nodes = createNodes();
+
+        // let rectG = svg.append('g').attr('class', 'rect-container');
+        //
+        // rectG
+        //     .selectAll('rect')
+        //     .data(nodes)
+        //     .enter()
+        //     .append('rect')
+        //     .attr('x', d => {console.log(d); return d.data.textX})
+        //     .attr('y', d => d.data.textY)
+        //     .attr('width', 5)
+        //     .attr('height', 5);
 
         bubbles = svg.selectAll(".bubble-container")
             .data(nodes, d => d.data.Id)
@@ -189,12 +202,33 @@ function createBubbleChart(data, svg, settings) {
         isGroup = false;
         var clusterArr = Object.keys(rAreaCluster);
         createMultilineText(clusterArr);
+        d3.selectAll('circle').attr('r', 8);
 
         simulation.force('x', d3.forceX().strength(forceStrength).x(function (d) {
-            if (d.data.isInTimeline) {
-                return d.data.timelineX;
+            if (!d.data.isInTimeline) {
+                // return d.data.timelineX;
+                return d.data.textX;
             } else {
                 return rAreaCluster[d.data.ResearchArea].x;
+            }
+        })).force('y', d3.forceY().strength(forceStrength).y(function (d) {
+            if (!d.data.isInTimeline) {
+                // return d.data.timelineX;
+                return d.data.textY;
+            } else {
+                return rAreaCluster[d.data.ResearchArea].y;
+            }
+        })).force('collision', d3.forceCollide().radius(function (d) {
+            if (!d.data.isInTimeline) {
+                return 8;
+            } else {
+                return d.radius;
+            }
+        })).force('charge', d3.forceManyBody().strength(d => {
+            if (!d.data.isInTimeline) {
+                return 0;
+            } else {
+                return charge(d);
             }
         }));
         simulation.alpha(1).restart();
@@ -357,17 +391,83 @@ function createBubbleChart(data, svg, settings) {
 
     //calculate bubbles position in text
     function calculateTextPosition(chartData) {
-        console.log(chartData[0]);
+        //Calculate 'I'
         chartData[0].textX = textCluster['I'].x;
-        chartData[0].textY = textCluster['I'].y - 30;
+        chartData[0].textY = textCluster['I'].y - 60;
         chartData[1].textX = textCluster['I'].x;
-        chartData[1].textY = textCluster['I'].y - 15;
+        chartData[1].textY = textCluster['I'].y - 30;
         chartData[2].textX = textCluster['I'].x;
         chartData[2].textY = textCluster['I'].y;
         chartData[3].textX = textCluster['I'].x;
-        chartData[3].textY = textCluster['I'].y + 15;
+        chartData[3].textY = textCluster['I'].y + 30;
         chartData[4].textX = textCluster['I'].x;
-        chartData[4].textY = textCluster['I'].y + 30;
+        chartData[4].textY = textCluster['I'].y + 60;
+
+        //Calculate 'D'
+        chartData[5].textX = textCluster['D'].x - 30;
+        chartData[5].textY = textCluster['D'].y - 60;
+        chartData[6].textX = textCluster['D'].x - 30;
+        chartData[6].textY = textCluster['D'].y - 30;
+        chartData[7].textX = textCluster['D'].x - 30;
+        chartData[7].textY = textCluster['D'].y;
+        chartData[8].textX = textCluster['D'].x - 30;
+        chartData[8].textY = textCluster['D'].y + 30;
+        chartData[9].textX = textCluster['D'].x - 30;
+        chartData[9].textY = textCluster['D'].y + 60;
+        chartData[10].textX = textCluster['D'].x;
+        chartData[10].textY = textCluster['D'].y - 45;
+        chartData[11].textX = textCluster['D'].x;
+        chartData[11].textY = textCluster['D'].y + 45;
+        chartData[12].textX = textCluster['D'].x + 30;
+        chartData[12].textY = textCluster['D'].y - 30;
+        chartData[13].textX = textCluster['D'].x + 30;
+        chartData[13].textY = textCluster['D'].y + 30;
+        chartData[14].textX = textCluster['D'].x + 30;
+        chartData[14].textY = textCluster['D'].y;
+
+        //Calculate 'V'
+        chartData[15].textX = textCluster['V'].x - 40;
+        chartData[15].textY = textCluster['V'].y - 60;
+        chartData[16].textX = textCluster['V'].x - 30;
+        chartData[16].textY = textCluster['V'].y - 30;
+        chartData[17].textX = textCluster['V'].x - 20;
+        chartData[17].textY = textCluster['V'].y;
+        chartData[18].textX = textCluster['V'].x - 10;
+        chartData[18].textY = textCluster['V'].y + 30;
+        chartData[19].textX = textCluster['V'].x;
+        chartData[19].textY = textCluster['V'].y + 60;
+        chartData[20].textX = textCluster['V'].x + 10;
+        chartData[20].textY = textCluster['V'].y + 30;
+        chartData[21].textX = textCluster['V'].x + 20;
+        chartData[21].textY = textCluster['V'].y;
+        chartData[22].textX = textCluster['V'].x + 30;
+        chartData[22].textY = textCluster['V'].y - 30;
+        chartData[23].textX = textCluster['V'].x + 40;
+        chartData[23].textY = textCluster['V'].y - 60;
+
+        //Calculate 'L'
+        chartData[24].textX = textCluster['L'].x - 30;
+        chartData[24].textY = textCluster['L'].y - 60;
+        chartData[25].textX = textCluster['L'].x - 30;
+        chartData[25].textY = textCluster['L'].y - 30;
+        chartData[26].textX = textCluster['L'].x - 30;
+        chartData[26].textY = textCluster['L'].y;
+        chartData[27].textX = textCluster['L'].x - 30;
+        chartData[27].textY = textCluster['L'].y + 30;
+        chartData[28].textX = textCluster['L'].x - 30;
+        chartData[28].textY = textCluster['L'].y + 60;
+
+        chartData[29].textX = textCluster['L'].x - 10;
+        chartData[29].textY = textCluster['L'].y + 60;
+        chartData[30].textX = textCluster['L'].x + 10;
+        chartData[30].textY = textCluster['L'].y + 60;
+        chartData[31].textX = textCluster['L'].x + 30;
+        chartData[31].textY = textCluster['L'].y + 60;
+
+        for (let i = 32; i < chartData.length; i++) {
+            chartData[i].textX = 0;
+            chartData[i].textY = 0;
+        }
 
         return chartData;
     }
@@ -450,40 +550,40 @@ d3.tsv('data/publication.tsv').then(function (data) {
     let idx = 0;
     let panelImg = d3.select('#paper-img');
     let panelInfo = d3.select('#paper-info');
-    while (true) {
-        await sleep(3000).then(function () {
-
-            //update bubble opacity and title
-            // svg.selectAll('.node').attr('opacity', 0.3);
-            let currentItem = svg.select(`#data-${idList[idx].id}`);
-            // currentItem.attr('opacity', 1);
-            panelImg.attr('src', idList[idx].image);
-            panelInfo.selectAll('*').remove();
-            panelInfo.append('p').attr('class', 'panel-text').text(idList[idx].title);
-
-            currentItem.data()[0].data.isInTimeline = true;
-            bubbleChart.updateBubble();
-            //temp
-            // svg.select('.current-show').classed('current-show', false).transition().duration(2000).attr('r', bubbleChartSettings.bubbleRadius);
-
-            currentItem.select('circle').transition().duration(2000).attr('r', 8);
-            updateChips(idList[idx]);
-            if (idx === idList.length - 1) {
-                idx = 0;
-            } else {
-                idx++;
-            }
-        });
-
-        if (idx === 0) {
-            await sleep(3000).then(function () {
-                bubbleChart.reset();
-                svg.selectAll('circle').transition().delay((d, i) => 100 * i).duration(500).attr('r', bubbleChartSettings.bubbleRadius);
-            });
-
-            await sleep(4000);
-        }
-    }
+    // while (true) {
+    //     await sleep(3000).then(function () {
+    //
+    //         //update bubble opacity and title
+    //         // svg.selectAll('.node').attr('opacity', 0.3);
+    //         let currentItem = svg.select(`#data-${idList[idx].id}`);
+    //         // currentItem.attr('opacity', 1);
+    //         panelImg.attr('src', idList[idx].image);
+    //         panelInfo.selectAll('*').remove();
+    //         panelInfo.append('p').attr('class', 'panel-text').text(idList[idx].title);
+    //
+    //         currentItem.data()[0].data.isInTimeline = true;
+    //         bubbleChart.updateBubble();
+    //         //temp
+    //         // svg.select('.current-show').classed('current-show', false).transition().duration(2000).attr('r', bubbleChartSettings.bubbleRadius);
+    //
+    //         currentItem.select('circle').transition().duration(2000).attr('r', 8);
+    //         updateChips(idList[idx]);
+    //         if (idx === idList.length - 1) {
+    //             idx = 0;
+    //         } else {
+    //             idx++;
+    //         }
+    //     });
+    //
+    //     if (idx === 0) {
+    //         await sleep(3000).then(function () {
+    //             bubbleChart.reset();
+    //             svg.selectAll('circle').transition().delay((d, i) => 100 * i).duration(500).attr('r', bubbleChartSettings.bubbleRadius);
+    //         });
+    //
+    //         await sleep(4000);
+    //     }
+    // }
 
     function updateChips(info) {
         panelInfo.selectAll('.chip').remove();
