@@ -358,10 +358,10 @@ function createBubbleChart(data, svg, settings) {
         let clusters = {};
 
         let numOfClusters = clusterName.length;
-        let distance = width / (numOfClusters + 1);
+        let distance = (width - 100) / (numOfClusters-1);
 
         for (let i = 0; i < numOfClusters; i++) {
-            clusters[clusterName[i]] = {x: distance * (i + 1), y: yPosition}
+            clusters[clusterName[i]] = {x: distance * i + 50, y: yPosition}
         }
 
         return clusters;
