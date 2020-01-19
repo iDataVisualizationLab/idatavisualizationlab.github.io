@@ -4,7 +4,6 @@ let category = {};
 let year = {};
 let yearDistance = 0;
 let isGroup = true;
-let colors = ["#1f77b4", "#ff7f0e", "#2ca02c", "#d62728"];
 
 let bubbleChartSettings = {
     width: parseFloat(d3.select('#chart-container').style('width').replace('px', '')),
@@ -13,14 +12,14 @@ let bubbleChartSettings = {
 };
 
 function createBubbleChart(data, svg, settings) {
-    let color = d3.scaleOrdinal(colors);
+    // let color = d3.scaleOrdinal(colors);
     let displayType = 'group-all';
 
     let width = settings.width, height = settings.height;
     let center = {x: width / 2, y: height / 2};
     let forceStrength = 0.04;
     let bubbles = null;
-    let rAreaCluster = {}, yearCluster = {};
+    let rAreaCluster = {}, yearCluster = {}, textCluster = {};
     let simulation = null;
     let bubbleRadius = settings.bubbleRadius;
     let chartData = data;
@@ -58,12 +57,15 @@ function createBubbleChart(data, svg, settings) {
     chart.draw = function () {
         rAreaCluster = createAreaCluster('ResearchArea', height / 2);
         yearCluster = createYearCluster('year', height - 30);
+        textCluster = createTextCluster('Text', height / 2);
 
         year = yearCluster;
 
         chartData.forEach(function (d) {
             calculateTimelinePosition(d);
         });
+
+        chartData = calculateTextPosition(chartData);
 
         let yearArr = [];
         for (let key in yearCluster) {
@@ -126,7 +128,7 @@ function createBubbleChart(data, svg, settings) {
                 return "url(\"#" + d.id + "\")";
             })
             .attr('stroke', function (d) {
-                return color(d.data.ResearchArea);
+                return colors[d.data.ResearchArea];
             });
         // .on('mouseover', showDetail)
         // .on('mouseout', hideDetail);
@@ -317,6 +319,20 @@ function createBubbleChart(data, svg, settings) {
         return clusters;
     }
 
+    function createTextCluster(clusterType, yPosition) {
+        let clusterName = ['I', 'D', 'V', 'L'];
+        let clusters = {};
+
+        let numOfClusters = clusterName.length;
+        let distance = width / (numOfClusters + 1);
+
+        for (let i = 0; i < numOfClusters; i++) {
+            clusters[clusterName[i]] = {x: distance * (i + 1), y: yPosition}
+        }
+
+        return clusters;
+    }
+
     chart.toggleDisplay = function () {
         if (displayType === 'split') {
             groupBubbles();
@@ -339,6 +355,23 @@ function createBubbleChart(data, svg, settings) {
         currentItem.isInTimeline = false;
     }
 
+    //calculate bubbles position in text
+    function calculateTextPosition(chartData) {
+        console.log(chartData[0]);
+        chartData[0].textX = textCluster['I'].x;
+        chartData[0].textY = textCluster['I'].y - 30;
+        chartData[1].textX = textCluster['I'].x;
+        chartData[1].textY = textCluster['I'].y - 15;
+        chartData[2].textX = textCluster['I'].x;
+        chartData[2].textY = textCluster['I'].y;
+        chartData[3].textX = textCluster['I'].x;
+        chartData[3].textY = textCluster['I'].y + 15;
+        chartData[4].textX = textCluster['I'].x;
+        chartData[4].textY = textCluster['I'].y + 30;
+
+        return chartData;
+    }
+
     function createMultilineText(clusterArr) {
         let texts = svg.select('.chart-tags').selectAll('text').data(clusterArr)
             .enter()
@@ -347,7 +380,7 @@ function createBubbleChart(data, svg, settings) {
             .attr('x', d => rAreaCluster[d].x)
             .attr('y', d => rAreaCluster[d].y / 5)
             .attr('text-anchor', 'middle')
-            .style('fill', d => color(d))
+            .style('fill', d => colors[d])
             .text(d => d);
 
         let width = 200;
