@@ -110,3 +110,7 @@ i.material-icons.dis {
 .btn-small:hover {
     background-color: #c7312c;
 }
+
+nav {
+    background-color: transparent !important;
+}

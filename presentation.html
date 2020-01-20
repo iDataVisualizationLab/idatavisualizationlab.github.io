@@ -16,7 +16,9 @@
     <!--Import materialize.css-->
     <link type="text/css" rel="stylesheet" href="presentation/css/materialize.min.css" media="screen,projection"/>
     <link rel="stylesheet" type="text/css" href="presentation/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
     <link rel="stylesheet" type="text/css" href="presentation/css/main.css">
+
     <meta name="theme-color" content="#fafafa">
 </head>
 
@@ -27,20 +29,22 @@
 <![endif]-->
 
 <!-- Add your site or application content here -->
+<div id="header"></div>
+
 <div class="content">
-    <div class="row">
-        <div class="col s12">
-            <h1 class="valign-wrapper" style="position: relative">
-                <a href="index.html"> <img height="48px" src="images/iDVLlogo/iDVL.png" href="index.php" alt="logo"
-                                           title="logo"></a>
-                <a href="index.html" style="padding-left: 20px"><span
-                        class="logo_colour"> interactive Data Visualization Lab</span></a>
-                <a href="http://www.depts.ttu.edu/cs/" style="position: absolute;right: 0"><img height="48px"
-                                                                                                src="images/TTUlogo.png"
-                                                                                                alt="logo" title="logo"></a>
-            </h1>
-        </div>
-    </div>
+<!--    <div class="row">-->
+<!--        <div class="col s12">-->
+<!--            <h1 class="valign-wrapper" style="position: relative">-->
+<!--                <a href="index.html"> <img height="48px" src="images/iDVLlogo/iDVL.png" href="index.php" alt="logo"-->
+<!--                                           title="logo"></a>-->
+<!--                <a href="index.html" style="padding-left: 20px"><span-->
+<!--                        class="logo_colour"> interactive Data Visualization Lab</span></a>-->
+<!--                <a href="http://www.depts.ttu.edu/cs/" style="position: absolute;right: 0"><img height="48px"-->
+<!--                                                                                                src="images/TTUlogo.png"-->
+<!--                                                                                                alt="logo" title="logo"></a>-->
+<!--            </h1>-->
+<!--        </div>-->
+<!--    </div>-->
     <div class="row">
         <div class="col s5">
             <div class="col s12" id="chart-container">
@@ -96,8 +100,9 @@
     </div>
 </div>
 
-
 <script src="js/globalvariables.js"></script>
+
+
 <script src="presentation/js/vendor/modernizr-3.8.0.min.js"></script>
 <script src="presentation/js/vendor/d3.v5.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"
@@ -106,6 +111,16 @@
 <script src="presentation/js/plugins.js"></script>
 <script src="presentation/js/main.js"></script>
 <script src="presentation/js/presentation.js"></script>
+
+
+<script>
+    $(function () {
+        $("#header").load("header.html", function () {
+            d3.select("#confTab").classed("selected", true);
+        });
+        $("#footer").load("footer.html");
+    });
+</script>
 
 <script type="text/javascript" src="presentation/js/materialize.min.js"></script>
 </body>
