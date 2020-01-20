@@ -198,63 +198,80 @@ function createBubbleChart(data, svg, settings) {
         return nodes;
     }
 
-    function splitBubbles() {
+    function changeToAreaCluster() {
         isGroup = false;
-        var clusterArr = Object.keys(rAreaCluster);
+        let clusterArr = Object.keys(rAreaCluster);
         createMultilineText(clusterArr);
-        d3.selectAll('circle').attr('r', 8);
 
         simulation.force('x', d3.forceX().strength(forceStrength).x(function (d) {
-            if (!d.data.isInTimeline) {
-                // return d.data.timelineX;
-                return d.data.textX;
+            if (d.data.isInTimeline) {
+                return d.data.timelineX;
             } else {
                 return rAreaCluster[d.data.ResearchArea].x;
-            }
-        })).force('y', d3.forceY().strength(forceStrength).y(function (d) {
-            if (!d.data.isInTimeline) {
-                // return d.data.timelineX;
-                return d.data.textY;
-            } else {
-                return rAreaCluster[d.data.ResearchArea].y;
-            }
-        })).force('collision', d3.forceCollide().radius(function (d) {
-            if (!d.data.isInTimeline) {
-                return 8;
-            } else {
-                return d.radius;
-            }
-        })).force('charge', d3.forceManyBody().strength(d => {
-            if (!d.data.isInTimeline) {
-                return 0;
-            } else {
-                return charge(d);
             }
         }));
         simulation.alpha(1).restart();
     }
 
+    function changeToTextCluster() {
+        svg.selectAll('.cluster').remove();
+        d3.selectAll('circle').attr('r', 8);
+        simulation
+            // .force('x', d3.forceX().strength(forceStrength).x(d => d.data.isInTimeline ? d.data.timelineX : d.data.textX))
+            // .force('y', d3.forceY().strength(forceStrength).y(d => d.data.isInTimeline ? d.data.timelineY : d.data.textY))
+            // .force('collision', d3.forceCollide().radius(d => d.data.isInTimeline ? d.radius : 8))
+            // .force('charge', d3.forceManyBody().strength(0));
+            .force('x', d3.forceX().strength(forceStrength).x(d => d.data.textX))
+            .force('y', d3.forceY().strength(forceStrength).y(d => d.data.textY))
+            .force('collision', d3.forceCollide().radius(8))
+            .force('charge', d3.forceManyBody().strength(0));
+        simulation.alpha(1).restart();
+    }
+
+    function checkCurrentDisplay(d) {
+        let res = {x: center.x, y: center.y};
+        switch (displayType) {
+            case "area":
+                res.x = rAreaCluster[d.data.ResearchArea].x;
+                res.y = rAreaCluster[d.data.ResearchArea].y;
+                break;
+            case "group-all":
+                res.x = center.x;
+                res.y = center.y;
+                break;
+            case "text":
+                res.x = d.data.textX;
+                res.y = d.data.textY;
+                break;
+            default:
+                break;
+        }
+        return res;
+    }
+
     chart.updateBubble = function () {
         simulation.force('x', d3.forceX().strength(forceStrength).x(d => {
+            let pos = checkCurrentDisplay(d);
             if (d.data.isInTimeline) {
                 return d.data.timelineX;
             } else {
-                return isGroup ? center.x : rAreaCluster[d.data.ResearchArea].x;
+                return pos.x;
             }
         })).force('y', d3.forceY().strength(forceStrength).y(d => {
+            let pos = checkCurrentDisplay(d);
             if (d.data.isInTimeline) {
                 return d.data.timelineY;
             } else {
-                return center.y;
+                return pos.y;
             }
         })).force('collision', d3.forceCollide().radius(function (d) {
-            if (d.data.isInTimeline) {
+            if (d.data.isInTimeline || displayType === 'text') {
                 return 8;
             } else {
                 return d.radius;
             }
         })).force('charge', d3.forceManyBody().strength(d => {
-            if (d.data.isInTimeline) {
+            if (d.data.isInTimeline || displayType === 'text') {
                 return 0;
             } else {
                 return charge(d);
@@ -267,25 +284,23 @@ function createBubbleChart(data, svg, settings) {
         simulation.force('x', d3.forceX().strength(forceStrength).x(d => {
             d.data.isInTimeline = false;
             return isGroup ? center.x : rAreaCluster[d.data.ResearchArea].x;
-        })).force('y', d3.forceY().strength(forceStrength).y(d => {
-            return center.y;
-        })).force('collision', d3.forceCollide().radius(function (d) {
-            return d.radius;
-        })).force('charge', d3.forceManyBody().strength(charge));
+        })).force('y', d3.forceY().strength(forceStrength).y(center.y))
+            .force('collision', d3.forceCollide().radius(function (d) {
+                return d.radius;
+            })).force('charge', d3.forceManyBody().strength(charge));
         simulation.alpha(1).restart();
     };
 
     function groupBubbles() {
         isGroup = true;
         svg.selectAll('.cluster').remove();
+        svg.selectAll('circle').attr('r', d => d.data.isInTimeline ? 8 : bubbleRadius);
 
-        simulation.force('x', d3.forceX().strength(forceStrength).x(function (d) {
-            if (d.data.isInTimeline) {
-                return d.data.timelineX;
-            } else {
-                return center.x;
-            }
-        }));
+        simulation
+            .force('x', d3.forceX().strength(forceStrength).x(d => d.data.isInTimeline ? d.data.timelineX : center.x))
+            .force('y', d3.forceY().strength(forceStrength).y(d => d.data.isInTimeline ? d.data.timelineY : center.y))
+            .force('collision', d3.forceCollide().radius(d => d.data.isInTimeline ? 8 : bubbleRadius))
+            .force('charge', d3.forceManyBody().strength(d => d.data.isInTimeline ? 0 : charge(d)));
         simulation.alpha(1).restart();
     }
 
@@ -358,7 +373,7 @@ function createBubbleChart(data, svg, settings) {
         let clusters = {};
 
         let numOfClusters = clusterName.length;
-        let distance = (width - 100) / (numOfClusters-1);
+        let distance = (width - 100) / (numOfClusters - 1);
 
         for (let i = 0; i < numOfClusters; i++) {
             clusters[clusterName[i]] = {x: distance * i + 50, y: yPosition}
@@ -368,12 +383,19 @@ function createBubbleChart(data, svg, settings) {
     }
 
     chart.toggleDisplay = function () {
-        if (displayType === 'split') {
-            groupBubbles();
-            displayType = 'group';
-        } else {
-            splitBubbles();
-            displayType = 'split';
+        switch (displayType) {
+            case "area":
+                changeToTextCluster();
+                displayType = 'text';
+                break;
+            case "group-all":
+                changeToAreaCluster();
+                displayType = 'area';
+                break;
+            case "text":
+                groupBubbles();
+                displayType = "group-all";
+                break;
         }
     };
 
@@ -464,7 +486,19 @@ function createBubbleChart(data, svg, settings) {
         chartData[31].textX = textCluster['L'].x + 30;
         chartData[31].textY = textCluster['L'].y + 60;
 
-        for (let i = 32; i < chartData.length; i++) {
+        //Calculate more for 'I'
+        chartData[32].textX = textCluster['I'].x;
+        chartData[32].textY = textCluster['I'].y - 60;
+        chartData[33].textX = textCluster['I'].x;
+        chartData[33].textY = textCluster['I'].y - 30;
+        chartData[34].textX = textCluster['I'].x;
+        chartData[34].textY = textCluster['I'].y;
+        chartData[35].textX = textCluster['I'].x;
+        chartData[35].textY = textCluster['I'].y + 30;
+        chartData[36].textX = textCluster['I'].x;
+        chartData[36].textY = textCluster['I'].y + 60;
+
+        for (let i = 37; i < chartData.length; i++) {
             chartData[i].textX = 0;
             chartData[i].textY = 0;
         }
@@ -550,40 +584,40 @@ d3.tsv('data/publication.tsv').then(function (data) {
     let idx = 0;
     let panelImg = d3.select('#paper-img');
     let panelInfo = d3.select('#paper-info');
-    // while (true) {
-    //     await sleep(3000).then(function () {
-    //
-    //         //update bubble opacity and title
-    //         // svg.selectAll('.node').attr('opacity', 0.3);
-    //         let currentItem = svg.select(`#data-${idList[idx].id}`);
-    //         // currentItem.attr('opacity', 1);
-    //         panelImg.attr('src', idList[idx].image);
-    //         panelInfo.selectAll('*').remove();
-    //         panelInfo.append('p').attr('class', 'panel-text').text(idList[idx].title);
-    //
-    //         currentItem.data()[0].data.isInTimeline = true;
-    //         bubbleChart.updateBubble();
-    //         //temp
-    //         // svg.select('.current-show').classed('current-show', false).transition().duration(2000).attr('r', bubbleChartSettings.bubbleRadius);
-    //
-    //         currentItem.select('circle').transition().duration(2000).attr('r', 8);
-    //         updateChips(idList[idx]);
-    //         if (idx === idList.length - 1) {
-    //             idx = 0;
-    //         } else {
-    //             idx++;
-    //         }
-    //     });
-    //
-    //     if (idx === 0) {
-    //         await sleep(3000).then(function () {
-    //             bubbleChart.reset();
-    //             svg.selectAll('circle').transition().delay((d, i) => 100 * i).duration(500).attr('r', bubbleChartSettings.bubbleRadius);
-    //         });
-    //
-    //         await sleep(4000);
-    //     }
-    // }
+    while (true) {
+        await sleep(3000).then(function () {
+
+            //update bubble opacity and title
+            // svg.selectAll('.node').attr('opacity', 0.3);
+            let currentItem = svg.select(`#data-${idList[idx].id}`);
+            // currentItem.attr('opacity', 1);
+            panelImg.attr('src', idList[idx].image);
+            panelInfo.selectAll('*').remove();
+            panelInfo.append('p').attr('class', 'panel-text').text(idList[idx].title);
+
+            currentItem.data()[0].data.isInTimeline = true;
+            bubbleChart.updateBubble();
+            //temp
+            // svg.select('.current-show').classed('current-show', false).transition().duration(2000).attr('r', bubbleChartSettings.bubbleRadius);
+
+            currentItem.select('circle').transition().duration(2000).attr('r', 8);
+            updateChips(idList[idx]);
+            if (idx === idList.length - 1) {
+                idx = 0;
+            } else {
+                idx++;
+            }
+        });
+
+        if (idx === 0) {
+            await sleep(3000).then(function () {
+                bubbleChart.reset();
+                svg.selectAll('circle').transition().delay((d, i) => 100 * i).duration(500).attr('r', bubbleChartSettings.bubbleRadius);
+            });
+
+            await sleep(4000);
+        }
+    }
 
     function updateChips(info) {
         panelInfo.selectAll('.chip').remove();
