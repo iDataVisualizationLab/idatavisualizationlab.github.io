@@ -23,6 +23,7 @@ function createBubbleChart(data, svg, settings) {
     let simulation = null;
     let bubbleRadius = settings.bubbleRadius;
     let chartData = data;
+    let textBubbleRadius = 8;
 
     svg.attr('width', width).attr('height', height);
 
@@ -56,8 +57,6 @@ function createBubbleChart(data, svg, settings) {
         rAreaCluster = createAreaCluster('ResearchArea', height / 2);
         yearCluster = createYearCluster('year', height - 30);
         textCluster = createTextCluster('Text', height / 2);
-
-        console.log(textCluster);
 
         year = yearCluster;
 
@@ -110,17 +109,17 @@ function createBubbleChart(data, svg, settings) {
 
         let nodes = createNodes();
 
-        let rectG = svg.append('g').attr('class', 'shadow-container');
-
-        rectG
-            .selectAll('circle')
-            .data(nodes)
-            .enter()
-            .append('g')
-            .attr("transform", d => `translate(${d.data.textX},${d.data.textY})`)
-            .append('circle')
-            .attr('r', d => d.radius)
-            .attr('fill', 'gray');
+        // let rectG = svg.append('g').attr('class', 'shadow-container');
+        //
+        // rectG
+        //     .selectAll('circle')
+        //     .data(nodes)
+        //     .enter()
+        //     .append('g')
+        //     .attr("transform", d => `translate(${d.data.textX},${d.data.textY})`)
+        //     .append('circle')
+        //     .attr('r', d => d.radius)
+        //     .attr('fill', 'gray');
 
         bubbles = svg.selectAll(".bubble-container")
             .data(nodes, d => d.data.Id)
@@ -169,8 +168,6 @@ function createBubbleChart(data, svg, settings) {
         width = parseFloat(d3.select('#chart-container').style('width').replace('px', ''));
         height = parseFloat(d3.select('#chart-container').style('height').replace('px', ''));
 
-        console.log(width, height);
-
         bubbleChartSettings.bubbleRadius = width / 30;
 
         center = {x: width / 2, y: height / 2};
@@ -215,7 +212,7 @@ function createBubbleChart(data, svg, settings) {
 
     function changeToTextCluster() {
         svg.selectAll('.cluster').remove();
-        d3.selectAll('circle').attr('r', 8);
+        svg.selectAll('circle').attr('r', textBubbleRadius);
         simulation
             // .force('x', d3.forceX().strength(forceStrength).x(d => d.data.isInTimeline ? d.data.timelineX : d.data.textX))
             // .force('y', d3.forceY().strength(forceStrength).y(d => d.data.isInTimeline ? d.data.timelineY : d.data.textY))
@@ -223,7 +220,7 @@ function createBubbleChart(data, svg, settings) {
             // .force('charge', d3.forceManyBody().strength(0));
             .force('x', d3.forceX().strength(forceStrength).x(d => d.data.textX))
             .force('y', d3.forceY().strength(forceStrength).y(d => d.data.textY))
-            .force('collision', d3.forceCollide().radius(8))
+            .force('collision', d3.forceCollide().radius(textBubbleRadius))
             .force('charge', d3.forceManyBody().strength(0));
         simulation.alpha(1).restart();
     }
@@ -281,14 +278,23 @@ function createBubbleChart(data, svg, settings) {
     };
 
     chart.reset = function () {
+        chart.toggleDisplay();
+
         simulation.force('x', d3.forceX().strength(forceStrength).x(d => {
+            let pos = checkCurrentDisplay(d);
             d.data.isInTimeline = false;
-            return isGroup ? center.x : rAreaCluster[d.data.ResearchArea].x;
-        })).force('y', d3.forceY().strength(forceStrength).y(center.y))
+            return pos.x;
+        })).force('y', d3.forceY().strength(forceStrength).y(d => {
+            let pos = checkCurrentDisplay(d);
+            return pos.y;
+        }))
             .force('collision', d3.forceCollide().radius(function (d) {
-                return d.radius;
+                console.log(displayType === 'text' ? textBubbleRadius : d.radius);
+                return displayType === 'text' ? textBubbleRadius : d.radius;
             })).force('charge', d3.forceManyBody().strength(charge));
         simulation.alpha(1).restart();
+
+        svg.selectAll('circle').transition().delay((d, i) => 100 * i).duration(500).attr('r', displayType === 'text' ? textBubbleRadius : bubbleRadius);
     };
 
     function groupBubbles() {
@@ -467,6 +473,28 @@ function createBubbleChart(data, svg, settings) {
         chartData[23].textX = textCluster['V'].x + 40;
         chartData[23].textY = textCluster['V'].y - 60;
 
+        chartData[32].textX = textCluster['V'].x - 55;
+        chartData[32].textY = textCluster['V'].y - 75;
+        chartData[33].textX = textCluster['V'].x - 70;
+        chartData[33].textY = textCluster['V'].y - 85;
+        chartData[34].textX = textCluster['V'].x - 85;
+        chartData[34].textY = textCluster['V'].y - 95;
+        chartData[35].textX = textCluster['V'].x - 100;
+        chartData[35].textY = textCluster['V'].y - 105;
+        chartData[36].textX = textCluster['V'].x - 115;
+        chartData[36].textY = textCluster['V'].y - 115;
+
+        chartData[37].textX = textCluster['V'].x + 55;
+        chartData[37].textY = textCluster['V'].y - 75;
+        chartData[38].textX = textCluster['V'].x + 70;
+        chartData[38].textY = textCluster['V'].y - 85;
+        chartData[39].textX = textCluster['V'].x + 85;
+        chartData[39].textY = textCluster['V'].y - 95;
+        chartData[40].textX = textCluster['V'].x + 100;
+        chartData[40].textY = textCluster['V'].y - 105;
+        chartData[41].textX = textCluster['V'].x + 115;
+        chartData[41].textY = textCluster['V'].y - 115;
+
         //Calculate 'L'
         chartData[24].textX = textCluster['L'].x - 30;
         chartData[24].textY = textCluster['L'].y - 60;
@@ -486,22 +514,10 @@ function createBubbleChart(data, svg, settings) {
         chartData[31].textX = textCluster['L'].x + 30;
         chartData[31].textY = textCluster['L'].y + 60;
 
-        //Calculate more for 'I'
-        chartData[32].textX = textCluster['I'].x;
-        chartData[32].textY = textCluster['I'].y - 60;
-        chartData[33].textX = textCluster['I'].x;
-        chartData[33].textY = textCluster['I'].y - 30;
-        chartData[34].textX = textCluster['I'].x;
-        chartData[34].textY = textCluster['I'].y;
-        chartData[35].textX = textCluster['I'].x;
-        chartData[35].textY = textCluster['I'].y + 30;
-        chartData[36].textX = textCluster['I'].x;
-        chartData[36].textY = textCluster['I'].y + 60;
-
-        for (let i = 37; i < chartData.length; i++) {
-            chartData[i].textX = 0;
-            chartData[i].textY = 0;
-        }
+        // for (let i = 37; i < chartData.length; i++) {
+        //     chartData[i].textX = 0;
+        //     chartData[i].textY = 0;
+        // }
 
         return chartData;
     }
@@ -597,8 +613,6 @@ d3.tsv('data/publication.tsv').then(function (data) {
 
             currentItem.data()[0].data.isInTimeline = true;
             bubbleChart.updateBubble();
-            //temp
-            // svg.select('.current-show').classed('current-show', false).transition().duration(2000).attr('r', bubbleChartSettings.bubbleRadius);
 
             currentItem.select('circle').transition().duration(2000).attr('r', 8);
             updateChips(idList[idx]);
@@ -612,7 +626,6 @@ d3.tsv('data/publication.tsv').then(function (data) {
         if (idx === 0) {
             await sleep(3000).then(function () {
                 bubbleChart.reset();
-                svg.selectAll('circle').transition().delay((d, i) => 100 * i).duration(500).attr('r', bubbleChartSettings.bubbleRadius);
             });
 
             await sleep(4000);
