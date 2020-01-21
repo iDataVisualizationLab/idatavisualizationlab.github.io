@@ -114,3 +114,7 @@ i.material-icons.dis {
 nav {
     background-color: transparent !important;
 }
+
+.collection .collection-item.avatar {
+    display: block !important;
+}

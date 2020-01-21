@@ -101,8 +101,6 @@
 </div>
 
 <script src="js/globalvariables.js"></script>
-
-
 <script src="presentation/js/vendor/modernizr-3.8.0.min.js"></script>
 <script src="presentation/js/vendor/d3.v5.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"
@@ -112,11 +110,10 @@
 <script src="presentation/js/main.js"></script>
 <script src="presentation/js/presentation.js"></script>
 
-
 <script>
     $(function () {
         $("#header").load("header.html", function () {
-            d3.select("#confTab").classed("selected", true);
+            d3.select("#presentTab").classed("selected", true);
         });
         $("#footer").load("footer.html");
     });
