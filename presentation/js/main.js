@@ -110,17 +110,17 @@ function createBubbleChart(data, svg, settings) {
 
         let nodes = createNodes();
 
-        // let rectG = svg.append('g').attr('class', 'rect-container');
-        //
-        // rectG
-        //     .selectAll('rect')
-        //     .data(nodes)
-        //     .enter()
-        //     .append('rect')
-        //     .attr('x', d => {console.log(d); return d.data.textX})
-        //     .attr('y', d => d.data.textY)
-        //     .attr('width', 5)
-        //     .attr('height', 5);
+        let rectG = svg.append('g').attr('class', 'shadow-container');
+
+        rectG
+            .selectAll('circle')
+            .data(nodes)
+            .enter()
+            .append('g')
+            .attr("transform", d => `translate(${d.data.textX},${d.data.textY})`)
+            .append('circle')
+            .attr('r', d => d.radius)
+            .attr('fill', 'gray');
 
         bubbles = svg.selectAll(".bubble-container")
             .data(nodes, d => d.data.Id)
