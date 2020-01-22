@@ -625,7 +625,7 @@ ul#images li {
   display: inline-block;
 }
 img.resize {
-  max-width:136px;
+  max-width:119px;
   max-height:auto;
 }
 .images:hover{
@@ -655,6 +655,12 @@ img.resize {
 #huyenPub{
   display: none;
 }
+#haoPub{
+  display: none;
+}
+#baoPub{
+  display: none;
+}
 
 .images:hover ~ .infoArea > div {
   display: none;
@@ -672,7 +678,11 @@ img.resize {
 .images.imgSix:hover ~ .infoArea #infSix,
 .images.imgSix:hover ~ .infoArea #longPub,
 .images.imgSeven:hover ~ .infoArea #infSeven,
-.images.imgSeven:hover ~ .infoArea #yasinPub{
+.images.imgSeven:hover ~ .infoArea #yasinPub,
+.images.imgEight:hover ~ .infoArea #infEight,
+.images.imgEight:hover ~ .infoArea #haoPub,
+.images.imgThree:hover ~ .infoArea #baoPub
+{
   display: block;
 }
 .images.imgOne:hover ~ .infoArea .personBorder,
@@ -1270,16 +1280,16 @@ img:hover{
   text-align: center;
 }
 .cFaculty{
-  width: 132px;
+  width: 119px;
   height: 15px;
   float: left;
   background: #999;
-  padding: 2px;
+  /*padding: 2px;*/
   margin-right: 16px;
   color: #fff;
 }
 .currentMembers{
-  width: 553px;
+  width: 833px;
   background: #999;
   height: 15px;
   float: left;
@@ -1287,10 +1297,10 @@ img:hover{
   color: #fff;
 }
 .MsStudent {
-    width: 274px;
+    width: 238px;
     background: #999;
     height: 15px;
-    float: right;
+    float: left;
     padding: 2px;
     color: #fff;
 }
