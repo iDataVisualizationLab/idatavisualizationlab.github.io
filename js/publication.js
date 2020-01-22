@@ -22,7 +22,7 @@ function drawPub(data) {
                         <i>${d.Title}</i><br>
                         ${arraytoAuthor(d.Authors)} <br>
                         ${d.Venue}<br>
-                        <a href="${d.pubURL}">${d.VenueId}</a> <br>
+                        <a  ef="${d.pubURL}">${d.VenueId}</a> <br>
                         <a href="${d.pdf}"> <img src="images/icons/pdf.png" height="18"></a>
                         <a href="${d.video}"> <img src="images/icons/movie.png" height="19"></a>
                         <a href="${d.github}"> <img src="images/icons/github.png" height="18"></a>
