@@ -1,0 +1,129 @@
+body {
+    background: #fff url('../../images/pattern.png') repeat;
+    color: #000;
+}
+
+.content {
+    width: 90%;
+    margin: 20px auto;
+}
+
+.container {
+    margin-top: 10px;
+}
+
+.info-panel {
+    height: 150px;
+    width: 100%;
+    border: solid darkgrey 2px;
+    border-radius: 5px;
+    background-color: white;
+}
+
+.panel-text {
+    padding-left: 10px;
+    padding-right: 10px;
+    color: black;
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+.card-panel .avatar:not(.circle-clipper) > .circle, .card-panel .avatar :not(.circle-clipper) > .circle {
+    width: 80px;
+    height: 80px;
+    overflow: hidden;
+    left: 15px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.presentContentList_item:not(.circle-clipper) > .circle, .presentContentList_item :not(.circle-clipper) > .circle {
+    width: 40px;
+    height: 40px;
+    overflow: hidden;
+    left: 15px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.paperThumb img {
+    border: 1px solid #444;
+    border-radius: 5px;
+    box-shadow: 3px 3px 5px -2px #000;
+}
+
+.card-panel .avatar div {
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.card-panel a {
+    color: #b10f00;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 16px;
+}
+
+i.material-icons.dis {
+    color: #dddddd;
+}
+
+#presentList {
+    margin-top: 2%;
+}
+
+.logo_colour {
+    color: #9e1f1f;
+    position: relative;
+    bottom: 3px;
+}
+
+.chip {
+    margin-left: 5px;
+}
+
+.crop {
+    width: 100%;
+    overflow: hidden;
+}
+
+.crop img {
+    width: 100%;
+    border: solid darkgrey 2px;
+    border-radius: 5px;
+}
+
+#chart-container {
+    border: solid darkgrey 2px;
+    border-radius: 5px;
+    background-color: white;
+}
+
+.row .col .s12 {
+    padding: 0;
+}
+
+.btn-small {
+    background-color: #9e1f1f;
+}
+
+.btn-small:hover {
+    background-color: #c7312c;
+}
+
+nav {
+    background-color: transparent !important;
+}
+
+.collection .collection-item.avatar {
+    display: block !important;
+}
+
+li {
+    display: block;
+    /*background: none !important;*/
+}
+
+.content li {
+    background-image: none !important;
+}

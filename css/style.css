@@ -24,8 +24,11 @@ article, aside, figure, footer, header, hgroup, nav, section {
   display:block;
 }
 
-body { 
-  font: normal .80em arial, sans-serif;
+html {
+  font: 12px arial, sans-serif;
+}
+
+body {
   background: #fff url(../images/pattern.png) repeat;
   color: #000;
 }
@@ -201,8 +204,18 @@ nav {
   color: #222;
   border-top: 1px solid #fff;
   border-bottom: 1px solid #AFABAB;
-} 
+}
+.site_content {
+  width: 1000px;
+  overflow: hidden;
+  margin: 0 auto 0 auto;
+  padding: 0 0 0px 0;
+  border-bottom: 1px solid #AFABAB;
+}
 
+.top_border {
+  border-top: 1px solid #fff;
+  padding-top: 0px;}
 #site_content {
   width: 1000px;
   overflow: hidden;
@@ -1295,5 +1308,54 @@ img:hover{
   
 }
 
+.d3-tip {
+  pointer-events: none!important;
+  width: 400px;
+  transform: translateX(50%);
+  background-color: white;
+  padding: 10px;
+  border-radius: 5px;
+}
+.d3-tip.n {
+  transform: translateY(-100%);
+}
 
+#left_panel {
+  background-color: #eeeeee;
+  border: #dcdcdc;
+}
+.hidden {
+  display: none;
+}
+.category-entry{
+  border-radius: 3px;
+  /*-webkit-box-shadow:*/
+          /*0px 3px rgba(128,128,128,1), !* gradient effects *!*/
+          /*0px 4px rgba(118,118,118,1),*/
+          /*0px 5px rgba(108,108,108,1),*/
+          /*0px 6px rgba(98,98,98,1),*/
+          /*0px 7px rgba(88,88,88,1),*/
+          /*0px 8px rgba(78,78,78,1),*/
+          /*0px 14px 6px -1px rgba(128,128,128,1); !* shadow *!*/
 
+  /*-webkit-transition: -webkit-box-shadow .1s ease-in-out;*/
+}
+.category-entry.active {
+  background: #efefef;
+  opacity: 1;
+  font-weight: bold;
+  /*-webkit-box-shadow:*/
+          /*0px 3px rgba(128,128,128,1),*/
+          /*0px 4px rgba(118,118,118,1),*/
+          /*0px 5px rgba(108,108,108,1),*/
+          /*0px 6px rgba(98,98,98,1),*/
+          /*0px 7px rgba(88,88,88,1),*/
+          /*0px 8px rgba(78,78,78,1),*/
+          /*0px 10px 2px 0px rgba(128,128,128,.6); !* shadow *!*/
+}
+
+.flat-primary-inner-butt {
+  background: #ffffff;
+  font-weight: normal;
+  /*box-shadow: inset #dcdcdc -3px -3px 0px;*/
+}
