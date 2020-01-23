@@ -3,7 +3,7 @@ body {
     color: #000;
 }
 
-.content {
+.main-content {
     width: 90%;
     margin: 20px auto;
 }
@@ -124,6 +124,6 @@ li {
     /*background: none !important;*/
 }
 
-.content li {
+.main-content li {
     background-image: none !important;
 }
