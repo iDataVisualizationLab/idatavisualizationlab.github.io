@@ -684,8 +684,10 @@ img.resize {
 .images.imgSeven:hover ~ .infoArea #yasinPub,
 .images.imgEight:hover ~ .infoArea #infEight,
 .images.imgEight:hover ~ .infoArea #haoPub,
-.images.imgEight:hover ~ .infoArea #chauPub,
+.images.imgNine:hover ~ .infoArea #infNine,
 .images.imgThree:hover ~ .infoArea #baoPub
+
+.images.imgEight:hover ~ .infoArea #chauPub
 {
   display: block;
 }
