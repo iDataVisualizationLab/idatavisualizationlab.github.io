@@ -661,6 +661,9 @@ img.resize {
 #baoPub{
   display: none;
 }
+#chauPub{
+  display: none;
+}
 
 .images:hover ~ .infoArea > div {
   display: none;
@@ -681,6 +684,7 @@ img.resize {
 .images.imgSeven:hover ~ .infoArea #yasinPub,
 .images.imgEight:hover ~ .infoArea #infEight,
 .images.imgEight:hover ~ .infoArea #haoPub,
+.images.imgEight:hover ~ .infoArea #chauPub,
 .images.imgThree:hover ~ .infoArea #baoPub
 {
   display: block;
