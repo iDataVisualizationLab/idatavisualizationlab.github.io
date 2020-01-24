@@ -664,7 +664,9 @@ img.resize {
 #chauPub{
   display: none;
 }
-
+#juanitaPub{
+  display: none;
+}
 .images:hover ~ .infoArea > div {
   display: none;
 }
@@ -686,6 +688,7 @@ img.resize {
 .images.imgEight:hover ~ .infoArea #haoPub,
 .images.imgTen:hover ~ .infoArea #infTen,
 .images.imgTen:hover ~ .infoArea #chauPub,
+.images.imgTen:hover ~ .infoArea #juanitaPub,
 .images.imgThree:hover ~ .infoArea #baoPub
 {
   display: block;
@@ -1305,12 +1308,19 @@ img:hover{
   width: 238px;
   background: #999;
   height: 15px;
+  padding: 2px;
+  color: #fff;
+}
+
+.UnderStudent {
+  width: 238px;
+  background: #999;
+  height: 15px;
   float: left;
   padding: 2px;
   color: #fff;
 }
 
-}
 .curStd{
   width: 100%;
   margin-top: -12px;
