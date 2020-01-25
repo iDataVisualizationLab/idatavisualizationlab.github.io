@@ -157,9 +157,9 @@ function updatePublications(profile) {
 }
 
 $('#carousel-thumb').on('slide.bs.carousel', function (e) {
-    let id = e.relatedTarget.id;
-    let profile = profileList[id[id.length - 1]];
-
+    let idSplitter = e.relatedTarget.id.split('-');
+    let profile = profileList[idSplitter[idSplitter.length - 1]];
+    
     d3.select('.shortInfo').text(profile.introduction);
     updatePersonal(profile);
     updatePublications(profile);
