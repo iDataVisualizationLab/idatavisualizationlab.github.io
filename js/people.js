@@ -6,8 +6,7 @@ d3.csv('data/members.csv').then(function (data) {
         profileList = data;
         publicationList = publications;
         mapPubToPerson();
-
-        console.log(publications);
+        init();
 
         let carouselItem = d3.select('.carousel-inner').selectAll('.carousel-item')
             .data(data)
@@ -42,6 +41,12 @@ d3.csv('data/members.csv').then(function (data) {
             .attr('class', (d, i) => i === 0 ? 'active' : '')
             .append('img')
             .attr('src', d => d.image);
+
+        function init() {
+            d3.select('.shortInfo').text(profileList[0].introduction);
+            updatePersonal(profileList[0]);
+            updatePublications(profileList[0]);
+        }
     });
 });
 
@@ -148,7 +153,6 @@ function updatePublications(profile) {
     profile.name_on_pub.split(',').forEach(function (d) {
         let name = d.trim();
         if (name && personPubMap[name]) {
-            console.log(name);
             personPubMap[name].forEach(function (pub) {
                 addPublications(publications, pub)
             })
@@ -159,7 +163,7 @@ function updatePublications(profile) {
 $('#carousel-thumb').on('slide.bs.carousel', function (e) {
     let idSplitter = e.relatedTarget.id.split('-');
     let profile = profileList[idSplitter[idSplitter.length - 1]];
-    
+
     d3.select('.shortInfo').text(profile.introduction);
     updatePersonal(profile);
     updatePublications(profile);
