@@ -1,0 +1,77 @@
+<html>
+<head>
+    <title>iDVL People</title>
+    <link rel="shortcut icon" href="images/iDVLlogo/V2.png">
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="css/people.css"/>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script
+            src="https://code.jquery.com/jquery-3.3.1.js"
+            integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+            crossorigin="anonymous">
+    </script>
+    <script>
+        $(function () {
+            $("#header").load("header.html", function () {
+                d3.select("#peopleTab").classed("selected", true);
+            });
+            $("#footer").load("footer.html");
+        });
+    </script>
+</head>
+<body>
+<div id="header"></div>
+<div id="content">
+    <div id="site_content" class="fullPage">
+        <div id="top_border"></div>
+        <div id="main-content">
+            <div id="carousel-thumb" class="carousel slide carousel-fade carousel-thumbnails" data-ride="carousel">
+                <div class="carousel-inner" role="listbox">
+                </div>
+                <a class="carousel-control-prev" href="#carousel-thumb" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carousel-thumb" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+                <ol class="carousel-indicators">
+                </ol>
+            </div>
+        </div>
+
+        <div class="personInfo">
+            <p class="shortInfo"></p>
+            <p class="personLinks">
+                <a href="" class="cv-link"> <img src="images/icons/cv.gif" height="32" padding="0" alt="cv"/></a>
+                <a href="" class="homepage-link"> <img src="images/icons/webico.png" height="22" padding="0" alt="homepage"/></a>
+                <a href="" class="linkedin-link"> <img src="images/icons/Linked.png" height="22"  alt="linkedin"/></a>
+                <a href="" class="github-link"> <img src="images/icons/github.png" height="22" alt="github" /></a>
+                <a href="" class="scholar-link"> <img src="images/icons/GoogleScholar.png" height="26"  padding="0" alt="scholar"/></a>
+                <a href="" class="research-gate-link"> <img src="images/icons/RG.png" height="23"  padding="0" alt="researchgate"/></a>
+                <a href="" class="orcid-qr-link"> <img src="images/icons/orcid_qrcode_tommy.png" height="21"  padding="0" alt="orcid_qrcode"/></a>
+                <a href="" class="orcid-link"> <img src="images/icons/ORCID.png" height="21"  padding="0" alt="orcid"/></a>
+                <a href="" class="researcher-id-link"> <img src="images/icons/researcherID.png" height="22"  padding="0" alt="researcherid"/></a>
+                <a href="" class="youtube-link"> <img src="images/icons/youtubelogo.png" height="26"  padding="0" alt="youtube"/></a>
+            </p>
+            <div class="publications"></div>
+
+        </div>
+    </div>
+</div>
+<div id="footer"></div>
+
+<!--<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+<script src="js/d3.v5.min.js"></script>
+<script src="js/people.js"></script>
+</body>
+</html>
