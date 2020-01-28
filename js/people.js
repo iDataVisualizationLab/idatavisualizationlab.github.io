@@ -1,5 +1,19 @@
-$('.carousel').carousel();
+$('.carousel').carousel({
+    interval: 5000
+});
 let profileList = [], personPubMap = {}, publicationList = [];
+let bubbleChart = null, svg = null;
+
+let idList = null;
+let category = {};
+let yearCluster = {};
+let yearDistance = 0;
+
+let bubbleChartSettings = {
+    width: parseFloat(d3.select('.chart').style('width').replace('px', '')),
+    height: parseFloat(d3.select('.chart').style('width').replace('px', '')) / 2,
+    bubbleRadius: parseFloat(d3.select('.chart').style('width').replace('px', '')) / 30,
+};
 
 d3.csv('data/members.csv').then(function (data) {
     d3.tsv('data/publication.tsv').then(function (publications) {
@@ -23,7 +37,7 @@ d3.csv('data/members.csv').then(function (data) {
 
         let carouselCaption = carouselItem
             .append('div')
-            .attr('class', 'carousel-caption d-none d-md-block')
+            .attr('class', 'carousel-caption d-none d-md-block');
 
         carouselCaption
             .append('h3')
@@ -45,7 +59,13 @@ d3.csv('data/members.csv').then(function (data) {
         function init() {
             d3.select('.shortInfo').text(profileList[0].introduction);
             updatePersonal(profileList[0]);
-            updatePublications(profileList[0]);
+            let personPublications = updatePublications(profileList[0]);
+
+            svg = d3.select('.chart').select('#main-svg');
+            let filteredYearData = personPublications.filter(d => Date.parse(d.Time) > Date.parse("2017")).sort((a, b) => Date.parse(a.Time) - Date.parse(b.Time));
+
+            bubbleChart = createBubbleChart(filteredYearData, svg, bubbleChartSettings);
+            bubbleChart(filteredYearData);
         }
     });
 });
@@ -91,73 +111,21 @@ function updatePersonal(profile) {
     changePersonalLinks(personLinks, 'youtube-link', profile.youtube);
 }
 
-
-function addPublications(selector, publication) {
-    let tr = selector.append('div')
-        .attr('class', 'publicationArea')
-        .append('table')
-        .append('tr');
-
-    tr.append('th')
-        .attr('class', 'paperThumb')
-        .attr('width', '15%')
-        .append('img')
-        .attr('src', publication.image)
-        .attr('width', 200)
-        .attr('height', 100);
-
-    tr.append('th')
-        .attr('width', '85%')
-        .style('padding-left', '25px')
-        .append('th').attr('width', '85%')
-        .html(`<font color="${getColor(publication.Code)}">[${publication.Id}]</font>
-                        <i>${publication.Title}</i><br>
-                        ${arrayToAuthor(publication.Authors.split(',').map(e => e.trim()))} <br>
-                        ${publication.Venue}<br>
-                        <a  ef="${publication.pubURL}">${publication.VenueId}</a> <br>
-                        <a href="${publication.pdf}"> <img src="images/icons/pdf.png" height="18"></a>
-                        <a href="${publication.video}"> <img src="images/icons/movie.png" height="19"></a>
-                        <a href="${publication.github}"> <img src="images/icons/github.png" height="18"></a>
-                        <a href="${publication.doi}" class="button">DOI</a>
-                        <a href="${publication.bib}"> <img src="images/icons/bibtex.png" height="13"></a>`);
-
-    function arrayToAuthor(a) {
-        let lasta = a.pop();
-        if (a.length) {
-            return a.join(', ') + ' and ' + lasta;
-        }
-        return lasta;
-    }
-
-
-    function getColor(category) {
-        if (category == "C")
-            return "#66c2a5"
-        else if (category == "S")
-            return "#078ac3"
-        else if (category == "J")
-            return "#fc8d62"
-        else if (category == "W")
-            return "#e78ac3"
-        else if (category == "A")
-            return "#dd4444"
-        else {
-            return "#1c1c1c";
-        }
-    }
-}
-
 function updatePublications(profile) {
+    let personPublications = [];
     let publications = d3.select('.publications');
     publications.selectAll('*').remove();
     profile.name_on_pub.split(',').forEach(function (d) {
         let name = d.trim();
         if (name && personPubMap[name]) {
             personPubMap[name].forEach(function (pub) {
-                addPublications(publications, pub)
+                personPublications.push(pub);
+                // addPublications(publications, pub)
             })
         }
-    })
+    });
+
+    return personPublications;
 }
 
 $('#carousel-thumb').on('slide.bs.carousel', function (e) {
@@ -166,5 +134,258 @@ $('#carousel-thumb').on('slide.bs.carousel', function (e) {
 
     d3.select('.shortInfo').text(profile.introduction);
     updatePersonal(profile);
-    updatePublications(profile);
+    let personPublications = updatePublications(profile).filter(d => Date.parse(d.Time) > Date.parse("2017")).sort((a, b) => Date.parse(a.Time) - Date.parse(b.Time));
+    bubbleChart.update(personPublications);
 });
+
+function createBubbleChart(data, svg, settings) {
+    // let color = d3.scaleOrdinal(colors);
+    let displayType = 'group-all';
+
+    let width = settings.width, height = settings.height;
+    let center = {x: width / 2, y: height / 2};
+    let forceStrength = 0.04;
+    let bubbles = null;
+    let rAreaCluster = {}, textCluster = {};
+    let simulation = null;
+    let bubbleRadius = settings.bubbleRadius;
+    let chartData = data;
+    let textBubbleRadius = 8;
+
+    chartData = chartData.map(d => {
+        d['year'] = new Date(d.Time).getFullYear();
+        return d;
+    });
+
+    svg.attr('width', width).attr('height', height);
+
+    let defs = svg.append("defs");
+    yearCluster = createYearCluster('year', height - 20);
+
+    let chart = function () {
+        defs.selectAll("pattern")
+            .data(chartData)
+            .enter()
+            .append("pattern")
+            .attr("id", d => d.Id)
+            .attr("width", 1)
+            .attr("height", 1)
+            .attr("patternContentUnits", "objectBoundingBox")
+            .append("image")
+            .attr("xlink:href", d => d.image)
+            .attr("x", 0)
+            .attr("y", 0)
+            .attr("width", 1)
+            .attr("height", 1)
+            .attr("preserveAspectRatio", "xMinYMin slice");
+        chart.draw();
+    };
+
+    chart.draw = function () {
+        rAreaCluster = createAreaCluster('ResearchArea', height / 2);
+        // textCluster = createTextCluster('Text', height / 2);
+
+        chartData.forEach(function (d) {
+            calculateTimelinePosition(d);
+        });
+
+        // chartData = calculateTextPosition(chartData);
+
+        let yearArr = [];
+        for (let key in yearCluster) {
+            yearArr.push({year: key, x: yearCluster[key].x, y: yearCluster[key].y});
+        }
+
+        svg.select('.timeline')
+            .selectAll('rect')
+            .data(yearArr)
+            .enter()
+            .append('rect')
+            .attr('x', d => {
+                return d.x
+            })
+            .attr('y', d => d.y)
+            .attr('width', '2px')
+            .attr('height', '5px')
+            .attr('stroke', 'gray');
+
+        svg.select('.timeline')
+            .selectAll('text')
+            .data(yearArr)
+            .enter()
+            .append('text')
+            .attr('x', d => {
+                return d.x - 15
+            })
+            .attr('y', d => d.y + 20)
+            .text(d => d.year)
+            .attr('stroke', 'gray');
+
+        svg.select('.timeline')
+            .append('line')
+            .attr('x1', 0)
+            .attr('y1', height - 30)
+            .attr('x2', width)
+            .attr('y2', height - 30)
+            .attr('stroke-width', 2)
+            .attr('stroke', 'gray');
+
+        let nodes = createNodes();
+
+        svg.selectAll('.node').remove();
+
+        bubbles = svg.selectAll(".bubble-container")
+            .data(nodes, d => d.data.Id)
+            .enter()
+            .append('g')
+            .attr('class', 'node')
+            .attr("transform", d => `translate(${d.x},${d.y})`)
+            .attr('id', d => `data-${d.id}`)
+            .call(d3.drag()
+                .on('start', dragstarted)
+                .on('drag', dragged)
+                .on('end', dragended));
+
+        let bubblesE = bubbles.append('circle')
+            .classed('bubble', true)
+            .attr('r', 8)
+            .attr('fill', function (d) {
+                return "url(\"#" + d.id + "\")";
+            })
+            .attr('stroke', function (d) {
+                return colors[d.data.ResearchArea];
+            });
+
+        bubbles.merge(bubblesE);
+
+        bubbles.transition(2000)
+            .attr('r', d => d.radius);
+
+        simulation = d3.forceSimulation()
+            .velocityDecay(0.2)
+            .force('x', d3.forceX().strength(forceStrength).x(d => d.data.timelineX))
+            .force('y', d3.forceY().strength(forceStrength).y(d => d.data.timelineY))
+            .force('charge', d3.forceManyBody().strength(0))
+            .force('collision', d3.forceCollide().radius(8))
+            .alphaTarget(0.3)
+            .on('tick', ticked);
+
+        simulation.alpha(1).restart();
+
+        simulation.nodes(nodes);
+    };
+
+    chart.update = function (newData) {
+        // width = parseFloat(d3.select('.chart').style('width').replace('px', ''));
+        // height = parseFloat(d3.select('.chart').style('height').replace('px', ''));
+        //
+        // bubbleChartSettings.bubbleRadius = width / 30;
+        //
+        // center = {x: width / 2, y: height / 2};
+        // svg.attr('width', width).attr('height', height);
+
+        chartData = newData;
+
+        chart.draw();
+    };
+
+    function createNodes() {
+        let nodes = chartData.map(function (d) {
+            return {
+                radius: bubbleRadius,
+                value: 1,
+                id: d.Id,
+                image: d.image,
+                data: d,
+                x: Math.random() * 900,
+                y: Math.random() * 900
+            };
+        });
+        nodes.sort(function (a, b) {
+            return b.value - a.value;
+        });
+
+        return nodes;
+    }
+
+
+    function ticked() {
+        bubbles.attr("transform", d =>`translate(${d.x},${d.y})`);
+    }
+
+    function charge(d) {
+        return -Math.pow(d.radius, 2.0) * forceStrength;
+    }
+
+    function dragstarted(d) {
+        if (!d3.event.active) simulation.alphaTarget(0.3).restart();
+        d.fx = d.x;
+        d.fy = d.y;
+    }
+
+    function dragged(d) {
+        d.fx = d3.event.x;
+        d.fy = d3.event.y;
+    }
+
+    function dragended(d) {
+        if (!d3.event.active) simulation.alphaTarget(0.3);
+        d.fx = null;
+        d.fy = null;
+    }
+
+    function createAreaCluster(clusterType, yPosition) {
+        let clusterName = [];
+        let clusters = {};
+        chartData.forEach(function (d) {
+            if (!clusterName.includes(d[clusterType])) {
+                clusterName.push(d[clusterType])
+            }
+        });
+
+        let numOfClusters = clusterName.length;
+        let distance = width / (numOfClusters + 1);
+        for (let i = 0; i < numOfClusters; i++) {
+            clusters[clusterName[i]] = {x: distance * (i + 1), y: yPosition}
+        }
+
+        return clusters;
+    }
+
+    function createYearCluster(clusterType, yPosition) {
+        let clusterName = [];
+        let clusters = {};
+        chartData.forEach(function (d) {
+            if (!clusterName.includes(d[clusterType])) {
+                clusterName.push(d[clusterType])
+            }
+        });
+
+        clusterName.sort((a, b) => a - b);
+
+        let numOfClusters = clusterName.length;
+        let distance = width / (numOfClusters + 1);
+        yearDistance = distance;
+        for (let i = 0; i < numOfClusters; i++) {
+            clusters[clusterName[i]] = {x: distance * (i + 1), y: yPosition}
+        }
+
+        return clusters;
+    }
+
+    //calculate bubble position in timeline
+    function calculateTimelinePosition(currentItem) {
+        let currentItemTime = new Date(currentItem.Time);
+        let currentItemMonth = currentItemTime.getMonth();
+        let currentItemYear = currentItemTime.getFullYear();
+        let distance = yearDistance / 11;
+
+        console.log(yearCluster);
+
+        currentItem.timelineX = yearCluster[currentItemYear].x + distance * (currentItemMonth);
+        currentItem.timelineY = height * 85 / 100;
+        currentItem.isInTimeline = true;
+    }
+
+    return chart;
+}

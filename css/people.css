@@ -19,7 +19,6 @@
 
 
 .carousel-thumbnails .carousel-indicators > li.active img {
-    /*border-bottom: 4px solid #fff;*/
     opacity: 1;
 }
 
@@ -30,8 +29,14 @@
     max-width: 250px;
     margin-left: auto;
     margin-right: auto;
-    background: rgba(0,0,0,0.5);
+    background: rgba(0, 0, 0, 0.5);
     bottom: 0px !important;
+}
+
+.carousel-caption {
+    right: unset !important;
+    left: 0 !important;
+    width: 250px;
 }
 
 .carousel-caption h3, h4 {
@@ -46,12 +51,11 @@
 
 .carousel-image {
     display: block;
-    max-width:250px;
-    /*max-height:95px;*/
+    max-width: 250px;
     width: auto;
     height: auto;
-    margin-left: auto;
-    margin-right: auto;
+    /*margin-left: auto;*/
+    /*margin-right: auto;*/
 }
 
 .carousel-indicators {
@@ -61,6 +65,29 @@
 
 .shortInfo {
     font-size: 14px;
+}
+
+#main-svg {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.chart {
+    position: absolute;
+    width: 500px;
+    /*height: 500px;*/
+    margin-left: auto;
+    margin-right: auto;
+    top: 0;
+    right: 0;
+}
+
+#main-content {
+    position: relative;
+}
+
+header {
+    height: auto;
 }
 
 /*.carousel-indicators-image {*/
