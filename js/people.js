@@ -380,8 +380,6 @@ function createBubbleChart(data, svg, settings) {
         let currentItemYear = currentItemTime.getFullYear();
         let distance = yearDistance / 11;
 
-        console.log(yearCluster);
-
         currentItem.timelineX = yearCluster[currentItemYear].x + distance * (currentItemMonth);
         currentItem.timelineY = height * 85 / 100;
         currentItem.isInTimeline = true;
