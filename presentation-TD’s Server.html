@@ -1,0 +1,113 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="">
+    <link rel="shortcut icon" href="images/iDVLlogo/V2.png">
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1">-->
+
+    <link rel="apple-touch-icon" href="icon.png">
+    <!-- Place favicon.ico in the root directory -->
+
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="presentation/css/materialize.min.css" media="screen,projection"/>
+    <link rel="stylesheet" type="text/css" href="presentation/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="presentation/css/main.css">
+    <meta name="theme-color" content="#fafafa">
+</head>
+
+<body>
+<!--[if IE]>
+<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade
+    your browser</a> to improve your experience and security.</p>
+<![endif]-->
+
+<!-- Add your site or application content here -->
+<div class="content">
+    <div class="row">
+        <div class="col s12">
+            <h1 class="valign-wrapper" style="position: relative">
+                <a href="index.html"> <img height="48px" src="images/iDVLlogo/iDVL.png" href="index.php" alt="logo"
+                                           title="logo"></a>
+                <a href="index.html" style="padding-left: 20px"><span
+                        class="logo_colour"> interactive Data Visualization Lab</span></a>
+                <a href="http://www.depts.ttu.edu/cs/" style="position: absolute;right: 0"><img height="48px"
+                                                                                                src="images/TTUlogo.png"
+                                                                                                alt="logo" title="logo"></a>
+            </h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col s5">
+            <div class="col s12" id="chart-container">
+                <a class="waves-effect waves-light btn-small" id="chart-toggle">Toggle Chart</a>
+                <svg id="main-svg">
+                    <g class="timeline">
+                    </g>
+                    <g class="chart-tags"></g>
+                </svg>
+            </div>
+        </div>
+        <div class="img-panel col s7">
+            <div class="info-panel" id="paper-info"></div>
+            <div class="crop">
+                <img id="paper-img">
+            </div>
+        </div>
+    </div>
+    <div class="row" id="presentList">
+        <ul class="collection col s5">
+            <!--<li class="collection-item avatar">-->
+            <!--<img src="images/yuna.jpg" alt="" class="circle">-->
+            <!--<span class="title">Title</span>-->
+            <!--<p>First Line <br>-->
+            <!--Second Line-->
+            <!--</p>-->
+            <!--<a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>-->
+            <!--</li>-->
+        </ul>
+        <div class="col s7">
+            <div class="card-panel red lighten-5 presentCard">
+                <span class="center-align">Presenter</span>
+                <div class="avatar">
+                    <img src="images/noavatar.jpg" alt="" class="circle">
+                    <div class="valign-wrapper">
+                        <h4 class="name valign-wrapper"> Author name <span class="new badge red"
+                                                                           data-badge-caption="PhD"></span></h4>
+                    </div>
+                </div>
+
+                <ul class="presentContentList">
+                    <li class="presentContentList_item row">
+                        <a href="#!" target="_blank">
+                            <img class="col" src="images/noavatar.jpg" width="200" height="100">
+                            <span class="col">
+                                    Paper title
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="js/globalvariables.js"></script>
+<script src="presentation/js/vendor/modernizr-3.8.0.min.js"></script>
+<script src="presentation/js/vendor/d3.v5.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script>window.jQuery || document.write('<script src="presentation/js/vendor/jquery-3.4.1.min.js"><\/script>')</script>
+<script src="presentation/js/plugins.js"></script>
+<script src="presentation/js/main.js"></script>
+<script src="presentation/js/presentation.js"></script>
+
+<script type="text/javascript" src="presentation/js/materialize.min.js"></script>
+</body>
+
+</html>
