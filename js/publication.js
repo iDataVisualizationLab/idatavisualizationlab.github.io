@@ -22,12 +22,12 @@ function drawPub(data) {
                         <i>${d.Title}</i><br>
                         ${arraytoAuthor(d.Authors)} <br>
                         ${d.Venue}<br>
-                        <a  ef="${d.pubURL}">${d.VenueId}</a> <br>
-                        <a href="${d.pdf}"> <img src="images/icons/pdf.png" height="18"></a>
-                        <a href="${d.video}"> <img src="images/icons/movie.png" height="19"></a>
-                        <a href="${d.github}"> <img src="images/icons/github.png" height="18"></a>
-                        <a href="${d.doi}" class="button">DOI</a>
-                        <a href="${d.bib}"> <img src="images/icons/bibtex.png" height="13"></a>`);
+                        <a  href="${d.pubURL}">${d.VenueId}</a> <br>
+                        ${d.pdf !==''?`<a href="${d.pdf}"> <img src="images/icons/pdf.png" height="18"></a>`:''}
+                        ${d.video !==''?`<a href="${d.video}"> <img src="images/icons/movie.png" height="19"></a>`:''}
+                        ${d.github !== '' ?`<a href="${d.github}"> <img src="images/icons/github.png" height="18"></a>`:''}
+                        ${d.doi !== '' ?`<a href="${d.doi}" class="button">DOI</a>`:''}
+                        ${d.bib !== '' ?`<a href="${d.bib}"> <img src="images/icons/bibtex.png" height="13"></a>`:''}`);
     function arraytoAuthor(a){
         var lasta = a.pop();
         if (a.length){
