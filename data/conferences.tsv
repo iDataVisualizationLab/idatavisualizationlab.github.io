@@ -2,16 +2,16 @@ Name	Link	Acceptance	When	Where	Dealine	Notification	Poster	ResearchArea	Color
 ACM RecSys 2020	https://recsys.acm.org/recsys20/dates/	7-14 pages	Sep 22-26	"Rio de Janeiro, Brazil"	" Apr 27 (Abstracts), May 4 (Paper), Jun 8(Demo)"	"Jul 6 (paper), Jun 22 (demo)"			
 ISCV 2020	https://www.isvc.net/	12 pages	Oct 5-7	California	29-Jun	27-Jul			
 IV-2 2020	http://iv.csites.fct.unl.pt/au/	N/A	Nov 24-27	"Melbourne, Australia"	15-Jun	1-Sep			
-VARE 2020	http://www.msc-les.org/conf/vare2020/index.html	4-6 pages	Sep 16- Sep 18	"Greece, Athens"	Apr 15 (Extended abstracts)	15-May			#fef
+VARE 2020	http://www.msc-les.org/conf/vare2020/index.html	4-6 pages	Sep 16- Sep 18	"Greece, Athens"	<b>Apr 15</b> (Extended abstracts)	15-May			#fef
 IMMM 2020	https://www.iaria.org/conferences2020/IMMM20.html	4-6 pages	Sep 27 - Oct 1	"Rome, Italy"	18-May	18-Jul			#adf
 ASONAM 2020	http://asonam.cpsc.ucalgary.ca/2020/index.php	4-8 pages	Aug 3 - 6	"Hague, Netherlands"	<b>Apr 20</b>	14-Jun			#adf
-ICDM 2020	http://www.data-mining-forum.de/call_for_papers.php	15 pages	Jul 15 - 19	New York	Feb 15 - <b>Mar 20</b> (short)	10-Apr			#adf
+ICDM 2020	http://www.data-mining-forum.de/call_for_papers.php	15 pages	Jul 15 - 19	New York	Feb 15 - Mar 20(short)	10-Apr			#adf
 KDD 2020	https://www.kdd.org/kdd2020/calls	9 pages	Aug 22 - 27	"San Diego, California"	13-Feb	15-May			#adf
-VIS	http://ieeevis.org/year/2020/welcome		Oct 25-30	"Salt Lake City, Utah"	Mar 21-31				#fdc
+VIS	http://ieeevis.org/year/2020/welcome		Oct 25-30	"Salt Lake City, Utah"	<b>Apr 20</b> - Apr 30	6-Jun			#fdc
 SC20	https://sc20.supercomputing.org/	?	Nov 15-20	Georgia	<b>Apr 14</b>(Abstract) - Apr 20(Full)	15-Jun			#efe
-HILDA 2020	https://hilda.io/2020/	6 pages	19-Jun	"Portland, OR"	<b>Mar 23</b>	13-Apr			
-GRADES-NDA	https://gradesnda.github.io/	4-8 pages	14-Jun	"Portland, OR"	<b>Mar 23</b>	13-Apr			
-IAIT2020	http://www.iait-conf.org/2020/	5-10 pages	Jul 1-3	"Bangkok, Thailand"	<b>Mar 9</b>	25-Apr			
+HILDA 2020	https://hilda.io/2020/	6 pages	19-Jun	"Portland, OR"	<b>Apr 6</b>	27-Apr			
+GRADES-NDA	https://gradesnda.github.io/	4-8 pages	14-Jun	"Portland, OR"	<b>Apr 6</b>	11-May			
+IAIT2020	http://www.iait-conf.org/2020/	5-10 pages	Jul 1-3	"Bangkok, Thailand"	<b>Apr 20</b>	11-May			
 PEARC20 (Viz Showcase)	https://pearc.hosting2.acm.org/pearc20/program/call-for-participation/	2-4 pages	Jul 26 - 30	"Portland, OR"	1-May	22-May			#ffe
 PEARC20 (Student Technical)	https://pearc.hosting2.acm.org/pearc20/program/call-for-participation/	4-8 pages	Jul 26 - 30	"Portland, OR"	24-Feb	17-Apr			#ffe
 PEARC20 (Technical Track)	https://pearc.hosting2.acm.org/pearc20/program/call-for-participation/	4-8 pages	Jul 26 - 30	"Portland, OR"	17-Feb	17-Apr			#ffd
@@ -22,10 +22,10 @@ GI 2020	https://graphicsinterface.org/conference/2020/submissions/cfp/	8 pages?	
 CHIStudent Research Competition	https://chi2020.acm.org/authors/student-research-competition/	6 pages	Apr 25 - 30	"Honolulu, Hawaii"	6-Jan	29-Jan			#dfd
 SBIR/STTR Conference	https://techconnectworld.com/World2020/participate/innovation/		Jun 29 - Jul 1	Washington DC	28-Feb				#eee
 MLVis2020	https://www.tuni.fi/mlvis2020/	4 pages	N/A	"Norrkoping, Sweden"	<b>Apr 3</b>	20-Apr			#fed
-EnvirVis 2020	https://www.informatik.uni-leipzig.de/bsv/envirvis2020/	4-8 pages	with EuroVis	"Norrkoping, Sweden"	6-Mar	Mar 25			#fed
+EnvirVis 2020	https://www.informatik.uni-leipzig.de/bsv/envirvis2020/	4-8 pages	with EuroVis	"Norrkoping, Sweden"	6-Mar	25-Mar			#fed
 EuroVA 2020	https://www.eurova.org/eurova-2020	4+ 1	May 25-29	"Norrkoping, Sweden"	2-Mar	<b>April 4</b>			#fed
 MolVA 2020	http://decibel.fi.muni.cz/~xbyska/molva/	2-4/8 pages	25-May	"Norrkoping, Sweden"	29-Feb	<b>Apr 3<b>			#fed
-EuroVis2020	https://conferences.eg.org/egev20/for-submitters/eurovis-for-submitters/eurovis-short-papers/	4 pages	May 25-29	"Norrkoping, Sweden"	21-Feb	Mar 24	Short		#fdc
+EuroVis2020	https://conferences.eg.org/egev20/for-submitters/eurovis-for-submitters/eurovis-short-papers/	4 pages	May 25-29	"Norrkoping, Sweden"	21-Feb	24-Mar	Short		#fdc
 EuroVis2020	https://conferences.eg.org/egev20/for-submitters/eurovis-for-submitters/eurovis-full-papers/	10 pages	May 25-29	"Norrkoping, Sweden"	Nov 28 (abs.)	11-Feb	Full		#fdc
 Eurographics	https://conferences.eg.org/egev20/for-submitters/eurographics-for-submitters/eurographics-short-papers/	Educational	May 25-29	 	21-Jan	28-Feb			#fed
 SSIAI	http://ivpcl.unm.edu/SSIAI2020/SSIAI_2020_CFP_onePage.pdf	4 pages	Mar 28 - Apr 1 2020	"Santa Fe, NM"	1-Dec	31-Jan			#dfd
