@@ -1,7 +1,7 @@
 $(document).ready(function(){
     $(window).scrollTop(0);
     $(window).on('scroll', function(){
-        if( $(window).scrollTop() >= ($(document).height() - $(window).height()) ) {
+        if( $(window).scrollTop() >= ($(document).height() - $(window).height())*0.9 ) {
             if(typeof datapub !=="undefined" &&pubCount<datapub.length) {
                 pubCount += 5;
                 drawPub(datapub.filter((d, i) => i < pubCount));
