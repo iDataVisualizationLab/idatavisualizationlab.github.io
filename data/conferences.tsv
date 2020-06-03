@@ -1,28 +1,27 @@
 Name	Link	Acceptance	When	Where	Dealine	Notification	Poster	ResearchArea	Color
-HAI 2020	http://hai-conference.net/hai2020/	"Full:4-8pages, Poster: 2 pages"		"Sydney, Australia"	"Full: Jun 19, Poster: Aug 7"	"Full: Aug 7, Poster: Aug 17"			
-ISWEE 2020	http://www.confiswee.com/#/	7 pages	Dec 6-8	"Beijing, China"	15-Aug	Aubout 1 week after submission			
-IEEE QN	https://indico.cern.ch/event/737461/page/17373-important-dates	?	Oct 12-16	California	Aug 1	Sep 15			
-ISCV 2020	https://www.isvc.net/	12 pages	Oct 5-7	California	29-Jun	27-Jul			
-IV-2 2020	http://iv.csites.fct.unl.pt/au/	N/A	Nov 24-27	"Melbourne, Australia"	15-Jun	1-Sep			
-ACM RecSys 2020	https://recsys.acm.org/recsys20/dates/	7-14 pages	Sep 22-26	"Rio de Janeiro, Brazil"	<b>May 25</b>(Abstracts), Jun 1 (Paper), Jun 8(Demo)	"Jul 22 (paper), Jul 6 (demo)"			
-VARE 2020	http://www.msc-les.org/conf/vare2020/index.html	4-6 pages	Sep 16- Sep 18	"Greece, Athens"	<b>June 15</b> (Extended abstracts)	Jun 30			#fef
+ISWEE 2020	http://www.confiswee.com/#/	7 pages	Dec 6-8	"Beijing, China"	15-Aug	1 week after submission
+IEEE QN	https://indico.cern.ch/event/737461/page/17373-important-dates	?	Oct 12-16	California	Aug 1	Sep 15
+SC20	https://sc20.supercomputing.org/	Showcase	Nov 15-20	Georgia	"<b>Jul 31</b>"	15-Jun	ContiMap
+ISCV 2020	https://www.isvc.net/	12 pages	Oct 5-7	California	29-Jun	27-Jul
+HAI 2020	http://hai-conference.net/hai2020/	"4-8pages"		"Sydney, Australia"	"Full: Jun 19"	"Full: Aug 7"
+IV-2 2020	http://iv.csites.fct.unl.pt/au/		Nov 24-27	"Melbourne, Australia"	15-Jun	1-Sep
+ACM RecSys 2020	https://recsys.acm.org/recsys20/dates/	7-14 pages	Sep 22-26	"Rio de Janeiro, Brazil"	Jun 1, <b>Jun 8</b>(Demo)	"Jul 22 (paper), Jul 6 (demo)"
+VARE 2020	http://www.msc-les.org/conf/vare2020/index.html	4-6 pages	Sep 16- Sep 18	"Greece, Athens"	<b>June 15</b> 	Jun 30  			#fef
 ISMAR 2020	http://ismar20.org/call-for-papers/	4-10 pages	Nov 9-13	Porto de Galinhas	May 11 (abstract), May 18 (paper	15-Jul			#fef
 ASONAM 2020	http://asonam.cpsc.ucalgary.ca/2020/index.php	4-8 pages	Aug 3 - 6	"Hague, Netherlands"	"PhD, Multidisciplinary track Aug 2"	1-Oct			#adf
 IMMM 2020	https://www.iaria.org/conferences2020/IMMM20.html	4-6 pages	Sep 27 - Oct 1	"Rome, Italy"	<b>Jun 15</b>	18-Jul			#adf
-ICDM 2020	http://www.data-mining-forum.de/call_for_papers.php	15 pages	Jul 15 - 19	New York	Feb 15 - Mar 20(short)	10-Apr			#adf
-KDD 2020	https://www.kdd.org/kdd2020/calls	9 pages	Aug 22 - 27	"San Diego, California"	13-Feb	15-May			#adf
-VIS	http://ieeevis.org/year/2020/welcome		Oct 25-30	"Salt Lake City, Utah"	Apr 20 - Apr 30	6-Jun	<b>Jun 13<b>		#fdc
-SC20	https://sc20.supercomputing.org/	?	Nov 15-20	Georgia	"Apr 22(Full), <b>Jul 31</b>(Showcase)"	15-Jun	ContiMap		
-IAIT2020	http://www.iait-conf.org/2020/	5-10 pages	Jul 1-3	"Bangkok, Thailand"	May 12	11-May	GenExplorer <br> ScagCNN		
-PEARC20 (Viz Showcase)	https://pearc.hosting2.acm.org/pearc20/program/call-for-participation/	2-4 pages	Jul 26 - 30	"Portland, OR"	May 1	22-May	RadarView		#ffe
-PEARC20 (Student Technical)	https://pearc.hosting2.acm.org/pearc20/program/call-for-participation/	4-8 pages	Jul 26 - 30	"Portland, OR"	24-Feb	17-Apr			#ffe
-PEARC20 (Technical Track)	https://pearc.hosting2.acm.org/pearc20/program/call-for-participation/	4-8 pages	Jul 26 - 30	"Portland, OR"	17-Feb	17-Apr			#ffd
+ICDM 2020	http://www.data-mining-forum.de/call_for_papers.php	15 pages	Jul 15 - 19	New York	Feb 15 	10-Apr			#adf
+KDD 2020	https://www.kdd.org/kdd2020/calls	9 pages	Aug 22 - 27	"San Diego"	13-Feb	15-May			#adf
+VIS	http://ieeevis.org/year/2020/welcome	Short paper	Oct 25-30	"Salt Lake City, Utah"	<b>Jun 13<b>	Jul 18	PCA/UMAP		#fdc
+IAIT2020	http://www.iait-conf.org/2020/	5-10 pages	Jul 1-3	"Bangkok, Thailand"	May 12	11-May	ScagCNN
+PEARC20	https://pearc.hosting2.acm.org/pearc20/program/call-for-participation/	Viz Showcase	Jul 26 - 30	"Portland, OR"	May 1	22-May	RadarView		#ffe
+PEARC20	https://pearc.hosting2.acm.org/pearc20/program/call-for-participation/	4-8 pages	Jul 26 - 30	"Portland, OR"	17-Feb	17-Apr			#ffd
 EICS 2020 (Full paper)	https://eics.acm.org/2020/index.html#submissions	TBA	Jun 23 - 26	"Sophia Antipolis, France"	Feb 14 - Mar 9 (short)	24-Apr			#dfd
 COMPSAC 2020	https://ieeecompsac.computer.org/2020/important-dates/	10 pages	Jul 13 - 17	"Madrid, Spain"	31-Jan	3-Apr			#ffd
 DIS 2020	https://dis.acm.org/2020/	10 pages	Jul 6 - 10	"Eindhoven, Netherlands"	Jan 24 (abs) - Jan 31 (full)	9-Apr			#dfd
 GI 2020	https://graphicsinterface.org/conference/2020/submissions/cfp/	8 pages?	May 21 - 22	"Toronto, Canada"	3-Apr	15-Jan			#dfd
-CHIStudent Research Competition	https://chi2020.acm.org/authors/student-research-competition/	6 pages	Apr 25 - 30	"Honolulu, Hawaii"	6-Jan	29-Jan			#dfd
-SBIR/STTR Conference	https://techconnectworld.com/World2020/participate/innovation/		Jun 29 - Jul 1	Washington DC	28-Feb				#eee
+CHIStudent	https://chi2020.acm.org/authors/student-research-competition/	6 pages	Apr 25 - 30	"Honolulu, Hawaii"	6-Jan	29-Jan			#dfd
+SBIR/STTR 	https://techconnectworld.com/World2020/participate/innovation/		Jun 29 - Jul 1	Washington DC	28-Feb				#eee
 MLVis2020	https://www.tuni.fi/mlvis2020/	4 pages	N/A	"Norrkoping, Sweden"	3-Apr	20-Apr			#fed
 EnvirVis 2020	https://www.informatik.uni-leipzig.de/bsv/envirvis2020/	4-8 pages	with EuroVis	"Norrkoping, Sweden"	6-Mar	25-Mar			#fed
 EuroVA 2020	https://www.eurova.org/eurova-2020	4+ 1	May 25-29	"Norrkoping, Sweden"	2-Mar	4-Apr			#fed
