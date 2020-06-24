@@ -1,22 +1,25 @@
 Name	Link	Acceptance	When	Where	Dealine	Notification	Poster	ResearchArea	Color
-TOIT-Edge-AI for Connected Living	https://dl.acm.org/pb-assets/static_journal_pages/toit/pdf/ACM-TOIT-CfP-EdgeAIConnectedLiving-1586834694673.pdf	?	15-Apr	ACM	1-Oct-20	15-Dec			
-VINCI '20	https://vinci-conf.org/submissions.html	4-8 pages	Dec 8-10	"Eindhoven, The Netherlands"	3-Aug	21-Sep			
-VizSec 2020	https://vizsec.org/vizsec2020/#cfp	9 +2 (references)	Oct 25-30 	"Utah, USA"	13-Jul	13-Aug			
-ISWEE 2020	http://www.confiswee.com/#/	7 pages	Dec 6-8	"Beijing, China"	15-Aug	1 week after submission			
+TOIT-Edge-AI 	https://dl.acm.org/pb-assets/static_journal_pages/toit/pdf/ACM-TOIT-CfP-EdgeAIConnectedLiving-1586834694673.pdf	?	15-Apr	ACM	1-Oct-20	15-Dec			
+ISWEE 2020	http://www.confiswee.com/#/	7 pages	Dec 6-8	Beijing	15-Aug	1 week after submission			
+VINCI '20	https://vinci-conf.org/submissions.html	4-8 pages	Dec 8-10	Eindhoven	3-Aug	21-Sep			
 IEEE QN	https://indico.cern.ch/event/737461/page/17373-important-dates	?	Oct 12-16	California	1-Aug	15-Sep			
 SC20	https://sc20.supercomputing.org/	Showcase	Nov 15-20	Georgia	<b>Jul 31</b>	15-Jun	ContiMap		
 ISCV 2020	https://www.isvc.net/	12 pages	Oct 5-7	California	<b>Jun 29</b>	27-Jul	NetScatterplot		
 HAI 2020	http://hai-conference.net/hai2020/	4-8pages		"Sydney, Australia"	Full: Jun 19	Full: Aug 7			
 IV-2 2020	http://iv.csites.fct.unl.pt/au/		Nov 24-27	"Melbourne, Australia"	15-Jun	1-Sep			
-ACM RecSys 2020	https://recsys.acm.org/recsys20/dates/	7-14 pages	Sep 22-26	"Rio de Janeiro, Brazil"	"Jun 1, <b>Jun 22</b>(Demo)"	"Jul 22 (paper), Jul 13 (demo)"			
-VARE 2020	http://www.msc-les.org/conf/vare2020/index.html	4-6 pages	Sep 16- Sep 18	"Greece, Athens"	<b>June 15</b> 	30-Jun			#fef
+ACM RecSys 2020	https://recsys.acm.org/recsys20/dates/	7-14 pages	Sep 22-26	"Rio de Janeiro, Brazil"	"Jun 1, <b>Jun 27</b>(Short)"	"Jul 22 (paper), Jul 13 (demo)"			
+VARE 2020	http://www.msc-les.org/conf/vare2020/index.html	4-6 pages	Sep 16- Sep 18	"Greece, Athens"	15-Jun	30-Jun			#fef
 ISMAR 2020	http://ismar20.org/call-for-papers/	4-10 pages	Nov 9-13	Porto de Galinhas	"May 11 (abstract), May 18 (paper"	15-Jul			#fef
 ASONAM 2020	http://asonam.cpsc.ucalgary.ca/2020/index.php	4-8 pages	Aug 3 - 6	"Hague, Netherlands"	"PhD, Multidisciplinary track Aug 2"	1-Oct			#adf
-IMMM 2020	https://www.iaria.org/conferences2020/IMMM20.html	4-6 pages	Sep 27 - Oct 1	"Rome, Italy"	<b>Jun 15</b>	18-Jul			#adf
+IMMM 2020	https://www.iaria.org/conferences2020/IMMM20.html	4-6 pages	Sep 27 - Oct 1	"Rome, Italy"	15-Jun	18-Jul			#adf
 ICDM 2020	http://www.data-mining-forum.de/call_for_papers.php	15 pages	Jul 15 - 19	New York	15-Feb	10-Apr			#adf
 KDD 2020	https://www.kdd.org/kdd2020/calls	9 pages	Aug 22 - 27	San Diego	13-Feb	15-May			#adf
-VIS	http://ieeevis.org/year/2020/welcome	Short paper	Oct 25-30	"Salt Lake City, Utah"	<b>July 13<b>	18-Aug	PCA/UMAP		#fdc
-VISxAI	https://visxai.io/	?	26-Oct	"Salt Lake City, Utah"	<b>July 24<b>	9-Aug			#fdc
+VISxAI	https://visxai.io/	?	26-Oct	"Salt Lake City, Utah"	<b>Jul 24</b>	9-Aug			#fdc
+MLUI	https://learningfromusersworkshop.github.io/	?	26-Oct	"Salt Lake City, Utah"	<b>Jul 24</b>	12-Aug			#fdc
+TREX	https://trexvis.github.io/Workshop2020/index.html	TRust and Experience		"Utah, USA"	<b>Jul 20</b>	12-Aug	Vinh		#fdc
+VSD 20	http://www.visualdatascience.org/2020/index.html	9 +2		"Utah, USA"	<b>Jul 17</b>	28-Aug			#fdc
+VizSec 20	https://vizsec.org/vizsec2020/#cfp	9 +2	Oct 25-30 	"Utah, USA"	<b>Jul 13</b>	13-Aug			#fdc
+VIS	http://ieeevis.org/year/2020/welcome	Short paper	Oct 25-30	"Salt Lake City, Utah"	<b>Jul 13</b>	18-Aug	PCA/UMAP		#fdc
 IAIT2020	http://www.iait-conf.org/2020/	5-10 pages	Jul 1-3	"Bangkok, Thailand"	12-May	11-May	ScagCNN		
 PEARC20	https://pearc.hosting2.acm.org/pearc20/program/call-for-participation/	Viz Showcase	Jul 26 - 30	"Portland, OR"	1-May	22-May	RadarView		#ffe
 PEARC20	https://pearc.hosting2.acm.org/pearc20/program/call-for-participation/	4-8 pages	Jul 26 - 30	"Portland, OR"	17-Feb	17-Apr			#ffd
