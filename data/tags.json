@@ -3,7 +3,8 @@
     "BDV": "Big Data Visualization",
     "IVA": "Intelligent Visual Analytic",
     "VR": "Virtual Reality & Argument Reality",
-    "EML": "Explainable Machine Learning"
+    "EML": "Explainable Machine Learning",
+    "HCI": "Human-Computer Interaction"
   },
   "Application": {
     "B": "Biology",
