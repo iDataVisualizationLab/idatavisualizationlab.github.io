@@ -10,12 +10,12 @@
 <script type="text/javascript" src="js/jquery.kwicks-1.5.1.js"></script>
 <script type="text/javascript">
     $(document).ready(function() {
-        $('#images').kwicks({
-            max : 600,
-            spacing : 2
-        });
+        if ($('#images')[0]) {
+            $('#images').kwicks({
+                max: 600,
+                spacing: 2
+            });
+        }
         $('ul.sf-menu').sooperfish();
     });
 </script>
-</body>
-</html>
