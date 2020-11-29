@@ -14,7 +14,12 @@ let bubbleChartSettings = {
     height: parseFloat(d3.select('.chart').style('width').replace('px', '')) / 2,
     bubbleRadius: parseFloat(d3.select('.chart').style('width').replace('px', '')) / 30,
 };
-
+function formatTime (d){
+    let time_current = d3.time.format('%d-%b-%y').parse(d);
+    if (time_current===null)
+        time_current = new Date(d);
+    return time_current;
+}
 d3.csv('data/members.csv').then(function (data) {
     d3.tsv('data/publication.tsv').then(function (publications) {
         profileList = data;
@@ -153,7 +158,7 @@ function createBubbleChart(data, svg, settings) {
     let textBubbleRadius = 8;
 
     chartData = chartData.map(d => {
-        d['year'] = new Date(d.Time).getFullYear();
+        d['year'] = formatTime(d.Time).getFullYear();
         return d;
     });
 
@@ -375,7 +380,7 @@ function createBubbleChart(data, svg, settings) {
 
     //calculate bubble position in timeline
     function calculateTimelinePosition(currentItem) {
-        let currentItemTime = new Date(currentItem.Time);
+        let currentItemTime = formatTime(currentItem.Time);
         let currentItemMonth = currentItemTime.getMonth();
         let currentItemYear = currentItemTime.getFullYear();
         let distance = yearDistance / 11;
