@@ -15,7 +15,7 @@ let bubbleChartSettings = {
     bubbleRadius: parseFloat(d3.select('.chart').style('width').replace('px', '')) / 30,
 };
 function formatTime (d){
-    let time_current = d3.time.format('%d-%b-%y').parse(d);
+    let time_current = d3.timeParse('%d-%b-%y')(d);
     if (time_current===null)
         time_current = new Date(d);
     return time_current;
@@ -67,7 +67,7 @@ d3.csv('data/members.csv').then(function (data) {
             let personPublications = updatePublications(profileList[0]);
 
             svg = d3.select('.chart').select('#main-svg');
-            let filteredYearData = personPublications.filter(d => Date.parse(d.Time) > Date.parse("2017")).sort((a, b) => Date.parse(a.Time) - Date.parse(b.Time));
+            let filteredYearData = personPublications.filter(d => formatTime(d.Time) > formatTime("Jan 1 2017")).sort((a, b) => formatTime(a.Time) - formatTime(b.Time));
 
             bubbleChart = createBubbleChart(filteredYearData, svg, bubbleChartSettings);
             bubbleChart(filteredYearData);
