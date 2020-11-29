@@ -37,17 +37,22 @@ function drawPub(data) {
     }
 }
 let pubCount = 10;
+function formatTime (d){
+    let time_current = d3.time.format('%d-%b-%y').parse(d);
+    if (time_current===null)
+        time_current = new Date(d);
+    return time_current;
+}
 d3.tsv("data/publication.tsv", function (error,data_) {
     if (error) throw error;
 
     var minYear = 2017;
-
-    datapub = data_.filter(d => new Date(d.Time).getFullYear() >= minYear);
+    datapub = data_.filter(d => formatTime(d.Time).getFullYear() >= minYear);
 
     // preprocess
     let checkTommy = new RegExp(/Tuan Dang|Tommy Dang/);
     datapub.forEach(d=>{
-        d.Time = new Date(d.Time);
+        d.Time = formatTime(d.Time);
         d.Authors = d.Authors.split(',').map(n=>n.trim());
         // check if have tommy dang | nhon tuan Dang or not
         if (!d.Authors.find(e=>checkTommy.test(e)))
