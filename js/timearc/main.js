@@ -12,7 +12,7 @@ $(document).ready(function(){
 
 })
 //Constants for the SVG
-var margin = {top: 0, right: 100, bottom: 5, left: 15};
+var margin = {top: 0, right: 400, bottom: 5, left: 15};
 var width = timearc.getBoundingClientRect().width;
 // var width = document.body.clientWidth;
 var height = 800 - margin.top - margin.bottom;

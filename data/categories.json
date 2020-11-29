@@ -9,31 +9,31 @@
         "type":"category-entry",
         "title":"W",
         "description":"Workshop",
-        "content":"<span>W</span>"
+        "content":"<span>Workshop</span>"
       },
       {
         "type":"category-entry",
         "title":"S",
         "description":"Short paper",
-        "content":"<span>S</span>"
+        "content":"<span>Short paper</span>"
       },
       {
         "type":"category-entry",
         "title":"C",
         "description":"Conference",
-        "content":"<span>C</span>"
+        "content":"<span>Conference</span>"
       },
       {
         "type":"category-entry",
         "title":"J",
         "description":"Journal",
-        "content":"<span>J</span>"
+        "content":"<span>Journal</span>"
       },
       {
         "type":"category-entry",
         "title":"A",
         "description":"Award",
-        "content":"<span>A</span>"
+        "content":"<span>Award</span>"
       }
     ]
   },
