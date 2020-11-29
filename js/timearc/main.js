@@ -302,6 +302,7 @@ function data2timearc() {
     /// The second force directed layout ***********
     for (var i = 0; i < nodes.length; i++) {
         var nod = nodes[i];
+        // nodes[i].connect = new Array();
         if (!nodes2List[nod.name] && nodes2List[nod.name] != 0) {
             var newNod = {};
             newNod.name = nod.name;
@@ -683,6 +684,7 @@ function computeNodes() {
         nod.isConnectedMaxYear = termArray[i].isConnectedMaxYear;
         nod.maxYear = termArray[i].isConnectedMaxYear;
         nod.year = termArray[i].isConnectedMaxYear;
+        nod.connect = new Array();
         if (termArray[i].isSearchTerm) {
             nod.isSearchTerm = 1;
             if (!nod.year)
@@ -785,11 +787,7 @@ function computeLinks() {
                         var sourceNodeId = i;
                         var targetNodeId = j;
 
-                        if (!nodes[i].connect)
-                            nodes[i].connect = new Array();
                         nodes[i].connect.push(j)
-                        if (!nodes[j].connect)
-                            nodes[j].connect = new Array();
                         nodes[j].connect.push(i)
 
                         if (m != nodes[i].maxYear) {
@@ -955,7 +953,11 @@ function computeLinks() {
         .attr("r", 15)
         .style("fill-opacity",1)
         .style("fill", function(d) {
-            let image = "#node_avatar" + fixstring(d.name.replace(/Tuan Dang|Tommy Dang/, 'Tommy Dang ' + (Math.round(d.connect[0]) + minYear)));
+            let image = "#node_avatar";
+            if (d.connect!==undefined)
+                image += fixstring(d.name.replace(/Tuan Dang|Tommy Dang/, 'Tommy Dang ' + (Math.round(d.connect[0]) + minYear)));
+            else
+                image += fixstring(d.name);
             let nodeimg = d3.select(image);
             if (nodeimg.empty())
                 return "url(#node_avatarnoavatar)";
