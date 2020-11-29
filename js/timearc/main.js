@@ -108,7 +108,7 @@ var terms;
 var nodeG;
 var nodeG_dummy;
 
-var xStep = margin.left;
+var xStep = -width/numYear/2;
 // if (width > 900)
 //     xStep += (width - 900) / 2;
 
