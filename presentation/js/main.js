@@ -4,7 +4,12 @@ let category = {};
 let year = {};
 let yearDistance = 0;
 let isGroup = true;
-
+function formatTime (d){
+    let time_current = d3.timeParse('%d-%b-%y')(d);
+    if (time_current===null)
+        time_current = new Date(d);
+    return time_current;
+}
 let bubbleChartSettings = {
     width: parseFloat(d3.select('#chart-container').style('width').replace('px', '')),
     height: parseFloat(d3.select('#chart-container').style('width').replace('px', '')),
@@ -566,7 +571,8 @@ let bubbleChart = null;
 d3.tsv('data/publication.tsv').then(function (data) {
     d3.json('data/tags.json').then(function (tags) {
         category = Object.assign(tags.ResearchArea, tags.Application);
-        let filteredYearData = data.filter(d => Date.parse(d.Time) > Date.parse("2017")).sort((a, b) => Date.parse(a.Time) - Date.parse(b.Time));
+        debugger
+        let filteredYearData = data.filter(d => formatTime(d.Time) > Date.parse("Jan 1 2017")).sort((a, b) => formatTime(a.Time) - formatTime(b.Time));
         svg = d3.select('#main-svg');
         bubbleChart = createBubbleChart(filteredYearData, svg, bubbleChartSettings);
 
