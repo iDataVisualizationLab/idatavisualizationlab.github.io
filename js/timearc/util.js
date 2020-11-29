@@ -11,7 +11,7 @@ var positions = [{role:"Msc program", yearStart:0, years: 2, color: "#0ff", opac
     {role:"Post-doc", yearStart:6, years: 2, color: "#ff0", opacity: 0.1},
     {role:"Assitant Professor", yearStart:8, years: 5, color: "#f00", opacity: 0.1},];
 function drawColorLegend() {
-  var x1 = xStep;
+  var x1 = margin.left;
   var y1 = 10;
   var yStep = 15;
 

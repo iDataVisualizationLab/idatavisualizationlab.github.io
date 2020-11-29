@@ -12,8 +12,8 @@ $(document).ready(function(){
 
 })
 //Constants for the SVG
-var margin = {top: 0, right: 400, bottom: 5, left: 15};
-var width = timearc.getBoundingClientRect().width;
+var margin = {top: 0, right: 100, bottom: 5, left: 15};
+var width = timearc.getBoundingClientRect().width-margin.left-margin.right;
 // var width = document.body.clientWidth;
 var height = 800 - margin.top - margin.bottom;
 
@@ -35,7 +35,7 @@ var svg = d3.select("#timearc").append("svg")
     .attr("x", 0)
     .attr("width", '100%')
     .attr("height", height)
-    .attr("viewBox", `0 0 ${width} ${height}`);
+    .attr("viewBox", `0 0 ${width+margin.left+margin.right} ${height}`);
 svg.call(tip);
 
 var topTermMode = 0;
@@ -108,7 +108,7 @@ var terms;
 var nodeG;
 var nodeG_dummy;
 
-var xStep = 0;
+var xStep = margin.left;
 // if (width > 900)
 //     xStep += (width - 900) / 2;
 
