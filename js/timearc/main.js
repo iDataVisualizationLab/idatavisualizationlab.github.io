@@ -32,13 +32,10 @@ var svg = d3.select("#timearc").append("svg")
     .style("overflow", "visible")
     .style("fill-opacity", 0)
     .attr("x", 0)
-    .attr("width", width)
-    .attr("height", height);
+    .attr("width", '100%')
+    .attr("height", height)
+    .attr("viewBox", `0 0 ${width} ${height}`);
 svg.call(tip);
-var svg2 = d3.select("body").append("svg")
-    .style("background", "#ee0")
-    .attr("width", width)
-    .attr("height", 0);
 
 var topTermMode = 0;
 var linkWeight = 2
@@ -180,13 +177,16 @@ var timearr = {};
 let imagerange = d3.range(2007,2019+1); // tommy pic years
 
 function data2timearc() {
-    var time2num = d3.time.scale().domain([new Date('Jan ' + minYear), new Date('Jan ' + (minYear + 1))]);
+    var time2num = d3.time.scale().domain([new Date('Jan 1 ' + minYear), new Date('Jan 1 ' + (minYear + 1))]);
     terms = new Object();
     termMaxMax = 1;
     var cccc = 0;
     data.forEach(function (d, i) {
         // var year = time2num(new Date(d["Time"]));
-        var year = time2num(new Date('Jan ' + (new Date(d["Time"]).getFullYear())));
+        let time_current = d3.time.format('%d-%b-%y').parse(d["Time"]);
+        if (time_current===null)
+            time_current = new Date(d['Time']);
+        var year = time2num(new Date('Jan 1 ' + time_current.getFullYear()));
         d.year = year;
         timearr[year] = 1;
         //if (d.year<20) return;
@@ -368,67 +368,7 @@ function data2timearc() {
         .links(links)
         .start(100, 150, 200);
 
-    var link2 = svg2.selectAll(".link2")
-        .data(links2)
-        .enter().append("line")
-        .attr("class", "link2")
-        .style("stroke", function (d) {
-            if (d.count == 1) {
-                return "#fbb";
-            }
-            else {
-                return "#f00";
-            }
 
-        })
-        .style("stroke-width", function (d) {
-            return 0.0 + 0.75 * linkScale(d.count);
-        });
-
-    var node2 = svg2.selectAll(".nodeText2")
-        .data(nodes2)
-        .enter().append("text")
-        .attr("class", "nodeText2")
-        .text(function (d) {
-            return d.name
-        })
-        .attr("dy", ".35em")
-        .style("fill", "#000")
-        .style("text-anchor", "middle")
-        // .style("text-shadow", "1px 1px 0 rgba(255, 255, 255, 0.6")
-        .style("font-weight", function (d) {
-            return d.isSearchTerm ? "bold" : "";
-        })
-        .attr("dy", ".21em")
-        .attr("font-family", "sans-serif")
-        .attr("font-size", "12px");
-
-    node2.append("title")
-        .text(function (d) {
-            return d.name;
-        });
-
-    force2.on("tick", function () {
-        link2.attr("x1", function (d) {
-            return d.source.x;
-        })
-            .attr("y1", function (d) {
-                return d.source.y;
-            })
-            .attr("x2", function (d) {
-                return d.target.x;
-            })
-            .attr("y2", function (d) {
-                return d.target.y;
-            });
-
-        node2.attr("x", function (d) {
-            return d.x;
-        })
-            .attr("y", function (d) {
-                return d.y;
-            });
-    });
 
 
     force.on("tick", function () {
