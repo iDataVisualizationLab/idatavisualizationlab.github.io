@@ -2,7 +2,7 @@ $(document).ready(function(){
     $(window).scrollTop(0);
     $(window).on('scroll', function(){
         if( $(window).scrollTop() >= ($(document).height() - $(window).height())*0.9 ) {
-            debugger
+            
             if(typeof datapub !=="undefined" &&pubCount<datapub.length) {
                 pubCount += 5;
                 drawPub(datapub.filter((d, i) => i < pubCount));
@@ -783,7 +783,7 @@ function computeLinks() {
             }
         }
     }
-    //debugger;
+    //
 
     var linearScale = d3.scale.linear()
         .range([0.3, 0.2])
@@ -1402,7 +1402,7 @@ function detactTimeSeries() {
         }
     }
 
-    //debugger;
+    //
     force.stop();
 
     updateTransition(2000, height - 4);
