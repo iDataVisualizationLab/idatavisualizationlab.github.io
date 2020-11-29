@@ -45,9 +45,13 @@ d3.tsv("data/publication.tsv", function (error,data_) {
     datapub = data_.filter(d => new Date(d.Time).getFullYear() >= minYear);
 
     // preprocess
+    let checkTommy = new RegExp(/Tuan Dang|Tommy Dang/);
     datapub.forEach(d=>{
         d.Time = new Date(d.Time);
         d.Authors = d.Authors.split(',').map(n=>n.trim());
+        // check if have tommy dang | nhon tuan Dang or not
+        if (!d.Authors.find(e=>checkTommy.test(e)))
+            d.Authors.push('Tommy Dang');
     });
     datapub.sort((a,b)=>b.Time-a.Time);
 

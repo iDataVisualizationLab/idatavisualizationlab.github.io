@@ -178,14 +178,6 @@ var numberInputTerms = 0;
 var listYear = [];
 var timearr = {};
 let imagerange = d3.range(2007,2019+1); // tommy pic years
-// d3.csv("data/people.csv", function(error,data){
-//     data.push({ID:"noavatar",img:"images/noavatar.jpg"})
-//     imagerange.forEach(i=>{
-//         data.push({ID:`${'Tommy Dang '}${i}`,img:`images/people/Tommy_pics/${i}.png`})
-//     })
-//     initAvatar(data);
-//     data2timearc();
-// });
 
 function data2timearc() {
     var time2num = d3.time.scale().domain([new Date('Jan ' + minYear), new Date('Jan ' + (minYear + 1))]);
