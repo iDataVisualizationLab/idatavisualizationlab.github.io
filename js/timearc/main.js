@@ -454,7 +454,7 @@ function readTermsAndRelationships() {
     }
 
 
-    var removeList = {};   // remove list **************
+    var removeList = {'Anuththara Lokubandara':true,'Peter Lai':true};   // remove list **************
 
     termArray = [];
     for (var att in terms) {
