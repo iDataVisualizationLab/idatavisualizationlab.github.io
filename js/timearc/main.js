@@ -175,7 +175,7 @@ var optArray = [];   // FOR search box
 var numberInputTerms = 0;
 var listYear = [];
 var timearr = {};
-let imagerange = d3.range(2007,2019+1); // tommy pic years
+let imagerange = d3.range(2007,2020+1); // tommy pic years
 
 function data2timearc() {
     var time2num = d3.time.scale().domain([new Date('Jan 1 ' + minYear), new Date('Jan 1 ' + (minYear + 1))]);
