@@ -1102,6 +1102,7 @@ function mouseovered() {
     nodeG.style('pointer-events','none');
     nodeG_dummy.style("opacity", 0);
     d3.select(this).style('pointer-events','all');
+    d3.select(this).style("opacity", 1);
     if (force.alpha() > 0) return;
     var list = new Object();
     list[d.name] = new Object();
