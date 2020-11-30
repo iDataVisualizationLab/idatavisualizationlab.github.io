@@ -34,8 +34,8 @@ var svg = d3.select("#timearc").append("svg")
     .style("fill-opacity", 0)
     .attr("x", 0)
     .attr("width", '100%')
-    .attr("height", height)
-    .attr("viewBox", `0 0 ${width+margin.left+margin.right} ${height}`);
+    .attr("height", height+ margin.top + margin.bottom)
+    .attr("viewBox", `0 0 ${width+margin.left+margin.right} ${height+ margin.top + margin.bottom}`);
 svg.call(tip);
 
 var topTermMode = 0;
