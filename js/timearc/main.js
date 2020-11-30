@@ -1100,7 +1100,7 @@ function mouseoutedLink(l) {
 function mouseovered() {
     let d = d3.select(this).datum();
     nodeG.style('pointer-events','none');
-    // nodeG_dummy.style("opacity", 0);
+    nodeG_dummy.style("opacity", 0);
     d3.select(this).style('pointer-events','all');
     if (force.alpha() > 0) return;
     var list = new Object();
@@ -1438,8 +1438,11 @@ function professor_images(nodeTommy){
         })
         .style('opacity',0);
     nodeG_dummy.transition().duration(500).style('opacity',1);
-    nodeG_dummy.on('mouseover', d=>(console.log(d),console.log(d-Math.round(nodeTommy[1].minY)),
-        _.bind(mouseovered,nodeG.filter(e=>e.name===(d-Math.round(nodeTommy[1].minY)<0?nodeTommy[0]:nodeTommy[1]).name).node())()))
+    nodeG_dummy.on('mouseover', d=> {
+            _.bind(mouseovered, nodeG.filter(e => e.name === (d - Math.round(nodeTommy[1].minY) < 0 ? nodeTommy[0] : nodeTommy[1]).name).node())();
+            d3.select(this).style('opacity',1)
+        }
+    )
         .on("mouseout", mouseouted);
 }
 
