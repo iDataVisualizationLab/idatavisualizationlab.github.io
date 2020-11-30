@@ -256,7 +256,7 @@ function data2timearc() {
     });
     setupSliderScale(svg);
     // drawBackground();
-    drawColorLegend();
+    // drawColorLegend();
     drawTimeLegend();
 
 
