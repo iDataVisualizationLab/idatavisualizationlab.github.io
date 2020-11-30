@@ -1438,7 +1438,8 @@ function professor_images(nodeTommy){
         })
         .style('opacity',0);
     nodeG_dummy.transition().duration(500).style('opacity',1);
-    nodeG_dummy.on('mouseover', d=> {
+    nodeG_dummy.on('mouseover', function(d) {
+        debugger
             _.bind(mouseovered, nodeG.filter(e => e.name === (d - Math.round(nodeTommy[1].minY) < 0 ? nodeTommy[0] : nodeTommy[1]).name).node())();
             d3.select(this).style('opacity',1)
         }
