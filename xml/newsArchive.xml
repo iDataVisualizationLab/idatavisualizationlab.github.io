@@ -175,6 +175,25 @@
 					</div>
 				</div>
 
+
+				
+				<div class="img-area">
+					<div class="img-middle">
+						<img src="./images/figures/HPCCtemp.gif"></img>
+					</div>
+					<div style="clear:both;"></div>
+				</div>
+
+				<p>The work was developed in collaboration with both industrial and acadamic domain experts:</p>
+				<ul>
+					<li><a target="_blank" href="http://www.myweb.ttu.edu/yonchen/">Dr. Yong Chen</a>, Department of Computer Science, Texas Tech University.</li>
+					<li><a target="_blank" href="https://members.educause.edu/alan-sill">Dr. Alan Sill</a>, Managing Director of HPCC; Co-Director, NSF CAC.</li>
+				</ul>
+				<div class="img-area">
+					<div class="img-middle">
+						<img src="./images/figures/HPCCfandspeed.gif"></img>
+					</div>
+				</div>
 			</div>
 		</fullNews>
 	</news>
@@ -407,8 +426,6 @@
 			</div>
 		</fullNews>
 	</news>
-
-
 
 	<!--<news category="website">
 		<headline>iDVL website launched</headline>
