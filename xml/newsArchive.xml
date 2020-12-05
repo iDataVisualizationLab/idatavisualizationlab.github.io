@@ -410,12 +410,12 @@
 
 
 
-	<news category="website">
+	<!--<news category="website">
 		<headline>iDVL website launched</headline>
 		<date>Jan 25, 2017</date>
 		<sortNews>Lab website has been launched</sortNews>
 		<fullNews>The website for iDVL: interactive Data Visualization Lab has been lunched.</fullNews>
-	</news>
+	</news> -->
 
 
 </newsArchive>
