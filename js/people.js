@@ -14,25 +14,35 @@ let bubbleChartSettings = {
     height: parseFloat(d3.select('.chart').style('width').replace('px', '')) / 2,
     bubbleRadius: parseFloat(d3.select('.chart').style('width').replace('px', '')) / 30,
 };
-function formatTime (d){
+
+function formatTime(d) {
     let time_current = d3.timeParse('%d-%b-%y')(d);
-    if (time_current===null)
+    if (time_current === null)
         time_current = new Date(d);
     return time_current;
 }
+
 d3.csv('data/members.csv').then(function (data) {
     d3.tsv('data/publication.tsv').then(function (publications) {
         profileList = data;
         debugger
-        data.sort((a,b)=>a.alumni-b.alumni);
-        alumni = data.filter(d=>d.alumni);
+        data.sort((a, b) => a.alumni - b.alumni);
+        alumni =[];
+        notalumni = data.filter((d,i) => {
+            d.index=i
+            if (!d.alumni)
+                return true;
+            else{
+                alumni.push(d)
+            }
+        });
         alumni[0].marginLeft = '20px';
-        if (alumni.length%2){
-            alumni[Math.round(alumni.length/2)].text = 'Alumni';
-            alumni[Math.round(alumni.length/2)].left = '50px';
-        }else{
-            alumni[alumni.length/2-1].text = 'Alumni';
-            alumni[alumni.length/2-1].left = '0';
+        if (alumni.length % 2) {
+            alumni[Math.round(alumni.length / 2)].text = 'Alumni';
+            alumni[Math.round(alumni.length / 2)].left = '50px';
+        } else {
+            alumni[alumni.length / 2 - 1].text = 'Alumni';
+            alumni[alumni.length / 2 - 1].left = '0';
         }
         publicationList = publications;
         mapPubToPerson();
@@ -62,24 +72,27 @@ d3.csv('data/members.csv').then(function (data) {
         carouselCaption.append('h4')
             .text(d => d.program);
 
-        const li = d3.select('.carousel-indicators').selectAll('li')
-            .data(data)
+        d3.select('.carousel-indicators.current').selectAll('li')
+            .data(notalumni)
             .enter()
             .append('li')
             .attr('data-target', '#carousel-thumb')
-            .attr('data-slide-to', (d, i) => i)
-            .attr('class', (d, i) => i === 0 ? 'active' : '')
-            .style('margin-left',d=>d.marginLeft??null)
-            .style('position','relative');
-        li
+            .attr('data-slide-to', (d, i) => d.index)
+            .attr('class', (d, i) => d.index === 0 ? 'active' : '')
+            .style('position', 'relative')
             .append('img')
             .attr('src', d => d.image);
-        li.filter(d=>d.text)
-            .append('span')
-            .text(d=>d.text)
-            .style('position','absolute')
-            .style('top',0)
-            .style('left',d=>d.left)
+        const li = d3.select('.carousel-indicators.alumni').selectAll('li')
+            .data(alumni)
+            .enter()
+            .append('li')
+            .attr('data-target', '#carousel-thumb')
+            .attr('data-slide-to', (d, i) => d.index)
+            .attr('class', (d, i) => d.index === 0 ? 'active' : '')
+            .style('position', 'relative')
+            .append('img')
+            .attr('src', d => d.image);
+
 
         function init() {
             d3.select('.shortInfo').text(profileList[0].introduction);
@@ -156,7 +169,8 @@ function updatePublications(profile) {
 $('#carousel-thumb').on('slide.bs.carousel', function (e) {
     let idSplitter = e.relatedTarget.id.split('-');
     let profile = profileList[idSplitter[idSplitter.length - 1]];
-
+    d3.selectAll('.carousel-indicators .active').classed('active',false);
+    d3.selectAll('.carousel-indicators li').filter(d=>d.index===+idSplitter[idSplitter.length - 1]).classed('active',true);
     d3.select('.shortInfo').text(profile.introduction);
     updatePersonal(profile);
     let personPublications = updatePublications(profile).filter(d => Date.parse(d.Time) > Date.parse("2017")).sort((a, b) => Date.parse(a.Time) - Date.parse(b.Time));
@@ -335,7 +349,7 @@ function createBubbleChart(data, svg, settings) {
 
 
     function ticked() {
-        bubbles.attr("transform", d =>`translate(${d.x},${d.y})`);
+        bubbles.attr("transform", d => `translate(${d.x},${d.y})`);
     }
 
     function charge(d) {
