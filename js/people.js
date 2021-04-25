@@ -23,6 +23,17 @@ function formatTime (d){
 d3.csv('data/members.csv').then(function (data) {
     d3.tsv('data/publication.tsv').then(function (publications) {
         profileList = data;
+        debugger
+        data.sort((a,b)=>a.alumni-b.alumni);
+        alumni = data.filter(d=>d.alumni);
+        alumni[0].marginLeft = '20px';
+        if (alumni.length%2){
+            alumni[Math.round(alumni.length/2)].text = 'Alumni';
+            alumni[Math.round(alumni.length/2)].left = '50px';
+        }else{
+            alumni[alumni.length/2-1].text = 'Alumni';
+            alumni[alumni.length/2-1].left = '0';
+        }
         publicationList = publications;
         mapPubToPerson();
         init();
@@ -51,15 +62,24 @@ d3.csv('data/members.csv').then(function (data) {
         carouselCaption.append('h4')
             .text(d => d.program);
 
-        d3.select('.carousel-indicators').selectAll('li')
+        const li = d3.select('.carousel-indicators').selectAll('li')
             .data(data)
             .enter()
             .append('li')
             .attr('data-target', '#carousel-thumb')
             .attr('data-slide-to', (d, i) => i)
             .attr('class', (d, i) => i === 0 ? 'active' : '')
+            .style('margin-left',d=>d.marginLeft??null)
+            .style('position','relative');
+        li
             .append('img')
             .attr('src', d => d.image);
+        li.filter(d=>d.text)
+            .append('span')
+            .text(d=>d.text)
+            .style('position','absolute')
+            .style('top',0)
+            .style('left',d=>d.left)
 
         function init() {
             d3.select('.shortInfo').text(profileList[0].introduction);
