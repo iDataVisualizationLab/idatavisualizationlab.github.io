@@ -73,25 +73,26 @@ d3.csv('data/members.csv').then(function (data) {
             .text(d => d.program);
 
         d3.select('.carousel-indicators.current').selectAll('li')
-            .data(notalumni)
+            .data(data)
             .enter()
             .append('li')
             .attr('data-target', '#carousel-thumb')
             .attr('data-slide-to', (d, i) => d.index)
             .attr('class', (d, i) => d.index === 0 ? 'active' : '')
             .style('position', 'relative')
+            .style('margin-left',d=>d.marginLeft)
             .append('img')
             .attr('src', d => d.image);
-        const li = d3.select('.carousel-indicators.alumni').selectAll('li')
-            .data(alumni)
-            .enter()
-            .append('li')
-            .attr('data-target', '#carousel-thumb')
-            .attr('data-slide-to', (d, i) => d.index)
-            .attr('class', (d, i) => d.index === 0 ? 'active' : '')
-            .style('position', 'relative')
-            .append('img')
-            .attr('src', d => d.image);
+        // const li = d3.select('.carousel-indicators.alumni').selectAll('li')
+        //     .data(alumni)
+        //     .enter()
+        //     .append('li')
+        //     .attr('data-target', '#carousel-thumb')
+        //     .attr('data-slide-to', (d, i) => d.index)
+        //     .attr('class', (d, i) => d.index === 0 ? 'active' : '')
+        //     .style('position', 'relative')
+        //     .append('img')
+        //     .attr('src', d => d.image);
 
 
         function init() {

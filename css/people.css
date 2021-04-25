@@ -11,7 +11,7 @@
 
 .carousel-thumbnails .carousel-indicators li {
     height: auto;
-    max-width: 100px;
+    max-width: 50px;
     width: 100%;
     border: none;
     box-shadow: 1px 3px 5px 0px rgba(0, 0, 0, 0.75);
