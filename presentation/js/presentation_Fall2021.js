@@ -8,7 +8,7 @@ $(document).ready(function() {
             data.push({Id:`${'Tommy Dang '}${i}`,img:`images/people/Tommy_pics/${i}.png`})
         });
         // initAvatar(data);
-        d3.json('presentation/data/presentList.json').then(pL=>{
+        d3.json('presentation/data/presentList_Fall2021.json').then(pL=>{
             dataPresent = pL;
             pL.forEach(d=>{
                 d.avatar = (data.find(e=>e.Id===d.name)||{img:'images/noavatar.jpg'}).img;
