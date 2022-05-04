@@ -1,22 +1,5 @@
 [
   {
-    "name":"Ngan Nguyen",
-    "contents":[
-      {
-        "title":"Interacting with your protein",
-        "shortTitle":"VR",
-        "img":"images/presentation/colorblind.png",
-        "link":"#!"
-      },
-      {
-        "title":"HiperView: Interactive visualization for High Performance Computing Centers",
-        "shortTitle":"HPC",
-        "img":"images/papers/HiperView.png",
-        "link":"https://idatavisualizationlab.github.io/HPCC/HiperView/demo.html"
-      }
-    ]
-  },
-  {
     "name":"Huyen Nguyen",
     "contents":[
       {
@@ -78,6 +61,23 @@
         "title":"Time Series analytics",
         "img":"images/presentation/timeB.png",
         "link":"https://idatavisualizationlab.github.io/B/congnostics/layout.html"
+      }
+    ]
+  },
+  {
+    "name":"Ngan Nguyen",
+    "contents":[
+      {
+        "title":"Interacting with your protein",
+        "shortTitle":"VR",
+        "img":"images/presentation/colorblind.png",
+        "link":"#!"
+      },
+      {
+        "title":"HiperView: Interactive visualization for High Performance Computing Centers",
+        "shortTitle":"HPC",
+        "img":"images/papers/HiperView.png",
+        "link":"https://idatavisualizationlab.github.io/HPCC/HiperView/demo.html"
       }
     ]
   }
