@@ -3,39 +3,12 @@
     "name":"Huyen Nguyen",
     "contents":[
       {
-        "title":"Enhanced soil profile visualization using portable X-ray fluorescence (PXRF) spectrometry",
-        "shortTitle":"SOAViz",
-        "img":"images/papers/geodermaSoil.png",
-        "link":"https://idatavisualizationlab.github.io/Soil/demos.html"
-      },
-      {
-        "title":"Award: Strong Support for Exploratory Analysis",
-        "shortTitle":"VAST Challenge 2018: Mini-Challenge 2",
-        "img":"images/papers/VAST2018mc2.png",
-        "link":"https://idatavisualizationlab.github.io/VAST2018/heatmap.html"
-      },
-      {
-        "title":"Outliagnostics: Am I outlier or inlier?",
-        "shortTitle":"Outliagnostics",
-        "img":"images/papers/outliagnostics_thumbnail.png",
-        "link":"https://outliagnostics.github.io/demos.html"
-      },
-      {
-        "title":"Explainable Neural Networks for Multivariate Time Series",
-        "shortTitle":"RUL",
-        "img":"images/presentation/NN.png",
-        "link":"https://idatavisualizationlab.github.io/V/RUL_Viz/"
-      }
-    ]
-  },
-  {
-    "name":"Jake Gonzalez",
-    "contents":[
-      {
-        "title":"DeepViz: Explaining Long Short-Term Memory Network With High Dimensional Time Series Data",
-        "shortTitle":"DeepViz",
-        "img":"images/presentation/deepviz.png",
-        "link":"https://idatavisualizationlab.github.io/H/VCNN/"
+        "title":"VAST Challenge 2020, Mini-Challenge 2 Award: Honorable Mention for Detailed Analysis of Patterns of Misclassification",
+        "shortTitle":"Analysis Patterns of Misclassification with Object Detection Visualization",
+        "img":"https://huyen-nguyen.github.io/VAST2020mc2/TTU-Nguyen-MC2/images/3-markTP.png",
+        "link":"https://huyen-nguyen.github.io/VAST2020mc2/index.html",
+        "report":"https://huyen-nguyen.github.io/VAST2020mc2/TTU-Nguyen-MC2/index.htm",
+        "paper":"https://arxiv.org/pdf/2107.11181.pdf"
       }
     ]
   },
@@ -43,24 +16,10 @@
     "name":"Juanita Benjamin",
     "contents":[
       {
-        "title":"Solar Flare Prediction Using two-tier Ensemble with Deep Learning and Gradient Boosting Machine​",
-        "shortTitle":"Solar Flare",
-        "img":"images/presentation/solarfare.png",
-        "link":"https://texastechuniversity-my.sharepoint.com/:p:/g/personal/tommy_dang_ttu_edu/ESIirh7nuqxMuB_gKQQx1EMBSbkMu7Fc7sbU9nx44FtGhw?e=4%3amAGYQp&at=9&CID=BEFC9A1D-87D7-4ACD-BE80-49BB3C229A0A&wdLOR=cAA885D4C-8069-477F-881C-EA821F6668D0"
-      },{
-        "title":"SHAP",
-        "img":"images/presentation/shap.jpg",
-        "link":"https://texastechuniversity-my.sharepoint.com/:p:/g/personal/tommy_dang_ttu_edu/ESIirh7nuqxMuB_gKQQx1EMBSbkMu7Fc7sbU9nx44FtGhw?e=4%3amAGYQp&at=9&CID=BEFC9A1D-87D7-4ACD-BE80-49BB3C229A0A&wdLOR=cAA885D4C-8069-477F-881C-EA821F6668D0"
-      }
-    ]
-  },
-  {
-    "name":"Zaynab Bello",
-    "contents":[
-      {
-        "title":"Time Series analytics",
-        "img":"images/presentation/timeB.png",
-        "link":"https://idatavisualizationlab.github.io/B/congnostics/layout.html"
+        "title":"Virtual Reality Simulation: A use case of 3D Modeling",
+        "shortTitle":"VR 3D Simulation",
+        "img":"images/presentation/vr_aircraft.jpg",
+        "link":"https://texastechuniversity-my.sharepoint.com/:p:/g/personal/juanita_benjamin_ttu_edu/EffTG5cuPV1Cqe54qYpH3TwBESRbhkAY5_JBHHAAJPNxNA?e=gv7WuB"
       }
     ]
   },
@@ -68,16 +27,27 @@
     "name":"Ngan Nguyen",
     "contents":[
       {
+        "title":"Monitoring High Performance Computing Center",
+        "shortTitle":"HPC",
+        "img":"images/papers/HiperView.png",
+        "link":"https://idatavisualizationlab.github.io/HPCC/HiperView/demo.html"
+      },
+      {
         "title":"Interacting with your protein",
         "shortTitle":"VR",
         "img":"images/presentation/colorblind.png",
         "link":"#!"
-      },
+      }
+    ]
+  },
+  {
+    "name":"Jake Gonzalez",
+    "contents":[
       {
-        "title":"HiperView: Interactive visualization for High Performance Computing Centers",
-        "shortTitle":"HPC",
-        "img":"images/papers/HiperView.png",
-        "link":"https://idatavisualizationlab.github.io/HPCC/HiperView/demo.html"
+        "title":"Soil Composition Analysis",
+        "shortTitle":"Soil Composition Analysis",
+        "img":"https://raw.githubusercontent.com/iDataVisualizationLab/Jake/main/SoilComposition/PCA/image1.png",
+        "link":"https://idatavisualizationlab.github.io/Jake/SoilComposition/alphashape/index.html"
       }
     ]
   }
