@@ -1,18 +1,13 @@
 [
   {
-    "name":"Ngan Nguyen",
+    "name":"Juanita Benjamin",
+    "tag":true,
     "contents":[
       {
-        "title":"Monitoring High Performance Computing Center",
-        "shortTitle":"HPC",
-        "img":"images/papers/HiperView.png",
-        "link":"https://idatavisualizationlab.github.io/HPCC/HiperView/demo.html"
-      },
-      {
-        "title":"Interacting with your protein",
-        "shortTitle":"VR",
-        "img":"images/presentation/colorblind.png",
-        "link":"https://texastechuniversity-my.sharepoint.com/:p:/g/personal/ngan_v_t_nguyen_ttu_edu/EaHHIxZkIHJOsP1XpY1ofVEB9pSO3w6MmDeeLCQw_atDeA?e=2ByCFD"
+        "title":"Virtual Reality Simulation: A use case of 3D Modeling",
+        "shortTitle":"VR 3D Simulation",
+        "img":"images/presentation/vr_aircraft.jpg",
+        "link":"https://texastechuniversity-my.sharepoint.com/:p:/g/personal/juanita_benjamin_ttu_edu/EffTG5cuPV1Cqe54qYpH3TwBESRbhkAY5_JBHHAAJPNxNA?e=gv7WuB"
       }
     ]
   },
@@ -30,14 +25,19 @@
     ]
   },
   {
-    "name":"Juanita Benjamin",
-    "tag":true,
+    "name":"Ngan Nguyen",
     "contents":[
       {
-        "title":"Virtual Reality Simulation: A use case of 3D Modeling",
-        "shortTitle":"VR 3D Simulation",
-        "img":"images/presentation/vr_aircraft.jpg",
-        "link":"https://texastechuniversity-my.sharepoint.com/:p:/g/personal/juanita_benjamin_ttu_edu/EffTG5cuPV1Cqe54qYpH3TwBESRbhkAY5_JBHHAAJPNxNA?e=gv7WuB"
+        "title":"Monitoring High Performance Computing Center",
+        "shortTitle":"HPC",
+        "img":"images/papers/HiperView.png",
+        "link":"https://idatavisualizationlab.github.io/HPCC/HiperView/demo.html"
+      },
+      {
+        "title":"Interacting with your protein",
+        "shortTitle":"VR",
+        "img":"images/presentation/colorblind.png",
+        "link":"https://texastechuniversity-my.sharepoint.com/:p:/g/personal/ngan_v_t_nguyen_ttu_edu/EaHHIxZkIHJOsP1XpY1ofVEB9pSO3w6MmDeeLCQw_atDeA?e=2ByCFD"
       }
     ]
   }
