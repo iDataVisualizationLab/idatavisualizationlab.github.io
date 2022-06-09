@@ -1,0 +1,44 @@
+[
+  {
+    "name":"Ngan Nguyen",
+    "contents":[
+      {
+        "title":"Monitoring High Performance Computing Center",
+        "shortTitle":"HPC",
+        "img":"images/papers/HiperView.png",
+        "link":"https://idatavisualizationlab.github.io/HPCC/HiperView/demo.html"
+      },
+      {
+        "title":"Interacting with your protein",
+        "shortTitle":"VR",
+        "img":"images/presentation/colorblind.png",
+        "link":"https://texastechuniversity-my.sharepoint.com/:p:/g/personal/ngan_v_t_nguyen_ttu_edu/EaHHIxZkIHJOsP1XpY1ofVEB9pSO3w6MmDeeLCQw_atDeA?e=2ByCFD"
+      }
+    ]
+  },
+  {
+    "name":"Huyen Nguyen",
+    "contents":[
+      {
+        "title":"VAST Challenge 2020, Mini-Challenge 2 Award: Honorable Mention for Detailed Analysis of Patterns of Misclassification",
+        "shortTitle":"Analysis Patterns of Misclassification with Object Detection Visualization",
+        "img":"https://huyen-nguyen.github.io/VAST2020mc2/TTU-Nguyen-MC2/images/3-markTP.png",
+        "link":"https://huyen-nguyen.github.io/VAST2020mc2/index.html",
+        "report":"https://huyen-nguyen.github.io/VAST2020mc2/TTU-Nguyen-MC2/index.htm",
+        "paper":"https://arxiv.org/pdf/2107.11181.pdf"
+      }
+    ]
+  },
+  {
+    "name":"Juanita Benjamin",
+    "tag":true,
+    "contents":[
+      {
+        "title":"Virtual Reality Simulation: A use case of 3D Modeling",
+        "shortTitle":"VR 3D Simulation",
+        "img":"images/presentation/vr_aircraft.jpg",
+        "link":"https://texastechuniversity-my.sharepoint.com/:p:/g/personal/juanita_benjamin_ttu_edu/EffTG5cuPV1Cqe54qYpH3TwBESRbhkAY5_JBHHAAJPNxNA?e=gv7WuB"
+      }
+    ]
+  }
+]
