@@ -1,5 +1,28 @@
 [
   {
+    "name":"Jake Gonzalez",
+    "contents":[
+      {
+        "title":"Soil Composition Analysis",
+        "shortTitle":"Soil Composition Analysis",
+        "img":"https://raw.githubusercontent.com/iDataVisualizationLab/Jake/main/SoilComposition/PCA/image1.png",
+        "link":"https://idatavisualizationlab.github.io/Jake/SoilComposition/alphashape/index.html"
+      }
+    ]
+  },
+  {
+    "name":"Juanita Benjamin",
+    "tag":true,
+    "contents":[
+      {
+        "title":"Virtual Reality Simulation: A use case of 3D Modeling",
+        "shortTitle":"VR 3D Simulation",
+        "img":"images/presentation/vr_aircraft.jpg",
+        "link":"https://texastechuniversity-my.sharepoint.com/:p:/g/personal/juanita_benjamin_ttu_edu/EffTG5cuPV1Cqe54qYpH3TwBESRbhkAY5_JBHHAAJPNxNA?e=gv7WuB"
+      }
+    ]
+  },
+  {
     "name":"Ngan Nguyen",
     "contents":[
       {
@@ -26,18 +49,6 @@
         "link":"https://huyen-nguyen.github.io/VAST2020mc2/index.html",
         "report":"https://huyen-nguyen.github.io/VAST2020mc2/TTU-Nguyen-MC2/index.htm",
         "paper":"https://arxiv.org/pdf/2107.11181.pdf"
-      }
-    ]
-  },
-  {
-    "name":"Juanita Benjamin",
-    "tag":true,
-    "contents":[
-      {
-        "title":"Virtual Reality Simulation: A use case of 3D Modeling",
-        "shortTitle":"VR 3D Simulation",
-        "img":"images/presentation/vr_aircraft.jpg",
-        "link":"https://texastechuniversity-my.sharepoint.com/:p:/g/personal/juanita_benjamin_ttu_edu/EffTG5cuPV1Cqe54qYpH3TwBESRbhkAY5_JBHHAAJPNxNA?e=gv7WuB"
       }
     ]
   }
