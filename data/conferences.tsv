@@ -1,44 +1,44 @@
 Name	Link	Acceptance	When	Where	Dealine	Notification	Poster	ResearchArea	Color
-text2story23	https://text2story23.inesctec.pt/	7+1 pages	Apr 2	Dublin, Ireland	Jan 23	Mar 2		fdc			
-BioInfo23	https://bioinformatics.scitevents.org/	8-10 pages	Feb 16-18	Lisbol, Portugal	Nov 24	Dec 22			fdc			
-VIS Short	http://ieeevis.org/year/2021/info/call-participation/shortpapers	4+1 pages	Oct 24-29	Virtual	Jun 20	Jul 25			fdc			
-Graph Drawing	https://algo.inf.uni-tuebingen.de/gd2021/	7-14 pages	ep 14-17	Virtual	Jun 2-9	Jul 19					
-ACM PEARC21	https://pearc.acm.org/pearc21/call-for-participation/	3-4 pages	Jul 18-22	Virtual	Apr 13	??	May 23	VizTheater			
-IAIT21	http://www.iait-conf.org/2021/		Jun 29	Bangkok, Thailand	April 30	May 10			
-MLVis 	https://www.tuni.fi/mlvis2021/	5 pages	June 14-18	 Zürich, Switzerland	Apr 12	May 3	 		#fdc	
-EnvirVis 	https://www.informatik.uni-leipzig.de/bsv/envirvis2021/	5 pages	June 14-18	 Zürich, Switzerland	Mar 5	Apr 7	 		#fdc	
-EuroVis2021	https://www.eurovis.org/index.php/for-submitters/important-dates/	5 pages	May 25-29	Zürich, Switzerland	Mar 1	Apr 2	Short		#fdc
-MolVA	http://decibel.fi.muni.cz/~xbyska/molva/	2-8 pager	June 14-18	 Zürich, Switzerland	Feb 28	Mar 31	 		#fdc	
-EuroVA 	https://www.eurova.org/	5 pages	June 14-18	 Zürich, Switzerland	Feb 26	April 12	 		#fdc	
-Journal: Cancers	https://www.mdpi.com/journal/cancers/special_issues/p53_Ralbp1	p53 and Ralbp1 in Carcinogenesis	(ISSN 2072-6694)	(IF 6.126)	Feb 28		
-COMPSAC 2021	https://ieeecompsac.computer.org/2021/call-for-papers/	10 pages	July 12	Virtual	Feb 18	April 15	 			
-DIS 2021	https://dis.acm.org/2021/papers-and-pictorials/	10 pages	Jun28-Jul2	Nowhere	Feb 11	Apr 8	24%	 			
-Eurographics Education	https://conferences.eg.org/eg2021/for-submitters/education-paper-submission/	4 pages	May 3-7	VIENNA, AUSTRIA	Jan 24	Feb 22	 		#fdc	
-CHI 2021 	https://chi2021.acm.org/for-authors/presenting/late-breaking-works	late-breaking	May 8-13	Yokohama, Japan	Jan 11	Feb 18 	Student Game			
-PacificVis 	http://vis.tju.edu.cn/pvis2021/visnotes.html	5 pages	April 19-22	TianJin	Jan 8	Feb 17	Jan 15 <i>MultiProjector+musicNhat	</i>		
-Eurographics 	https://conferences.eg.org/eg2021/	4 pages	May 3-7	VIENNA, AUSTRIA	Dec 21	Feb 15	 		#fdc	
-GI21 	https://graphicsinterface.org/conference/2021/submissions/cfp/	4-8 pages	May 27-28	Virtual	Dec 18	Jan 15	<b>Apr 9<b> Deadline #2		#fdc	
-IVAPP 	http://www.ivapp.visigrapp.org/	?	Feb 8-10	VISIGRAPP	Oct 29	Dec 4			
-ISCV 2020	https://www.isvc.net/	12 pages	Oct 5-7	California	Aug 31	Sep 21	NetScatterplot		
-BigData 2020	http://bigdataieee.org/BigData2020/ImportantDates.html		Dec 10-13	Atlanta	Aug 26	Oct 16			
-VINCI '20	https://vinci-conf.org/submissions.html	4-8 pages	Dec 8-10	Eindhoven	Aug 17 <br> Aug 24 (short)	21-Sep	PCA/UMAP Projections <br> MisInfo	
+text2story23	https://text2story23.inesctec.pt/	7+1 pages	2-Apr	"Dublin, Ireland"	23-Jan	2-Mar			#ffc
+BioInfo23	https://bioinformatics.scitevents.org/	8-10 pages	Feb 16-18	"Lisbol, Portugal"	24-Nov	22-Dec			#ffc
+VIS Short	http://ieeevis.org/year/2021/info/call-participation/shortpapers	4+1 pages	Oct 24-29	Virtual	20-Jun	25-Jul			#aaa
+Graph Drawing	https://algo.inf.uni-tuebingen.de/gd2021/	7-14 pages	ep 14-17	Virtual	Jun 2-9	19-Jul			
+ACM PEARC21	https://pearc.acm.org/pearc21/call-for-participation/	3-4 pages	Jul 18-22	Virtual	13-Apr	??	23-May	VizTheater	
+IAIT21	http://www.iait-conf.org/2021/		29-Jun	"Bangkok, Thailand"	30-Apr	10-May			
+MLVis 	https://www.tuni.fi/mlvis2021/	5 pages	June 14-18	" Zürich, Switzerland"	12-Apr	3-May	 		#fdc
+EnvirVis 	https://www.informatik.uni-leipzig.de/bsv/envirvis2021/	5 pages	June 14-18	" Zürich, Switzerland"	5-Mar	7-Apr	 		#fdc
+EuroVis2021	https://www.eurovis.org/index.php/for-submitters/important-dates/	5 pages	May 25-29	"Zürich, Switzerland"	1-Mar	2-Apr	Short		#fdc
+MolVA	http://decibel.fi.muni.cz/~xbyska/molva/	2-8 pager	June 14-18	" Zürich, Switzerland"	28-Feb	31-Mar	 		#fdc
+EuroVA 	https://www.eurova.org/	5 pages	June 14-18	" Zürich, Switzerland"	26-Feb	12-Apr	 		#fdc
+Journal: Cancers	https://www.mdpi.com/journal/cancers/special_issues/p53_Ralbp1	p53 and Ralbp1 in Carcinogenesis	(ISSN 2072-6694)	(IF 6.126)	28-Feb				
+COMPSAC 2021	https://ieeecompsac.computer.org/2021/call-for-papers/	10 pages	12-Jul	Virtual	18-Feb	15-Apr	 		
+DIS 2021	https://dis.acm.org/2021/papers-and-pictorials/	10 pages	Jun28-Jul2	Nowhere	11-Feb	8-Apr	24%	 	
+Eurographics Education	https://conferences.eg.org/eg2021/for-submitters/education-paper-submission/	4 pages	May 3-7	"VIENNA, AUSTRIA"	24-Jan	22-Feb	 		#fdc
+CHI 2021 	https://chi2021.acm.org/for-authors/presenting/late-breaking-works	late-breaking	May 8-13	"Yokohama, Japan"	11-Jan	18-Feb	Student Game		
+PacificVis 	http://vis.tju.edu.cn/pvis2021/visnotes.html	5 pages	April 19-22	TianJin	8-Jan	17-Feb	Jan 15 <i>MultiProjector+musicNhat	</i>	
+Eurographics 	https://conferences.eg.org/eg2021/	4 pages	May 3-7	"VIENNA, AUSTRIA"	21-Dec	15-Feb	 		#fdc
+GI21 	https://graphicsinterface.org/conference/2021/submissions/cfp/	4-8 pages	May 27-28	Virtual	18-Dec	15-Jan	<b>Apr 9<b> Deadline #2		#fdc
+IVAPP 	http://www.ivapp.visigrapp.org/	?	Feb 8-10	VISIGRAPP	29-Oct	4-Dec			
+ISCV 2020	https://www.isvc.net/	12 pages	Oct 5-7	California	31-Aug	21-Sep	NetScatterplot		
+BigData 2020	http://bigdataieee.org/BigData2020/ImportantDates.html		Dec 10-13	Atlanta	26-Aug	16-Oct			
+VINCI '20	https://vinci-conf.org/submissions.html	4-8 pages	Dec 8-10	Eindhoven	Aug 17 <br> Aug 24 (short)	21-Sep	PCA/UMAP Projections <br> MisInfo		
 ISWEE 2020	http://www.confiswee.com/#/	7 pages	Dec 6-8	Beijing	15-Aug	1 week after			
-SC20	https://sc20.supercomputing.org/	Showcase	Nov 15-20	Georgia	Aug 21	Sep 7	JobViewer		
-HAI 2020	http://hai-conference.net/hai2020/	4-8pages		"Sydney, Australia"	Jun 19	Aug 7			
+SC20	https://sc20.supercomputing.org/	Showcase	Nov 15-20	Georgia	21-Aug	7-Sep	JobViewer		
+HAI 2020	http://hai-conference.net/hai2020/	4-8pages		"Sydney, Australia"	19-Jun	7-Aug			
 IV-2 2020	http://iv.csites.fct.unl.pt/au/		Nov 24-27	"Melbourne, Australia"	15-Jun	1-Sep			
-ACM RecSys 2020	https://recsys.acm.org/recsys20/dates/	7-14 pages	Sep 22-26	"Rio de Janeiro, Brazil"	"Jun 1"	"Jul 22"			
+ACM RecSys 2020	https://recsys.acm.org/recsys20/dates/	7-14 pages	Sep 22-26	"Rio de Janeiro, Brazil"	1-Jun	22-Jul			
 VARE 2020	http://www.msc-les.org/conf/vare2020/index.html	4-6 pages	Sep 16- Sep 18	"Greece, Athens"	15-Jun	30-Jun	TasteVR		#fef
-ISMAR 2020	http://ismar20.org/call-for-papers/	4-10 pages	Nov 9-13	Porto de Galinhas	"May 11-18"	15-Jul			#fef
-ASONAM 2020	http://asonam.cpsc.ucalgary.ca/2020/index.php	4-8 pages	Dec 7-10	"Hague, Netherlands"	Aug 16	1-Oct			#adf
+ISMAR 2020	http://ismar20.org/call-for-papers/	4-10 pages	Nov 9-13	Porto de Galinhas	May 11-18	15-Jul			#fef
+ASONAM 2020	http://asonam.cpsc.ucalgary.ca/2020/index.php	4-8 pages	Dec 7-10	"Hague, Netherlands"	16-Aug	1-Oct			#adf
 IMMM 2020	https://www.iaria.org/conferences2020/IMMM20.html	4-6 pages	Sep 27 - Oct 1	"Rome, Italy"	15-Jun	18-Jul			#adf
 ICDM 2020	http://www.data-mining-forum.de/call_for_papers.php	15 pages	Jul 15 - 19	New York	15-Feb	10-Apr			#adf
 KDD 2020	https://www.kdd.org/kdd2020/calls	9 pages	Aug 22 - 27	San Diego	13-Feb	15-May			#adf
-VISxAI	https://visxai.io/	?	26-Oct	"Salt Lake City, Utah"	Aug 24	Sep 24			#fdc
-MLUI	https://learningfromusersworkshop.github.io/	?	26-Oct	"Salt Lake City, Utah"	Jul 24	12-Aug			#fdc
-TREX	https://trexvis.github.io/Workshop2020/index.html	TRust and Experience		"Utah, USA"	Jul 24	12-Aug			#fdc
-VizSec 20	https://vizsec.org/vizsec2020/#cfp	9 +2	Oct 25-30 	"Utah, USA"	Jul 22	13-Aug			#fdc
-VSD 20	http://www.visualdatascience.org/2020/index.html	9 +2		"Utah, USA"	Jul 17	Sep 4	RadarView		#fdc
-VIS	http://ieeevis.org/year/2020/welcome	Short paper	Oct 25-30	"Salt Lake City, Utah"	Jul 13	18-Aug			#fdc
+VISxAI	https://visxai.io/	?	26-Oct	"Salt Lake City, Utah"	24-Aug	24-Sep			#fdc
+MLUI	https://learningfromusersworkshop.github.io/	?	26-Oct	"Salt Lake City, Utah"	24-Jul	12-Aug			#fdc
+TREX	https://trexvis.github.io/Workshop2020/index.html	TRust and Experience		"Utah, USA"	24-Jul	12-Aug			#fdc
+VizSec 20	https://vizsec.org/vizsec2020/#cfp	9 +2	Oct 25-30 	"Utah, USA"	22-Jul	13-Aug			#fdc
+VSD 20	http://www.visualdatascience.org/2020/index.html	9 +2		"Utah, USA"	17-Jul	4-Sep	RadarView		#fdc
+VIS	http://ieeevis.org/year/2020/welcome	Short paper	Oct 25-30	"Salt Lake City, Utah"	13-Jul	18-Aug			#fdc
 IAIT2020	http://www.iait-conf.org/2020/	5-10 pages	Jul 1-3	"Bangkok, Thailand"	12-May	11-May			
 PEARC20	https://pearc.hosting2.acm.org/pearc20/program/call-for-participation/	Viz Showcase	Jul 26 - 30	"Portland, OR"	1-May	22-May			#ffe
 PEARC20	https://pearc.hosting2.acm.org/pearc20/program/call-for-participation/	4-8 pages	Jul 26 - 30	"Portland, OR"	17-Feb	17-Apr			#ffd
