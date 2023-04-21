@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<head>
+    <title>iDVL News</title>
+    <link rel="shortcut icon" href="images/iDVLlogo/V2.png">
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" href="css/video.css" />
+    <script
+            src="https://code.jquery.com/jquery-3.3.1.js"
+            integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+            crossorigin="anonymous">
+    </script>
+    <!--<script src="https://d3js.org/d3.v4.min.js"></script>-->
+    <script>
+        $(function(){
+            $("#header").load("header.html");
+            $("#footer").load("footer.html");
+            $("#sidebar").load("newsSidebar.html");
+        });
+    </script>
+</head>
+
+<div id="main">
+    <div id="header"></div>
+    <div id="site_content">
+        <div id="sidebar"></div>
+        <!-- Content here -->
+        <div class="content newsBox">
+            <h4><headline>DOE funded project</headline></h4><h5><date>August 2, 2021</date></h5><p><fullNews/>
+            <div class="news">
+                <center><h2>Texas Tech Aims to Make Aircraft Production Process More Secure</h2></center>
+
+                The team is tasked to develop the visualization to analyze the Energy process.
+            <button href="https://today.ttu.edu/posts/2020/11/Stories/texas-tech-aims-make-aircraft-production-process-more-secure">View More about the project</button>
+                <p/>
+                <div class="img-area">
+                    <div class="img-middle">
+                        <img src="./images/figures/oilRefine.jpg"/>
+                    </div>
+                    <div style="clear:both;"/>
+                </div>
+
+                <p/>
+                <p>The work is in collaboration with:</p>
+                <ul>
+                    <li><a target="_blank" href="https://cymanii.org/">Cybersecurity Manufacturing Innovation Institute</a>, CyManII is a $111 million public-private partnership led by the University of Texas at San Antonio</li>
+                    <li><a target="_blank" href="https://www.delekus.com/">Delek</a> is a diversified downstream energy company with assets in petroleum refining, logistics, asphalt, renewable fuels and convenience store retailing headquartered in Brentwood, Tennessee.</li> <div/>
+                    <li><a target="_blank" href="https://www.ttu.edu/">Texas Tech University</a></li> <div/>
+                </ul>
+                <div class="video-container">
+                    <iframe class="video" src="https://www.youtube.com/embed/sWI2qUAJ4V4?autoplay=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+    <div id="footer"></div>
+</div>
