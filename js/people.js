@@ -22,7 +22,8 @@ function formatTime(d) {
     return time_current;
 }
 
-d3.csv('data/members.csv').then(function (data) {
+d3.csv('data/members.csv').then(function (_data) {
+    const data = _data.filter(d=>!d.disable);
     d3.tsv('data/publication.tsv').then(function (publications) {
         profileList = data;
         debugger
