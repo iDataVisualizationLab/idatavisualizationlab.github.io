@@ -22,12 +22,13 @@ function formatTime(d) {
     return time_current;
 }
 
-d3.csv('data/members.csv').then(function (_data) {
-    const data = _data.filter(d=>!d.disable);
+d3.csv('data/members.csv?v=' + Date.now()).then(function (_data) {
+    // normalize alumni flag and filter out disabled
+    const data = _data.filter(d=>!d.disable).map(rec=>{rec.alumni = rec.alumni && rec.alumni.trim() !== '' ? 1 : 0; return rec;});
     d3.tsv('data/publication.tsv').then(function (publications) {
         profileList = data;
-        debugger
-        data.sort((a, b) => a.alumni - b.alumni);
+    // cache busting applied via query param above; removed stray debugger
+    data.sort((a, b) => a.alumni - b.alumni);
         alumni =[];
         notalumni = data.filter((d,i) => {
             d.index=i
@@ -37,6 +38,42 @@ d3.csv('data/members.csv').then(function (_data) {
                 alumni.push(d)
             }
         });
+        // populate current and alumni member grids
+        try {
+            const currentContainer = d3.select('.people-container .current-members .members-grid');
+            const alumniContainer = d3.select('.people-container .alumni-members .members-grid');
+            currentContainer.selectAll('*').remove();
+            alumniContainer.selectAll('*').remove();
+
+            const card = cont => sel => {
+                const c = sel.append('div').attr('class','member-card');
+                     c.append('img')
+                      .attr('src',d=>d.image)
+                      .attr('alt',d=>d.full_name)
+                      .attr('class','member-photo')
+                      .attr('loading','lazy')
+                      .attr('decoding','async')
+                      .on('error', function() {
+                          console.error('Failed to load image:', d3.select(this).attr('src'));
+                          d3.select(this).style('background', '#ddd').style('border', '2px dashed #999');
+                      })
+                     // using simpler image handling without srcset for reliability
+                c.append('div').attr('class','member-name').text(d=>d.full_name);
+                c.append('div').attr('class','member-role').text(d=>d.program || '');
+            };
+            currentContainer.selectAll('.member-card')
+                .data(notalumni)
+                .enter()
+                .call(card(currentContainer));
+            alumniContainer.selectAll('.member-card')
+                .data(alumni)
+                .enter()
+                .call(card(alumniContainer));
+
+            // removed automatic low-res flagging per user feedback
+        } catch(e){
+            console.error('Error populating member grids', e);
+        }
         alumni[0].marginLeft = '20px';
         if (alumni.length % 2) {
             alumni[Math.round(alumni.length / 2)].text = 'Alumni';
