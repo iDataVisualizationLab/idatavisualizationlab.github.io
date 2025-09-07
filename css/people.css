@@ -98,3 +98,64 @@ header {
 /*    margin-left: auto;*/
 /*    margin-right: auto;*/
 /*}*/
+
+/* Member grids */
+.people-container { margin-top:40px; }
+.people-container h2 { font-size:22px; margin:25px 0 15px; }
+.members-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(170px,1fr)); gap:26px; justify-items:center; }
+
+/* Alumni specific 4x4 grid */
+.alumni-members .members-grid { 
+    grid-template-columns: repeat(4, 1fr); 
+    max-width: 800px; 
+    margin: 0 auto 0 0; 
+    gap: 20px; 
+    justify-items: start;
+    padding-left: 0;
+}
+
+.member-card { text-align:center; font-size:14px; padding:6px 0; }
+.member-photo { 
+    width: 150px; 
+    height: 150px; 
+    object-fit: cover; 
+    border-radius: 10px; 
+    box-shadow: 0 3px 8px rgba(0,0,0,.30); 
+    border: 1px solid rgba(0,0,0,.10); 
+    transition: transform .18s ease, box-shadow .18s ease; 
+    background: #f5f5f5; 
+    display: block;
+}
+.member-card:hover .member-photo { transform:scale(1.03); box-shadow:0 4px 10px rgba(0,0,0,.35); }
+.member-name { margin-top:6px; line-height:1.2; font-weight:600; }
+.member-role { margin-top:2px; color:#555; font-size:13px; }
+
+/* Image error handling */
+.member-photo:not([src]), .member-photo[src=""] {
+    background: #f5f5f5;
+    border: 2px dashed #ccc;
+    color: #999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 120px;
+    width: 120px;
+}
+.member-photo:not([src])::after, .member-photo[src=""]::after {
+    content: "No Image";
+    font-size: 12px;
+}
+
+/* Low-res indicator removed per user request */
+
+/* Carousel image tighten */
+.carousel-item { display:flex; justify-content:center; align-items:center; }
+.carousel-image { max-height:260px; width:auto; height:100%; object-fit:contain; }
+
+/* Emphasis for section headings */
+.people-container .current-members h2,
+.people-container .alumni-members h2 {
+    color: #d32f2f !important; /* red */
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
